@@ -62,7 +62,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     return json({ ok: true, discarded: true });
   }
 
-  const to = env.CONTACT_TO || "sales@veslapack.com";
+  const to = env.CONTACT_TO || "yitengglass3@gmail.com";
   const from = env.CONTACT_FROM || "no-reply@veslapack.com";
   const subject = `New inquiry from ${body.name}${body.company ? ` (${body.company})` : ""}`;
   const text = [
