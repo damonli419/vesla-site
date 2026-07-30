@@ -12,7 +12,7 @@ const copy = {
     titleA: "Sixteen Years of",
     titleB: "Glass, in One Factory",
     intro:
-      "We are a 280-person cosmetic glass packaging manufacturer based in Xuzhou, Jiangsu. Every bottle, jar and vial we ship begins as molten glass on our own production lines — designed, decorated, inspected and exported under one roof.",
+      "We are a 280-person cosmetic glass packaging manufacturer based in Guangzhou, Guangdong. Every bottle, jar and vial we ship begins as molten glass on our own production lines — designed, decorated, inspected and exported under one roof.",
     factory: "Factory",
     factorySub: "32,000 m²",
     capacity: "Annual capacity",
@@ -23,7 +23,7 @@ const copy = {
     teamSub: "280 people",
     timelineTitle: "How we got here",
     timeline: [
-      { y: "2009", t: "Founded as a single-line glass workshop in Xuzhou, focused on perfume bottles." },
+      { y: "2009", t: "Founded as a single-line glass workshop in Guangzhou, focused on perfume bottles." },
       { y: "2013", t: "Added in-house frosting & spray coating; first export to a French indie perfumery." },
       { y: "2017", t: "ISO 9001 certified; opened a dedicated cosmetic packaging line for droppers & jars." },
       { y: "2020", t: "Reached 40 export countries; launched our in-house decoration studio." },
@@ -49,7 +49,7 @@ const copy = {
       { caption: "Drop-test certified export packing station", image: PEXEL(36423817) },
     ],
     ctaTitle: "Visit the factory",
-    ctaBody: "We welcome brand owners and procurement teams to tour our Xuzhou facility. We'll arrange airport pickup, factory visit, and a same-day sampling session in our decoration studio.",
+    ctaBody: "We welcome brand owners and procurement teams to tour our Guangzhou facility. We'll arrange airport pickup, factory visit, and a same-day sampling session in our decoration studio.",
     cta: "Plan a Factory Visit",
   },
   kr: {
@@ -57,14 +57,14 @@ const copy = {
     titleA: "16년 경력의",
     titleB: "원스톱 유리 공장",
     intro:
-      "저장성 쑤저우에 기반을 둔 280명 규모의 화장품 유리 포장 제조사입니다. 출하하는 모든 보틀, 자, 바이알은 자체 생산 라인에서 용융 유리로부터 시작되어, 디자인·데코레이션·검수·수출까지 한 지붕 아래에서 진행됩니다.",
+      "저장성 광저우에 기반을 둔 280명 규모의 화장품 유리 포장 제조사입니다. 출하하는 모든 보틀, 자, 바이알은 자체 생산 라인에서 용융 유리로부터 시작되어, 디자인·데코레이션·검수·수출까지 한 지붕 아래에서 진행됩니다.",
     factory: "공장 면적", factorySub: "32,000 m²",
     capacity: "연간 생산 능력", capacitySub: "6,000만 개",
     sku: "운영 SKU", skuSub: "1,200+",
     team: "임직원", teamSub: "280명",
     timelineTitle: "여기까지의 여정",
     timeline: [
-      { y: "2009", t: "쑤저우의 단일 라인 유리 공방으로 설립, 향수 보틀에 집중." },
+      { y: "2009", t: "광저우의 단일 라인 유리 공방으로 설립, 향수 보틀에 집중." },
       { y: "2013", t: "자체 프로스팅 및 스프레이 코팅 도입, 프랑스 인디 향수 브랜드로 첫 수출." },
       { y: "2017", t: "ISO 9001 인증, 드롭퍼·자 전용 화장품 포장 라인 신설." },
       { y: "2020", t: "수출 40개국 돌파, 사내 데코레이션 스튜디오 출범." },
@@ -90,7 +90,7 @@ const copy = {
       { caption: "드롭 테스트 인증 수출 포장 스테이션", image: PEXEL(36423817) },
     ],
     ctaTitle: "공장을 방문하세요",
-    ctaBody: "브랜드 오너와 구매 담당자의 쑤저우 공장 방문을 환영합니다. 공항 픽업, 공장見学, 데코레이션 스튜디오에서 당일 샘플링까지安排해 드립니다.",
+    ctaBody: "브랜드 오너와 구매 담당자의 광저우 공장 방문을 환영합니다. 공항 픽업, 공장見学, 데코레이션 스튜디오에서 당일 샘플링까지安排해 드립니다.",
     cta: "공장 방문 계획",
   },
   jp: {
@@ -98,14 +98,14 @@ const copy = {
     titleA: "16年の実績、",
     titleB: "ワンストップのガラス工場",
     intro:
-      "江蘇省徐州に拠点を置く280名の化粧品ガラス包装メーカーです。出荷するすべてのボトル・ジャー・バイアルは、溶融ガラスから自社の生産ラインで始まり、設計・装飾・検品・輸出を一貫して行います。",
+      "広東省広州に拠点を置く280名の化粧品ガラス包装メーカーです。出荷するすべてのボトル・ジャー・バイアルは、溶融ガラスから自社の生産ラインで始まり、設計・装飾・検品・輸出を一貫して行います。",
     factory: "工場", factorySub: "32,000 m²",
     capacity: "年間生産能力", capacitySub: "6,000万個",
     sku: "稼働SKU", skuSub: "1,200+",
     team: "従業員", teamSub: "280名",
     timelineTitle: "これまでの歩み",
     timeline: [
-      { y: "2009", t: "徐州の単一ラインガラス工房として設立。香水ボトルに集中。" },
+      { y: "2009", t: "広州の単一ラインガラス工房として設立。香水ボトルに集中。" },
       { y: "2013", t: "社内フロスト・スプレイコーティングを導入、フランスのインディーパフューマリーへ初輸出。" },
       { y: "2017", t: "ISO 9001認証取得。ドロッパー・ジャー専用の化粧品包装ラインを新設。" },
       { y: "2020", t: "輸出国40か国達成。社内装飾スタジオを稼働。" },
@@ -131,7 +131,7 @@ const copy = {
       { caption: "落下試験合格の輸出包装ステーション", image: PEXEL(36423817) },
     ],
     ctaTitle: "工場見学へ",
-    ctaBody: "ブランドオーナー・調達担当者の徐州工場見学を歓迎します。空港送迎、工場見学、装飾スタジオでの当日サンプリングまで手配いたします。",
+    ctaBody: "ブランドオーナー・調達担当者の広州工場見学を歓迎します。空港送迎、工場見学、装飾スタジオでの当日サンプリングまで手配いたします。",
     cta: "工場訪問を計画する",
   },
   tw: {
@@ -139,14 +139,14 @@ const copy = {
     titleA: "十六年玻璃功力,",
     titleB: "一廠全程把關",
     intro:
-      "我們是位於江蘇徐州、280 位同仁的化妝品玻璃包裝製造商。每一支瓶、罐、小瓶都從自有產線的融玻璃開始,於同一屋簷下完成設計、裝飾、驗貨與出口。",
+      "我們是位於廣東廣州、280 位同仁的化妝品玻璃包裝製造商。每一支瓶、罐、小瓶都從自有產線的融玻璃開始,於同一屋簷下完成設計、裝飾、驗貨與出口。",
     factory: "廠房", factorySub: "32,000 m²",
     capacity: "年產能", capacitySub: "6,000 萬瓶",
     sku: "在產 SKU", skuSub: "1,200+",
     team: "員工", teamSub: "280 人",
     timelineTitle: "一路走來",
     timeline: [
-      { y: "2009", t: "於徐州成立,專注香水瓶的單線玻璃工坊。" },
+      { y: "2009", t: "於廣州成立,專注香水瓶的單線玻璃工坊。" },
       { y: "2013", t: "導入自有磨砂與噴塗工藝,首次出口至法國獨立香水品牌。" },
       { y: "2017", t: "通過 ISO 9001,增設滴管瓶與膏霜瓶專用化妝品包裝產線。" },
       { y: "2020", t: "出口突破 40 國,成立自有裝飾工作室。" },
@@ -172,7 +172,7 @@ const copy = {
       { caption: "通過跌落測試的出口包裝工站", image: PEXEL(36423817) },
     ],
     ctaTitle: "蒞臨工廠",
-    ctaBody: "我們歡迎品牌主與採購團隊蒞臨徐州廠區。我們將安排機場接送、工廠參觀,以及於裝飾工作室的當日打樣。",
+    ctaBody: "我們歡迎品牌主與採購團隊蒞臨廣州廠區。我們將安排機場接送、工廠參觀,以及於裝飾工作室的當日打樣。",
     cta: "預約工廠參訪",
   },
 };

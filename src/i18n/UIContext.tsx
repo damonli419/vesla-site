@@ -232,10 +232,6 @@ export function UIProvider({ children }: { children: ReactNode }) {
     if (typeof window === "undefined") return "en";
     const stored = localStorage.getItem(STORAGE_KEY) as Locale | null;
     if (stored && stored in translations) return stored;
-    const browser = navigator.language.toLowerCase();
-    if (browser.startsWith("ko")) return "kr";
-    if (browser.startsWith("ja")) return "jp";
-    if (browser.startsWith("zh")) return "tw";
     return "en";
   });
 

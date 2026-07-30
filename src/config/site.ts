@@ -8,18 +8,18 @@ export const siteConfig = {
   legalName: "Vesla Co., Ltd.",
   url: "https://veslapack.com",
   email: env.VITE_COMPANY_EMAIL || "yitengglass3@gmail.com",
-  phone: env.VITE_COMPANY_PHONE || "+86-138-0000-0000",
+  phone: env.VITE_COMPANY_PHONE || "+86 18165681131",
   // WhatsApp numbers must be digits only, no plus sign.
-  whatsapp: env.VITE_COMPANY_WHATSAPP || "8613800000000",
+  whatsapp: env.VITE_COMPANY_WHATSAPP || "8618165681131",
   whatsappDisplay: env.VITE_COMPANY_WHATSAPP
     ? `+${env.VITE_COMPANY_WHATSAPP}`
-    : "+86 138 0000 0000",
+    : "+86 18165681131",
   address: {
-    street: "Vesla Industrial Park",
-    city: "Xuzhou",
-    region: "Jiangsu",
+    street: "11th Floor, Building 5, Baiyun Financial Holdings Intelligent Connected Vehicle Industrial Park, No. 66-4 Zhihong Road, Jianggao Town, Baiyun District",
+    city: "Guangzhou",
+    region: "Guangdong",
     country: "China",
-    postal: "221000",
+    postal: "510000",
   },
   social: {
     instagram: "https://instagram.com/veslapack",
