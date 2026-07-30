@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import Analytics from "./components/Analytics";
 import SampleRequestModal from "./components/SampleRequestModal";
+import FloatingWhatsapp from "./components/FloatingWhatsapp";
 import { UIProvider } from "./i18n/UIContext";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
@@ -46,6 +47,7 @@ export default function App() {
               </Routes>
             </main>
             <SampleRequestModal />
+            <FloatingWhatsapp />
             <Footer />
           </div>
         </BrowserRouter>
