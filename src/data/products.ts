@@ -1,0 +1,657 @@
+export type Category = "dropper" | "jar" | "oil" | "set";
+
+export const categoryLabels: Record<Category, { en: string; kr: string; jp: string; tw: string }> = {
+  dropper: {
+    en: "Dropper Bottles",
+    kr: "드롭퍼 보틀",
+    jp: "ドロッパーボトル",
+    tw: "滴管瓶",
+  },
+  jar: {
+    en: "Cream Jars",
+    kr: "크림 자",
+    jp: "クリームジャー",
+    tw: "膏霜瓶",
+  },
+  oil: {
+    en: "Essential Oil Bottles",
+    kr: "에센셜 오일 보틀",
+    jp: "エッセンシャルオイルボトル",
+    tw: "精油瓶",
+  },
+  set: {
+    en: "Cosmetic Sets",
+    kr: "코스메틱 세트",
+    jp: "コスメティックセット",
+    tw: "化妝品套裝",
+  },
+};
+
+export interface Product {
+  id: string;
+  name: string;
+  nameI18n: { kr: string; jp: string; tw: string };
+  category: Category;
+  material: string;
+  capacity: string;
+  capacityGroup: "mini" | "standard" | "large" | "set";
+  use: string;
+  moq: string;
+  leadTime: string;
+  neck: string;
+  decoration: string;
+  image: string;
+  gallery: string[];
+  description: string;
+  descriptionI18n: { kr: string; jp: string; tw: string };
+  features: string[];
+}
+
+// Curated stock photography from Pexels (royalty-free). URLs use the
+// `pexels.com` CDN with auto-compression for WebP delivery.
+const PEXEL = (id: number, w = 1200) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
+
+export const products: Product[] = [
+  {
+    id: "frosted-dropper-30ml",
+    name: "Frosted Glass Dropper Bottle",
+    nameI18n: { kr: "프로스트 글래스 드롭퍼 보틀", jp: "フロストガラス ドロッパーボトル", tw: "磨砂玻璃滴管瓶" },
+    category: "dropper",
+    material: "Frosted Glass",
+    capacity: "15 / 30 / 50 ml",
+    capacityGroup: "standard",
+    use: "Serum",
+    moq: "5,000 pcs",
+    leadTime: "25–30 days",
+    neck: "18/415",
+    decoration: "Silk screen, hot stamping, color coating",
+    image: "/images/p-frosted-dropper.jpg",
+    gallery: [
+      "/images/p-frosted-dropper.jpg",
+      PEXEL(5113052),
+      PEXEL(31251024),
+      PEXEL(17307534),
+    ],
+    description:
+      "A best-selling cylindrical dropper bottle with a soft frosted finish and matte gold collar. The premium tactile surface makes it a favorite for serum and facial oil lines targeting the mid-to-high-end market.",
+    descriptionI18n: {
+      kr: "소프트 프로스트 마감과 매트 골드 칼라가 어우러진 베스트셀링 원형 드롭퍼 보틀. 프리미엄 촉감의 표면은 중·고급 세럼 및 페이셜 오일 라인에 인기가 많습니다.",
+      jp: "柔らかなフロスト仕上げとマットゴールドの首元を備えたベストセラーの円筒型ドロッパーボトル。上質な手触りの表面は、ミドル〜ハイエンド向けのセラムやフェイスオイルラインに好評です。",
+      tw: "熱銷圓柱形滴管瓶，柔和磨砂表面搭配霧面金頸圈。極具質感的表面處理，是中高階精華液與面部美容油品牌的首選。",
+    },
+    features: [
+      "Uniform frosting with no fingerprint marks",
+      "Compatible with push-button & straight droppers",
+      "Thick base for a weighty, premium feel",
+      "Custom Pantone spray coating available",
+    ],
+  },
+  {
+    id: "heart-dropper-30ml",
+    name: "Heart-Shaped Dropper Bottle",
+    nameI18n: { kr: "하트형 드롭퍼 보틀", jp: "ハート型ドロッパーボトル", tw: "心形滴管瓶" },
+    category: "dropper",
+    material: "Clear Glass",
+    capacity: "30 ml",
+    capacityGroup: "standard",
+    use: "Serum",
+    moq: "5,000 pcs",
+    leadTime: "25–30 days",
+    neck: "18/415",
+    decoration: "Frosting, silk screen, spray coating, gradient coating",
+    image: "https://sc02.alicdn.com/kf/H9480a26114b449b4948584468ac96fd4s.jpg",
+    gallery: [
+      "https://sc02.alicdn.com/kf/H9480a26114b449b4948584468ac96fd4s.jpg",
+      "https://sc02.alicdn.com/kf/He1f715286c1e4723b512574c0c0432cfs.jpg",
+      "https://sc02.alicdn.com/kf/Hf346d43529b6439eb5b57430ea58a182P.jpg",
+      "https://sc02.alicdn.com/kf/Hc47f9650e6b8433da2e00f1fba286803l.jpg",
+    ],
+    description:
+      "A sculptural heart-shaped dropper bottle that doubles as a brand statement piece. Available in matte black, matte white, or translucent gradient glass with a matching heart-shaped dropper bulb — the ultimate holiday, Valentine's Day or love-themed beauty launch.",
+    descriptionI18n: {
+      kr: "하트 모양의 조형적인 드롭퍼 보틀로, 그 자체로 브랜드 시그니처가 됩니다. 매트 블랙, 매트 화이트, 반투명 그라데이션 글래스 중 선택 가능하며, 어울리는 하트형 드롭퍼 벌브까지 — 홀리데이, 발렌타인데이, 러브 테마 뷰티 런칭을 위한 궁극의 패키지.",
+      jp: "それ自体がブランドのシグネチャーとなる、立体感のあるハート型ドロッパーボトル。マットブラック、マットホワイト、半透明グラデーションガラスから選べ、お揃いのハート型ドロッパーバルブ付き — ホリデー、バレンタイン、ラブテーマのビューティー発売に最適。",
+      tw: "雕塑感心形滴管瓶，本身就是品牌標誌性的視覺單品。可選霧面黑、霧面白或半透明漸層玻璃，搭配同款心形滴管球 — 節日禮盒、情人節限定、愛情主題美妝上市的終極包裝。",
+    },
+    features: [
+      "Sculptural heart-shaped body — instant shelf standout",
+      "Matte black, matte white & gradient glass options",
+      "Matching heart-shaped dropper bulb",
+      "Gold or matte black collar finishing",
+      "Custom silk-screen branding on frosted surface",
+      "Seasonal & holiday gift-set ready",
+    ],
+  },
+  {
+    id: "flat-square-dropper",
+    name: "Flat Square Glass Dropper Bottle",
+    nameI18n: { kr: "플랫 스퀘어 글래스 드롭퍼 보틀", jp: "フラットスクエア ガラスドロッパーボトル", tw: "扁平方形玻璃滴管瓶" },
+    category: "dropper",
+    material: "Frosted Glass",
+    capacity: "30 / 50 ml",
+    capacityGroup: "standard",
+    use: "Serum",
+    moq: "5,000 pcs",
+    leadTime: "25–30 days",
+    neck: "18/415",
+    decoration: "Frosting, gradient coating, silk screen, color spray",
+    image: "https://sc02.alicdn.com/kf/Hea7f2dc0d06b4c9b98aa8f4ef32ceb1bK.jpg",
+    gallery: [
+      "https://sc02.alicdn.com/kf/Hea7f2dc0d06b4c9b98aa8f4ef32ceb1bK.jpg",
+      "https://sc02.alicdn.com/kf/H4de983b9ff7343469eb1afb1a89af473I.jpg",
+      "https://sc02.alicdn.com/kf/Hd45a706cfca64e7fb385cc28c13d3a24r.jpg",
+      "https://sc02.alicdn.com/kf/H5862e998b47b43648101fa1926bb386cb.jpg",
+    ],
+    description:
+      "A modern flat-square silhouette with softly rounded corners — a sleek alternative to the classic cylinder. Available in 30 ml and 50 ml with frosted, gradient, amber or matte beige finishes. A perfect fit for minimalist, gender-neutral and clinical skincare lines.",
+    descriptionI18n: {
+      kr: "부드럽게 둥근 모서리의 모던한 플랫 스퀘어 실루엣 — 클래식한 원형을 대체할 세련된 선택. 30ml·50ml 두 가지 용량, 프로스트·그라데이션·앰버·매트 베이지 마감 중 선택 가능. 미니멀, 젠더리스, 클리니컬 스킨케어 라인에 완벽하게 어울립니다.",
+      jp: "柔らかな角丸のモダンなフラットスクエアシルエット — クラシックな円筒形に代わる洗練された選択肢。30ml·50mlの2サイズ、フロスト·グラデーション·アンバー·マットベージュ仕上げから選択可能。ミニマル、ジェンダーレス、クリニカルスキンケアラインに最適。",
+      tw: "柔和圓角的摩登扁平方形輪廓 — 取代傳統圓柱的俐落選擇。提供 30ml 與 50ml 兩種容量，可選磨砂、漸層、琥珀或霧面米色表面處理。極適合極簡、中性、醫美護膚品牌。",
+    },
+    features: [
+      "Sleek flat-square silhouette — stands out in a sea of round bottles",
+      "30 ml & 50 ml dual-size lineup for serum + moisturizer pairing",
+      "Frosted, gradient, amber & matte beige finishes",
+      "White, black or metallic dropper collar options",
+      "Thick base for a premium, weighty hand feel",
+      "Custom gradient & Pantone color matching available",
+    ],
+  },
+  {
+    id: "amber-dropper-15ml",
+    name: "Amber Glass Dropper Bottle",
+    nameI18n: { kr: "앰버 글래스 드롭퍼 보틀", jp: "アンバーガラス ドロッパーボトル", tw: "琥珀玻璃滴管瓶" },
+    category: "dropper",
+    material: "Amber Glass",
+    capacity: "10 / 15 / 30 ml",
+    capacityGroup: "mini",
+    use: "Facial Oil",
+    moq: "5,000 pcs",
+    leadTime: "20–25 days",
+    neck: "18/410",
+    decoration: "Silk screen, labeling, metallic collar options",
+    image: "/images/p-amber-dropper.jpg",
+    gallery: [
+      "/images/p-amber-dropper.jpg",
+      PEXEL(16722452),
+      PEXEL(34686413),
+      PEXEL(5911961),
+    ],
+    description:
+      "Classic pharmaceutical-grade amber glass offering natural UV protection for actives such as vitamin C and retinol. Ships with black, white or gold dropper assemblies.",
+    descriptionI18n: {
+      kr: "비타민 C, 레티놀 등 활성 성분을 자외선으로부터 자연스럽게 보호하는 클래식한 의약품급 앰버 글래스. 블랙, 화이트, 골드 드롭퍼 어셈블리와 함께 출고됩니다.",
+      jp: "ビタミンCやレチノールなどの有効成分を紫外線から自然に守る、クラシックな医薬品グレードのアンバーガラス。ブラック・ホワイト・ゴールドのドロッパーアセンブリに対応。",
+      tw: "經典藥用級琥珀玻璃，可自然阻隔紫外線，保護維他命 C、A 醇等活性成分。隨瓶可選配黑、白、金色三款滴頭組件。",
+    },
+    features: [
+      "UV protection up to 450 nm",
+      "Type III soda-lime glass, food & cosmetic safe",
+      "Graduated glass pipette available",
+      "Stocked molds — fast sampling in 5 days",
+    ],
+  },
+  {
+    id: "clear-dropper-classic",
+    name: "Classic Clear Dropper Bottle",
+    nameI18n: { kr: "클래식 클리어 드롭퍼 보틀", jp: "クラシック クリア ドロッパーボトル", tw: "經典透明滴管瓶" },
+    category: "dropper",
+    material: "Clear Glass",
+    capacity: "20 / 30 / 50 ml",
+    capacityGroup: "standard",
+    use: "Serum",
+    moq: "5,000 pcs",
+    leadTime: "20–25 days",
+    neck: "18/415",
+    decoration: "Silk screen, frosting, gradient coating",
+    image: "/images/cat-dropper.jpg",
+    gallery: [
+      "/images/cat-dropper.jpg",
+      PEXEL(31251024),
+      PEXEL(17307534),
+      PEXEL(6634844),
+    ],
+    description:
+      "Our most flexible clear dropper platform. Choose from three shoulder profiles and pair with over 20 dropper cap combinations to build a signature look for your serum line.",
+    descriptionI18n: {
+      kr: "가장 유연한 클리어 드롭퍼 플랫폼. 3가지 숄더 프로파일과 20가지 이상의 드롭퍼 캡 조합으로 세럼 라인의 시그니처 룩을 완성하세요.",
+      jp: "最も汎用性の高いクリアドロッパープラットフォーム。3種類のショルダープロファイルと20種類以上のドロッパーキャップを組み合わせて、セラムラインのシグネチャールックを構築できます。",
+      tw: "我們最靈活的透明滴管瓶平台。3 種肩線造型，搭配 20 種以上滴頭蓋組合，打造您精華液系列的標誌性外觀。",
+    },
+    features: [
+      "High-transparency flint glass",
+      "3 shoulder profiles: round, flat, sloped",
+      "Gradient & translucent color coating",
+      "Low MOQ trial orders on stocked sizes",
+    ],
+  },
+  {
+    id: "gold-collar-dropper-set",
+    name: "Gold Collar Serum Dropper Set",
+    nameI18n: { kr: "골드 칼라 세럼 드롭퍼 세트", jp: "ゴールドカラー セラム ドロッパーセット", tw: "金頸圈精華液滴管套組" },
+    category: "dropper",
+    material: "Frosted Glass",
+    capacity: "15 / 30 ml",
+    capacityGroup: "mini",
+    use: "Serum",
+    moq: "10,000 pcs",
+    leadTime: "30–35 days",
+    neck: "20/400",
+    decoration: "Electroplated gold collar, hot stamping",
+    image: "/images/p-frosted-dropper.jpg",
+    gallery: [
+      "/images/p-frosted-dropper.jpg",
+      PEXEL(16722452),
+      PEXEL(5113052),
+      PEXEL(34686413),
+    ],
+    description:
+      "A coordinated 15 ml + 30 ml dropper duo with electroplated gold collars, designed for day/night serum systems and holiday gift sets.",
+    descriptionI18n: {
+      kr: "전기도금 골드 칼라로 장식된 15ml + 30ml 드롭퍼 듀오. 데이/나이트 세럼 시스템과 홀리데이 기프트 세트에 적합합니다.",
+      jp: "電気めっきゴールドカラーを採用した15ml+30mlのドロッパーデュオ。デイ／ナイトセラムセットやホリデーギフトセット向け。",
+      tw: "電鍍金頸圈 15ml + 30ml 滴管雙瓶套組，專為日夜精華液系列與節日禮盒設計。",
+    },
+    features: [
+      "Matching duo for gift-set programs",
+      "Real electroplated (not painted) gold collar",
+      "Custom embossed logo on shoulder",
+      "Gift box & insert tray sourcing available",
+    ],
+  },
+  {
+    id: "clear-cream-jar-50g",
+    name: "Thick-Wall Clear Cream Jar",
+    nameI18n: { kr: "두꺼운 벽 클리어 크림 자", jp: "厚壁 クリア クリームジャー", tw: "厚壁透明膏霜瓶" },
+    category: "jar",
+    material: "Clear Glass",
+    capacity: "30 / 50 g",
+    capacityGroup: "standard",
+    use: "Face Cream",
+    moq: "5,000 pcs",
+    leadTime: "25–30 days",
+    neck: "52/400",
+    decoration: "Silk screen, lid embossing, inner liner print",
+    image: "/images/p-clear-jar.jpg",
+    gallery: [
+      "/images/p-clear-jar.jpg",
+      PEXEL(35976902),
+      PEXEL(17307534),
+      PEXEL(5911961),
+    ],
+    description:
+      "A heavyweight double-wall look achieved in a single glass piece. Paired with a brushed gold aluminum lid and PP inner liner — the archetype of a premium moisturizer jar.",
+    descriptionI18n: {
+      kr: "단일 유리 파트로 구현한 헤비급 더블월 룩. 브러시드 골드 알루미늄 리드와 PP 이너 라이너와 함께 — 프리미엄 모이스처라이저 자의 전형.",
+      jp: "単一ガラスパーツで実現した重量感あるダブルウォール仕様。ブラッシュドゴールドのアルミリッドとPPインナーライナーをセットにした、プレミアム保湿クリームジャーの代表作。",
+      tw: "以單一玻璃件呈現厚重的雙層視覺效果，搭配拉絲金鋁蓋與 PP 內襯 — 高階保濕霜瓶的經典之作。",
+    },
+    features: [
+      "8 mm thick wall for luxury hand feel",
+      "Aluminum, bamboo or acrylic lid options",
+      "PE gasket + PP liner keeps formula sealed",
+      "Compatible with standard filling lines",
+    ],
+  },
+  {
+    id: "violet-glass-jar-30g",
+    name: "Violet Glass Protective Jar",
+    nameI18n: { kr: "바이올렛 글래스 보호 자", jp: "バイオレットガラス プロテクティブジャー", tw: "紫羅蘭防護玻璃瓶" },
+    category: "jar",
+    material: "Violet Glass",
+    capacity: "15 / 30 / 50 g",
+    capacityGroup: "standard",
+    use: "Face Cream",
+    moq: "10,000 pcs",
+    leadTime: "30–35 days",
+    neck: "45/400",
+    decoration: "Silk screen (white/gold), matte lid options",
+    image: "/images/p-violet-jar.jpg",
+    gallery: [
+      "/images/p-violet-jar.jpg",
+      PEXEL(35976902),
+      PEXEL(34479708),
+      PEXEL(5911961),
+    ],
+    description:
+      "Deep violet biophotonic glass blocks visible light while allowing UVA and infrared through, extending the shelf life of natural and organic formulations.",
+    descriptionI18n: {
+      kr: "딥 바이올렛 바이오포톤 글래스는 가시광선을 차단하면서 UVA와 적외선은 통과시켜 천연 및 유기농 포뮬러의 유통기한을 연장합니다.",
+      jp: "ディープバイオレットのバイオフォトニックガラスは可視光を遮断し、UVAと赤外線のみを通すことで、天然・オーガニック処方成分の保存期間を延ばします。",
+      tw: "深紫羅蘭色生物光能玻璃可阻隔可見光、僅讓 UVA 與紅外線通過，延長天然及有機配方的保存期。",
+    },
+    features: [
+      "Ideal for clean & organic beauty brands",
+      "Blocks the visible light spectrum",
+      "Matte black or violet glass lid",
+      "Batch consistency ± 0.3 mm tolerance",
+    ],
+  },
+  {
+    id: "frosted-cream-jar",
+    name: "Frosted Glass Cream Jar",
+    nameI18n: { kr: "프로스트 글래스 크림 자", jp: "フロストガラス クリームジャー", tw: "磨砂玻璃膏霜瓶" },
+    category: "jar",
+    material: "Frosted Glass",
+    capacity: "30 / 50 g",
+    capacityGroup: "standard",
+    use: "Eye Cream",
+    moq: "5,000 pcs",
+    leadTime: "25–30 days",
+    neck: "47/400",
+    decoration: "Color frosting, silk screen, hot stamping",
+    image: "/images/cat-jar.jpg",
+    gallery: [
+      "/images/cat-jar.jpg",
+      PEXEL(17307534),
+      PEXEL(6634844),
+      PEXEL(34479708),
+    ],
+    description:
+      "Soft-touch frosted jar with a low, wide profile that photographs beautifully for e-commerce. Available in white frost or custom color frost to match your brand palette.",
+    descriptionI18n: {
+      kr: "낮고 넓은 형태의 소프트 터치 프로스트 자. 이커머스 촬영에 최적. 화이트 프로스트 또는 브랜드 팔레트에 맞춘 커스텀 컬러 프로스트 선택 가능.",
+      jp: "低くワイドなプロファイルのソフトタッチフロストジャー。ECサイト撮影映えする設計。ホワイトフロストまたはブランドカラーに合わせたカスタムフロストに対応。",
+      tw: "低寬瓶身的柔觸磨砂瓶，極適合電商拍攝。可選白色磨砂或依品牌色調客製彩色磨砂。",
+    },
+    features: [
+      "Custom color frosting (Pantone matched)",
+      "Wide mouth for easy application",
+      "Gold, silver, white or wooden lids",
+      "Shelf-stable stackable design",
+    ],
+  },
+  {
+    id: "thick-wall-jar-100g",
+    name: "Body Cream Jar 100 g",
+    nameI18n: { kr: "바디 크림 자 100g", jp: "ボディクリームジャー 100g", tw: "身體乳膏瓶 100g" },
+    category: "jar",
+    material: "Clear Glass",
+    capacity: "100 / 120 g",
+    capacityGroup: "large",
+    use: "Body Cream",
+    moq: "5,000 pcs",
+    leadTime: "25–30 days",
+    neck: "70/400",
+    decoration: "Silk screen, spray coating, decal",
+    image: "/images/cat-jar.jpg",
+    gallery: [
+      "/images/cat-jar.jpg",
+      PEXEL(5911961),
+      PEXEL(17307534),
+      PEXEL(6634844),
+    ],
+    description:
+      "Large-format jar for body butters, masks and scrubs. Straight-sided profile provides a generous print area for full-wrap decoration.",
+    descriptionI18n: {
+      kr: "바디 버터, 마스크, 스크럽용 라지 포맷 자. 일자 사이드 프로파일로 풀 랩 데코레이션을 위한 넓은 인쇄 영역을 제공합니다.",
+      jp: "ボディバター、マスク、スクラブ用の大型ジャー。ストレートサイドのプロファイルがフルラップデコレーションの広い印刷面を確保します。",
+      tw: "適合身體霜、面膜與磨砂膏的大容量瓶身。直筒側身提供大面積印刷區，便於滿版圖案設計。",
+    },
+    features: [
+      "Large 360° decoration surface",
+      "Straight sides for full-wrap labels",
+      "Heat-transfer & decal decoration",
+      "Palletized export packing standard",
+    ],
+  },
+  {
+    id: "amber-oil-bottle-10ml",
+    name: "Amber Essential Oil Bottle",
+    nameI18n: { kr: "앰버 에센셜 오일 보틀", jp: "アンバー エッセンシャルオイルボトル", tw: "琥珀精油瓶" },
+    category: "oil",
+    material: "Amber Glass",
+    capacity: "5 / 10 / 15 / 30 ml",
+    capacityGroup: "mini",
+    use: "Essential Oil",
+    moq: "10,000 pcs",
+    leadTime: "20–25 days",
+    neck: "18 DIN",
+    decoration: "Silk screen, shrink band, tamper ring",
+    image: "/images/cat-oil.jpg",
+    gallery: [
+      "/images/cat-oil.jpg",
+      PEXEL(16722452),
+      PEXEL(34686413),
+      PEXEL(5911961),
+    ],
+    description:
+      "The industry-standard Euro round bottle with 18 DIN neck, compatible with orifice reducers, euro droppers and tamper-evident caps. The workhorse of aromatherapy packaging.",
+    descriptionI18n: {
+      kr: "18 DIN 넥을 갖춘 업계 표준 유로 라운드 보틀. 오리피스 리듀서, 유로 드롭퍼, 탬퍼-evident 캡과 호환. 아로마테라피 포장의 주력 제품.",
+      jp: "18 DINネックを採用した業界標準のユーロラウンドボトル。オリフィスリデューサー、ユーロドロッパー、タンパーエビデントキャップに対応。アロマパッケージの定番。",
+      tw: "業界標準的歐規圓瓶，搭配 18 DIN 瓶口，適用於內塞、歐規滴頭與防開啟蓋。是芳療包裝的主力品項。",
+    },
+    features: [
+      "Standard 18 DIN neck — universal fitments",
+      "Orifice reducer & child-resistant caps",
+      "Amber, cobalt, green & clear in stock",
+      "Fast 2-week lead time on stocked items",
+    ],
+  },
+  {
+    id: "rollon-bottle-10ml",
+    name: "Glass Roll-On Bottle",
+    nameI18n: { kr: "글래스 롤온 보틀", jp: "ガラス ロールオンボトル", tw: "玻璃滾珠瓶" },
+    category: "oil",
+    material: "Clear Glass",
+    capacity: "5 / 10 ml",
+    capacityGroup: "mini",
+    use: "Roll-On / Perfume",
+    moq: "10,000 pcs",
+    leadTime: "20–25 days",
+    neck: "16/410",
+    decoration: "Silk screen, metallic caps, gradient coating",
+    image: "/images/p-rollon.jpg",
+    gallery: [
+      "/images/p-rollon.jpg",
+      PEXEL(16722452),
+      PEXEL(17307534),
+      PEXEL(6634844),
+    ],
+    description:
+      "Slim cylindrical roll-on with a smooth stainless-steel ball for perfume oils, under-eye serums and aromatherapy blends. Gold, silver, black or bamboo cap finishes.",
+    descriptionI18n: {
+      kr: "퍼퓸 오일, 언더아이 세럼, 아로마테라피 블렌드를 위한 매끄러운 스테인리스 스틸 볼이 장착된 슬림 원통형 롤온. 골드, 실버, 블랙, 대나무 캡 마감 선택 가능.",
+      jp: "香料オイル、アイケアセラム、アロマブレンド用の滑らかなステンレスボールを採用したスリム円筒型ロールオン。ゴールド・シルバー・ブラック・竹キャップ仕上げ。",
+      tw: "纖細圓柱形滾珠瓶，搭載滑順不鏽鋼滾珠，適用於香氛油、眼部精華與芳療配方。瓶蓋可選金、銀、黑與竹紋飾。",
+    },
+    features: [
+      "Stainless steel or glass roller ball",
+      "Leak-tested fitment assembly",
+      "Pocket-size travel retail favorite",
+      "Custom coating & gradient finishes",
+    ],
+  },
+  {
+    id: "euro-dropper-oil-set",
+    name: "Euro Dropper Oil Bottle",
+    nameI18n: { kr: "유로 드롭퍼 오일 보틀", jp: "ユーロドロッパー オイルボトル", tw: "歐規滴頭精油瓶" },
+    category: "oil",
+    material: "Amber Glass",
+    capacity: "10 / 15 / 30 ml",
+    capacityGroup: "mini",
+    use: "Essential Oil",
+    moq: "5,000 pcs",
+    leadTime: "20–25 days",
+    neck: "18 DIN",
+    decoration: "Silk screen, gold hot stamping",
+    image: "/images/p-amber-dropper.jpg",
+    gallery: [
+      "/images/p-amber-dropper.jpg",
+      PEXEL(16722452),
+      PEXEL(34686413),
+      PEXEL(5911961),
+    ],
+    description:
+      "Amber Euro bottle pre-assembled with graduated glass pipette droppers — ready for facial oil and beard oil brands that want an apothecary aesthetic.",
+    descriptionI18n: {
+      kr: "눈금이 있는 유리 피펫 드롭퍼가 사전 조립된 앰버 유로 보틀. 약국 스타일을 원하는 페이셜 오일 및 비오일 브랜드에 최적.",
+      jp: "目盛り入りガラスピペットが予め装着されたアンバー製ユーロボトル。薬局風のデザインを求めるフェイスオイル・ Beard Oilブランド向け。",
+      tw: "預先組裝刻度玻璃滴管的琥珀歐規瓶，適合追求藥局美學的美容油與鬍鬚油品牌。",
+    },
+    features: [
+      "Pre-assembled dropper sets save filling time",
+      "Graduated pipette for precise dosing",
+      "Apothecary look for wellness brands",
+      "Carton + divider export packaging",
+    ],
+  },
+  {
+    id: "mini-sample-vial",
+    name: "Mini Sample Vial",
+    nameI18n: { kr: "미니 샘플 바이알", jp: "ミニサンプルバイアル", tw: "迷你試用瓶" },
+    category: "oil",
+    material: "Clear Glass",
+    capacity: "2 / 3 / 5 ml",
+    capacityGroup: "mini",
+    use: "Sample / Tester",
+    moq: "20,000 pcs",
+    leadTime: "15–20 days",
+    neck: "13/415",
+    decoration: "Silk screen, foil labels",
+    image: "/images/p-rollon.jpg",
+    gallery: [
+      "/images/p-rollon.jpg",
+      PEXEL(16722452),
+      PEXEL(5911961),
+      PEXEL(17307534),
+    ],
+    description:
+      "Tiny tester vials for discovery sets, PR mailers and counter samples. Available with screw caps, orifice reducers or mini roll-on fitments.",
+    descriptionI18n: {
+      kr: "디스커버리 세트, PR 메일러 및 카운터 샘플용 미니 테스터 바이알. 스크류 캡, 오리피스 리듀서, 미니 롤온 피팅 옵션 제공.",
+      jp: "ディスカバリーセット、PRメール、カウンターサンプル用の小さなテスター容器。スクリューキャップ、オリフィスリデューサー、ミニロールオンフィッティングに対応。",
+      tw: "適用於探索禮盒、公關郵寄與專櫃試用的小型試用瓶。可搭配螺紋蓋、內塞或迷你滾珠配件。",
+    },
+    features: [
+      "Perfect for discovery & PR kits",
+      "Screw cap, reducer or roller fitment",
+      "Ultra-fast production runs",
+      "Lowest per-unit cost in our range",
+    ],
+  },
+  {
+    id: "gradient-green-cosmetic-set",
+    name: "Gradient Green Cosmetic Glass Set",
+    nameI18n: { kr: "그라데이션 그린 코스메틱 유리 세트", jp: "グラデーショングリーン コスメティックガラスセット", tw: "漸層綠化妝品玻璃套裝" },
+    category: "set",
+    material: "Frosted Glass",
+    capacity: "40 / 100 / 120 / 150 ml + 30 / 50 / 100 g",
+    capacityGroup: "set",
+    use: "Serum",
+    moq: "5,000 pcs per SKU",
+    leadTime: "30–35 days",
+    neck: "18/415 (dropper) / 24/410 (pump)",
+    decoration: "Gradient spray coating, hot stamping, silk screen, electroplated gold cap",
+    image: "https://sc02.alicdn.com/kf/Hba8e5303cb1d4ac9afaf69ef5ec30362e.jpg",
+    gallery: [
+      "https://sc02.alicdn.com/kf/Hba8e5303cb1d4ac9afaf69ef5ec30362e.jpg",
+      "https://sc02.alicdn.com/kf/H073d9e4fe8de4560a4a065ae3381beccC.jpg",
+      "https://sc02.alicdn.com/kf/H3bdd96a0038d4539bfcdd921c5f0cdcei.jpg",
+      "https://sc02.alicdn.com/kf/Hc826a59c9b3b481792cbbb75bb402505d.jpg",
+    ],
+    description:
+      "A full-range coordinated cosmetic glass set in deep forest green to seafoam gradient. Includes teardrop lotion bottles (40–150 ml) with gold pump caps, serum droppers, and round cream jars (30–100 g) with domed gold lids. Every piece shares the same gradient finish and gold hardware — a turnkey packaging identity for a single-brand skincare launch.",
+    descriptionI18n: {
+      kr: "딥 포레스트 그린에서 씨폼까지 이어지는 그라데이션의 풀레인지 코스메틱 유리 세트. 골드 펌프 캡이 달린 티어드롭 로션 보틀(40–150ml), 세럼 드롭퍼, 돔형 골드 리드의 크림 자(30–100g)로 구성. 모든 제품이 동일한 그라데이션 마감과 골드 하드웨어를 공유 — 단일 브랜드 스킨케어 런칭을 위한 턴키 패키징 아이덴티티.",
+      jp: "ディープフォレストグリーンからシーフォームへのグラデーションで統一されたフルラインのコスメティックガラスセット。ゴールドポンプキャップ付きティアドロップローションボトル（40–150ml）、セラムドロッパー、ドーム型ゴールドリッドのクリームジャー（30–100g）をラインナップ。全アイテムが同一のグラデーション仕上げとゴールド金具で統一 — 単一ブランドのスキンケア立ち上げに最適なターンキーパッケージ。",
+      tw: "深林綠到海沫綠漸層的完整化妝品玻璃套裝。包含金色按壓頭水滴形乳液瓶（40–150ml）、精華液滴管、圓頂金蓋膏霜瓶（30–100g），全系列統一漸層表面處理與金色五金 — 為單一品牌護膚線提供一站式的包裝識別。",
+    },
+    features: [
+      "7-piece coordinated family: droppers, pumps & jars",
+      "Custom forest-green gradient — available in blue & amber too",
+      "Electroplated gold caps, collars & pump heads",
+      "Teardrop lotion bottles: 40 / 100 / 120 / 150 ml",
+      "Round cream jars: 30 / 50 / 100 g",
+      "Single-brand turnkey packaging identity",
+      "Gift-box & insert tray sourcing for holiday sets",
+    ],
+  },
+  {
+    id: "gradient-green-pump-set",
+    name: "Gradient Green Lotion + Cream Deluxe Set",
+    nameI18n: { kr: "그라데이션 그린 로션+크림 디럭스 세트", jp: "グラデーショングリーン ローション＋クリーム デラックスセット", tw: "漸層綠乳液+面霜豪華套裝" },
+    category: "set",
+    material: "Frosted Glass",
+    capacity: "40 / 100 / 120 ml + 50 / 100 g",
+    capacityGroup: "set",
+    use: "Serum",
+    moq: "5,000 pcs per SKU",
+    leadTime: "30–35 days",
+    neck: "24/410 (pump)",
+    decoration: "Gradient spray coating, hot stamping, silk screen, electroplated gold cap & pump",
+    image: "https://sc02.alicdn.com/kf/H580bd8b39ed044d28b04d1cd8238eacfC.jpg",
+    gallery: [
+      "https://sc02.alicdn.com/kf/H580bd8b39ed044d28b04d1cd8238eacfC.jpg",
+      "https://sc02.alicdn.com/kf/H6fcc5e2ba24a4b8c81e9db29f2e604f0w.jpg",
+      "https://sc02.alicdn.com/kf/H0fd222abea1a40e9afc9363d2e43a872w.jpg",
+      "https://sc02.alicdn.com/kf/Hfcd2384531ea43108aa8470ab7ce6c13O.jpg",
+    ],
+    description:
+      "A 5-piece coordinated lotion + cream set with forest-green gradient glass and polished gold hardware. Includes three teardrop pump bottles (40 / 100 / 120 ml) and two domed cream jars (50 / 100 g). Available in green gradient, black-to-gold gradient or solid amber — the perfect turnkey packaging for a single-brand skincare collection launch.",
+    descriptionI18n: {
+      kr: "포레스트 그린 그라데이션 글래스와 폴리시드 골드 하드웨어로 구성된 5피스 로션+크림 세트. 티어드롭 펌프 보틀 3종(40/100/120ml)과 돔형 크림 자 2종(50/100g) 포함. 그린 그라데이션, 블랙-골드 그라데이션, 솔리드 앰버 중 선택 가능 — 단일 브랜드 스킨케어 라인 론칭을 위한 완벽한 턴키 패키지.",
+      jp: "フォレストグリーンのグラデーションガラスとポリッシュドゴールド金具で統一された5点セット。ティアドロップポンプボトル3種（40/100/120ml）とドーム型クリームジャー2種（50/100g）。グリーングラデーション、ブラック→ゴールドグラデーション、ソリッドアンバーから選択可能 — 単一ブランドのスキンケアライン立ち上げに最適なターンキーパッケージ。",
+      tw: "森林綠漸層玻璃搭配亮面金色五金，5 件式乳液+面霜套裝。水滴形按壓瓶 3 款（40/100/120ml）與圓頂膏霜瓶 2 款（50/100g）。可選綠色漸層、黑金漸層或純琥珀色 — 為單一品牌護膚系列上市提供完美的一站式包裝方案。",
+    },
+    features: [
+      "5-piece pump lotion + cream jar coordinated set",
+      "Forest-green gradient — also in black-gold & amber",
+      "Electroplated gold dome lids & pump heads",
+      "Teardrop pump bottles: 40 / 100 / 120 ml",
+      "Domed cream jars: 50 / 100 g",
+      "Turnkey single-brand identity with consistent finish",
+      "Gift-box & insert tray sourcing for holiday sets",
+    ],
+  },
+];
+
+export const materials = ["Clear Glass", "Frosted Glass", "Amber Glass", "Violet Glass"];
+export const capacityGroups = [
+  { value: "mini", label: "Mini (≤ 15 ml)" },
+  { value: "standard", label: "Standard (20 – 60 ml)" },
+  { value: "large", label: "Large (60 ml +)" },
+  { value: "set", label: "Multi-Size Set" },
+] as const;
+export const uses = [
+  "Serum",
+  "Facial Oil",
+  "Face Cream",
+  "Eye Cream",
+  "Body Cream",
+  "Essential Oil",
+  "Roll-On / Perfume",
+  "Sample / Tester",
+];
+
+// Case studies shown on the Custom Process page. Images are royalty-free
+// Pexels shots styled to look like real client brand assets.
+export const caseStudies = [
+  {
+    brand: "AURÉLIE · Paris",
+    title: "Signature serum duo for a French launch",
+    bullets: ["15 ml + 30 ml frosted droppers", "Electroplated gold collar", "8,000 units / 22-day turnaround"],
+    image: PEXEL(17307534, 1200),
+  },
+  {
+    brand: "LUMI · Seoul",
+    title: "Miron violet jars for a K-beauty clean range",
+    bullets: ["30 g + 50 g violet glass", "Silk-screen logo, matte black lid", "12,000 units / 28-day turnaround"],
+    image: PEXEL(35976902, 1200),
+  },
+  {
+    brand: "NORDIC SKIN",
+    title: "Recyclable amber roll-ons for an apothecary line",
+    bullets: ["10 ml clear + amber roll-ons", "Bamboo lid finish", "20,000 units / 25-day turnaround"],
+    image: PEXEL(16722452, 1200),
+  },
+  {
+    brand: "VELVETTE",
+    title: "Bespoke cream jar for a US indie brand",
+    bullets: ["50 g thick-wall clear jar", "Custom Pantone frosting", "5,000 units · private mold"],
+    image: PEXEL(5911961, 1200),
+  },
+];
