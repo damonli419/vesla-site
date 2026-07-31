@@ -296,7 +296,7 @@ export default function About() {
             { n: 6, title: "Confirm", desc: "You review the samples, request any tweaks, and give the green light. Production mold cutting begins.", img: "https://sc02.alicdn.com/kf/H9dabc8c4179c432e99d09e729e5b4e00a.jpg" },
             { n: 7, title: "Mass Production", desc: "Full batch runs on our 6 IS machines under ISO 9001 quality control. Inline inspection at every station.", img: "https://sc02.alicdn.com/kf/H3ed4c7e33e7444e0b8776874383d6c0d2.jpg" },
             { n: 8, title: "Quality Testing", desc: "AQL sampling, drop testing and dimensional checks before any bottle leaves the QC lab.", img: "A3fa0a4dee6c14803924e1a1558cc248c1" },
-            { n: 9, title: "Packaging & Ship", desc: "Drop-test certified export cartons, palletized and strapped. EXW, FOB or DDP to your warehouse.", img: "Aa60728bf697d43b7a09df0c6f4990e1ck" },
+            { n: 9, title: "Packaging & Ship", desc: "Drop-test certified export cartons, palletized and strapped. EXW, FOB or DDP to your warehouse.", img: "https://sc02.alicdn.com/kf/H95b280256ba04004af162257b20eb19au.jpg" },
           ].map((s) => (
             <div key={s.n} className="group overflow-hidden rounded-2xl bg-white ring-1 ring-gold/20 transition-shadow hover:shadow-lg">
               <div className="relative aspect-square overflow-hidden">
