@@ -28,6 +28,11 @@ export default {
       );
     }
 
+    // Serve llms.txt for AI discoverability
+    if (url.pathname === "/llms.txt" || url.pathname === "/llms-full.txt") {
+      return env.ASSETS.fetch(request);
+    }
+
     // All other routes: let Cloudflare handle via assets
     return env.ASSETS.fetch(request);
   },
