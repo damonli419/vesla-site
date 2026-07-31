@@ -294,7 +294,7 @@ export default function About() {
             { n: 4, title: "Trial Mold", desc: "We cut a trial mold and run a short batch on our IS forming line — same glass, same process as mass production.", img: "https://sc02.alicdn.com/kf/H507b403bcd8c49f18e0ef4b2dd0e9f1dw.jpg" },
             { n: 5, title: "Samples", desc: "Finished samples with your chosen decoration arrive at your door. Test fill, check cap torque, photograph for your launch.", img: "Abc9e1f5ec8f84484a9665349e9ac77eca" },
             { n: 6, title: "Confirm", desc: "You review the samples, request any tweaks, and give the green light. Production mold cutting begins.", img: "A0b845672bb6043ada33d694815768129H" },
-            { n: 7, title: "Mass Production", desc: "Full batch runs on our 6 IS machines under ISO 9001 quality control. Inline inspection at every station.", img: "A3051579e7c924f71b35d9e30c7db60ccl" },
+            { n: 7, title: "Mass Production", desc: "Full batch runs on our 6 IS machines under ISO 9001 quality control. Inline inspection at every station.", img: "https://sc02.alicdn.com/kf/H3ed4c7e33e7444e0b8776874383d6c0d2.jpg" },
             { n: 8, title: "Quality Testing", desc: "AQL sampling, drop testing and dimensional checks before any bottle leaves the QC lab.", img: "A3fa0a4dee6c14803924e1a1558cc248c1" },
             { n: 9, title: "Packaging & Ship", desc: "Drop-test certified export cartons, palletized and strapped. EXW, FOB or DDP to your warehouse.", img: "Aa60728bf697d43b7a09df0c6f4990e1ck" },
           ].map((s) => (
