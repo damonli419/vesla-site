@@ -290,7 +290,7 @@ export default function About() {
           {[
             { n: 1, title: "Idea", desc: "You share your vision, target audience & budget — we recommend the right glass type, shape and decoration.", img: "A714fe69e5f0c4660ad68d4afe3a14407F" },
             { n: 2, title: "3D Modeling", desc: "Our engineers build a precise CAD model of your bottle, showing every angle, neck finish and label recess.", img: "Abad35464fec74c6689591886a178361cG" },
-            { n: 3, title: "3D Printing", desc: "A physical resin prototype is printed in-house so you can hold, test and photograph the bottle before cutting steel.", img: "A6734f2bc67c34e5598e0aece17798d79M" },
+            { n: 3, title: "3D Printing", desc: "A physical resin prototype is printed in-house so you can hold, test and photograph the bottle before cutting steel.", img: "https://sc02.alicdn.com/kf/Hb708ce633e88465a961005f780549806Y.jpg" },
             { n: 4, title: "Trial Mold", desc: "We cut a trial mold and run a short batch on our IS forming line — same glass, same process as mass production.", img: "https://sc02.alicdn.com/kf/H507b403bcd8c49f18e0ef4b2dd0e9f1dw.jpg" },
             { n: 5, title: "Samples", desc: "Finished samples with your chosen decoration arrive at your door. Test fill, check cap torque, photograph for your launch.", img: "Abc9e1f5ec8f84484a9665349e9ac77eca" },
             { n: 6, title: "Confirm", desc: "You review the samples, request any tweaks, and give the green light. Production mold cutting begins.", img: "https://sc02.alicdn.com/kf/H9dabc8c4179c432e99d09e729e5b4e00a.jpg" },
