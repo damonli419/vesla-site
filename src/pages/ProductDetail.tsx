@@ -44,7 +44,6 @@ export default function ProductDetail() {
   const specs: [string, string][] = [
     [t("spec.capacity"), product.capacity],
     [t("spec.material"), product.material],
-    [t("spec.neck"), product.neck],
     [t("spec.moq"), product.moq],
     [t("spec.leadTime"), product.leadTime],
     [t("spec.decoration"), product.decoration],

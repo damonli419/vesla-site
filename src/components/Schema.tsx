@@ -51,7 +51,6 @@ export function ProductSchema({ product }: { product: Product }) {
       { "@type": "PropertyValue", name: "Capacity", value: product.capacity },
       { "@type": "PropertyValue", name: "MOQ", value: product.moq },
       { "@type": "PropertyValue", name: "Lead time", value: product.leadTime },
-      { "@type": "PropertyValue", name: "Neck finish", value: product.neck },
     ],
     offers: {
       "@type": "Offer",
