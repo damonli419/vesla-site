@@ -60,7 +60,7 @@ export default function Products() {
       /** Extract all numeric capacities (ml or g) from a capacity string */
       const parseMl = (cap: string): number[] => {
         const nums: number[] = [];
-        const re = /(\d+(?:\.\d+)?)\s*(?:ml|g)/gi;
+        const re = /(\d+(?:\.\d+)?)/g;
         let m: RegExpExecArray | null;
         while ((m = re.exec(cap)) !== null) {
           nums.push(parseFloat(m[1]));
