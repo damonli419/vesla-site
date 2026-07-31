@@ -20,10 +20,10 @@ export default {
       );
     }
 
-    // Serve robots.txt directly
+    // Serve robots.txt — allow all search engines AND AI crawlers
     if (url.pathname === "/robots.txt") {
       return new Response(
-        `User-agent: *\nAllow: /\nSitemap: https://www.veslapack.com/sitemap.xml\n`,
+        `User-agent: *\nAllow: /\n\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nSitemap: https://www.veslapack.com/sitemap.xml\n`,
         { headers: { "Content-Type": "text/plain; charset=utf-8" } }
       );
     }

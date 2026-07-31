@@ -19,11 +19,15 @@ export default function Seo({ title, description, path = "/" }: SeoProps) {
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={`https://veslapack.com${path}`} />
+      <meta property="og:url" content={`https://www.veslapack.com${path}`} />
+      <meta property="og:image" content="https://www.veslapack.com/og-image.jpg" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <link rel="canonical" href={`https://veslapack.com${path}`} />
+      <meta name="twitter:image" content="https://www.veslapack.com/og-image.jpg" />
+      <link rel="canonical" href={`https://www.veslapack.com${path}`} />
     </Helmet>
   );
 }
