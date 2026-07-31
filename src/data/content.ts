@@ -1,4 +1,4 @@
-export interface BlogPost {
+﻿export interface BlogPost {
   slug: string;
   title: { en: string; kr: string; jp: string; tw: string };
   excerpt: { en: string; kr: string; jp: string; tw: string };
@@ -24,7 +24,7 @@ export const blogPosts: BlogPost[] = [
       jp: "リサイクル性、印象、コスト、リードタイム — ガラスにプレミアムを払う価値がある場合と、プラスチックが依然として有利な場合。",
       tw: "回收性、品牌感知、成本與交期 — 何時玻璃值得加價、何時塑膠仍勝出。",
     },
-    date: "2025-11-04",
+    date: "2026-07-25",
     readMinutes: 7,
     category: "material",
     keywords: ["glass vs plastic cosmetic packaging", "eco friendly beauty packaging"],
@@ -43,7 +43,7 @@ export const blogPosts: BlogPost[] = [
       jp: "18/410 vs 18/415 vs 20/400 — 各ネック仕上げがクロージャー、充填ライン、デコレーションに与える影響。",
       tw: "18/410 vs 18/415 vs 20/400 — 三種瓶口規格對瓶蓋、充填線與表面處理的影響。",
     },
-    date: "2025-10-22",
+    date: "2026-07-18",
     readMinutes: 5,
     category: "guide",
     keywords: ["18/415 neck finish", "dropper bottle neck size"],
@@ -62,7 +62,7 @@ export const blogPosts: BlogPost[] = [
       jp: "フロストとクリアドロッパーのECサイト撮影比較、Pantoneマッチングとツーリングコストの解説付き。",
       tw: "磨砂與透明滴管瓶電商拍攝實測對比，含 Pantone 配色與模具成本分析。",
     },
-    date: "2025-10-08",
+    date: "2026-07-11",
     readMinutes: 4,
     category: "material",
     keywords: ["frosted glass bottle photography", "luxury cosmetic packaging"],
@@ -81,7 +81,7 @@ export const blogPosts: BlogPost[] = [
       jp: "モールド・デコレーション・付属品・配送の最小発注数量を徹底解説 — そして下げる方法。",
       tw: "從模具、裝飾、配件到出貨，全面拆解最低起訂量 — 以及如何降低您的起訂量。",
     },
-    date: "2025-09-15",
+    date: "2026-07-04",
     readMinutes: 6,
     category: "guide",
     keywords: ["low MOQ cosmetic packaging", "indie beauty supplier"],
@@ -100,7 +100,7 @@ export const blogPosts: BlogPost[] = [
       jp: "出荷あたり40,000個超に使用する、輸出カートン・緩衝材・パレットの具体的な構成。",
       tw: "每批 4 萬瓶以上的出口紙箱、緩衝內襯與棧板配置的完整細節。",
     },
-    date: "2025-08-30",
+    date: "2026-06-27",
     readMinutes: 5,
     category: "logistics",
     keywords: ["shipping glass bottles internationally", "EXW FOB DDP packaging"],
@@ -119,7 +119,7 @@ export const blogPosts: BlogPost[] = [
       jp: "リフィル可能ジャーからバイオフォトニックバイオレットガラスまで — 現在の韓国インディーブランドの新商品。",
       tw: "從可補充瓶到生物光能紫羅蘭玻璃 — 韓國獨立品牌正在推出的全新設計。",
     },
-    date: "2025-08-12",
+    date: "2026-06-20",
     readMinutes: 6,
     category: "trend",
     keywords: ["K-beauty packaging 2026", "Korean indie beauty brand"],
