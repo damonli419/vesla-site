@@ -282,6 +282,36 @@ export default function About() {
         </div>
       </section>
 
+      {/* ── 9-Step Process ─────────────────────── */}
+      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+        <h2 className="mb-4 text-center font-serif text-3xl text-ink sm:text-4xl">From Concept to Container</h2>
+        <p className="mb-12 text-center text-sm text-ink-soft">Every VESLA bottle follows this 9-step journey — from your first sketch to the pallet leaving our Guangzhou facility.</p>
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+          {[
+            { n: 1, title: "Idea", desc: "You share your vision, target audience & budget — we recommend the right glass type, shape and decoration.", img: "A714fe69e5f0c4660ad68d4afe3a14407F" },
+            { n: 2, title: "3D Modeling", desc: "Our engineers build a precise CAD model of your bottle, showing every angle, neck finish and label recess.", img: "Abad35464fec74c6689591886a178361cG" },
+            { n: 3, title: "3D Printing", desc: "A physical resin prototype is printed in-house so you can hold, test and photograph the bottle before cutting steel.", img: "A6734f2bc67c34e5598e0aece17798d79M" },
+            { n: 4, title: "Trial Mold", desc: "We cut a trial mold and run a short batch on our IS forming line — same glass, same process as mass production.", img: "A94dc89e0fe2f40ecbe795f6084f7bbf4L" },
+            { n: 5, title: "Samples", desc: "Finished samples with your chosen decoration arrive at your door. Test fill, check cap torque, photograph for your launch.", img: "Abc9e1f5ec8f84484a9665349e9ac77eca" },
+            { n: 6, title: "Confirm", desc: "You review the samples, request any tweaks, and give the green light. Production mold cutting begins.", img: "A0b845672bb6043ada33d694815768129H" },
+            { n: 7, title: "Mass Production", desc: "Full batch runs on our 6 IS machines under ISO 9001 quality control. Inline inspection at every station.", img: "A3051579e7c924f71b35d9e30c7db60ccl" },
+            { n: 8, title: "Quality Testing", desc: "AQL sampling, drop testing and dimensional checks before any bottle leaves the QC lab.", img: "A3fa0a4dee6c14803924e1a1558cc248c1" },
+            { n: 9, title: "Packaging & Ship", desc: "Drop-test certified export cartons, palletized and strapped. EXW, FOB or DDP to your warehouse.", img: "Aa60728bf697d43b7a09df0c6f4990e1ck" },
+          ].map((s) => (
+            <div key={s.n} className="group overflow-hidden rounded-2xl bg-white ring-1 ring-gold/20 transition-shadow hover:shadow-lg">
+              <div className="relative aspect-square overflow-hidden">
+                <img src={`https://sc02.alicdn.com/kf/${s.img}.png`} alt={s.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                <div className="absolute top-3 left-3 flex h-7 w-7 items-center justify-center rounded-full bg-white/90 text-xs font-bold text-gold-dark shadow-sm">{s.n}</div>
+              </div>
+              <div className="p-4">
+                <div className="font-serif text-base text-ink">{s.title}</div>
+                <p className="mt-1 text-xs leading-relaxed text-ink-soft">{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* ── Client Testimonials ─────────────────────── */}
       <section className="bg-cream-dark/60 py-24">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
