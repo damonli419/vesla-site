@@ -5,9 +5,10 @@ interface SeoProps {
   title: string;
   description: string;
   path?: string;
+  keywords?: string;
 }
 
-export default function Seo({ title, description, path = "/" }: SeoProps) {
+export default function Seo({ title, description, path = "/", keywords }: SeoProps) {
   const { locale } = useUI();
   const site = "Vesla";
   const fullTitle = title === site ? title : `${title} · ${site}`;
@@ -16,6 +17,7 @@ export default function Seo({ title, description, path = "/" }: SeoProps) {
       <html lang={locale === "tw" ? "zh-Hant" : locale === "kr" ? "ko" : locale === "jp" ? "ja" : "en"} />
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
+      {keywords && <meta name="keywords" content={keywords} />}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />

@@ -57,9 +57,10 @@ export default function ProductDetail() {
   return (
     <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
       <Seo
-        title={`${localizedName(product, locale)} · ${catLabel(product.category)}`}
-        description={localizedDesc(product, locale).slice(0, 160)}
+        title={`${localizedName(product, locale)} | Custom Cosmetic Glass Packaging — Vesla`}
+        description={localizedDesc(product, locale).slice(0, 155)}
         path={`/products/${product.id}`}
+        keywords={product.seoKeywords?.join(", ")}
       />
       <ProductSchema product={product} />
       <OrganizationSchema />
@@ -165,6 +166,28 @@ export default function ProductDetail() {
           </p>
         </div>
       </div>
+
+      {/* ── SEO keyword-rich section ───────────────── */}
+      {product.seoTags && product.seoTags.length > 0 && (
+        <section className="mt-16 border-t border-gold/15 pt-12">
+          <h2 className="font-serif text-xl text-ink mb-4">
+            {locale === "en" && "About This Product"}
+            {locale === "kr" && "제품 정보"}
+            {locale === "jp" && "この製品について"}
+            {locale === "tw" && "關於此產品"}
+          </h2>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {product.seoTags.map((tag) => (
+              <span key={tag} className="inline-block rounded-full border border-gold/20 px-3 py-1 text-xs text-ink-soft bg-cream-dark/30">
+                {tag}
+              </span>
+            ))}
+          </div>
+          <p className="text-sm leading-relaxed text-ink-soft max-w-3xl">
+            {product.seoKeywords?.join(" · ") || ""}
+          </p>
+        </section>
+      )}
 
       {related.length > 0 && (
         <section className="mt-28">

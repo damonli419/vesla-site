@@ -45,6 +45,8 @@ export interface Product {
   description: string;
   descriptionI18n: { kr: string; jp: string; tw: string };
   features: string[];
+  seoKeywords: string[];
+  seoTags: string[];
 }
 
 // Curated stock photography from Pexels (royalty-free). URLs use the
@@ -85,7 +87,9 @@ export const products: Product[] = [
       "Compatible with push-button & straight droppers",
       "Thick base for a weighty, premium feel",
       "Custom Pantone spray coating available",
-    ],
+    ]
+    seoKeywords: ["custom glass dropper bottle manufacturer", "frosted glass serum bottle wholesale", "cosmetic dropper bottle low MOQ", "skincare glass packaging supplier China", "private label essential oil dropper", "OEM glass dropper bottle factory", "DDP cosmetic glass packaging USA", "FDA compliant glass serum bottle"],
+    seoTags: ["Serum Packaging", "Dropper Bottle", "Skincare Glass", "Custom OEM", "Low MOQ", "FDA Approved", "DDP Shipping"],,
   },
   {
     id: "heart-dropper-30ml",
@@ -121,7 +125,9 @@ export const products: Product[] = [
       "Gold or matte black collar finishing",
       "Custom silk-screen branding on frosted surface",
       "Seasonal & holiday gift-set ready",
-    ],
+    ]
+    seoKeywords: ["custom glass dropper bottle manufacturer", "frosted glass serum bottle wholesale", "cosmetic dropper bottle low MOQ", "skincare glass packaging supplier China", "private label essential oil dropper", "OEM glass dropper bottle factory", "DDP cosmetic glass packaging USA", "FDA compliant glass serum bottle"],
+    seoTags: ["Serum Packaging", "Dropper Bottle", "Skincare Glass", "Custom OEM", "Low MOQ", "FDA Approved", "DDP Shipping"],,
   },
   {
     id: "flat-square-dropper",
@@ -157,7 +163,9 @@ export const products: Product[] = [
       "White, black or metallic dropper collar options",
       "Thick base for a premium, weighty hand feel",
       "Custom gradient & Pantone color matching available",
-    ],
+    ]
+    seoKeywords: ["custom glass dropper bottle manufacturer", "frosted glass serum bottle wholesale", "cosmetic dropper bottle low MOQ", "skincare glass packaging supplier China", "private label essential oil dropper", "OEM glass dropper bottle factory", "DDP cosmetic glass packaging USA", "FDA compliant glass serum bottle"],
+    seoTags: ["Serum Packaging", "Dropper Bottle", "Skincare Glass", "Custom OEM", "Low MOQ", "FDA Approved", "DDP Shipping"],,
   },
   {
     id: "amber-dropper-15ml",
@@ -191,7 +199,9 @@ export const products: Product[] = [
       "Type III soda-lime glass, food & cosmetic safe",
       "Graduated glass pipette available",
       "Stocked molds — fast sampling in 5 days",
-    ],
+    ]
+    seoKeywords: ["custom glass dropper bottle manufacturer", "frosted glass serum bottle wholesale", "cosmetic dropper bottle low MOQ", "skincare glass packaging supplier China", "private label essential oil dropper", "OEM glass dropper bottle factory", "DDP cosmetic glass packaging USA", "FDA compliant glass serum bottle"],
+    seoTags: ["Serum Packaging", "Dropper Bottle", "Skincare Glass", "Custom OEM", "Low MOQ", "FDA Approved", "DDP Shipping"],,
   },
   {
     id: "clear-dropper-classic",
@@ -225,7 +235,9 @@ export const products: Product[] = [
       "3 shoulder profiles: round, flat, sloped",
       "Gradient & translucent color coating",
       "Low MOQ trial orders on stocked sizes",
-    ],
+    ]
+    seoKeywords: ["custom glass dropper bottle manufacturer", "frosted glass serum bottle wholesale", "cosmetic dropper bottle low MOQ", "skincare glass packaging supplier China", "private label essential oil dropper", "OEM glass dropper bottle factory", "DDP cosmetic glass packaging USA", "FDA compliant glass serum bottle"],
+    seoTags: ["Serum Packaging", "Dropper Bottle", "Skincare Glass", "Custom OEM", "Low MOQ", "FDA Approved", "DDP Shipping"],,
   },
   {
     id: "gold-collar-dropper-set",
@@ -259,7 +271,9 @@ export const products: Product[] = [
       "Real electroplated (not painted) gold collar",
       "Custom embossed logo on shoulder",
       "Gift box & insert tray sourcing available",
-    ],
+    ]
+    seoKeywords: ["custom glass dropper bottle manufacturer", "frosted glass serum bottle wholesale", "cosmetic dropper bottle low MOQ", "skincare glass packaging supplier China", "private label essential oil dropper", "OEM glass dropper bottle factory", "DDP cosmetic glass packaging USA", "FDA compliant glass serum bottle"],
+    seoTags: ["Serum Packaging", "Dropper Bottle", "Skincare Glass", "Custom OEM", "Low MOQ", "FDA Approved", "DDP Shipping"],,
   },
   {
     id: "clear-cream-jar-50g",
@@ -293,7 +307,9 @@ export const products: Product[] = [
       "Aluminum, bamboo or acrylic lid options",
       "PE gasket + PP liner keeps formula sealed",
       "Compatible with standard filling lines",
-    ],
+    ]
+    seoKeywords: ["custom glass cream jar manufacturer", "wholesale cosmetic glass jar with lid", "thick wall glass jar skincare", "private label face cream packaging", "OEM cosmetic jar factory China", "low MOQ glass cream jar", "frosting glass jar bulk", "hot stamping cream jar"],
+    seoTags: ["Cream Jar", "Skincare Packaging", "Glass Container", "Custom OEM", "Low MOQ", "FDA Compliant", "Bulk Wholesale"],,
   },
   {
     id: "violet-glass-jar-30g",
@@ -327,7 +343,9 @@ export const products: Product[] = [
       "Blocks the visible light spectrum",
       "Matte black or violet glass lid",
       "Batch consistency ± 0.3 mm tolerance",
-    ],
+    ]
+    seoKeywords: ["custom glass cream jar manufacturer", "wholesale cosmetic glass jar with lid", "thick wall glass jar skincare", "private label face cream packaging", "OEM cosmetic jar factory China", "low MOQ glass cream jar", "frosting glass jar bulk", "hot stamping cream jar"],
+    seoTags: ["Cream Jar", "Skincare Packaging", "Glass Container", "Custom OEM", "Low MOQ", "FDA Compliant", "Bulk Wholesale"],,
   },
   {
     id: "frosted-cream-jar",
@@ -361,7 +379,9 @@ export const products: Product[] = [
       "Wide mouth for easy application",
       "Gold, silver, white or wooden lids",
       "Shelf-stable stackable design",
-    ],
+    ]
+    seoKeywords: ["custom glass cream jar manufacturer", "wholesale cosmetic glass jar with lid", "thick wall glass jar skincare", "private label face cream packaging", "OEM cosmetic jar factory China", "low MOQ glass cream jar", "frosting glass jar bulk", "hot stamping cream jar"],
+    seoTags: ["Cream Jar", "Skincare Packaging", "Glass Container", "Custom OEM", "Low MOQ", "FDA Compliant", "Bulk Wholesale"],,
   },
   {
     id: "thick-wall-jar-100g",
@@ -395,7 +415,9 @@ export const products: Product[] = [
       "Straight sides for full-wrap labels",
       "Heat-transfer & decal decoration",
       "Palletized export packing standard",
-    ],
+    ]
+    seoKeywords: ["custom glass cream jar manufacturer", "wholesale cosmetic glass jar with lid", "thick wall glass jar skincare", "private label face cream packaging", "OEM cosmetic jar factory China", "low MOQ glass cream jar", "frosting glass jar bulk", "hot stamping cream jar"],
+    seoTags: ["Cream Jar", "Skincare Packaging", "Glass Container", "Custom OEM", "Low MOQ", "FDA Compliant", "Bulk Wholesale"],,
   },
   {
     id: "amber-oil-bottle-10ml",
@@ -429,7 +451,9 @@ export const products: Product[] = [
       "Orifice reducer & child-resistant caps",
       "Amber, cobalt, green & clear in stock",
       "Fast 2-week lead time on stocked items",
-    ],
+    ]
+    seoKeywords: ["essential oil glass bottle wholesale", "custom glass roll on bottle manufacturer", "amber glass dropper bottle bulk", "aromatherapy glass vial supplier", "OEM essential oil packaging China", "frosted glass oil bottle low MOQ", "euro round glass bottle factory", "private label essential oil bottle"],
+    seoTags: ["Essential Oil", "Glass Vial", "Aromatherapy", "Roll On Bottle", "Custom OEM", "Low MOQ", "Bulk Supply"],,
   },
   {
     id: "rollon-bottle-10ml",
@@ -463,7 +487,9 @@ export const products: Product[] = [
       "Leak-tested fitment assembly",
       "Pocket-size travel retail favorite",
       "Custom coating & gradient finishes",
-    ],
+    ]
+    seoKeywords: ["essential oil glass bottle wholesale", "custom glass roll on bottle manufacturer", "amber glass dropper bottle bulk", "aromatherapy glass vial supplier", "OEM essential oil packaging China", "frosted glass oil bottle low MOQ", "euro round glass bottle factory", "private label essential oil bottle"],
+    seoTags: ["Essential Oil", "Glass Vial", "Aromatherapy", "Roll On Bottle", "Custom OEM", "Low MOQ", "Bulk Supply"],,
   },
   {
     id: "euro-dropper-oil-set",
@@ -497,7 +523,9 @@ export const products: Product[] = [
       "Graduated pipette for precise dosing",
       "Apothecary look for wellness brands",
       "Carton + divider export packaging",
-    ],
+    ]
+    seoKeywords: ["essential oil glass bottle wholesale", "custom glass roll on bottle manufacturer", "amber glass dropper bottle bulk", "aromatherapy glass vial supplier", "OEM essential oil packaging China", "frosted glass oil bottle low MOQ", "euro round glass bottle factory", "private label essential oil bottle"],
+    seoTags: ["Essential Oil", "Glass Vial", "Aromatherapy", "Roll On Bottle", "Custom OEM", "Low MOQ", "Bulk Supply"],,
   },
   {
     id: "mini-sample-vial",
@@ -531,7 +559,9 @@ export const products: Product[] = [
       "Screw cap, reducer or roller fitment",
       "Ultra-fast production runs",
       "Lowest per-unit cost in our range",
-    ],
+    ]
+    seoKeywords: ["essential oil glass bottle wholesale", "custom glass roll on bottle manufacturer", "amber glass dropper bottle bulk", "aromatherapy glass vial supplier", "OEM essential oil packaging China", "frosted glass oil bottle low MOQ", "euro round glass bottle factory", "private label essential oil bottle"],
+    seoTags: ["Essential Oil", "Glass Vial", "Aromatherapy", "Roll On Bottle", "Custom OEM", "Low MOQ", "Bulk Supply"],,
   },
   {
     id: "gradient-green-cosmetic-set",
@@ -568,7 +598,9 @@ export const products: Product[] = [
       "Round cream jars: 30 / 50 / 100 g",
       "Single-brand turnkey packaging identity",
       "Gift-box & insert tray sourcing for holiday sets",
-    ],
+    ]
+    seoKeywords: ["custom cosmetic glass set manufacturer", "wholesale skincare packaging set", "glass bottle and jar collection supplier", "private label cosmetic packaging", "OEM beauty packaging set China", "low MOQ gradient glass set", "luxury cosmetic glass packaging", "matching bottle jar set wholesale"],
+    seoTags: ["Cosmetic Set", "Glass Collection", "Luxury Packaging", "Custom OEM", "Low MOQ", "Gradient Glass", "Wholesale Set"],,
   },
   {
     id: "gradient-green-pump-set",
@@ -605,7 +637,9 @@ export const products: Product[] = [
       "Domed cream jars: 50 / 100 g",
       "Turnkey single-brand identity with consistent finish",
       "Gift-box & insert tray sourcing for holiday sets",
-    ],
+    ]
+    seoKeywords: ["custom cosmetic glass set manufacturer", "wholesale skincare packaging set", "glass bottle and jar collection supplier", "private label cosmetic packaging", "OEM beauty packaging set China", "low MOQ gradient glass set", "luxury cosmetic glass packaging", "matching bottle jar set wholesale"],
+    seoTags: ["Cosmetic Set", "Glass Collection", "Luxury Packaging", "Custom OEM", "Low MOQ", "Gradient Glass", "Wholesale Set"],,
   },
 ];
 
