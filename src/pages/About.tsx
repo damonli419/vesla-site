@@ -41,8 +41,8 @@ const copy = {
     tourTitle: "Inside the factory",
     tourSub: "A walk through forming, annealing, decoration, assembly and inspection.",
     tour: [
-      { caption: "Automated forming line — 6 IS machines running 24/7", image: PEXEL(36423805) },
-      { caption: "Inline annealing lehr with PID-controlled temperature profile", image: PEXEL(36423801) },
+      { caption: "Automated forming line — 6 IS machines running 24/7", image: "https://sc02.alicdn.com/kf/Hf8c65594e53f4307878710c088d888415.jpg" },
+      { caption: "Inline annealing lehr with PID-controlled temperature profile", image: "https://sc02.alicdn.com/kf/H76e6611f96f1403a894795786b31ffc6m.jpg" },
       { caption: "Spray coating & color frosting booth", image: PEXEL(36423824) },
       { caption: "Silk-screen and hot-stamping decoration studio", image: PEXEL(36423800) },
       { caption: "QC lab — dimensional checks & cosmetic inspection", image: PEXEL(9574449) },
