@@ -177,13 +177,14 @@ export default function Home() {
       <section className="relative flex min-h-[92vh] items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-ink via-ink/90 to-ink/70" />
         <video
+          ref={(el) => { if (el) { el.play().catch(() => {}); el.onloadeddata = () => el.play().catch(() => {}); } }}
           className="absolute inset-0 h-full w-full object-cover"
           src="/factory-hero.mp4"
           autoPlay
           muted
           loop
           playsInline
-          preload="none"
+          preload="metadata"
           poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080'%3E%3Crect fill='%231a1a1a' width='1920' height='1080'/%3E%3C/svg%3E"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/50 to-ink/70" />
