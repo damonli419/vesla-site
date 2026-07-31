@@ -44,7 +44,7 @@ const copy = {
       { caption: "Automated forming line — 6 IS machines running 24/7", image: "https://sc02.alicdn.com/kf/Hf8c65594e53f4307878710c088d888415.jpg" },
       { caption: "Inline annealing lehr with PID-controlled temperature profile", image: "https://sc02.alicdn.com/kf/H76e6611f96f1403a894795786b31ffc6m.jpg" },
       { caption: "Spray coating & color frosting booth", image: "https://sc02.alicdn.com/kf/H3825fe063ae2478380df83967fcf76789.jpg" },
-      { caption: "Silk-screen and hot-stamping decoration studio", image: PEXEL(36423800) },
+      { caption: "Silk-screen and hot-stamping decoration studio", image: "https://sc02.alicdn.com/kf/Ha424be08e66841e19c8af1213614c1ffb.jpg" },
       { caption: "QC lab — dimensional checks & cosmetic inspection", image: PEXEL(9574449) },
       { caption: "Drop-test certified export packing station", image: "https://sc02.alicdn.com/kf/H95b280256ba04004af162257b20eb19au.jpg" },
     ],
