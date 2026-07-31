@@ -152,7 +152,7 @@ export default function About() {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-3">
-            {[PEXEL(36423805), PEXEL(36423800), PEXEL(36423801), PEXEL(36423824)].map((src, i) => (
+            {["https://sc02.alicdn.com/kf/H2a0f52f9cd45414fba0418d075ced6e6Z.jpg", "https://sc02.alicdn.com/kf/Ha2731a7e453c4a9e8adcece81e20e4b8v.jpg", "https://sc02.alicdn.com/kf/H8771e7dad94345d18779c24b6a573df4T.jpg", "https://sc02.alicdn.com/kf/H66ba895aa94541fc97f0e3cb6605faafZ.jpg"].map((src, i) => (
               <div key={i} className={`overflow-hidden rounded-2xl ring-1 ring-gold/15 ${i % 2 ? "mt-8" : ""}`}>
                 <LazyImage src={src} alt={`Factory ${i + 1}`} className="aspect-[4/5] w-full object-cover" />
               </div>
