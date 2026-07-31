@@ -170,7 +170,7 @@ export const products: Product[] = [
     category: "dropper",
     material: "Glass",
     capacity: "10 / 15 / 30 ml",
-    capacityGroup: "mini",
+    capacityGroup: "standard",
     use: "Facial Oil",
     moq: "5,000 pcs",
     leadTime: "20–25 days",
@@ -240,7 +240,7 @@ export const products: Product[] = [
     category: "dropper",
     material: "Glass",
     capacity: "15 / 30 ml",
-    capacityGroup: "mini",
+    capacityGroup: "standard",
     use: "Serum",
     moq: "10,000 pcs",
     leadTime: "30–35 days",
@@ -415,7 +415,7 @@ export const products: Product[] = [
     category: "oil",
     material: "Glass",
     capacity: "5 / 10 / 15 / 30 ml",
-    capacityGroup: "mini",
+    capacityGroup: "standard",
     use: "Essential Oil",
     moq: "10,000 pcs",
     leadTime: "20–25 days",
@@ -485,7 +485,7 @@ export const products: Product[] = [
     category: "oil",
     material: "Glass",
     capacity: "10 / 15 / 30 ml",
-    capacityGroup: "mini",
+    capacityGroup: "standard",
     use: "Essential Oil",
     moq: "5,000 pcs",
     leadTime: "20–25 days",
@@ -626,11 +626,11 @@ export const products: Product[] = [
   },
 ];
 
-export const materials = ["Clear Glass", "Frosted Glass", "Amber Glass", "Violet Glass"];
+export const materials = ["Glass", "Plastic"];
 export const capacityGroups = [
-  { value: "mini", label: "Mini (≤ 15 ml)" },
-  { value: "standard", label: "Standard (20 – 60 ml)" },
-  { value: "large", label: "Large (60 ml +)" },
+  { value: "mini", label: "Mini (≤ 15 ml / 15 g)" },
+  { value: "standard", label: "Standard (20 – 60 ml / g)" },
+  { value: "large", label: "Large (60+ ml / g)" },
   { value: "set", label: "Multi-Size Set" },
 ] as const;
 export const uses = [
