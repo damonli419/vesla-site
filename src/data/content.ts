@@ -129,6 +129,18 @@ export const blogPosts: BlogPost[] = [
 // FAQ entries rendered on the contact page for SEO + UX.
 export const faqItems = [
   {
+    q: { en: "Do you produce glass bottles in your own factory?", kr: "유리병을 자체 공장에서 생산하나요?", jp: "ガラスボトルは自社工場で生産していますか？", tw: "玻璃瓶是自有工廠生產的嗎？" },
+    a: { en: "Yes. We operate 6 IS forming machines on our own production floor in Guangzhou. Glass melting, forming, annealing, and quality inspection all happen under our roof. We also partner with select cap and pump manufacturers in Guangdong for accessories — but the glass is 100% ours.", kr: "네. 광저우 자체 생산 공장에서 6대의 IS 성형기를 운영하고 있습니다. 유리 용해, 성형, 어닐링, 품질 검사까지 모두 자체 시설에서 진행합니다. 캡과 펌프 등 액세서리는 광둥 지역의 우수 협력사와 파트너십을 맺고 있지만, 유리 자체는 100% 자체 생산입니다.", jp: "はい。広州の自社工場で6台のIS成形機を稼働しています。ガラスの溶解、成形、徐冷、品質検査まで一貫して自社設備で行っています。キャップやポンプなどの付属品は広東省の優良パートナーと連携していますが、ガラス本体は100％自社製造です。", tw: "是的。我們在廣州自有廠區營運 6 台 IS 玻璃成型機，從玻璃熔融、成型、退火到品檢全部在自有產線上完成。瓶蓋與泵頭等配件則與廣東地區的優質供應商合作，但玻璃瓶本身 100% 由我們自己生產。" },
+  },
+  {
+    q: { en: "Can I visit your factory or do a video walkthrough?", kr: "공장을 방문하거나 화상 투어를 할 수 있나요?", jp: "工場見学やビデオツアーは可能ですか？", tw: "可以參觀工廠或進行視訊看廠嗎？" },
+    a: { en: "Absolutely. We welcome in-person factory visits — we'll arrange airport pickup from Guangzhou Baiyun Airport, a guided tour of forming, decoration and QC stations, plus a same-day sampling session. Can't travel? We'll schedule a live video walkthrough with your sales engineer. Just reach out via the contact form.", kr: "물론입니다. 직접 방문 시 광저우 바이윈 공항 픽업, 성형·데코레이션·QC 라인 견학, 당일 샘플링 세션을安排해 드립니다. 방문이 어려우시면 영업 엔지니어와 실시간 화상 공장 투어를 예약해 드립니다. 문의 양식으로 연락 주세요.", jp: "もちろんです。ご来訪時には広州白雲空港からの送迎、成形・装飾・QCラインのご案内、当日サンプリングをご手配します。ご来訪が難しい場合は、営業担当エンジニアによるライブビデオツアーも承ります。お問い合わせフォームからご連絡ください。", tw: "當然可以。親自到訪我們會安排廣州白雲機場接送、成型/裝飾/品管產線導覽，以及當日打樣服務。不便前來？我們也可以安排銷售工程師與您進行即時視訊看廠，請透過聯絡表單預約。" },
+  },
+  {
+    q: { en: "What decoration processes do you handle in-house vs. outsource?", kr: "데코레이션 공정 중 어떤 것들을 자체 생산하나요?", jp: "装飾工程のうち自社対応しているものは？", tw: "哪些表面處理是廠內自有工序？" },
+    a: { en: "All core decoration is in-house: frosting, spray coating (solid + gradient), silk-screen printing, hot stamping, and electroplated collar finishing. We don't outsource decoration — this gives us full quality control, faster sampling, and consistent color matching across batches. Inner-liner printing and custom packaging inserts are also done on-site.", kr: "모든 주요 데코레이션은 자체 생산입니다: 프로스팅, 스프레이 코팅(솔리드+그라데이션), 실크스크린, 핫 스탬핑, 전기도금 칼라 마감. 외주 데코레이션 없음 — 완전한 품질 관리, 빠른 샘플링, 배치 간 일관된 컬러 매칭이 가능합니다. 이너 라이너 인쇄와 맞춤 포장 인서트도 현장에서 진행합니다.", jp: "主要な装飾はすべて自社内で対応：フロスト加工、スプレー塗装（ソリッド＋グラデーション）、シルクスクリーン印刷、ホットスタンプ、電気めっきカラー仕上げ。装飾の外注はゼロ — 完全な品質管理、迅速なサンプリング、ロット間の一貫した色合わせを実現しています。インナーライナー印刷やカスタム包装インサートも自社対応です。", tw: "所有核心裝飾均為廠內自有工序：磨砂、噴塗（純色+漸層）、絲印、燙金、電鍍頸圈。裝飾不外包 — 這讓我們能完全掌控品質、快速打樣、確保跨批次的顏色一致性。內襯印刷和訂製包裝內盒也在廠內完成。" },
+  },
+  {
     q: { en: "What is your minimum order quantity (MOQ)?", kr: "최소 주문수량(MOQ)은 얼마인가요?", jp: "最小発注数量（MOQ）はどのくらいですか？", tw: "請問最低起訂量（MOQ）是多少？" },
     a: { en: "5,000 pcs on stock molds, 10,000 pcs for private mold programs. We can also arrange mixed-container shipments combining SKUs.", kr: "스톡 몰드는 5,000개, 프라이빗 몰드 프로그램은 10,000개부터. SKU 혼합 컨테이너 출하도 가능합니다.", jp: "在庫モールドは5,000個、プライベートモールドは10,000個から。SKU混載コンテナの手配も可能です。", tw: "現有模具 5,000 瓶起，私模計畫 10,000 瓶起。我們也可安排混櫃出貨。" },
   },

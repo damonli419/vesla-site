@@ -48,9 +48,21 @@ const copy = {
       { caption: "QC lab — dimensional checks & cosmetic inspection", image: PEXEL(9574449) },
       { caption: "Drop-test certified export packing station", image: PEXEL(36423817) },
     ],
+    modesTitle: "How We Work With You",
+    modes: [
+      { name: "OEM", desc: "You provide the design or CAD. We manufacture to your exact specifications — glass forming, decoration, assembly, export.", icon: "🛠" },
+      { name: "ODM", desc: "Pick from our 300+ stock molds and customize the finish, color, cap, and decoration to match your brand.", icon: "🎨" },
+      { name: "Stock Supply", desc: "Need a fast restock? We keep popular sizes in inventory for 2-week turnaround on standard finishes.", icon: "⚡" },
+    ],
+    clientsTitle: "What Our Clients Say",
+    clients: [
+      { name: "Sophie L., Paris", text: "We launched our 3-SKU serum line with Vesla's frosted droppers. The gold-collar set photographed beautifully for our website — customers thought the packaging alone justified the price.", brand: "French indie skincare brand" },
+      { name: "Marcus T., Los Angeles", text: "As a first-time founder, I was terrified about MOQ and lead times. Vesla walked me through every step — from mold selection to DDP delivery. Our 50g cream jars arrived at our 3PL exactly on schedule.", brand: "US men's grooming brand" },
+      { name: "Yuna K., Seoul", text: "We needed violet glass jars for our clean beauty line and every supplier we contacted said minimum 30,000. Vesla started us at 5,000 with custom silk-screen decoration. The QC reports came with every shipment.", brand: "K-beauty clean skincare brand" },
+    ],
     ctaTitle: "Visit the factory",
-    ctaBody: "We welcome brand owners and procurement teams to tour our Guangzhou facility. We'll arrange airport pickup, factory visit, and a same-day sampling session in our decoration studio.",
-    cta: "Plan a Factory Visit",
+    ctaBody: "We welcome brand owners and procurement teams to tour our Guangzhou facility. We'll arrange airport pickup, factory visit, and a same-day sampling session in our decoration studio. Video calls also available — ask your sales contact for a live line walkthrough.",
+    cta: "Book a Factory Tour",
   },
   kr: {
     eyebrow: "Vesla 소개",
@@ -252,6 +264,47 @@ export default function About() {
         </div>
       </section>
 
+      {/* ── Cooperation Modes ─────────────────────── */}
+      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+        <h2 className="mb-12 text-center font-serif text-3xl text-ink sm:text-4xl">How We Work With You</h2>
+        <div className="grid gap-6 sm:grid-cols-3">
+          {[
+            { name: "OEM", desc: "You provide the design or CAD. We manufacture to your exact specs — glass forming, decoration, assembly, export.", icon: "🛠" },
+            { name: "ODM", desc: "Pick from our 300+ stock molds and customize the finish, color, cap and decoration to match your brand.", icon: "🎨" },
+            { name: "Stock Supply", desc: "Need a fast restock? We keep popular sizes in inventory for 2-week turnaround on standard finishes.", icon: "⚡" },
+          ].map((m) => (
+            <div key={m.name} className="rounded-2xl bg-white p-8 text-center ring-1 ring-gold/20">
+              <div className="text-4xl mb-4">{m.icon}</div>
+              <div className="font-serif text-xl text-gold-dark">{m.name}</div>
+              <p className="mt-3 text-sm leading-relaxed text-ink-soft">{m.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Client Testimonials ─────────────────────── */}
+      <section className="bg-cream-dark/60 py-24">
+        <div className="mx-auto max-w-5xl px-6 lg:px-8">
+          <h2 className="mb-12 text-center font-serif text-3xl text-ink sm:text-4xl">What Our Clients Say</h2>
+          <div className="grid gap-8 sm:grid-cols-3">
+            {[
+              { name: "Sophie L., Paris", text: "We launched our 3-SKU serum line with Vesla's frosted droppers. The gold-collar set photographed beautifully — customers thought the packaging alone justified the price.", brand: "French indie skincare" },
+              { name: "Marcus T., Los Angeles", text: "As a first-time founder, I was terrified about MOQ. Vesla walked me through every step — from mold selection to DDP delivery. Our 50g cream jars arrived exactly on schedule.", brand: "US men's grooming" },
+              { name: "Yuna K., Seoul", text: "Every supplier said minimum 30,000 for violet glass. Vesla started us at 5,000 with custom silk-screen. QC reports came with every shipment.", brand: "K-beauty clean skincare" },
+            ].map((c) => (
+              <div key={c.name} className="rounded-2xl bg-white p-8 ring-1 ring-gold/20">
+                <div className="flex gap-1 mb-4 text-gold">{Array(5).fill("★").join("")}</div>
+                <p className="text-sm leading-relaxed text-ink-soft italic">"{c.text}"</p>
+                <div className="mt-5 border-t border-gold/15 pt-4">
+                  <div className="font-semibold text-ink text-sm">{c.name}</div>
+                  <div className="text-xs text-ink-soft mt-0.5">{c.brand}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-cream-dark/60 py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-12 text-center">
@@ -272,6 +325,7 @@ export default function About() {
       <section className="mx-auto max-w-3xl px-6 py-24 text-center">
         <h2 className="font-serif text-3xl text-ink sm:text-4xl">{c.ctaTitle}</h2>
         <p className="mt-4 text-sm leading-relaxed text-ink-soft">{c.ctaBody}</p>
+        <p className="mt-2 text-xs text-ink-soft">Video call walkthroughs also available — ask your sales contact.</p>
         <Link
           to="/contact"
           className="mt-8 inline-block rounded-full bg-gold px-10 py-4 text-sm font-semibold tracking-wide text-white shadow-md transition hover:bg-gold-dark"
