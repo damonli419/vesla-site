@@ -19,8 +19,8 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-gold/20 bg-cream/90 backdrop-blur-md">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
-        <Link to="/" className="flex items-baseline gap-1.5" onClick={() => setOpen(false)}>
-          <span className="font-serif text-2xl font-semibold tracking-tight text-ink">Vesla</span>
+        <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
+          <img src="/logo.png" alt="Vesla" className="h-12 w-auto" />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">

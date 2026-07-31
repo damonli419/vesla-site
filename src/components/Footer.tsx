@@ -9,8 +9,8 @@ export default function Footer() {
     <footer className="bg-ink text-cream/80">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-4 lg:px-8">
         <div className="md:col-span-2">
-          <div className="flex items-baseline gap-1.5">
-            <span className="font-serif text-2xl font-semibold text-white">Vesla</span>
+          <div className="flex items-center">
+            <img src="/logo.png" alt="Vesla" className="h-14 w-auto brightness-0 invert" />
           </div>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-cream/60">{t("footer.tagline")}</p>
           <div className="mt-6 flex items-center gap-3">
