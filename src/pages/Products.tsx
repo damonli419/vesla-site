@@ -4,7 +4,6 @@ import {
   products,
   materials,
   capacityGroups,
-  uses,
   type Category,
 } from "../data/products";
 import { useUI } from "../i18n/UIContext";
@@ -49,7 +48,6 @@ export default function Products() {
 
   const [selMaterials, setSelMaterials] = useState<string[]>([]);
   const [selCapacities, setSelCapacities] = useState<string[]>([]);
-  const [selUses, setSelUses] = useState<string[]>([]);
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   const toggle = (setter: React.Dispatch<React.SetStateAction<string[]>>) => (v: string) =>
@@ -91,17 +89,15 @@ export default function Products() {
           }
         }
 
-        if (selUses.length && !selUses.includes(p.use)) return false;
         return true;
       });
     },
-    [category, selMaterials, selCapacities, selUses]
+    [category, selMaterials, selCapacities]
   );
 
   const clearAll = () => {
     setSelMaterials([]);
     setSelCapacities([]);
-    setSelUses([]);
     setSearchParams({});
   };
 
@@ -147,13 +143,6 @@ export default function Products() {
         selected={selCapacities}
         onToggle={toggle(setSelCapacities)}
       />
-      <FilterGroup
-        title="Use"
-        options={uses.map((u) => ({ value: u, label: u }))}
-        selected={selUses}
-        onToggle={toggle(setSelUses)}
-      />
-
       <button onClick={clearAll} className="text-sm font-semibold text-gold-dark underline-offset-4 hover:underline">
         {t("common.clearFilters")}
       </button>
