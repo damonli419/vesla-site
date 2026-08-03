@@ -15,7 +15,7 @@ function copyPublicFiles(): Plugin {
     writeBundle() {
       const publicDir = path.resolve(__dirname, "public");
       const distDir = path.resolve(__dirname, "dist");
-      const files = ["sitemap.xml", "robots.txt", "_redirects", "_headers", "llms.txt", "llms-full.txt", "logo.png"];
+      const files = ["sitemap.xml", "robots.txt", "_redirects", "_headers", "llms.txt", "llms-full.txt", "logo.png", "products.xml"];
       for (const f of files) {
         const src = path.join(publicDir, f);
         const dest = path.join(distDir, f);
