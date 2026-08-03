@@ -259,11 +259,11 @@ export default function Home() {
               to={`/products?category=${c.key}`}
               className="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gold/15 transition duration-300 hover:-translate-y-1.5 hover:shadow-xl"
             >
-              <div className="aspect-[4/5] overflow-hidden">
+              <div className="flex items-center justify-center bg-[#faf7f2] p-4" style={{ height: "260px" }}>
                 <LazyImage
                   src={c.image}
                   alt={catLabel(c.key)}
-                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  className="max-h-full max-w-full object-contain"
                 />
               </div>
               <div className="p-7">
