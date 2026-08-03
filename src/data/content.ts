@@ -124,6 +124,63 @@ export const blogPosts: BlogPost[] = [
     category: "trend",
     keywords: ["K-beauty packaging 2026", "Korean indie beauty brand"],
   },
+  {
+    slug: "glass-dropper-bottle-shapes-guide",
+    title: {
+      en: "5 Glass Dropper Bottle Shapes That Sell Best on Instagram",
+      kr: "인스타그램에서 가장 잘 팔리는 유리 드롭퍼 보틀 5가지 쉐입",
+      jp: "インスタグラムで最も売れるガラスドロッパーボトル5つの形状",
+      tw: "Instagram 上最暢銷的 5 種玻璃滴管瓶形狀",
+    },
+    excerpt: {
+      en: "From flat-shoulder to square to heart-shaped — which dropper bottle silhouette gets the most clicks, saves, and DMs from indie beauty buyers.",
+      kr: "플랫 숄더부터 스퀘어, 하트 실루엣까지 — 어떤 드롭퍼 보틀이 인디 뷰티 바이어들의 클릭, 저장, DM을 가장 많이 받을까요.",
+      jp: "フラットショルダーからスクエア、ハート型まで — どのドロッパーボトルのシルエットがインディービューティーバイヤーから最もクリック・保存・DMを得られるか。",
+      tw: "從平肩到方形到愛心形——哪種滴管瓶輪廓最能獲得獨立美妝買家的點擊、收藏與私訊。",
+    },
+    date: "2026-08-01",
+    readMinutes: 5,
+    category: "trend",
+    keywords: ["glass dropper bottle shapes", "instagram packaging design", "indie beauty packaging trend", "serum bottle photography", "best selling dropper bottle silhouette"],
+  },
+  {
+    slug: "frosted-vs-clear-glass-packaging",
+    title: {
+      en: "Frosted vs Clear Glass Packaging: A 2026 Brand Buyer's Guide",
+      kr: "프로스트 vs 클리어 글래스 포장: 2026년 브랜드 바이어 가이드",
+      jp: "フロストガラス vs クリアガラス：2026年版ブランドバイヤーズガイド",
+      tw: "磨砂 vs 透明玻璃包裝：2026 品牌買家指南",
+    },
+    excerpt: {
+      en: "Photography, perceived value, scratch resistance, cost — we break down when frosted glass wins and when clear glass is still the smarter choice for your skincare line.",
+      kr: "촬영, 인지 가치, 스크래치 저항성, 비용 — 프로스트 글래스가 유리한 시기와 클리어 글래스가 스킨케어 라인에 더 현명한 선택인 시기를 분석합니다.",
+      jp: "撮影、知覚価値、耐傷性、コスト — フロストガラスが勝るケースと、クリアガラスがスキンケアラインにとって依然賢い選択であるケースを詳しく解説。",
+      tw: "拍攝效果、品牌感知價值、耐刮度、成本——我們拆解何時磨砂玻璃勝出、何時透明玻璃仍是護膚線的聰明選擇。",
+    },
+    date: "2026-08-01",
+    readMinutes: 6,
+    category: "material",
+    keywords: ["frosted glass packaging", "clear glass packaging comparison", "cosmetic glass finish guide", "matte glass bottle", "skincare packaging material choice"],
+  },
+  {
+    slug: "ship-glass-bottles-china-usa",
+    title: {
+      en: "How to Ship Glass Bottles from China to the USA Without Breakage",
+      kr: "중국에서 미국까지 깨짐 없이 유리병 배송하는 방법",
+      jp: "ガラスボトルを中国から米国へ破損なく配送する方法",
+      tw: "如何從中國安全運送玻璃瓶到美國：零破損指南",
+    },
+    excerpt: {
+      en: "Drop-test certified cartons, DDP customs clearance, freight options (sea vs air) — everything a brand founder needs to know before ordering 5,000+ glass bottles from China.",
+      kr: "낙하 테스트 인증 카톤, DDP 통관, 해상 vs 항공 운송 옵션 — 중국에서 5,000개 이상 유리병을 주문하기 전 브랜드 창업자가 알아야 할 모든 것.",
+      jp: "落下試験認定カートン、DDP通関、海上 vs 航空輸送オプション — 中国から5,000本以上のガラスボトルを発注する前にブランド創業者が知っておくべき全て。",
+      tw: "通過跌落測試的出口紙箱、DDP 雙清關、海運 vs 空運選項——從中國下單 5,000 瓶以上之前品牌創辦人必須知道的一切。",
+    },
+    date: "2026-08-01",
+    readMinutes: 7,
+    category: "logistics",
+    keywords: ["ship glass bottles China USA", "DDP glass packaging shipping", "glass bottle export carton", "sea freight cosmetic packaging", "USA cosmetic packaging logistics"],
+  },
 ];
 
 // FAQ entries rendered on the contact page for SEO + UX.

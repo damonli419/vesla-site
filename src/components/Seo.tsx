@@ -29,6 +29,7 @@ export default function Seo({ title, description, path = "/", keywords }: SeoPro
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content="https://www.veslapack.com/og-image.jpg" />
+      <meta name="pinterest-rich-pin" content="true" />
       <link rel="canonical" href={`https://www.veslapack.com${path}`} />
     </Helmet>
   );
