@@ -184,8 +184,9 @@ export default function Home() {
           muted
           loop
           playsInline
-          preload="metadata"
-          poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080'%3E%3Crect fill='%231a1a1a' width='1920' height='1080'/%3E%3C/svg%3E"
+          preload="none"
+          fetchpriority="low"
+          poster="https://sc02.alicdn.com/kf/A65f39345c3d842e4a580477a679d11c1G.png"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/50 to-ink/70" />
 
