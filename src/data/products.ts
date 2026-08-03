@@ -55,41 +55,6 @@ const PEXEL = (id: number, w = 1200) =>
 
 export const products: Product[] = [
   {
-    id: "frosted-dropper-30ml",
-    name: "Frosted Glass Dropper Bottle",
-    nameI18n: { kr: "프로스트 글래스 드롭퍼 보틀", jp: "フロストガラス ドロッパーボトル", tw: "磨砂玻璃滴管瓶" },
-    category: "dropper",
-    material: "Glass",
-    capacity: "15 / 30 / 50 ml",
-    capacityGroup: "standard",
-    use: "Serum",
-    moq: "5,000 pcs",
-    leadTime: "25–30 days",
-    decoration: "Silk screen, hot stamping, color coating",
-    image: "/images/p-frosted-dropper.jpg",
-    gallery: [
-      "/images/p-frosted-dropper.jpg",
-      PEXEL(5113052),
-      PEXEL(31251024),
-      PEXEL(17307534),
-    ],
-    description:
-      "A best-selling cylindrical dropper bottle with a soft frosted finish and matte gold collar. The premium tactile surface makes it a favorite for serum and facial oil lines targeting the mid-to-high-end market.",
-    descriptionI18n: {
-      kr: "소프트 프로스트 마감과 매트 골드 칼라가 어우러진 베스트셀링 원형 드롭퍼 보틀. 프리미엄 촉감의 표면은 중·고급 세럼 및 페이셜 오일 라인에 인기가 많습니다.",
-      jp: "柔らかなフロスト仕上げとマットゴールドの首元を備えたベストセラーの円筒型ドロッパーボトル。上質な手触りの表面は、ミドル〜ハイエンド向けのセラムやフェイスオイルラインに好評です。",
-      tw: "熱銷圓柱形滴管瓶，柔和磨砂表面搭配霧面金頸圈。極具質感的表面處理，是中高階精華液與面部美容油品牌的首選。",
-    },
-    features: [
-      "Uniform frosting with no fingerprint marks",
-      "Compatible with push-button & straight droppers",
-      "Thick base for a weighty, premium feel",
-      "Custom Pantone spray coating available",
-    ],
-    seoKeywords: ["custom glass dropper bottle manufacturer", "frosted glass serum bottle wholesale", "cosmetic dropper bottle low MOQ", "skincare glass packaging supplier China", "private label essential oil dropper", "OEM glass dropper bottle factory", "DDP cosmetic glass packaging USA", "FDA compliant glass serum bottle"],
-    seoTags: ["Serum Packaging", "Dropper Bottle", "Skincare Glass", "Custom OEM", "Low MOQ", "FDA Approved", "DDP Shipping"],
-  },
-  {
     id: "heart-dropper-30ml",
     name: "Heart-Shaped Dropper Bottle",
     nameI18n: { kr: "하트형 드롭퍼 보틀", jp: "ハート型ドロッパーボトル", tw: "心形滴管瓶" },
