@@ -37,16 +37,6 @@ const categories = [
     },
   },
   {
-    key: "set",
-    image: "/images/cat-set.jpg",
-    blurb: {
-      en: "Coordinated bottle-and-jar collections with matching finishes for full skincare regimens.",
-      kr: "풀 스킨케어 루틴을 위한 매칭 마감의 코디네이트 보틀-자 컬렉션.",
-      jp: "フルスキンケアルーティンのためのコーディネートされたボトルとジャーのコレクション。",
-      tw: "全套護膚流程的配套瓶罐組合，統一表面處理。",
-    },
-  },
-  {
     key: "oil",
     image: "/images/cat-oil.jpg",
     blurb: {
@@ -273,7 +263,7 @@ export default function Home() {
                 <LazyImage
                   src={c.image}
                   alt={catLabel(c.key)}
-                  className="h-full w-full object-contain transition duration-700 group-hover:scale-105"
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                 />
               </div>
               <div className="p-7">
