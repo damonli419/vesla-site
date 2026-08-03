@@ -17,8 +17,18 @@ const categories = [
     },
   },
   {
-    key: "jar",
-    image: "/images/cat-jar.jpg",
+    key: "vial",
+    image: "https://sc02.alicdn.com/kf/H27e01174162a48ce8efb4aa97bdb82c07.jpg",
+    blurb: {
+      en: "Roll-on vials, sample tubes and injection glass vials for serums, perfumes and wellness.",
+      kr: "세럼, 퍼퓸, 웰니스용 롤온 바이알, 샘플 튜브 및 인젝션 글래스 바이알.",
+      jp: "セラム、パフューム、ウェルネス向けロールオンバイアル、サンプルチューブ。",
+      tw: "精華液、香水和健康產品的滾珠瓶、樣品管與拉管玻璃瓶。",
+    },
+  },
+  {
+    key: "set",
+    image: "/images/cat-set.jpg",
     blurb: {
       en: "Thick-wall cream jars from 15 g to 120 g with premium lid options.",
       kr: "15g부터 120g까지의 두꺼운 벽 크림 자, 프리미엄 리드 옵션 제공.",

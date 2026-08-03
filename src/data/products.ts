@@ -1,4 +1,4 @@
-﻿export type Category = "dropper" | "jar" | "oil" | "set";
+﻿export type Category = "dropper" | "jar" | "oil" | "set" | "vial";
 
 export const categoryLabels: Record<Category, { en: string; kr: string; jp: string; tw: string }> = {
   dropper: {
@@ -24,6 +24,12 @@ export const categoryLabels: Record<Category, { en: string; kr: string; jp: stri
     kr: "코스메틱 세트",
     jp: "コスメティックセット",
     tw: "化妝品套裝",
+  },
+  vial: {
+    en: "Glass Vials",
+    kr: "글래스 바이알",
+    jp: "ガラスバイアル",
+    tw: "拉管玻璃瓶",
   },
 };
 
@@ -567,6 +573,9 @@ export const uses = [
   "Essential Oil",
   "Roll-On / Perfume",
   "Sample / Tester",
+  "Injection / Injectable",
+  "Aromatherapy",
+  "Wellness Supplement",
 ];
 
 // Case studies shown on the Custom Process page. Images are royalty-free
