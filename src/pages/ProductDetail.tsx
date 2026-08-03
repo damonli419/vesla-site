@@ -5,7 +5,7 @@ import { useUI } from "../i18n/UIContext";
 import Seo from "../components/Seo";
 import LazyImage from "../components/LazyImage";
 import { trackEvent } from "../components/Analytics";
-import { ProductSchema, OrganizationSchema } from "../components/Schema";
+import { ProductSchema, OrganizationSchema, BreadcrumbSchema } from "../components/Schema";
 import { whatsappLink } from "../config/site";
 
 function localizedName(p: Product, locale: "en" | "kr" | "jp" | "tw") {
@@ -63,6 +63,7 @@ export default function ProductDetail() {
       />
       <ProductSchema product={product} />
       <OrganizationSchema />
+      <BreadcrumbSchema items={[{ name: "Home", url: "https://www.veslapack.com/" }, { name: "Products", url: "https://www.veslapack.com/products" }, { name: product.name, url: `https://www.veslapack.com/products/${product.id}` }]} />
 
       <nav className="mb-10 text-xs uppercase tracking-widest text-ink-soft">
         <Link to="/" className="hover:text-gold-dark">Home</Link>

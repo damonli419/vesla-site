@@ -1,6 +1,7 @@
 ﻿import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Seo from "../components/Seo";
+import { FAQSchema } from "../components/Schema";
 import { trackEvent } from "../components/Analytics";
 import { siteConfig, whatsappLink } from "../config/site";
 import { faqItems } from "../data/content";
@@ -247,6 +248,7 @@ export default function Contact() {
         </aside>
       </div>
 
+      <FAQSchema items={faqItems} />
       {/* ── FAQ for SEO + UX ─────────────────────── */}
       <section className="mt-24">
         <h2 className="mb-10 text-center font-serif text-3xl text-ink sm:text-4xl">
