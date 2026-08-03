@@ -114,7 +114,7 @@ export function BlogPost() {
       </header>
       <div className="prose mt-10 text-[15px] leading-relaxed text-ink-soft">
         <p className="text-lg text-ink">{local(post, "excerpt", locale)}</p>
-        {local(post, "body", locale).split("\n\n").map((para, i) => (
+        {(local(post, "body", locale) || "").split("\n\n").filter(Boolean).map((para, i) => (
           <p key={i} className="mt-5">{para.trim()}</p>
         ))}
         <p className="mt-8 border-t border-gold/15 pt-6 text-sm">
