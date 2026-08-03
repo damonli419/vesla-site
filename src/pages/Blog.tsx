@@ -88,8 +88,8 @@ export function BlogPost() {
   return (
     <article className="mx-auto max-w-3xl px-6 py-16 lg:px-8">
       <Seo
-        title={localizedTitle(post, locale)}
-        description={localizedExcerpt(post, locale)}
+        title={local(post, "title", locale)}
+        description={local(post, "excerpt", locale)}
         path={`/blog/${post.slug}`}
       />
       <BlogPostSchema
