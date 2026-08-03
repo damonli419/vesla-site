@@ -183,7 +183,7 @@ export const blogPosts: BlogPost[] = [
   },
 ];
 
-// FAQ entries rendered on the contact page for SEO + UX.
+// FAQ entries rendered on the Contact page for SEO + UX (voice search & AI snippets).
 export const faqItems = [
   {
     q: { en: "Do you produce glass bottles in your own factory?", kr: "유리병을 자체 공장에서 생산하나요?", jp: "ガラスボトルは自社工場で生産していますか？", tw: "玻璃瓶是自有工廠生產的嗎？" },
