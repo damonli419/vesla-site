@@ -1,0 +1,139 @@
+{
+  "products": [
+    {
+      "id": "heart-dropper-30ml",
+      "name": "Heart-Shaped Dropper Bottle",
+      "capacity": "30 ml"
+    },
+    {
+      "id": "flat-square-dropper",
+      "name": "Flat Square Glass Dropper Bottle",
+      "capacity": "30 / 50 ml"
+    },
+    {
+      "id": "square-serum-dropper",
+      "name": "Square Glass Serum Dropper Bottle",
+      "capacity": "30 / 50 / 100 ml"
+    },
+    {
+      "id": "frosted-blue-dropper-30ml",
+      "name": "30ml Frosted Blue Dropper Bottle",
+      "capacity": "30 ml"
+    },
+    {
+      "id": "flat-shoulder-dropper-30ml",
+      "name": "30ml Flat Shoulder Empty Dropper Bottle",
+      "capacity": "30 ml"
+    },
+    {
+      "id": "matte-black-serum-bottle",
+      "name": "Matte Black Glass Serum Bottle",
+      "capacity": "5 / 10 / 15 / 20 / 30 / 50 / 100 ml"
+    },
+    {
+      "id": "black-flat-shoulder-dropper",
+      "name": "Black Flat Shoulder Round Dropper Bottle",
+      "capacity": "20 / 30 / 50 / 60 ml"
+    },
+    {
+      "id": "flat-shoulder-round-dropper-60ml",
+      "name": "Flat Shoulder Round Glass Dropper Bottle",
+      "capacity": "60 ml"
+    },
+    {
+      "id": "matte-black-brown-jar",
+      "name": "30g 50g Matte Black Brown Face Cream Jar",
+      "capacity": "30 / 50 g"
+    },
+    {
+      "id": "frosted-round-jar-woodgrain",
+      "name": "Frosted Round Glass Cream Jar — Woodgrain Lid",
+      "capacity": "5 / 10 / 15 / 30 / 50 / 100 g"
+    },
+    {
+      "id": "brown-woodgrain-jar",
+      "name": "Brown Water Transfer Woodgrain Cream Jar",
+      "capacity": "10 / 15 / 30 / 50 g"
+    },
+    {
+      "id": "gradient-green-cosmetic-set",
+      "name": "Gradient Green Cosmetic Glass Set",
+      "capacity": "40 / 100 / 120 / 150 ml + 30 / 50 / 100 g"
+    },
+    {
+      "id": "gradient-green-pump-set",
+      "name": "Gradient Green Lotion + Cream Deluxe Set",
+      "capacity": "40 / 100 / 120 ml + 50 / 100 g"
+    }
+  ],
+  "blogs": [
+    {
+      "slug": "glass-vs-plastic-cosmetic-packaging",
+      "title": "Glass vs. Plastic in Cosmetic Packaging: A Buyer's Honest Comparison"
+    },
+    {
+      "slug": "how-to-choose-neck-finish",
+      "title": "How to Choose the Right Neck Finish for Your Dropper Bottle"
+    },
+    {
+      "slug": "glass-dropper-bottle-shapes-guide",
+      "title": "5 Glass Dropper Bottle Shapes That Sell Best on Instagram"
+    },
+    {
+      "slug": "frosted-vs-clear-glass-packaging",
+      "title": "Frosted vs Clear Glass Packaging: A 2026 Brand Buyer's Guide"
+    },
+    {
+      "slug": "ship-glass-bottles-china-usa",
+      "title": "How to Ship Glass Bottles from China to the USA Without Breakage"
+    },
+    {
+      "slug": "custom-glass-bottle-cost-breakdown",
+      "title": "How Much Does Custom Glass Bottle Manufacturing Actually Cost?"
+    },
+    {
+      "slug": "find-unique-cosmetic-packaging-supplier",
+      "title": "Where to Find Unique Cosmetic Packaging That Doesn't Look Generic"
+    },
+    {
+      "slug": "avoid-scam-sourcing-packaging-china",
+      "title": "How to Avoid Getting Scammed When Sourcing Cosmetic Packaging from China"
+    },
+    {
+      "slug": "why-serums-come-in-small-bottles",
+      "title": "Why Do Serums Come in Such Small Bottles? (It's Not a Scam)"
+    },
+    {
+      "slug": "sustainable-cosmetic-glass-packaging",
+      "title": "Is Glass Packaging Actually Sustainable? A 2026 Reality Check"
+    },
+    {
+      "slug": "low-moq-packaging-indie-brand-launch",
+      "title": "Low MOQ Cosmetic Packaging for Indie Brand Launches: What's Actually Possible"
+    },
+    {
+      "slug": "small-batch-glass-bottle-200-units",
+      "title": "Small Batch Glass Bottles (200 Units): What's Actually Possible in 2026"
+    },
+    {
+      "slug": "dropper-bottle-vs-airless-pump-packaging",
+      "title": "Dropper Bottle vs Airless Pump: Which Packaging Protects Your Serum Better?"
+    },
+    {
+      "slug": "private-label-skincare-brand-launch-2026",
+      "title": "How to Launch a Private Label Skincare Brand: The Packaging-First Framework"
+    },
+    {
+      "slug": "refillable-reusable-cosmetic-glass-packaging",
+      "title": "Refillable Glass Packaging: Why Your Customers Want to Keep the Bottle"
+    },
+    {
+      "slug": "cosmetic-packaging-design-flaws-solved",
+      "title": "5 Cosmetic Packaging Design Flaws (and How to Fix Them Before Production)"
+    },
+    {
+      "slug": "how-to-spot-fake-cosmetic-glass-packaging",
+      "title": "Amazon Skincare Fakes Are a Billion-Dollar Problem: How Packaging Gives Them Away"
+    }
+  ]
+}

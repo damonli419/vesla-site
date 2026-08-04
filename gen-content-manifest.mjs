@@ -1,4 +1,4 @@
-// Generate a content manifest for AI crawler SSR fallback
+﻿// Generate a content manifest for AI crawler SSR fallback
 import fs from "fs";
 
 const productsSrc = fs.readFileSync("src/data/products.ts", "utf-8");
@@ -58,7 +58,7 @@ const manifest = {
     h1: "Glass Packaging Blog",
     body: blogs.map((b) => `- ${b.title}: ${b.excerpt}`).join("\n"),
   },
-  blogs_by_slug: {} as Record<string, { title: string; body: string }>,
+  blogs_by_slug: {},
 };
 
 for (const b of blogs) {
