@@ -69,7 +69,7 @@ export default function Privacy() {
   const { locale } = useUI();
   const c = copy[locale];
   const dpo = siteConfig.email;
-  const lastUpdated = "2025-11-01";
+  const lastUpdated = "2026-08-01";
 
   return (
     <div className="mx-auto max-w-3xl px-6 py-16 lg:px-8">
