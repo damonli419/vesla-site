@@ -43,34 +43,10 @@ export default function LazyImage({ src, alt, className = "", width, height, eag
     return () => io.disconnect();
   }, [eager]);
 
-  const webpSrc = src.match(/\.(jpg|jpeg|png)(\?|$)/i)
-    ? src.replace(/\.(jpg|jpeg|png)/i, ".webp")
-    : null;
-  const imgSrc = loaded || eager ? src : undefined;
-
-  if (webpSrc && imgSrc) {
-    return (
-      <picture ref={ref}>
-        <source srcSet={webpSrc} type="image/webp" />
-        <img
-          src={imgSrc}
-          data-src={src}
-          alt={alt}
-          loading={eager ? "eager" : "lazy"}
-          decoding="async"
-          width={width}
-          height={height}
-          onLoad={() => setLoaded(true)}
-          className={`bg-cream-dark/40 transition-opacity duration-700 opacity-100 ${className}`}
-        />
-      </picture>
-    );
-  }
-
   return (
     <img
       ref={ref}
-      src={imgSrc}
+      src={loaded || eager ? src : undefined}
       data-src={src}
       alt={alt}
       loading={eager ? "eager" : "lazy"}
