@@ -117,7 +117,41 @@ export function BlogPost() {
         {(local(post, "body", locale) || "").split("\n\n").filter(Boolean).map((para, i) => (
           <p key={i} className="mt-5">{para.trim()}</p>
         ))}
-        <p className="mt-8 border-t border-gold/15 pt-6 text-sm">
+        <div className="mt-8 border-t border-gold/15 pt-6">
+          <p className="text-xs font-semibold uppercase tracking-widest text-gold-dark mb-3">
+            {locale === "en" ? "Explore related products" : locale === "kr" ? "관련 제품 살펴보기" : locale === "jp" ? "関連製品を見る" : "探索相關產品"}
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {post.category === "guide" && (
+              <>
+                <a href="/products?category=dropper" className="rounded-full border border-gold/20 px-3 py-1 text-xs text-gold-dark hover:bg-gold/10 transition">Dropper Bottles</a>
+                <a href="/products?category=jar" className="rounded-full border border-gold/20 px-3 py-1 text-xs text-gold-dark hover:bg-gold/10 transition">Cream Jars</a>
+              </>
+            )}
+            {post.category === "material" && (
+              <>
+                <a href="/products?category=dropper" className="rounded-full border border-gold/20 px-3 py-1 text-xs text-gold-dark hover:bg-gold/10 transition">Dropper Bottles</a>
+                <a href="/products/matte-black-serum-bottle" className="rounded-full border border-gold/20 px-3 py-1 text-xs text-gold-dark hover:bg-gold/10 transition">Matte Black Serum</a>
+              </>
+            )}
+            {post.category === "logistics" && (
+              <>
+                <a href="/products" className="rounded-full border border-gold/20 px-3 py-1 text-xs text-gold-dark hover:bg-gold/10 transition">All Products</a>
+                <a href="/about" className="rounded-full border border-gold/20 px-3 py-1 text-xs text-gold-dark hover:bg-gold/10 transition">Factory Tour</a>
+              </>
+            )}
+            {post.category === "trend" && (
+              <>
+                <a href="/products?category=vial" className="rounded-full border border-gold/20 px-3 py-1 text-xs text-gold-dark hover:bg-gold/10 transition">Glass Vials</a>
+                <a href="/products/frosted-round-jar-woodgrain" className="rounded-full border border-gold/20 px-3 py-1 text-xs text-gold-dark hover:bg-gold/10 transition">Woodgrain Jars</a>
+              </>
+            )}
+            <a href="/products" className="rounded-full border border-gold/20 px-3 py-1 text-xs text-gold-dark hover:bg-gold/10 transition">
+              {locale === "en" ? "All Products →" : locale === "kr" ? "모든 제품 →" : locale === "jp" ? "全製品 →" : "所有產品 →"}
+            </a>
+          </div>
+        </div>
+        <p className="mt-6 text-sm">
           {locale === "en" && "This guide is part of Vesla's ongoing series on cosmetic glass packaging. For project-specific questions, "}
           {locale === "kr" && "이 가이드는 Vesla의 화장품 유리 포장 시리즈의 일부입니다. 프로젝트별 문의는 "}
           {locale === "jp" && "本記事は Vesla の化粧品ガラス包装シリーズの一部です。プロジェクト別の質問は "}
