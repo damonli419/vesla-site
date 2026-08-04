@@ -31,6 +31,11 @@ export default function Seo({ title, description, path = "/", keywords }: SeoPro
       <meta name="twitter:image" content="https://www.veslapack.com/og-image.jpg" />
       <meta name="pinterest-rich-pin" content="true" />
       <link rel="canonical" href={`https://www.veslapack.com${path}`} />
+      <link rel="alternate" hreflang="en" href={`https://www.veslapack.com${path}`} />
+      <link rel="alternate" hreflang="ko" href={`https://www.veslapack.com${path}`} />
+      <link rel="alternate" hreflang="ja" href={`https://www.veslapack.com${path}`} />
+      <link rel="alternate" hreflang="zh-Hant" href={`https://www.veslapack.com${path}`} />
+      <link rel="alternate" hreflang="x-default" href={`https://www.veslapack.com${path}`} />
     </Helmet>
   );
 }
