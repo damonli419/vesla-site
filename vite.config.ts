@@ -19,8 +19,15 @@ function copyPublicFiles(): Plugin {
       for (const f of files) {
         const src = path.join(publicDir, f);
         const dest = path.join(distDir, f);
-        if (fs.existsSync(src)) {
-          fs.copyFileSync(src, dest);
+        if (fs.existsSync(src)) fs.copyFileSync(src, dest);
+      }
+      // Copy all images including WebP variants
+      const imgDir = path.join(publicDir, "images");
+      if (fs.existsSync(imgDir)) {
+        const destImg = path.join(distDir, "images");
+        if (!fs.existsSync(destImg)) fs.mkdirSync(destImg, { recursive: true });
+        for (const f of fs.readdirSync(imgDir)) {
+          fs.copyFileSync(path.join(imgDir, f), path.join(destImg, f));
         }
       }
     },
