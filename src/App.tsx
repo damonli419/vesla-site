@@ -8,6 +8,7 @@ import SampleRequestModal from "./components/SampleRequestModal";
 import FloatingWhatsapp from "./components/FloatingWhatsapp";
 import { UIProvider } from "./i18n/UIContext";
 import Home from "./pages/Home";
+import DropperBottles from "./pages/DropperBottles";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Process from "./pages/Process";
@@ -29,6 +30,7 @@ export default function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/products" element={<Products />} />
+                <Route path="/dropper-bottles" element={<DropperBottles />} />
                 <Route path="/products/:id" element={<ProductDetail />} />
                 <Route path="/process" element={<Process />} />
                 <Route path="/about" element={<About />} />
