@@ -240,6 +240,40 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Virtual Factory Tour (360°) ───────────────── */}
+      <section className="bg-ink py-20">
+        <div className="mx-auto max-w-6xl px-6 lg:px-8">
+          <div className="mb-10 text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gold-light">360° Virtual Tour</p>
+            <h2 className="mt-3 font-serif text-3xl font-medium text-white sm:text-4xl">
+              Walk Through Our Factory
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/60">
+              See our glass forming lines and decoration studios up close. Drag to look around — click the
+              arrows to switch between scenes.
+            </p>
+          </div>
+          <div className="overflow-hidden rounded-3xl ring-1 ring-white/10 shadow-2xl">
+            <iframe
+              src="https://preview-lyj.aliyuncs.com/preview/b834db813e104d698bd00acb90b72a8a?lang=en"
+              title="Vesla Virtual Factory Tour 360"
+              className="h-[420px] w-full sm:h-[520px]"
+              loading="lazy"
+              allow="fullscreen; gyroscope; accelerometer"
+              allowFullScreen
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <p className="mt-6 text-center text-xs text-white/40">
+            Can't wait?{" "}
+            <Link to="/contact" className="text-gold-light underline hover:text-gold">
+              Book a live video factory tour
+            </Link>{" "}
+            with our engineers.
+          </p>
+        </div>
+      </section>
+
       {/* ── Categories ───────────────────────────────── */}
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
         <div className="mb-16 text-center">
