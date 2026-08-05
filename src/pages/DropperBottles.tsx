@@ -2,38 +2,38 @@ import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
 import { products, categoryLabels } from "../data/products";
 import { useUI } from "../i18n/UIContext";
-import { FAQPageSchema } from "../components/Schema";
+import { FAQSchema } from "../components/Schema";
 
 const dropperProducts = products.filter((p) => p.category === "dropper");
 
 const faqItems = [
   {
-    q: "What is the minimum order quantity (MOQ) for custom dropper bottles?",
-    a: "Our MOQ is 5,000 pcs for stock molds with standard finishes (clear, frosted, amber). Custom colors, silk-screen logos and hot-stamping are available at the same 5,000 pcs MOQ. Private molds start from 10,000 pcs.",
+    q: { en: "What is the minimum order quantity (MOQ) for custom dropper bottles?" },
+    a: { en: "Our MOQ is 5,000 pcs for stock molds with standard finishes (clear, frosted, amber). Custom colors, silk-screen logos and hot-stamping are available at the same 5,000 pcs MOQ. Private molds start from 10,000 pcs." },
   },
   {
-    q: "How much do custom glass dropper bottles cost?",
-    a: "A standard 30ml frosted dropper bottle with gold collar and pipette costs $0.38-0.65 per unit at 5,000 pcs, depending on decoration complexity. Silk-screen setup is $80-120 per color per SKU. Hot-stamping dies run $150-300 per design.",
+    q: { en: "How much do custom glass dropper bottles cost?" },
+    a: { en: "A standard 30ml frosted dropper bottle with gold collar and pipette costs $0.38-0.65 per unit at 5,000 pcs, depending on decoration complexity. Silk-screen setup is $80-120 per color per SKU. Hot-stamping dies run $150-300 per design." },
   },
   {
-    q: "How fast can I get dropper bottle samples?",
-    a: "We ship a fully decorated sample kit within 5-7 business days via DHL Express. Rush service (3 days) is available for time-sensitive brand pitches. The kit includes MOQ pricing and decoration samples.",
+    q: { en: "How fast can I get dropper bottle samples?" },
+    a: { en: "We ship a fully decorated sample kit within 5-7 business days via DHL Express. Rush service (3 days) is available for time-sensitive brand pitches. The kit includes MOQ pricing and decoration samples." },
   },
   {
-    q: "Can you do custom colors and branding on dropper bottles?",
-    a: "Yes. We offer custom Pantone color frosting, spray coating (solid + gradient), silk-screen printing, hot stamping, and electroplated collar finishes. All decoration is handled in-house for full color control.",
+    q: { en: "Can you do custom colors and branding on dropper bottles?" },
+    a: { en: "Yes. We offer custom Pantone color frosting, spray coating (solid + gradient), silk-screen printing, hot stamping, and electroplated collar finishes. All decoration is handled in-house for full color control." },
   },
   {
-    q: "What sizes of dropper bottles are available?",
-    a: "We stock 5ml, 10ml, 15ml, 20ml, 30ml, 50ml, 60ml and 100ml dropper bottles in clear, frosted, amber, violet and matte black glass. All sizes support custom decoration.",
+    q: { en: "What sizes of dropper bottles are available?" },
+    a: { en: "We stock 5ml, 10ml, 15ml, 20ml, 30ml, 50ml, 60ml and 100ml dropper bottles in clear, frosted, amber, violet and matte black glass. All sizes support custom decoration." },
   },
   {
-    q: "Do you ship dropper bottles to the USA and Europe?",
-    a: "Yes. We offer EXW, FOB and DDP shipping. DDP door-to-door to the USA takes 20-26 days (sea freight through Los Angeles/Long Beach). EU deliveries route through Rotterdam or Hamburg.",
+    q: { en: "Do you ship dropper bottles to the USA and Europe?" },
+    a: { en: "Yes. We offer EXW, FOB and DDP shipping. DDP door-to-door to the USA takes 20-26 days (sea freight through Los Angeles/Long Beach). EU deliveries route through Rotterdam or Hamburg." },
   },
   {
-    q: "Are your dropper bottles FDA and EU compliant?",
-    a: "Yes. Type III soda-lime glass complies with FDA 21 CFR, EU 1935/2004 and EC 1223/2009. ISO 17025-accredited test reports and REACH/RoHS declarations are included with every shipment.",
+    q: { en: "Are your dropper bottles FDA and EU compliant?" },
+    a: { en: "Yes. Type III soda-lime glass complies with FDA 21 CFR, EU 1935/2004 and EC 1223/2009. ISO 17025-accredited test reports and REACH/RoHS declarations are included with every shipment." },
   },
 ];
 
@@ -48,7 +48,7 @@ export default function DropperBottles() {
         description="Dropper bottles suppliers & manufacturers — custom glass serum dropper bottles from 5ml to 100ml. Low MOQ 5,000 pcs, free samples, in-house decoration, DDP to EU & USA. ISO 9001 certified."
         path="/dropper-bottles"
       />
-      <FAQPageSchema items={faqItems.map((i) => ({ q: i.q, a: i.a }))} />
+      <FAQSchema items={faqItems} />
 
       {/* Hero */}
       <section className="bg-ink py-20 text-center">
@@ -125,9 +125,9 @@ export default function DropperBottles() {
         <h2 className="mb-8 font-serif text-2xl text-ink sm:text-3xl">Dropper Bottle FAQ</h2>
         <div className="space-y-4">
           {faqItems.map((f) => (
-            <details key={f.q} className="group rounded-2xl bg-white p-6 ring-1 ring-gold/15">
-              <summary className="cursor-pointer text-sm font-semibold text-ink">{f.q}</summary>
-              <p className="mt-3 text-sm leading-relaxed text-ink-soft">{f.a}</p>
+            <details key={f.q.en} className="group rounded-2xl bg-white p-6 ring-1 ring-gold/15">
+              <summary className="cursor-pointer text-sm font-semibold text-ink">{f.q.en}</summary>
+              <p className="mt-3 text-sm leading-relaxed text-ink-soft">{f.a.en}</p>
             </details>
           ))}
         </div>
