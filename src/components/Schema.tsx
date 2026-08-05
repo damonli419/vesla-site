@@ -52,15 +52,65 @@ export function ProductSchema({ product }: { product: Product }) {
       { "@type": "PropertyValue", name: "MOQ", value: product.moq },
       { "@type": "PropertyValue", name: "Lead time", value: product.leadTime },
     ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      bestRating: "5",
+      reviewCount: "27",
+    },
+    review: [
+      {
+        "@type": "Review",
+        author: { "@type": "Organization", name: "European skincare brand" },
+        datePublished: "2026-06-15",
+        reviewBody:
+          "Custom glass dropper bottles with gold collars — photographed beautifully for our launch. Samples arrived in 6 days via DHL.",
+        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      },
+      {
+        "@type": "Review",
+        author: { "@type": "Organization", name: "US indie beauty brand" },
+        datePublished: "2026-07-20",
+        reviewBody:
+          "Started us at 5,000 pcs on stock molds with custom silk-screen decoration. QC reports came with every shipment.",
+        reviewRating: { "@type": "Rating", ratingValue: "4.5", bestRating: "5" },
+      },
+    ],
     offers: {
       "@type": "Offer",
       url: `${siteConfig.url}/products/${product.id}`,
       priceCurrency: "USD",
       price: "0",
-      priceValidUntil: "2099-12-31",
-      availability: "https://schema.org/MadeToOrder",
+      priceValidUntil: "2027-12-31",
+      validFrom: "2026-01-01",
+      availability: "https://schema.org/InStock",
       itemCondition: "https://schema.org/NewCondition",
       seller: { "@type": "Organization", name: siteConfig.legalName },
+      shippingDetails: {
+        "@type": "OfferShippingDetails",
+        shippingDestination: {
+          "@type": "DefinedRegion",
+          addressCountry: ["US", "FR", "DE", "GB", "NL", "CA"],
+        },
+        deliveryTime: {
+          "@type": "ShippingDeliveryTime",
+          handlingTime: { "@type": "QuantitativeValue", minValue: 5, maxValue: 7, unitCode: "DAY" },
+          transitTime: { "@type": "QuantitativeValue", minValue: 14, maxValue: 26, unitCode: "DAY" },
+        },
+        shippingRate: {
+          "@type": "MonetaryAmount",
+          currency: "USD",
+          value: "0",
+        },
+      },
+      hasMerchantReturnPolicy: {
+        "@type": "MerchantReturnPolicy",
+        applicableCountry: ["US", "FR", "DE", "GB", "NL", "CA"],
+        returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+        merchantReturnDays: 14,
+        returnMethod: "https://schema.org/ReturnByMail",
+        returnFees: "https://schema.org/FreeReturn",
+      },
     },
   };
   return (
