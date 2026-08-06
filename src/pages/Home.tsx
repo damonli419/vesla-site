@@ -175,18 +175,28 @@ export default function Home() {
   const isRtl = false;
   const videoEl = useRef<HTMLVideoElement | null>(null);
 
-  // Defer hero video download until after page load + 4s (LCP-friendly).
+  // Defer hero video until page is fully idle (12s) or first user interaction —
+  // keeps the 11MB video out of the critical path (LCP/payload).
   useEffect(() => {
     let cancelled = false;
+    let started = false;
     const startVideo = () => {
-      if (cancelled || !videoEl.current) return;
+      if (started || cancelled || !videoEl.current) return;
+      started = true;
       videoEl.current.src = "/factory-hero.mp4";
       videoEl.current.play().catch(() => {});
     };
-    const t = window.setTimeout(startVideo, 4000);
+    const t = window.setTimeout(startVideo, 12000);
+    const kick = () => startVideo();
+    window.addEventListener("scroll", kick, { once: true, passive: true });
+    window.addEventListener("touchstart", kick, { once: true, passive: true });
+    window.addEventListener("click", kick, { once: true });
     return () => {
       cancelled = true;
       window.clearTimeout(t);
+      window.removeEventListener("scroll", kick);
+      window.removeEventListener("touchstart", kick);
+      window.removeEventListener("click", kick);
     };
   }, []);
 
