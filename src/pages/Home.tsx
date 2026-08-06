@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useUI } from "../i18n/UIContext";
 import LazyImage from "../components/LazyImage";
@@ -174,6 +174,7 @@ export default function Home() {
   const cta = ctaCopy[locale];
   const isRtl = false;
   const videoEl = useRef<HTMLVideoElement | null>(null);
+  const [panoOpen, setPanoOpen] = useState(false);
 
   // Defer hero video until page is fully idle (12s) or first user interaction —
   // keeps the 11MB video out of the critical path (LCP/payload).
@@ -279,15 +280,42 @@ export default function Home() {
             </p>
           </div>
           <div className="overflow-hidden rounded-3xl ring-1 ring-white/10 shadow-2xl">
-            <iframe
-              src="https://preview-lyj.aliyuncs.com/preview/b834db813e104d698bd00acb90b72a8a?lang=en"
-              title="Vesla Virtual Factory Tour 360"
-              className="h-[420px] w-full sm:h-[520px]"
-              loading="lazy"
-              allow="fullscreen; gyroscope; accelerometer"
-              allowFullScreen
-              referrerPolicy="no-referrer"
-            />
+            {panoOpen ? (
+              <iframe
+                src="https://preview-lyj.aliyuncs.com/preview/b834db813e104d698bd00acb90b72a8a?lang=en"
+                title="Vesla Virtual Factory Tour 360"
+                className="h-[420px] w-full sm:h-[520px]"
+                allow="fullscreen; gyroscope; accelerometer"
+                allowFullScreen
+                referrerPolicy="no-referrer"
+              />
+            ) : (
+              <button
+                type="button"
+                onClick={() => setPanoOpen(true)}
+                className="group relative block h-[420px] w-full cursor-pointer sm:h-[520px]"
+                aria-label="Enter 360 virtual factory tour"
+              >
+                <img
+                  src="/images/hero-poster.jpg"
+                  alt="Vesla factory virtual tour preview"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+                <span className="absolute inset-0 flex items-center justify-center bg-black/40 transition group-hover:bg-black/30">
+                  <span className="flex flex-col items-center gap-3 rounded-2xl border border-white/30 bg-black/50 px-8 py-5 backdrop-blur-sm">
+                    <svg className="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <circle cx="12" cy="12" r="9" />
+                      <path d="M12 7v10M7 12h10" strokeLinecap="round" />
+                    </svg>
+                    <span className="text-sm font-semibold text-white">
+                      Enter 360° Factory Tour
+                    </span>
+                    <span className="text-xs text-white/70">Drag to look around</span>
+                  </span>
+                </span>
+              </button>
+            )}
           </div>
           <p className="mt-6 text-center text-xs text-white/40">
             Can't wait?{" "}
