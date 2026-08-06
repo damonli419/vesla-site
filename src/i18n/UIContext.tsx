@@ -228,31 +228,26 @@ const UICtx = createContext<Ctx | null>(null);
 const STORAGE_KEY = "yt-locale";
 
 export function UIProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(() => {
-    if (typeof window === "undefined") return "en";
-    const stored = localStorage.getItem(STORAGE_KEY) as Locale | null;
-    if (stored && stored in translations) return stored;
-    return "en";
-  });
+  // English-only site. Locale is locked to "en" (multilingual data is retained
+  // but never switched in the UI).
+  const [locale] = useState<Locale>("en");
 
-  const setLocale = (l: Locale) => {
-    setLocaleState(l);
-    localStorage.setItem(STORAGE_KEY, l);
-    document.documentElement.lang = localeMeta[l].htmlLang;
+  const setLocale = (_l: Locale) => {
+    // No-op — English only.
   };
 
   useEffect(() => {
-    document.documentElement.lang = localeMeta[locale].htmlLang;
-  }, [locale]);
+    document.documentElement.lang = "en";
+  }, []);
 
   const value = useMemo<Ctx>(
     () => ({
-      locale,
+      locale: "en",
       setLocale,
-      t: (key: string) => translations[locale][key] ?? translations.en[key] ?? key,
-      catLabel: (c: Category) => categoryLabels[c][locale] ?? categoryLabels[c].en,
+      t: (key: string) => translations.en[key] ?? key,
+      catLabel: (c: Category) => categoryLabels[c].en ?? c,
     }),
-    [locale]
+    []
   );
 
   return <UICtx.Provider value={value}>{children}</UICtx.Provider>;

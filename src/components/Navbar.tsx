@@ -1,7 +1,7 @@
 ﻿import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useUI } from "../i18n/UIContext";
-import LocaleSwitcher from "./LocaleSwitcher";
+
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -39,7 +39,6 @@ export default function Navbar() {
               {l.label}
             </NavLink>
           ))}
-          <LocaleSwitcher />
           <Link
             to="/contact"
             className="rounded-full bg-gold px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-gold-dark"
@@ -49,7 +48,6 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3 lg:hidden">
-          <LocaleSwitcher />
           <button
             className="flex h-10 w-10 flex-col items-center justify-center gap-1.5"
             onClick={() => setOpen(!open)}
