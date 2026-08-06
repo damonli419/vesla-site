@@ -129,6 +129,13 @@ export default {
     }
 
     // Default: serve SPA
-    return env.ASSETS.fetch(request);
+    const resp = await env.ASSETS.fetch(request);
+    // Missing static assets must return a real 404, not the SPA fallback HTML —
+    // otherwise browsers try to decode index.html as an image/font/script.
+    const ctype = resp.headers.get("content-type") || "";
+    if (/\.(js|css|png|jpg|jpeg|webp|avif|svg|ico|woff2?|ttf|mp4|xml|txt)$/i.test(path) && ctype.includes("text/html")) {
+      return new Response("Not Found", { status: 404, headers: { "Content-Type": "text/plain" } });
+    }
+    return resp;
   },
 };
