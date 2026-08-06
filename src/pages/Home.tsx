@@ -9,7 +9,7 @@ import PdfGuideBanner from "../components/PdfGuideBanner";
 const categories = [
   {
     key: "dropper",
-    image: "/images/cat-dropper.jpg",
+    image: "/images/cat-dropper.webp",
     blurb: "Serum & facial oil droppers with 20+ cap and pipette combinations.",
   },
   {
@@ -24,7 +24,7 @@ const categories = [
   },
   {
     key: "oil",
-    image: "/images/cat-oil.jpg",
+    image: "/images/cat-oil.webp",
     blurb: "Euro rounds, roll-ons and vials for aromatherapy & wellness lines.",
   },
   {
@@ -154,7 +154,7 @@ export default function Home() {
           playsInline
           preload="none"
           fetchpriority="high"
-          poster="/images/hero-poster.jpg"
+          poster="/images/hero-poster.webp"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/50 to-ink/70" />
 
@@ -229,7 +229,7 @@ export default function Home() {
                 aria-label="Enter 360 virtual factory tour"
               >
                 <img
-                  src="/images/hero-poster.jpg"
+                  src="/images/hero-poster.webp"
                   alt="Vesla factory virtual tour preview"
                   width={800}
                   height={520}
