@@ -5,34 +5,11 @@ import { trackEvent } from "./Analytics";
 import { siteConfig } from "../config/site";
 
 const copy = {
-  en: {
-    badge: "Free for new brands",
-    title: "Get a Free Sample Kit",
-    body: "We'll ship 3–5 fully decorated sample bottles (with your logo) within 5–7 days. You only cover DHL express.",
-    cta: "Request Sample Kit",
-    skip: "Not now",
-  },
-  kr: {
-    badge: "신규 브랜드 무료",
-    title: "무료 샘플 키트를 받아보세요",
-    body: "5–7일 내에 로고까지 적용된 풀 데코 샘플 보틀 3–5개를 발송해 드립니다. DHL 익스프레스 비용만 부담해 주세요.",
-    cta: "샘플 키트 신청",
-    skip: "다음에",
-  },
-  jp: {
-    badge: "新規ブランド無料",
-    title: "無料サンプルキットを進呈",
-    body: "貴社ロゴ入りフル装飾サンプル3〜5点を5〜7日でお届けします。DHL速達送料のみご負担ください。",
-    cta: "サンプルキットを申請",
-    skip: "あとで",
-  },
-  tw: {
-    badge: "新品牌免費",
-    title: "領取免費樣品組",
-    body: "5–7 天內寄出 3–5 支完整表面處理(可加上您的 logo)的樣品瓶,您只需負擔 DHL 速遞費用。",
-    cta: "申請樣品組",
-    skip: "稍後再說",
-  },
+  badge: "Free for new brands",
+  title: "Get a Free Sample Kit",
+  body: "We'll ship 3–5 fully decorated sample bottles (with your logo) within 5–7 days. You only cover DHL express.",
+  cta: "Request Sample Kit",
+  skip: "Not now",
 };
 
 const DISMISS_KEY = "yt-sample-dismissed";
@@ -75,7 +52,7 @@ export default function SampleRequestModal() {
   };
 
   if (!open) return null;
-  const c = copy[locale];
+  const c = copy;
 
   return (
     <div className="fixed inset-0 z-50 flex items-end justify-center bg-ink/60 p-4 backdrop-blur-sm sm:items-center">

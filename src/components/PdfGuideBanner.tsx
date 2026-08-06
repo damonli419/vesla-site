@@ -3,43 +3,17 @@ import { useUI } from "../i18n/UIContext";
 import { trackEvent } from "./Analytics";
 
 const copy = {
-  en: {
-    eyebrow: "Free PDF · 24 pages",
-    title: "The Indie Beauty Brand's Guide to Glass Packaging",
-    body: "A printable walkthrough: neck-finish diagrams, capacity vs. bottle weight, decoration cost matrix, and a 1-page supplier-comparison checklist.",
-    cta: "Download Free Guide",
-    email: "Your work email",
-    sent: "Sent! Check your inbox in 2 minutes.",
-  },
-  kr: {
-    eyebrow: "무료 PDF · 24쪽",
-    title: "인디 뷰티 브랜드의 유리 포장 가이드",
-    body: "인쇄 가능한 워크스루: 넥 파이니시 다이어그램, 용량 vs 보틀 무게, 데코레이션 비용 매트릭스, 1쪽 공급사 비교 체크리스트.",
-    cta: "무료 가이드 다운로드",
-    email: "업무용 이메일",
-    sent: "전송 완료! 2분 이내에 받은편지함을 확인해 주세요.",
-  },
-  jp: {
-    eyebrow: "無料PDF · 24ページ",
-    title: "インディービューティーブランドのためのガラス包装ガイド",
-    body: "印刷可能なワークスルー：ネック仕上げ図、容量対ボトル重量、デコレーションコストマトリクス、1ページのサプライヤー比較チェックリスト。",
-    cta: "無料ガイドをダウンロード",
-    email: "勤務先メール",
-    sent: "送信完了！2分以内に受信箱をご確認ください。",
-  },
-  tw: {
-    eyebrow: "免費 PDF · 24 頁",
-    title: "獨立美妝品牌的玻璃包裝指南",
-    body: "可列印的完整攻略:瓶口規格圖、容量 vs 瓶重對照、裝飾成本矩陣,以及 1 頁供應商比較檢查表。",
-    cta: "下載免費指南",
-    email: "您的公司 email",
-    sent: "已寄出!請於 2 分鐘內查收信箱。",
-  },
+  eyebrow: "Free PDF · 24 pages",
+  title: "The Indie Beauty Brand's Guide to Glass Packaging",
+  body: "A printable walkthrough: neck-finish diagrams, capacity vs. bottle weight, decoration cost matrix, and a 1-page supplier-comparison checklist.",
+  cta: "Download Free Guide",
+  email: "Your work email",
+  sent: "Sent! Check your inbox in 2 minutes.",
 };
 
 export default function PdfGuideBanner() {
   const { locale } = useUI();
-  const c = copy[locale];
+  const c = copy;
   const [email, setEmail] = useState("");
   const [state, setState] = useState<"idle" | "loading" | "sent">("idle");
 
