@@ -123,7 +123,7 @@ export default function About() {
     <div>
       <Seo
         title="About"
-        description="Inside Vesla — 16 years, 280 people, 60M annual capacity. ISO 9001, FDA & EU compliant. Factory tours welcome."
+        description="Inside Vesla — 13+ years, 280 people, 60M annual capacity. ISO 9001, FDA & EU compliant. Factory tours welcome."
         path="/about"
       />
 

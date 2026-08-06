@@ -10,7 +10,7 @@ const processCopy = {
     titleA: "From Idea to ",
     titleB: "Finished Bottle",
     intro:
-      "A clear, four-step process refined over 16 years and hundreds of beauty brand launches. You always know what happens next — and when.",
+      "A clear, five-step process refined over 13+ years and hundreds of beauty brand launches. You always know what happens next — and when.",
     timeline: "Deadline CTA",
     timelineTitle: "Have a Deadline in Mind?",
     timelineBody:
@@ -69,7 +69,7 @@ export default function Process() {
     <div>
       <Seo
         title="Custom Process"
-        description="Vesla's four-step custom packaging process: consultation, sampling, production and delivery. ISO 9001, AQL inspection, EXW/FOB/DDP."
+        description="Vesla's five-step custom packaging process: requirement, design & quote, sampling, production and global shipping. ISO 9001, AQL inspection, EXW/FOB/DDP."
         path="/process"
       />
 
@@ -87,10 +87,11 @@ export default function Process() {
           <div className="absolute bottom-8 left-8 top-8 hidden w-px bg-gold/30 md:block" />
           <div className="space-y-10">
             {[
-              { num: "01", title: "Consultation", duration: "1–3 days", icon: "✉", text: "Share your capacity, finish, closure and quantity requirements. Our packaging engineers recommend stock molds or a private mold plan, with transparent pricing and a decoration feasibility review.", points: ["Free spec consultation", "Stock mold library of 300+ shapes", "Quotation within 24 hours"] },
-              { num: "02", title: "Sampling", duration: "5–10 days", icon: "◈", text: "We produce physical samples with your chosen decoration — frosting, spray color, silk-screen artwork or hot stamping — and ship them via express for your approval before any bulk production begins.", points: ["Pantone color matching", "Artwork proofs before sampling", "Compatibility test with your fillings"] },
-              { num: "03", title: "Production", duration: "20–35 days", icon: "⚙", text: "Bulk manufacturing under ISO 9001 with inline QC at forming, annealing, decoration and assembly. AQL 1.5/2.5/4.0 inspection standard and third-party inspection (SGS/BV) welcomed.", points: ["ISO 9001 certified factory", "AQL sampling inspection", "Weekly photo & video updates"] },
-              { num: "04", title: "Delivery", duration: "By sea or air", icon: "⛴", text: "Drop-test-certified export cartons with foam or divider protection. We handle booking, customs documents and can deliver EXW, FOB Shanghai/Qingdao, or DDP to your warehouse in the EU or USA.", points: ["EXW / FOB / DDP terms", "Drop-test certified packaging", "Breakage guarantee on sea freight"] },
+              { num: "01", title: "Send Requirement", duration: "1–2 days", icon: "✉", text: "Share your bottle type, capacity, target quantity and decoration needs. Our engineers recommend stock molds or a private mold plan with transparent pricing and a decoration feasibility review.", points: ["Free spec consultation", "Stock mold library of 300+ shapes", "Quotation within 24 hours"] },
+              { num: "02", title: "Design & Quote", duration: "24 hours", icon: "◈", text: "We confirm the design — shape, neck finish, surface finish and closures — and send a detailed quotation. Pantone color matching and artwork proofs are prepared before sampling.", points: ["Pantone color matching", "3D model on request", "Detailed itemized quote"] },
+              { num: "03", title: "Sample Approval", duration: "5–10 days", icon: "❖", text: "Physical samples with your chosen decoration — frosting, spray color, silk-screen artwork or hot stamping — are shipped by express for your approval before any bulk production begins.", points: ["Fully decorated samples", "Express shipping", "Compatibility test with your fillings"] },
+              { num: "04", title: "Mass Production", duration: "7–15 days (stock)", icon: "⚙", text: "Bulk manufacturing under ISO 9001 with inline QC at forming, annealing, decoration and assembly. AQL 1.5/2.5/4.0 inspection standard and third-party inspection (SGS/BV) welcomed.", points: ["ISO 9001 certified factory", "AQL sampling inspection", "Weekly photo & video updates"] },
+              { num: "05", title: "Global Shipping", duration: "By sea or air", icon: "⛴", text: "Drop-test-certified export cartons with foam or divider protection. We handle booking, customs documents and can deliver EXW, FOB Shanghai/Qingdao, or DDP to your warehouse in the EU or USA.", points: ["EXW / FOB / DDP terms", "Drop-test certified packaging", "Breakage guarantee on sea freight"] },
             ].map((s) => (
               <div key={s.num} className="relative md:pl-24">
                 <div className="absolute left-0 top-0 hidden h-16 w-16 items-center justify-center rounded-full bg-gold font-serif text-xl text-white shadow-md md:flex">

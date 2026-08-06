@@ -1,44 +1,92 @@
 ﻿import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { useUI } from "../i18n/UIContext";
 import LazyImage from "../components/LazyImage";
 import Seo from "../components/Seo";
-import { OrganizationSchema, WebsiteSchema } from "../components/Schema";
+import { OrganizationSchema, WebsiteSchema, FAQSchema } from "../components/Schema";
 import PdfGuideBanner from "../components/PdfGuideBanner";
+import { faqItems } from "../data/content";
 
-const categories = [
+const featured = [
   {
-    key: "dropper",
-    image: "/images/cat-dropper.webp",
-    blurb: "Serum & facial oil droppers with 20+ cap and pipette combinations.",
+    key: "essential-oil",
+    title: "Essential Oil Bottles",
+    image: "https://sc02.alicdn.com/kf/H231a0895f6c347b6a26f12d523d9ac76q.jpg",
+    applications: "Aromatherapy, carrier oil & wellness brands",
+    advantage: "UV-protective amber glass · 5-100ml · euro round & shoulder styles",
+    customization: "Custom logos, color coating & cap options",
+    link: "/products/amber-serum-vial-dropper",
   },
   {
-    key: "vial",
+    key: "perfume",
+    title: "Perfume Bottles",
+    image: "https://sc02.alicdn.com/kf/Hf8141c781bab4805ad28c6ac4bc99918H.jpg",
+    applications: "Perfume, cologne & fragrance startups",
+    advantage: "Elegant flat-shoulder & classic silhouettes with premium closures",
+    customization: "Gradient coating, silk screen & hot stamping",
+    link: "/products/flat-shoulder-dropper-30ml",
+  },
+  {
+    key: "roller",
+    title: "Roller Bottles",
+    image: "/images/p-rollon.jpg",
+    applications: "Roll-on essential oil blends & wellness serums",
+    advantage: "Leak-proof roll-on heads · 5-30ml · amber & violet glass",
+    customization: "Custom ball sizes, colors & branding",
+    link: "/products?category=oil",
+  },
+  {
+    key: "sample",
+    title: "Sample Bottles",
     image: "https://sc02.alicdn.com/kf/H27e01174162a48ce8efb4aa97bdb82c07.jpg",
-    blurb: "Roll-on vials, sample tubes and injection glass vials for serums, perfumes and wellness.",
+    applications: "Sampling, travel size & discovery sets",
+    advantage: "2-10ml vials & tubes · bulk or gift-boxed",
+    customization: "Branded caps, printing & display packaging",
+    link: "/products?category=vial",
+  },
+] as const;
+
+const factorySteps = [
+  { title: "Production Line", desc: "6 IS forming machines run 24/7 with 60M units annual capacity.", img: "https://sc02.alicdn.com/kf/H3ed4c7e33e7444e0b8776874383d6c0d2.jpg" },
+  { title: "Glass Inspection", desc: "AQL sampling, drop tests & dimensional checks before any bottle ships.", img: "https://sc02.alicdn.com/kf/A3fa0a4dee6c14803924e1a1558cc248c1.png" },
+  { title: "Printing Workshop", desc: "In-house silk screen, hot stamping & pad printing lines.", img: "https://sc02.alicdn.com/kf/H9dabc8c4179c432e99d09e729e5b4e00a.jpg" },
+  { title: "Coating Workshop", desc: "Frosting, spray & gradient coating with full Pantone color control.", img: "https://sc02.alicdn.com/kf/Abc9e1f5ec8f84484a9665349e9ac77eca.png" },
+  { title: "Packaging Process", desc: "Drop-test certified export cartons, palletized. EXW / FOB / DDP.", img: "https://sc02.alicdn.com/kf/H95b280256ba04004af162257b20eb19au.jpg" },
+] as const;
+
+const processSteps = [
+  { n: "01", title: "Send Requirement", desc: "Share your bottle type, capacity, quantity & decoration needs." },
+  { n: "02", title: "Design & Quote", desc: "Engineers confirm the design and send a transparent quote within 24h." },
+  { n: "03", title: "Sample Approval", desc: "Physical samples with your decoration, approved before mass production." },
+  { n: "04", title: "Mass Production", desc: "Bulk run under ISO 9001 with inline QC at every station." },
+  { n: "05", title: "Global Shipping", desc: "EXW, FOB or DDP to EU & USA with drop-test certified cartons." },
+] as const;
+
+const caseStudies = [
+  {
+    industry: "European Essential Oil Brand",
+    need: "Premium amber glass bottles with a customized logo.",
+    solution: "30ml amber bottle · custom printing · OEM packaging",
+    result: "Delivered on schedule with zero breakage — reordered twice.",
   },
   {
-    key: "jar",
-    image: "https://sc02.alicdn.com/kf/H609e157916a5449fbf4c69ca8d800bb2m.jpg",
-    blurb: "Thick-wall cream jars from 15 g to 120 g with premium lid options.",
+    industry: "US Skincare Startup",
+    need: "Signature dropper bottle with gradient coating for a serum launch.",
+    solution: "30ml frosted gradient bottle · custom collar & dropper · private label",
+    result: "From first quote to full production in 60 days.",
   },
   {
-    key: "oil",
-    image: "/images/cat-oil.webp",
-    blurb: "Euro rounds, roll-ons and vials for aromatherapy & wellness lines.",
-  },
-  {
-    key: "set",
-    image: "https://sc02.alicdn.com/kf/Hba8e5303cb1d4ac9afaf69ef5ec30362e.jpg",
-    blurb: "Coordinated bottle + jar collections in matching gradient finishes — one brand, one look.",
+    industry: "Korean Wellness Brand",
+    need: "Vials and roll-on bottles for a 6-SKU aromatherapy line.",
+    solution: "10ml vials + 15ml roll-ons · amber & violet glass · branded caps",
+    result: "Full line shipped DDP to Seoul warehouse in 4 weeks.",
   },
 ] as const;
 
 const stats = [
-  { value: "16+", label: "Years Manufacturing" },
-  { value: "300+", label: "Stock Molds" },
-  { value: "40+", label: "Export Countries" },
-  { value: "5,000", label: "Minimum Order Qty" },
+  { value: "13+", label: "Years Manufacturing" },
+  { value: "500+", label: "Global Customers" },
+  { value: "OEM", label: "Custom Packaging" },
+  { value: "7-15", label: "Days Production" },
 ];
 
 // "Client logos" — we don't use real third-party brand marks (legal risk).
@@ -79,17 +127,19 @@ function LogoMark({ name, subtitle, style }: { name: string; subtitle: string; s
 
 const heroCopy = {
   eyebrow: "Cosmetic Glass Packaging · Made to Order",
-  titleA: "Glass That Tells",
-  titleB: "Your Brand's Story",
-  body: "Vesla partners with indie and emerging beauty brands across Europe and North America to design, decorate and deliver custom glass packaging — from a single sample to a million units.",
-  cta1: "Explore Products",
-  cta2: "Request a Quote",
+  titleA: "Premium Glass Packaging",
+  titleB: "for Beauty & Wellness Brands",
+  body: "13+ Years Experience · OEM/ODM Customization · Factory Direct Supply",
+  cta1: "Get Factory Quote",
+  cta2: "Explore Products",
 };
 
-const whyCopy = [
-  { title: "Built for Small Brands", text: "MOQs from 5,000 pcs on stock molds and low-cost sampling, so you can launch without warehouse-scale commitments.", icon: "◈" },
-  { title: "In-House Decoration", text: "Frosting, spray coating, silk screen, hot stamping and electroplating under one roof — full color control, one QC standard.", icon: "✦" },
-  { title: "Export-Ready Logistics", text: "EXW, FOB or DDP to the EU and USA. Drop-test-certified export cartons and experienced freight partners on both coasts.", icon: "❖" },
+const whyStats = [
+  { value: "13+", title: "Years Glass Packaging Experience", text: "Decades of manufacturing expertise serving indie & established beauty brands." },
+  { value: "500+", title: "Global Customers", text: "Beauty brands across Europe, North America & Asia trust Veslapack." },
+  { value: "OEM", title: "Custom Packaging Solution", text: "Bespoke molds, Pantone colors and full private-label support." },
+  { value: "7-15", title: "Days Production", text: "Fast turnaround on stock molds with strict inline QC." },
+  { value: "QC", title: "Strict QC System", text: "ISO 9001, AQL sampling & drop tests on every order." },
 ];
 
 const ctaCopy = {
@@ -100,9 +150,8 @@ const ctaCopy = {
 };
 
 export default function Home() {
-  const { catLabel } = useUI();
   const hero = heroCopy;
-  const why = whyCopy;
+  const why = whyStats;
   const cta = ctaCopy;
   const isRtl = false;
   const videoEl = useRef<HTMLVideoElement | null>(null);
@@ -261,37 +310,69 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Categories ───────────────────────────────── */}
+      {/* ── Why Global Brands Choose Veslapack ────────── */}
+      <section className="bg-cream-dark/60">
+        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+          <div className="mb-14 text-center">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold-dark">
+              Why Veslapack
+            </p>
+            <h2 className="font-serif text-3xl font-medium text-ink sm:text-4xl">
+              Why Global Brands Choose Veslapack
+            </h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+            {why.map((f) => (
+              <div key={f.title} className="rounded-2xl bg-white p-7 text-center shadow-sm ring-1 ring-gold/15">
+                <div className="font-serif text-4xl text-gold">{f.value}</div>
+                <h3 className="mt-3 text-sm font-semibold leading-snug text-ink">{f.title}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-ink-soft">{f.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Featured Products ────────────────────────── */}
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
         <div className="mb-16 text-center">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold-dark">
-            Our Collections
+            Featured Products
           </p>
           <h2 className="font-serif text-3xl font-medium text-ink sm:text-5xl">
-            Core Collections,
-            <br className="hidden sm:block" /> Endless Customization
+            Built for Your Market,
+            <br className="hidden sm:block" /> Customized to Your Brand
           </h2>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
-          {categories.map((c) => (
+        <div className="grid gap-8 md:grid-cols-2">
+          {featured.map((f) => (
             <Link
-              key={c.key}
-              to={`/products?category=${c.key}`}
+              key={f.key}
+              to={f.link}
               className="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gold/15 transition duration-300 hover:-translate-y-1.5 hover:shadow-xl"
             >
-              <div className="aspect-[4/5] overflow-hidden">
-                <LazyImage
-                  src={c.image}
-                  alt={catLabel(c.key)}
-                  className="h-full w-full object-cover object-top"
-                />
+              <div className="aspect-[16/10] overflow-hidden">
+                <LazyImage src={f.image} alt={f.title} className="h-full w-full object-cover" />
               </div>
               <div className="p-7">
-                <h3 className="font-serif text-2xl text-ink">{catLabel(c.key)}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-soft">{c.blurb}</p>
-                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-gold-dark">
-                  View collection
+                <h3 className="font-serif text-2xl text-ink">{f.title}</h3>
+                <dl className="mt-4 space-y-2 text-sm">
+                  <div>
+                    <dt className="inline font-semibold text-gold-dark">Applications: </dt>
+                    <dd className="inline text-ink-soft">{f.applications}</dd>
+                  </div>
+                  <div>
+                    <dt className="inline font-semibold text-gold-dark">Advantage: </dt>
+                    <dd className="inline text-ink-soft">{f.advantage}</dd>
+                  </div>
+                  <div>
+                    <dt className="inline font-semibold text-gold-dark">Customization: </dt>
+                    <dd className="inline text-ink-soft">{f.customization}</dd>
+                  </div>
+                </dl>
+                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold-dark">
+                  View Range
                   <span className="transition group-hover:translate-x-1">→</span>
                 </span>
               </div>
@@ -300,15 +381,110 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Why Vesla ───────────────────────────────── */}
-      <section className="bg-cream-dark/60">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-3 lg:px-8">
-          {why.map((f) => (
-            <div key={f.title} className="text-center lg:text-left">
-              <div className="mb-5 text-3xl text-gold">{f.icon}</div>
-              <h3 className="font-serif text-2xl text-ink">{f.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-ink-soft">{f.text}</p>
+      {/* ── Inside Veslapack Factory ─────────────────── */}
+      <section className="bg-ink py-24 text-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mb-14 text-center">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold-light">
+              Factory Capability
+            </p>
+            <h2 className="font-serif text-3xl font-medium sm:text-4xl">Inside Veslapack Factory</h2>
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/60">
+              One integrated facility — from molten glass to decorated, export-ready bottles.
+            </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+            {factorySteps.map((s) => (
+              <div key={s.title} className="group overflow-hidden rounded-2xl ring-1 ring-white/10">
+                <div className="aspect-square overflow-hidden">
+                  <LazyImage
+                    src={s.img}
+                    alt={s.title}
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-serif text-lg text-gold-light">{s.title}</h3>
+                  <p className="mt-2 text-xs leading-relaxed text-white/60">{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-10 text-center">
+            <Link to="/about" className="text-sm font-semibold text-gold-light underline-offset-4 hover:underline">
+              Take a virtual tour of our factory →
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      {/* ── From Idea To Production ──────────────────── */}
+      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+        <div className="mb-14 text-center">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold-dark">
+            Customization Process
+          </p>
+          <h2 className="font-serif text-3xl font-medium text-ink sm:text-4xl">From Idea To Production</h2>
+        </div>
+        <div className="grid gap-6 md:grid-cols-5">
+          {processSteps.map((s) => (
+            <div key={s.n} className="relative rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gold/15">
+              <div className="font-serif text-3xl text-gold/70">{s.n}</div>
+              <h3 className="mt-3 font-serif text-lg text-ink">{s.title}</h3>
+              <p className="mt-2 text-xs leading-relaxed text-ink-soft">{s.desc}</p>
+              {s.n !== "05" && (
+                <span className="absolute -right-3 top-1/2 hidden -translate-y-1/2 text-gold md:block">→</span>
+              )}
             </div>
+          ))}
+        </div>
+        <div className="mt-10 text-center">
+          <Link to="/process" className="text-sm font-semibold text-gold-dark underline-offset-4 hover:underline">
+            Learn more about our process →
+          </Link>
+        </div>
+      </section>
+
+      {/* ── Customer Case Study ──────────────────────── */}
+      <section className="bg-cream-dark/60">
+        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+          <div className="mb-14 text-center">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold-dark">
+              Customer Case Study
+            </p>
+            <h2 className="font-serif text-3xl font-medium text-ink sm:text-4xl">From Brief to Delivery</h2>
+          </div>
+          <div className="grid gap-8 lg:grid-cols-3">
+            {caseStudies.map((c) => (
+              <div key={c.industry} className="flex flex-col rounded-2xl bg-white p-7 shadow-sm ring-1 ring-gold/15">
+                <p className="text-xs font-semibold uppercase tracking-widest text-gold-dark">{c.industry}</p>
+                <h3 className="mt-4 font-serif text-lg text-ink">Need</h3>
+                <p className="mt-1 text-sm text-ink-soft">{c.need}</p>
+                <h3 className="mt-5 font-serif text-lg text-ink">Solution</h3>
+                <p className="mt-1 text-sm text-ink-soft">{c.solution}</p>
+                <p className="mt-auto pt-5 text-sm font-semibold text-gold-dark">✦ {c.result}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ──────────────────────────────────────── */}
+      <section className="mx-auto max-w-4xl px-6 py-24 lg:px-8">
+        <FAQSchema items={faqItems} />
+        <div className="mb-12 text-center">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold-dark">FAQ</p>
+          <h2 className="font-serif text-3xl font-medium text-ink sm:text-4xl">Frequently Asked Questions</h2>
+        </div>
+        <div className="space-y-4">
+          {faqItems.slice(0, 6).map((f) => (
+            <details key={f.q.en} className="group rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gold/15">
+              <summary className="flex cursor-pointer items-center justify-between gap-4 font-serif text-lg text-ink">
+                {f.q.en}
+                <span className="shrink-0 text-gold transition group-open:rotate-45">+</span>
+              </summary>
+              <p className="mt-3 text-sm leading-relaxed text-ink-soft">{f.a.en}</p>
+            </details>
           ))}
         </div>
       </section>

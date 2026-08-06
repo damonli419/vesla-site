@@ -261,7 +261,7 @@ export const faqItems = [
   },
   {
     q: { en: "What is the lead time from deposit to delivery?", kr: "계약금 입금 후 납품까지 리드타임은 얼마나 걸리나요?", jp: "前入金から納品までのリードタイムは？", tw: "從訂金到交貨需要多久？" },
-    a: { en: "5–7 days sampling + 20–35 days bulk production + 18–30 days sea freight to the EU/US. Air freight cuts transit to 4–6 days.", kr: "샘플링 5–7일 + 본 생산 20–35일 + 해상 운송 18–30일(유럽/미국). 항공 운송은 4–6일로 단축 가능합니다.", jp: "サンプル5〜7日 + 量産20〜35日 + 海運18〜30日（欧州/米国）。航空便なら4〜6日。", tw: "打樣 5–7 天 + 量產 20–35 天 + 海運 18–30 天（歐美）。空運可縮短至 4–6 天。" },
+    a: { en: "5–7 days sampling + 7–15 days bulk production on stock molds (25–30 days for custom molds) + 18–30 days sea freight to the EU/US. Air freight cuts transit to 4–6 days.", kr: "샘플링 5–7일 + 본 생산 20–35일 + 해상 운송 18–30일(유럽/미국). 항공 운송은 4–6일로 단축 가능합니다.", jp: "サンプル5〜7日 + 量産20〜35日 + 海運18〜30日（欧州/米国）。航空便なら4〜6日。", tw: "打樣 5–7 天 + 量產 20–35 天 + 海運 18–30 天（歐美）。空運可縮短至 4–6 天。" },
   },
   {
     q: { en: "Do you handle DDP shipping to the EU and USA?", kr: "유럽·미국으로의 DDP 배송을 대행해 주시나요?", jp: "EU・米国へのDDP配送も対応していますか？", tw: "是否提供 DDP 雙清送到歐美倉庫？" },
