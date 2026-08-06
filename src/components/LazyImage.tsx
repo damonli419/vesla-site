@@ -19,6 +19,10 @@ interface Props {
 export default function LazyImage({ src, alt, className = "", width, height, eager = false }: Props) {
   const [loaded, setLoaded] = useState(false);
   const ref = useRef<HTMLImageElement | null>(null);
+  // Explicit width/height reduce CLS (Lighthouse requirement). Defaults are safe
+  // because images render inside fixed-aspect containers with object-cover.
+  const dimW = width ?? 800;
+  const dimH = height ?? 800;
 
   useEffect(() => {
     if (eager) return;
@@ -51,8 +55,8 @@ export default function LazyImage({ src, alt, className = "", width, height, eag
       alt={alt}
       loading={eager ? "eager" : "lazy"}
       decoding="async"
-      width={width}
-      height={height}
+      width={dimW}
+      height={dimH}
       onLoad={() => setLoaded(true)}
       className={`bg-cream-dark/40 transition-opacity duration-700 ${
         loaded ? "opacity-100" : "opacity-0"

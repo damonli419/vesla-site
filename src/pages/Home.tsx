@@ -299,6 +299,8 @@ export default function Home() {
                 <img
                   src="/images/hero-poster.jpg"
                   alt="Vesla factory virtual tour preview"
+                  width={800}
+                  height={520}
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />

@@ -21,7 +21,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-gold/20 bg-cream/90 backdrop-blur-md">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
         <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
-          <img src="/images/logo-small.png" alt="Vesla" className="h-14 w-auto" />
+          <img src="/images/logo-small.png" alt="Vesla" width={200} height={200} className="h-14 w-auto" />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
