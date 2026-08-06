@@ -1,4 +1,5 @@
-﻿import { Link } from "react-router-dom";
+﻿import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { useUI } from "../i18n/UIContext";
 import LazyImage from "../components/LazyImage";
 import Seo from "../components/Seo";
@@ -172,6 +173,22 @@ export default function Home() {
   const why = whyCopy[locale];
   const cta = ctaCopy[locale];
   const isRtl = false;
+  const videoEl = useRef<HTMLVideoElement | null>(null);
+
+  // Defer hero video download until after page load + 4s (LCP-friendly).
+  useEffect(() => {
+    let cancelled = false;
+    const startVideo = () => {
+      if (cancelled || !videoEl.current) return;
+      videoEl.current.src = "/factory-hero.mp4";
+      videoEl.current.play().catch(() => {});
+    };
+    const t = window.setTimeout(startVideo, 4000);
+    return () => {
+      cancelled = true;
+      window.clearTimeout(t);
+    };
+  }, []);
 
   return (
     <div dir={isRtl ? "rtl" : "ltr"}>
@@ -187,10 +204,8 @@ export default function Home() {
       <section className="relative flex min-h-[92vh] items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-ink via-ink/90 to-ink/70" />
         <video
-          ref={(el) => { if (el) { el.play().catch(() => {}); el.onloadeddata = () => el.play().catch(() => {}); } }}
+          ref={(el) => { videoEl.current = el; }}
           className="absolute inset-0 h-full w-full object-cover"
-          src="/factory-hero.mp4"
-          autoPlay
           muted
           loop
           playsInline
