@@ -5,10 +5,13 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import Analytics from "./components/Analytics";
-import SampleRequestModal from "./components/SampleRequestModal";
 import FloatingWhatsapp from "./components/FloatingWhatsapp";
 import { UIProvider } from "./i18n/UIContext";
 import Home from "./pages/Home";
+
+// Sample modal only matters 45s into the session — load it on demand so the
+// critical main bundle stays small (Lighthouse: critical request chains).
+const LazySampleModal = lazy(() => import("./components/SampleRequestModal"));
 
 const DropperBottles = lazy(() => import("./pages/DropperBottles"));
 const Products = lazy(() => import("./pages/Products"));
@@ -60,7 +63,9 @@ export default function App() {
                 </Routes>
               </Suspense>
             </main>
-            <SampleRequestModal />
+            <Suspense fallback={null}>
+              <LazySampleModal />
+            </Suspense>
             <FloatingWhatsapp />
             <Footer />
           </div>
