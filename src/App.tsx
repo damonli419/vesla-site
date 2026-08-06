@@ -19,7 +19,9 @@ const ProductDetail = lazy(() => import("./pages/ProductDetail"));
 const Process = lazy(() => import("./pages/Process"));
 const About = lazy(() => import("./pages/About"));
 const Privacy = lazy(() => import("./pages/Privacy"));
-const Blog = lazy(() => import("./pages/Blog"));
+// Blog.tsx only has named exports — map them to default for React.lazy.
+const BlogIndex = lazy(() => import("./pages/Blog").then((m) => ({ default: m.BlogIndex })));
+const BlogPostPage = lazy(() => import("./pages/Blog").then((m) => ({ default: m.BlogPost })));
 const Contact = lazy(() => import("./pages/Contact"));
 
 function PageLoader() {
@@ -48,8 +50,8 @@ export default function App() {
                   <Route path="/products/:id" element={<ProductDetail />} />
                   <Route path="/process" element={<Process />} />
                   <Route path="/about" element={<About />} />
-                  <Route path="/blog" element={<Blog.BlogIndex />} />
-                  <Route path="/blog/:slug" element={<Blog.BlogPost />} />
+                  <Route path="/blog" element={<BlogIndex />} />
+                  <Route path="/blog/:slug" element={<BlogPostPage />} />
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/privacy" element={<Privacy />} />
                   {/* locale-prefixed SEO landing paths */}
