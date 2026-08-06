@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
 import { products, categoryLabels } from "../data/products";
 import { useUI } from "../i18n/UIContext";
@@ -81,7 +81,7 @@ export default function DropperBottles() {
         </p>
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {dropperProducts.map((p) => (
-            <Link key={p.id} to={`/products/${p.id}`} className="group rounded-2xl bg-white p-4 ring-1 ring-gold/15 transition hover:shadow-lg">
+            <Link key={p.id} to={`/products/${p.seoSlug || p.id}`} className="group rounded-2xl bg-white p-4 ring-1 ring-gold/15 transition hover:shadow-lg">
               <div className="aspect-square overflow-hidden rounded-xl bg-cream-dark/40">
                 <img src={p.image} alt={p.name} className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105" loading="lazy" />
               </div>

@@ -1,5 +1,5 @@
 ﻿import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { products, type Product } from "../data/products";
 import { useUI } from "../i18n/UIContext";
 import Seo from "../components/Seo";
@@ -20,9 +20,17 @@ function localizedDesc(p: Product, locale: "en" | "kr" | "jp" | "tw") {
 
 export default function ProductDetail() {
   const { id } = useParams();
-  const product = products.find((p) => p.id === id);
+  const product = products.find((p) => p.id === id || p.seoSlug === id);
   const { t, catLabel, locale } = useUI();
   const [activeImage, setActiveImage] = useState(0);
+  const navigate = useNavigate();
+
+  // Redirect old /products/{id} URLs to SEO-friendly /products/{seoSlug}
+  useEffect(() => {
+    if (product && id !== product.seoSlug) {
+      navigate(`/products/${product.seoSlug}`, { replace: true });
+    }
+  }, [id, product, navigate]);
 
   useEffect(() => {
     setActiveImage(0);
@@ -58,12 +66,12 @@ export default function ProductDetail() {
       <Seo
         title={`${localizedName(product, locale)} | Custom Cosmetic Glass Packaging — Vesla`}
         description={localizedDesc(product, locale).slice(0, 155)}
-        path={`/products/${product.id}`}
+        path={`/products/${product.seoSlug}`}
         keywords={product.seoKeywords?.join(", ")}
       />
       <ProductSchema product={product} />
       <OrganizationSchema />
-      <BreadcrumbSchema items={[{ name: "Home", url: "https://www.veslapack.com/" }, { name: "Products", url: "https://www.veslapack.com/products" }, { name: product.name, url: `https://www.veslapack.com/products/${product.id}` }]} />
+      <BreadcrumbSchema items={[{ name: "Home", url: "https://www.veslapack.com/" }, { name: "Products", url: "https://www.veslapack.com/products" }, { name: product.name, url: `https://www.veslapack.com/products/${product.seoSlug}` }]} />
 
       <nav className="mb-10 text-xs uppercase tracking-widest text-ink-soft">
         <Link to="/" className="hover:text-gold-dark">Home</Link>
@@ -196,7 +204,7 @@ export default function ProductDetail() {
             {related.map((p) => (
               <Link
                 key={p.id}
-                to={`/products/${p.id}`}
+                to={`/products/${p.seoSlug || p.id}`}
                 className="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gold/15 transition hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="aspect-square overflow-hidden bg-cream-dark/40">

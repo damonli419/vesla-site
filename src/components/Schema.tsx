@@ -78,7 +78,7 @@ export function ProductSchema({ product }: { product: Product }) {
     ],
     offers: {
       "@type": "Offer",
-      url: `${siteConfig.url}/products/${product.id}`,
+      url: `${siteConfig.url}/products/${product.seoSlug || product.id}`,
       priceCurrency: "USD",
       price: "0",
       priceValidUntil: "2027-12-31",

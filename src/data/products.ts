@@ -35,6 +35,7 @@ export const categoryLabels: Record<Category, { en: string; kr: string; jp: stri
 
 export interface Product {
   id: string;
+  seoSlug: string;
   name: string;
   nameI18n: { kr: string; jp: string; tw: string };
   category: Category;
@@ -62,6 +63,7 @@ const PEXEL = (id: number, w = 1200) =>
 export const products: Product[] = [
   {
     id: "heart-dropper-30ml",
+    seoSlug: "heart-shaped-glass-dropper-bottle-manufacturer",
     name: "Heart-Shaped Dropper Bottle",
     nameI18n: { kr: "하트형 드롭퍼 보틀", jp: "ハート型ドロッパーボトル", tw: "心形滴管瓶" },
     category: "dropper",
@@ -99,6 +101,7 @@ export const products: Product[] = [
   },
   {
     id: "flat-square-dropper",
+    seoSlug: "custom-flat-square-glass-dropper-bottle-supplier",
     name: "Flat Square Glass Dropper Bottle",
     nameI18n: { kr: "플랫 스퀘어 글래스 드롭퍼 보틀", jp: "フラットスクエア ガラスドロッパーボトル", tw: "扁平方形玻璃滴管瓶" },
     category: "dropper",
@@ -136,6 +139,7 @@ export const products: Product[] = [
   },
   {
     id: "square-serum-dropper",
+    seoSlug: "square-glass-serum-dropper-bottle-manufacturer-100ml",
     name: "Square Glass Serum Dropper Bottle",
     nameI18n: { kr: "스퀘어 글래스 세럼 드롭퍼 보틀", jp: "スクエアガラス セラム ドロッパーボトル", tw: "方形玻璃精華液滴管瓶" },
     category: "dropper",
@@ -173,6 +177,7 @@ export const products: Product[] = [
   },
   {
     id: "frosted-blue-dropper-30ml",
+    seoSlug: "frosted-blue-glass-dropper-bottle-manufacturer",
     name: "30ml Frosted Blue Dropper Bottle",
     nameI18n: { kr: "30ml 프로스트 블루 드롭퍼 보틀", jp: "30ml フロストブルー ドロッパーボトル", tw: "30ml 磨砂藍滴管瓶" },
     category: "dropper",
@@ -210,6 +215,7 @@ export const products: Product[] = [
   },
   {
     id: "flat-shoulder-dropper-30ml",
+    seoSlug: "flat-shoulder-glass-dropper-bottle-supplier",
     name: "30ml Flat Shoulder Empty Dropper Bottle",
     nameI18n: { kr: "30ml 플랫 숄더 드롭퍼 보틀", jp: "30ml フラットショルダー ドロッパーボトル", tw: "30ml 平肩滴管空瓶" },
     category: "dropper",
@@ -247,6 +253,7 @@ export const products: Product[] = [
   },
   {
     id: "matte-black-serum-bottle",
+    seoSlug: "custom-matte-black-glass-serum-bottle-manufacturer",
     name: "Matte Black Glass Serum Bottle",
     nameI18n: { kr: "매트 블랙 글래스 세럼 보틀", jp: "マットブラック ガラス セラムボトル", tw: "霧面黑玻璃精華液瓶" },
     category: "dropper",
@@ -284,6 +291,7 @@ export const products: Product[] = [
   },
   {
     id: "black-flat-shoulder-dropper",
+    seoSlug: "black-flat-shoulder-round-dropper-bottle-supplier",
     name: "Black Flat Shoulder Round Dropper Bottle",
     nameI18n: { kr: "블랙 플랫 숄더 라운드 드롭퍼 보틀", jp: "ブラック フラットショルダー ラウンド ドロッパーボトル", tw: "黑色平肩圓形滴管瓶" },
     category: "dropper",
@@ -321,6 +329,7 @@ export const products: Product[] = [
   },
   {
     id: "flat-shoulder-round-dropper-60ml",
+    seoSlug: "flat-shoulder-round-glass-dropper-bottle-manufacturer",
     name: "Flat Shoulder Round Glass Dropper Bottle",
     nameI18n: { kr: "플랫 숄더 라운드 글래스 드롭퍼 보틀", jp: "フラットショルダー ラウンド ガラス ドロッパーボトル", tw: "平肩圓形玻璃滴管瓶" },
     category: "dropper",
@@ -358,6 +367,7 @@ export const products: Product[] = [
   },
   {
     id: "matte-black-brown-jar",
+    seoSlug: "matte-black-brown-glass-cream-jar-manufacturer",
     name: "30g 50g Matte Black Brown Face Cream Jar",
     nameI18n: { kr: "30g 50g 매트 블랙 브라운 페이스 크림 자", jp: "30g 50g マットブラックブラウン フェイスクリームジャー", tw: "30g 50g 霧面黑棕面霜瓶" },
     category: "jar",
@@ -395,6 +405,7 @@ export const products: Product[] = [
   },
   {
     id: "frosted-round-jar-woodgrain",
+    seoSlug: "frosted-round-glass-cream-jar-woodgrain-lid-supplier",
     name: "Frosted Round Glass Cream Jar — Woodgrain Lid",
     nameI18n: { kr: "프로스트 라운드 글래스 크림 자 — 우드그레인 리드", jp: "フロスト ラウンド クリームジャー — 木目調リッド", tw: "磨砂圓形膏霜瓶 — 水轉印木紋蓋" },
     category: "jar",
@@ -432,6 +443,7 @@ export const products: Product[] = [
   },
   {
     id: "brown-woodgrain-jar",
+    seoSlug: "brown-woodgrain-water-transfer-cream-jar-manufacturer",
     name: "Brown Water Transfer Woodgrain Cream Jar",
     nameI18n: { kr: "브라운 수전사 우드그레인 크림 자", jp: "ブラウン水転写木目調クリームジャー", tw: "棕色水轉印木紋膏霜瓶" },
     category: "jar",
@@ -481,6 +493,7 @@ export const products: Product[] = [
   },
   {
     id: "amber-serum-vial-dropper",
+    seoSlug: "amber-glass-serum-vial-dropper-bottle-supplier",
     name: "Amber Glass Serum Vial Dropper Bottle",
     nameI18n: { kr: "앰버 글래스 세럼 바이알 드롭퍼", jp: "アンバーガラス セラム バイアル ドロッパー", tw: "茶色精華液拉管滴管瓶" },
     category: "vial",
@@ -528,6 +541,7 @@ export const products: Product[] = [
   },
   {
     id: "gradient-green-cosmetic-set",
+    seoSlug: "gradient-green-cosmetic-glass-set-manufacturer",
     name: "Gradient Green Cosmetic Glass Set",
     nameI18n: { kr: "그라데이션 그린 코스메틱 유리 세트", jp: "グラデーショングリーン コスメティックガラスセット", tw: "漸層綠化妝品玻璃套裝" },
     category: "set",
@@ -566,6 +580,7 @@ export const products: Product[] = [
   },
   {
     id: "gradient-green-pump-set",
+    seoSlug: "gradient-green-lotion-cream-glass-set-supplier",
     name: "Gradient Green Lotion + Cream Deluxe Set",
     nameI18n: { kr: "그라데이션 그린 로션+크림 디럭스 세트", jp: "グラデーショングリーン ローション＋クリーム デラックスセット", tw: "漸層綠乳液+面霜豪華套裝" },
     category: "set",
