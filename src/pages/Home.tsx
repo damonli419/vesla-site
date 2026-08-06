@@ -220,7 +220,7 @@ export default function Home() {
           loop
           playsInline
           preload="none"
-          fetchpriority="low"
+          fetchpriority="high"
           poster="https://sc02.alicdn.com/kf/A65f39345c3d842e4a580477a679d11c1G.png"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/50 to-ink/70" />
