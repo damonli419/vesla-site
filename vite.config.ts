@@ -23,6 +23,16 @@ function copyPublicFiles(): Plugin {
         }
       }
 
+      // Copy all files in public/images/ (logo, poster, category images) to dist/images/
+      const imgDir = path.join(publicDir, "images");
+      if (fs.existsSync(imgDir)) {
+        const destImg = path.join(distDir, "images");
+        if (!fs.existsSync(destImg)) fs.mkdirSync(destImg, { recursive: true });
+        for (const f of fs.readdirSync(imgDir)) {
+          fs.copyFileSync(path.join(imgDir, f), path.join(destImg, f));
+        }
+      }
+
       // Inline the built CSS into index.html to eliminate render-blocking CSS.
       const htmlPath = path.join(distDir, "index.html");
       const assetsDir = path.join(distDir, "assets");
