@@ -22,6 +22,32 @@ function copyPublicFiles(): Plugin {
           fs.copyFileSync(src, dest);
         }
       }
+
+      // Inline the built CSS into index.html to eliminate render-blocking CSS.
+      const htmlPath = path.join(distDir, "index.html");
+      const assetsDir = path.join(distDir, "assets");
+      if (fs.existsSync(htmlPath) && fs.existsSync(assetsDir)) {
+        let html = fs.readFileSync(htmlPath, "utf-8");
+        const cssFiles = fs.readdirSync(assetsDir).filter((f) => f.endsWith(".css"));
+        for (const cssFile of cssFiles) {
+          const css = fs.readFileSync(path.join(assetsDir, cssFile), "utf-8");
+          const linkTag = new RegExp(
+            `<link[^>]*href="/assets/${cssFile.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"[^>]*/?>`,
+            "g"
+          );
+          if (linkTag.test(html)) {
+            html = html.replace(linkTag, `<style>${css}</style>`);
+            // Also handle relative href (assets/xxx.css)
+            const relTag = new RegExp(
+              `<link[^>]*href="assets/${cssFile.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"[^>]*/?>`,
+              "g"
+            );
+            html = html.replace(relTag, "");
+            console.log(`[copy-public-files] Inlined ${cssFile} into index.html`);
+          }
+        }
+        fs.writeFileSync(htmlPath, html, "utf-8");
+      }
     },
   };
 }
