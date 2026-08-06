@@ -33,7 +33,7 @@ function copyPublicFiles(): Plugin {
         }
       }
 
-      // Inline the built CSS into index.html to eliminate render-blocking CSS.
+      // Inline the built CSS + preload the main JS to shorten the critical chain.
       const htmlPath = path.join(distDir, "index.html");
       const assetsDir = path.join(distDir, "assets");
       if (fs.existsSync(htmlPath) && fs.existsSync(assetsDir)) {
@@ -47,13 +47,23 @@ function copyPublicFiles(): Plugin {
           );
           if (linkTag.test(html)) {
             html = html.replace(linkTag, `<style>${css}</style>`);
-            // Also handle relative href (assets/xxx.css)
             const relTag = new RegExp(
               `<link[^>]*href="assets/${cssFile.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"[^>]*/?>`,
               "g"
             );
             html = html.replace(relTag, "");
             console.log(`[copy-public-files] Inlined ${cssFile} into index.html`);
+          }
+        }
+        // Preload the main entry JS with high fetchpriority (shortens critical chain)
+        const jsFiles = fs
+          .readdirSync(assetsDir)
+          .filter((f) => /^index-[A-Za-z0-9_-]+\.js$/.test(f));
+        for (const jsFile of jsFiles) {
+          const preloadTag = `<link rel="preload" as="script" href="/assets/${jsFile}" fetchpriority="high" />`;
+          if (!html.includes(preloadTag)) {
+            html = html.replace("</head>", `    ${preloadTag}\n  </head>`);
+            console.log(`[copy-public-files] Preloaded ${jsFile}`);
           }
         }
         fs.writeFileSync(htmlPath, html, "utf-8");
