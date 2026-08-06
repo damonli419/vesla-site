@@ -48,6 +48,13 @@ export default {
     const path = url.pathname;
     const ua = request.headers.get("user-agent") || "";
 
+    // Canonical host: redirect non-www → www (avoid duplicate content)
+    if (url.hostname === "veslapack.com") {
+      const canonical = new URL(request.url);
+      canonical.hostname = "www.veslapack.com";
+      return Response.redirect(canonical.toString(), 301);
+    }
+
     switch (path) {
       case "/sitemap.xml":
         return new Response(SITEMAP, { headers: { "Content-Type": "application/xml" } });
