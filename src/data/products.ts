@@ -617,6 +617,45 @@ export const products: Product[] = [
     seoKeywords: ["gradient green pump bottle set OEM", "lotion pump glass cosmetic set wholesale", "color coordinated pump jar skincare set", "modern dispensing glass bottle set", "matching pump jar cosmetic collection", "full regimen pump dispenser glass set", "skincare routine glass set packaging", "pump bottle jar gradient green factory", "coordinated cosmetic packaging China OEM", "pump dispenser green glass bottle set", "all in one skincare glass set supplier", "luxury pump jar cosmetic gift set"],
     seoTags: ["Cosmetic Set", "Glass Collection", "Luxury Packaging", "Custom OEM", "Low MOQ", "Gradient Glass", "Wholesale Set"],
   },
+  {
+    id: "gradient-red-cosmetic-set",
+    seoSlug: "red-gradient-round-cosmetic-set-bottle-manufacturer",
+    name: "Red Gradient Round Cosmetic Set Bottles",
+    nameI18n: { kr: "레드 그라데이션 라운드 코스메틱 세트 보틀", jp: "レッドグラデーション ラウンドコスメティックセットボトル", tw: "紅色漸層圓瓶化妝品套裝" },
+    category: "set",
+    material: "Glass",
+    capacity: "30 / 50 / 100 / 120 ml + 30 / 50 / 100 g",
+    capacityGroup: "set",
+    use: "Lotion / Cream",
+    moq: "5,000 pcs per SKU",
+    leadTime: "30–35 days",
+    decoration: "Red gradient spray coating, silk screen, hot stamping, metallic red cap",
+    image: "https://sc02.alicdn.com/kf/H81b7e5b0bfbb42989d73eaf28d9106cb7.jpg",
+    gallery: [
+      "https://sc02.alicdn.com/kf/H81b7e5b0bfbb42989d73eaf28d9106cb7.jpg",
+      "https://sc02.alicdn.com/kf/Hd4329c0c0ffb424cb90ab2dae8a61171l.jpg",
+      "https://sc02.alicdn.com/kf/H17aad3d85d2b479fa608719d468d58b2r.jpg",
+      "https://sc02.alicdn.com/kf/H38fb1dad05ac4f1393fee7e6dddf9b63f.jpg",
+    ],
+    description:
+      "A coordinated red gradient cosmetic set built on classic straight-round bottles and cream jars. Deep crimson spray coating melts into clear glass at the base, paired with satin metallic red caps and gold foil branding. Covers 30–120 ml lotion and serum bottles plus 30–100 g cream jars — one consistent, eye-catching identity for a single-brand skincare or gift-set launch.",
+    descriptionI18n: {
+      kr: "클래식 스트레이트 라운드 보틀과 크림 자로 구성된 레드 그라데이션 코스메틱 세트. 딥 크림슨 스프레이 코팅이 바닥의 투명 글래스로 이어지며, 새틴 메탈릭 레드 캡과 골드 폴 브랜딩을 더했습니다. 30–120ml 로션·세럼 보틀과 30–100g 크림 자를 커버 — 단일 브랜드 스킨케어 또는 기프트 세트 런칭을 위한 일관된 아이덴티티.",
+      jp: "クラシックなストレートラウンドボトルとクリームジャーで構成されたレッドグラデーションのコスメティックセット。ディープクリムゾンのスプレーコーティングが底部の透明ガラスへと溶け込み、サテンメタリックレッドのキャップとゴールドフォイルのブランディングを合わせました。30〜120mlのローション・セラムボトルと30〜100gのクリームジャーに対応 — 単一ブランドのスキンケアやギフトセットの立ち上げに最適な一貫したアイデンティティ。",
+      tw: "以經典直圓瓶與膏霜罐組成的紅色漸層化妝品套裝。深紅噴塗漸變至瓶底透明玻璃，搭配緞面金屬紅蓋與金色燙印品牌標識。涵蓋 30–120ml 乳液/精華瓶與 30–100g 膏霜罐 — 為單一品牌護膚或禮盒上市提供一致的視覺識別。",
+    },
+    features: [
+      "Classic straight-round bottles + wide-mouth cream jars",
+      "Custom crimson-to-clear gradient — also in other Pantone colors",
+      "Satin metallic red caps & gold foil logo stamping",
+      "Lotion bottles: 30 / 50 / 100 / 120 ml",
+      "Cream jars: 30 / 50 / 100 g",
+      "Turnkey single-brand identity with consistent finish",
+      "Gift-box & insert tray sourcing for holiday sets",
+    ],
+    seoKeywords: ["red gradient glass cosmetic set wholesale", "crimson ombre bottle jar packaging set", "red round cosmetic bottle set factory", "matching red lotion jar set OEM China", "red spray coat glass set manufacturer", "wine red gradient skincare collection", "red pump lotion bottle cream jar set", "brand matched red glass packaging set", "luxury red cosmetic gift set packaging", "straight round red bottle jar supplier"],
+    seoTags: ["Cosmetic Set", "Red Gradient", "Lotion Bottle", "Cream Jar", "Custom OEM", "Gift Set Packaging", "Gradient Glass"],
+  },
 ];
 
 export const materials = ["Glass", "Plastic"];
