@@ -656,6 +656,45 @@ export const products: Product[] = [
     seoKeywords: ["red gradient glass cosmetic set wholesale", "crimson ombre bottle jar packaging set", "red round cosmetic bottle set factory", "matching red lotion jar set OEM China", "red spray coat glass set manufacturer", "wine red gradient skincare collection", "red pump lotion bottle cream jar set", "brand matched red glass packaging set", "luxury red cosmetic gift set packaging", "straight round red bottle jar supplier"],
     seoTags: ["Cosmetic Set", "Red Gradient", "Lotion Bottle", "Cream Jar", "Custom OEM", "Gift Set Packaging", "Gradient Glass"],
   },
+  {
+    id: "small-round-dropper-10ml-15ml",
+    seoSlug: "10ml-15ml-small-straight-round-dropper-bottle-supplier",
+    name: "10ml & 15ml Small Straight Round Dropper Bottles",
+    nameI18n: { kr: "10ml·15ml 소형 스트레이트 라운드 드롭퍼 보틀", jp: "10ml・15ml 小型ストレートラウンドドロッパーボトル", tw: "10ml・15ml 小型直圓滴管瓶" },
+    category: "dropper",
+    material: "Glass",
+    capacity: "10 / 15 ml",
+    capacityGroup: "mini",
+    use: "Serum / Oil",
+    moq: "5,000 pcs",
+    leadTime: "25–30 days",
+    decoration: "Silk screen, hot stamping, frosting, color spray coating, gold/silver collar",
+    image: "https://sc02.alicdn.com/kf/H7992e5d9f9c64887aba3dc4b4db434fa4.jpg",
+    gallery: [
+      "https://sc02.alicdn.com/kf/H7992e5d9f9c64887aba3dc4b4db434fa4.jpg",
+      "https://sc02.alicdn.com/kf/H60f29d5cc9b4430fb100fe29f5ef07edt.jpg",
+      "https://sc02.alicdn.com/kf/H13d5954a17cc476683c98b755b611c41i.jpg",
+      "https://sc02.alicdn.com/kf/Ha23a1b2586854eeda64d36bca1ea1b64w.jpg",
+    ],
+    description:
+      "Compact 10ml and 15ml straight-round dropper bottles in translucent purple, matte white or teal glass. Small enough for travel-size serums, essential oil blends and sample kits — premium enough to sit beside full-size SKUs. Choose between gold knurled collars with white squeeze bulbs, silver push-button droppers or matte white caps, with glass pipettes inside every bottle.",
+    descriptionI18n: {
+      kr: "트랜스루센트 퍼플, 매트 화이트 또는 틸 글래스로 제작된 10ml·15ml 컴팩트 스트레이트 라운드 드롭퍼 보틀. 트래블 사이즈 세럼, 에센셜 오일 블렌드, 샘플 키트에 적합하며 풀사이즈 SKU와 나란히 놓여도 손색없는 프리미엄 퀄리티. 골드 너얼 컬러 + 화이트 스퀴즈 불브, 실버 푸시버튼 드롭퍼, 매트 화이트 캡 중 선택 가능. 모든 보틀에 글래스 피펫 내장.",
+      jp: "半透明パープル、マットホワイト、ティールガラスの10ml・15mlコンパクトストレートラウンドドロッパーボトル。トラベルサイズのセラム、エッセンシャルオイルブレンド、サンプルキットに最適で、フルサイズSKUの隣に置いても引けを取らないプレミアム品質。ゴールドニールカラー＋ホワイトスクイーズバルブ、シルバープッシュボタンドロッパー、マットホワイトキャップから選択可能。全ボトルにガラスピペット内蔵。",
+      tw: "半透明紫、霧面白或湖水綠玻璃製成的 10ml・15ml 小型直圓滴管瓶。適合旅行裝精華液、精油調配與試用套裝，放在全尺寸產品旁同樣高級。可選金色滾花圈+白色膠頭、銀色按壓式滴管或霧面白蓋，每瓶均配玻璃吸管。",
+    },
+    features: [
+      "Compact 10ml & 15ml straight-round silhouette",
+      "Translucent purple, matte white or teal glass",
+      "Gold knurled collar + white squeeze bulb droppers",
+      "Silver push-button dropper caps available",
+      "Glass pipette inside every bottle",
+      "Travel-size, sample-kit & essential oil ready",
+      "Custom silk screen & hot stamping logos",
+    ],
+    seoKeywords: ["10ml small glass dropper bottle supplier", "15ml straight round dropper bottle wholesale", "mini essential oil dropper bottle 10ml 15ml", "small capacity glass serum bottle travel size", "10ml purple glass dropper bottle OEM", "15ml matte white dropper bottle factory", "compact straight round dropper glass manufacturer", "small dropper bottle sample size bulk", "10ml 15ml dropper bottle with glass pipette", "travel size essential oil dropper packaging"],
+    seoTags: ["Dropper Bottle", "Small Capacity", "Essential Oil", "Travel Size", "Sample Bottle", "Custom OEM", "Glass Pipette"],
+  },
 ];
 
 export const materials = ["Glass", "Plastic"];
