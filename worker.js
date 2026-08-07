@@ -30,7 +30,11 @@ function serveSSR({ title, description, h1, body, url }) {
 </body>
 </html>`;
   return new Response(html, {
-    headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "public, max-age=3600" },
+    headers: {
+      "Content-Type": "text/html; charset=utf-8",
+      "Cache-Control": "public, max-age=3600",
+      "Vary": "User-Agent",
+    },
   });
 }
 
@@ -193,11 +197,18 @@ export default {
 
     // Default: serve SPA
     const resp = await env.ASSETS.fetch(request);
+    const ctype = resp.headers.get("content-type") || "";
     // Missing static assets must return a real 404, not the SPA fallback HTML —
     // otherwise browsers try to decode index.html as an image/font/script.
-    const ctype = resp.headers.get("content-type") || "";
     if (/\.(js|css|png|jpg|jpeg|webp|avif|svg|ico|woff2?|ttf|mp4|xml|txt)$/i.test(path) && ctype.includes("text/html")) {
       return new Response("Not Found", { status: 404, headers: { "Content-Type": "text/plain" } });
+    }
+    // HTML responses: vary cache by User-Agent so AI crawlers get the SSR
+    // version while browsers get the SPA (Cloudflare's cache key ignores UA).
+    if (ctype.includes("text/html")) {
+      const headers = new Headers(resp.headers);
+      headers.set("Vary", "User-Agent");
+      return new Response(resp.body, { status: resp.status, statusText: resp.statusText, headers });
     }
     return resp;
   },
