@@ -67,11 +67,14 @@ const formCopy = {
 export default function Contact() {
   const [searchParams] = useSearchParams();
   const prefilledProduct = searchParams.get("product") ?? "";
+  const prefilledMessage = searchParams.get("source") === "sample"
+    ? "I'd like to request a sample of this product. Please share the sample policy and cost."
+    : "";
   const [state, setState] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [errorDetail, setErrorDetail] = useState<string>("");
   const [form, setForm] = useState({
     name: "", email: "", company: "", country: "",
-    product: prefilledProduct, quantity: "", message: "", hp: "",
+    product: prefilledProduct, quantity: "", message: prefilledMessage, hp: "",
   });
   const { locale } = useUI();
   const hero = heroCopy[locale];

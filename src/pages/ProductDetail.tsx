@@ -13,6 +13,53 @@ function localizedName(p: Product, locale: "en" | "kr" | "jp" | "tw") {
   return p.nameI18n[locale] ?? p.name;
 }
 
+function displayTitle(p: Product) {
+  return p.specTitle ?? p.name;
+}
+
+// Industry applications per product category (sales-oriented copy)
+const applicationsByCategory: Record<string, string[]> = {
+  dropper: ["Serum & Essence Brands", "Facial Oil Lines", "Skincare Startups"],
+  jar: ["Cream & Moisturizer Brands", "Body Care Lines", "Wellness Brands"],
+  oil: ["Essential Oil Brands", "Aromatherapy Companies", "Wellness & Diffuser Lines"],
+  vial: ["Perfume & Fragrance Brands", "Essential Oil Brands", "Sample Kit Brands"],
+  set: ["Skincare Brands", "Gift Set Brands", "Full-Regimen Launches"],
+};
+
+// Customization options per product category
+const customizationByCategory: Record<string, { label: string; value: string }[]> = {
+  dropper: [
+    { label: "Logo Printing", value: "Silk screen, hot stamping or gold foil logo" },
+    { label: "Color Coating", value: "Frosting, spray or gradient Pantone coating" },
+    { label: "Cap Options", value: "Gold/silver collars, wooden caps, push-button droppers" },
+    { label: "Packaging Design", value: "Gift boxes, insert trays & private label" },
+  ],
+  jar: [
+    { label: "Logo Printing", value: "Silk screen or hot stamping on jar body & lid" },
+    { label: "Color Coating", value: "Matte, frosted or gradient finishes, Pantone matched" },
+    { label: "Cap Options", value: "Woodgrain, matte, metallic or double-wall lids" },
+    { label: "Packaging Design", value: "Gift boxes, sleeve printing & private label" },
+  ],
+  oil: [
+    { label: "Logo Printing", value: "Silk screen, hot stamping or label application" },
+    { label: "Color Coating", value: "Amber, violet or custom Pantone tinted glass" },
+    { label: "Cap Options", value: "Roll-on, dropper, euro dropper or screw caps" },
+    { label: "Packaging Design", value: "Retail-ready boxes, displays & private label" },
+  ],
+  vial: [
+    { label: "Logo Printing", value: "Silk screen or hot stamping on small vials" },
+    { label: "Color Coating", value: "Frosting, spray or gradient options" },
+    { label: "Cap Options", value: "Roll-on balls, dropper tips, crimp or screw caps" },
+    { label: "Packaging Design", value: "Sample kits, display boxes & private label" },
+  ],
+  set: [
+    { label: "Logo Printing", value: "Silk screen, hot stamping or gold foil across the set" },
+    { label: "Color Coating", value: "Matching gradient or solid Pantone finishes" },
+    { label: "Cap Options", value: "Coordinated caps, pumps and droppers per SKU" },
+    { label: "Packaging Design", value: "Holiday gift boxes, inserts & full private label" },
+  ],
+};
+
 function localizedDesc(p: Product, locale: "en" | "kr" | "jp" | "tw") {
   if (locale === "en") return p.description;
   return p.descriptionI18n[locale] ?? p.description;
@@ -64,7 +111,7 @@ export default function ProductDetail() {
   return (
     <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
       <Seo
-        title={`${localizedName(product, locale)} | Custom Cosmetic Glass Packaging — Vesla`}
+        title={`${displayTitle(product)} | Custom Cosmetic Glass Packaging — Vesla`}
         description={localizedDesc(product, locale).slice(0, 155)}
         path={`/products/${product.seoSlug}`}
         keywords={product.seoKeywords?.join(", ")}
@@ -122,7 +169,7 @@ export default function ProductDetail() {
             {catLabel(product.category)}
           </p>
           <h1 className="mt-3 font-serif text-4xl font-medium leading-tight text-ink sm:text-5xl">
-            {localizedName(product, locale)}
+            {displayTitle(product)}
           </h1>
           <p className="mt-5 text-[15px] leading-relaxed text-ink-soft">
             {localizedDesc(product, locale)}
@@ -151,13 +198,45 @@ export default function ProductDetail() {
             </table>
           </div>
 
+          {/* ── Applications ─────────────────────── */}
+          <div className="mt-8 rounded-2xl bg-cream-dark/50 p-6 ring-1 ring-gold/15">
+            <h2 className="text-xs font-semibold uppercase tracking-[0.25em] text-gold-dark">Applications</h2>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {(applicationsByCategory[product.category] || []).map((a) => (
+                <span key={a} className="rounded-full bg-white px-4 py-1.5 text-xs font-medium text-ink ring-1 ring-gold/20">
+                  {a}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* ── Customization ────────────────────── */}
+          <div className="mt-6 rounded-2xl bg-cream-dark/50 p-6 ring-1 ring-gold/15">
+            <h2 className="text-xs font-semibold uppercase tracking-[0.25em] text-gold-dark">Customization</h2>
+            <ul className="mt-3 space-y-2">
+              {(customizationByCategory[product.category] || []).map((c) => (
+                <li key={c.label} className="text-sm">
+                  <span className="font-semibold text-ink">{c.label}: </span>
+                  <span className="text-ink-soft">{c.value}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
             <Link
-              to={`/contact?product=${encodeURIComponent(product.name)}`}
-              onClick={() => trackEvent("click_inquiry", { product: product.id })}
+              to={`/contact?source=sample&product=${encodeURIComponent(product.name)}`}
+              onClick={() => trackEvent("click_sample", { product: product.id })}
               className="flex-1 rounded-full bg-gold px-8 py-4 text-center text-sm font-semibold tracking-wide text-white shadow-md transition hover:bg-gold-dark"
             >
-              {t("common.sendInquiry")}
+              Request Sample
+            </Link>
+            <Link
+              to={`/contact?product=${encodeURIComponent(product.name)}`}
+              onClick={() => trackEvent("click_quote", { product: product.id })}
+              className="flex-1 rounded-full border border-gold px-8 py-4 text-center text-sm font-semibold tracking-wide text-gold-dark transition hover:bg-gold hover:text-white"
+            >
+              Get Quote
             </Link>
             <a
               href={whatsappLink(`Hi Vesla, I'm interested in the ${product.name}.`)}
