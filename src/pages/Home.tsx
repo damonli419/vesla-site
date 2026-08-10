@@ -185,8 +185,8 @@ export default function Home() {
   return (
     <div dir={isRtl ? "rtl" : "ltr"}>
       <Seo
-        title="Vesla | Custom Cosmetic Glass Packaging Manufacturer for Indie Beauty Brands"
-        description="Custom glass dropper bottles, cream jars, essential oil bottles &amp; vials for indie beauty brands. Low MOQ 5,000 pcs, in-house decoration, free sample kit, DDP to EU &amp; USA. ISO 9001 certified Guangzhou factory."
+        title="Vesla — China Glass Packaging Manufacturer | Cosmetic Bottle Supplier"
+        description="Vesla provides premium glass packaging solutions for cosmetics, essential oils and beauty brands. OEM &amp; ODM available — dropper bottles, cream jars &amp; vials. Low MOQ 5,000 pcs, in-house decoration, DDP to EU &amp; USA."
         path="/"
       />
       <OrganizationSchema />
@@ -202,7 +202,7 @@ export default function Home() {
           loop
           playsInline
           preload="none"
-          fetchpriority="high"
+          fetchPriority="high"
           poster="/images/hero-poster.webp"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/50 to-ink/70" />

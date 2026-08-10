@@ -140,6 +140,18 @@ Office Hours: Mon-Sat, 9:00-18:00 (GMT+8)`,
   },
 };
 
+// Known SPA routes — anything else gets a real 404 (kills soft-404s in GSC).
+const KNOWN_PATHS = new Set([
+  "/", "/products", "/dropper-bottles", "/about", "/process", "/blog", "/contact", "/privacy",
+  "/sitemap.xml", "/robots.txt", "/llms.txt", "/llms-full.txt", "/content-manifest.json",
+  "/b4c8e9a2d1f3.txt",
+]);
+const STATIC_FILE_RE = /\.(js|css|png|jpg|jpeg|webp|avif|svg|ico|woff2?|ttf|mp4|xml|txt|json)$/i;
+
+function notFound() {
+  return new Response("Not Found", { status: 404, headers: { "Content-Type": "text/plain" } });
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -195,13 +207,31 @@ export default {
       }
     }
 
+    // Real-404 guard: unknown paths return 404 instead of SPA-fallback HTML
+    // (prevents Google soft-404 flags on invalid URLs like /products/:id).
+    if (!KNOWN_PATHS.has(path) && !STATIC_FILE_RE.test(path) && !/^\/(products|blog)\//.test(path)) {
+      return notFound();
+    }
+    if (/^\/(products|blog)\//.test(path)) {
+      try {
+        const manifest = await env.ASSETS.fetch(new Request(new URL("/content-manifest.json", url.origin))).then((r) => r.json());
+        const slug = decodeURIComponent(path.split("/").pop() || "");
+        const ok = path.startsWith("/products/")
+          ? (manifest.products || []).some((p) => p.seoSlug === slug || p.id === slug)
+          : (manifest.blogs || []).some((b) => b.slug === slug);
+        if (!ok) return notFound();
+      } catch (e) {
+        // manifest unavailable — fall through and let the SPA handle it
+      }
+    }
+
     // Default: serve SPA
     const resp = await env.ASSETS.fetch(request);
     const ctype = resp.headers.get("content-type") || "";
     // Missing static assets must return a real 404, not the SPA fallback HTML —
     // otherwise browsers try to decode index.html as an image/font/script.
-    if (/\.(js|css|png|jpg|jpeg|webp|avif|svg|ico|woff2?|ttf|mp4|xml|txt)$/i.test(path) && ctype.includes("text/html")) {
-      return new Response("Not Found", { status: 404, headers: { "Content-Type": "text/plain" } });
+    if (STATIC_FILE_RE.test(path) && ctype.includes("text/html")) {
+      return notFound();
     }
     // HTML responses: vary cache by User-Agent so AI crawlers get the SSR
     // version while browsers get the SPA (Cloudflare's cache key ignores UA).

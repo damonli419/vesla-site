@@ -8,6 +8,7 @@ import {
 } from "../data/products";
 import { useUI } from "../i18n/UIContext";
 import LazyImage from "../components/LazyImage";
+import Seo from "../components/Seo";
 import { ProductListSchema, OrganizationSchema } from "../components/Schema";
 
 function FilterGroup({
@@ -158,6 +159,11 @@ export default function Products() {
         </h1>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink-soft">{t("products.subtitle")}</p>
       </div>
+      <Seo
+        title="Cosmetic Glass Bottles Wholesale | Custom Packaging Supplier — Vesla"
+        description="Wholesale cosmetic glass bottles: dropper bottles, cream jars, essential oil bottles, perfume vials &amp; gradient sets. Custom OEM/ODM from a China manufacturer. Low MOQ 5,000 pcs, DDP to EU &amp; USA."
+        path="/products"
+      />
       <ProductListSchema items={filtered} />
       <OrganizationSchema />
 
