@@ -752,6 +752,46 @@ export const products: Product[] = [
     seoKeywords: ["white coated glass cosmetic set wholesale", "stone texture white bottle jar set factory", "matte white cosmetic set silver cap", "white ceramic look glass set OEM", "silver cap white bottle jar packaging set", "matte white lotion jar set China supplier", "white cosmetic set gift packaging wholesale", "pearl white glass set manufacturer", "silver lid white cream jar set", "white coating bottle jar collection OEM"],
     seoTags: ["Cosmetic Set", "White Coating", "Matte Finish", "Silver Cap", "Lotion Bottle", "Cream Jar", "Custom OEM"],
   },
+  {
+    id: "gold-pump-black-cosmetic-set",
+    seoSlug: "gold-pump-black-cosmetic-set-bottle-manufacturer",
+    specTitle: "Gold Pump Black Cosmetic Set — Black Lotion Bottles & Cream Jars with Gold Pumps",
+    name: "Gold Pump Black Cosmetic Set",
+    nameI18n: { kr: "골드 펌프 블랙 코스메틱 세트", jp: "ゴールドポンプブラックコスメティックセット", tw: "金泵頭黑色化妝品套裝" },
+    category: "set",
+    material: "Glass",
+    capacity: "40 / 100 / 120 ml + 30 / 50 g",
+    capacityGroup: "set",
+    use: "Lotion / Cream",
+    moq: "5,000 pcs per SKU",
+    leadTime: "30–35 days",
+    decoration: "Black spray coating, gold metal pump, silk screen, hot stamping",
+    image: "https://sc02.alicdn.com/kf/He40bf9490b9242f19c8612d4cbac2026I.jpg",
+    gallery: [
+      "https://sc02.alicdn.com/kf/He40bf9490b9242f19c8612d4cbac2026I.jpg",
+      "https://sc02.alicdn.com/kf/Hb118f16cbbf741fe89df0fb95f380ae1o.jpg",
+      "https://sc02.alicdn.com/kf/H47f109f7a8de490eb70d148aa8b768d39.jpg",
+      "https://sc02.alicdn.com/kf/H2a98dce4c152490cbe5714f127490d20A.jpg",
+    ],
+    description:
+      "A statement black cosmetic set with gold pumps and black caps — deep matte black bottles and cream jars in a single coordinated identity. Three lotion bottles (40, 100, 120 ml) with gold pump dispensers and two cream jars (30, 50 g) with black screw lids, finished with your logo in silk screen or hot stamping. The gold-on-black contrast reads premium and gender-neutral, fitting men's grooming, luxury skincare and hotel amenity lines.",
+    descriptionI18n: {
+      kr: "골드 펌프와 블랙 캡을 더한 스테이트먼트 블랙 코스메틱 세트 — 딥 매트 블랙 보틀과 크림 자를 하나의 코디네이티드 아이덴티티로 구성. 골드 펌프 디스펜서가 적용된 로션 보틀 3종(40, 100, 120ml)과 블랙 스크류 리드의 크림 자 2종(30, 50g)에 실크스크린 또는 홋 스탬핑으로 로고를 적용. 골드-온-블랙 대비는 프리미엄하고 중성적인 느낌으로, 남성 그루밍, 럭셔리 스킨케어, 호텔 어메니티 라인에 적합.",
+      jp: "ゴールドポンプとブラックキャップを備えたステートメントなブラックのコスメティックセット。ディープマットブラックのボトルとクリームジャーを一貫したアイデンティティで構成。ゴールドポンプディスペンサー付きローションボトル3種（40・100・120ml）とブラックスクリューリッドのクリームジャー2種（30・50g）に、シルクスクリーンまたはホットスタンピングでロゴを施します。ゴールド×ブラックのコントラストはプレミアムでジェンダーニュートラル。メンズグルーミング、ラグジュアリースキンケア、ホテルアメニティラインに最適。",
+      tw: "以金色泵頭與黑蓋打造的黑色宣言系列——深霧黑瓶身與膏霜罐組成統一視覺。三款乳液瓶（40/100/120ml）搭配金色按壓泵，兩款膏霜罐（30/50g）配黑色旋蓋，可絲印或燙印您的 Logo。金×黑對比既高級又中性，適合男性護理、奢華護膚與飯店備品系列。",
+    },
+    features: [
+      "Deep matte black coating — gold-on-black premium contrast",
+      "Gold metal pump dispensers on 40 / 100 / 120 ml lotion bottles",
+      "Black screw lids on 30 / 50 g cream jars",
+      "Straight-round silhouette with rounded shoulders",
+      "Silk screen & hot stamping logos in gold or silver",
+      "Turnkey set — one identity across bottles and jars",
+      "Men's grooming, luxury skincare & hotel amenity ready",
+    ],
+    seoKeywords: ["black glass lotion bottle pump set", "gold pump black cosmetic bottle set", "black cream jar set gold cap", "black cosmetic set luxury packaging", "gold pump bottle black glass OEM", "black lotion jar set China supplier", "black glass cosmetic set wholesale", "gold pump black jar set factory", "matte black pump bottle jar set", "black gold luxury cosmetic set"],
+    seoTags: ["Cosmetic Set", "Black Coating", "Gold Pump", "Lotion Bottle", "Cream Jar", "Luxury Packaging", "Custom OEM"],
+  },
 ];
 
 export const materials = ["Glass", "Plastic"];
