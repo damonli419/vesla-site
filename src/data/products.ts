@@ -712,6 +712,46 @@ export const products: Product[] = [
     seoKeywords: ["10ml small glass dropper bottle supplier", "15ml straight round dropper bottle wholesale", "mini essential oil dropper bottle 10ml 15ml", "small capacity glass serum bottle travel size", "10ml purple glass dropper bottle OEM", "15ml matte white dropper bottle factory", "compact straight round dropper glass manufacturer", "small dropper bottle sample size bulk", "10ml 15ml dropper bottle with glass pipette", "travel size essential oil dropper packaging"],
     seoTags: ["Dropper Bottle", "Small Capacity", "Essential Oil", "Travel Size", "Sample Bottle", "Custom OEM", "Glass Pipette"],
   },
+  {
+    id: "stone-texture-white-cosmetic-set",
+    seoSlug: "stone-texture-white-cosmetic-set-bottle-manufacturer",
+    specTitle: "Stone Texture White Cosmetic Set — Matte White Bottles & Jars with Silver Caps",
+    name: "Stone Texture White Cosmetic Set",
+    nameI18n: { kr: "스톤 텍스처 화이트 코스메틱 세트", jp: "ストーンテクスチャーホワイトコスメティックセット", tw: "石紋白瓷化妝品套裝" },
+    category: "set",
+    material: "Glass",
+    capacity: "40 / 100 / 120 ml + 30 / 50 g",
+    capacityGroup: "set",
+    use: "Lotion / Cream",
+    moq: "5,000 pcs per SKU",
+    leadTime: "30–35 days",
+    decoration: "Matte white spray coating, silk screen, hot stamping, silver metal caps",
+    image: "https://sc02.alicdn.com/kf/H13a0c4c52f64454fa4da3904e0668a58A.jpg",
+    gallery: [
+      "https://sc02.alicdn.com/kf/H13a0c4c52f64454fa4da3904e0668a58A.jpg",
+      "https://sc02.alicdn.com/kf/H01c3cc391cd34b02890f52bd30443966r.jpg",
+      "https://sc02.alicdn.com/kf/H1e4771e465994f6aac8c4b9d8cf19112B.jpg",
+      "https://sc02.alicdn.com/kf/H805713bae49b4562bba0c436499579f3S.jpg",
+    ],
+    description:
+      "A stone-texture matte white cosmetic set with high-polish silver caps — the 'ceramic' look that reads premium on any shelf. Three straight-round lotion bottles (40, 100, 120 ml) and two dome-lid cream jars (30, 50 g) in one coordinated identity, with soft-touch white coating and gold or silver logo stamping. Works as a full skincare regimen set, a retail gift collection or a hotel & spa amenity line.",
+    descriptionI18n: {
+      kr: "하이폴리시 실버 캡을 더한 스톤 텍스처 매트 화이트 코스메틱 세트 — 어떤 선반에서도 프리미엄으로 읽히는 '세라믹' 룩. 스트레이트 라운드 로션 보틀 3종(40, 100, 120ml)과 돔 리드 크림 자 2종(30, 50g)이 하나의 코디네이티드 아이덴티티로 구성되며, 소프트 터치 화이트 코팅과 골드/실버 로고 스탬핑. 풀 스킨케어 세트, 리테일 기프트 컬렉션 또는 호텔·스파 어메니티 라인으로 활용 가능.",
+      jp: "ハイポリッシュシルバーキャップを備えたストーンテクスチャーマットホワイトのコスメティックセット — どんな棚でもプレミアムに見える「セラミック」ルック。ストレートラウンドのローションボトル3種（40・100・120ml）とドームリッドのクリームジャー2種（30・50g）を一貫したアイデンティティで構成。ソフトタッチのホワイトコーティングとゴールド/シルバーのロゴスタンピング。フルスキンケアセット、リテールギフトコレクション、ホテル・スパのアメニティラインとしても対応。",
+      tw: "搭配高光銀蓋的石紋霧面白化妝品套裝——在貨架上立刻呈現高級「陶瓷」質感。三款直圓乳液瓶（40/100/120ml）與兩款圓頂蓋膏霜罐（30/50g）組成統一視覺，霧面白塗層搭配金色或銀色 Logo 燙印。適合作為完整護膚套組、零售禮盒或飯店 SPA 備品系列。",
+    },
+    features: [
+      "Stone-texture matte white coating — ceramic look, soft-touch feel",
+      "High-polish silver caps: teardrop for bottles, dome for jars",
+      "Bottles: 40 / 100 / 120 ml straight-round with rounded shoulders",
+      "Jars: 30 / 50 g wide-mouth with dome lids",
+      "Gold or silver logo silk screen & hot stamping",
+      "Turnkey regimen set — same identity across every SKU",
+      "Hotel & spa amenity and gift-set packaging options",
+    ],
+    seoKeywords: ["white coated glass cosmetic set wholesale", "stone texture white bottle jar set factory", "matte white cosmetic set silver cap", "white ceramic look glass set OEM", "silver cap white bottle jar packaging set", "matte white lotion jar set China supplier", "white cosmetic set gift packaging wholesale", "pearl white glass set manufacturer", "silver lid white cream jar set", "white coating bottle jar collection OEM"],
+    seoTags: ["Cosmetic Set", "White Coating", "Matte Finish", "Silver Cap", "Lotion Bottle", "Cream Jar", "Custom OEM"],
+  },
 ];
 
 export const materials = ["Glass", "Plastic"];
