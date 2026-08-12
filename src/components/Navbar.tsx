@@ -10,6 +10,7 @@ export default function Navbar() {
   const links = [
     { to: "/", label: t("nav.home") },
     { to: "/dropper-bottles", label: "Dropper Bottles" },
+    { to: "/cream-jars", label: "Cream Jars" },
     { to: "/products", label: t("nav.products") },
     { to: "/process", label: t("nav.process") },
     { to: "/about", label: t("nav.about") },

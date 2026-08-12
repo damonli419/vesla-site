@@ -142,7 +142,7 @@ Office Hours: Mon-Sat, 9:00-18:00 (GMT+8)`,
 
 // Known SPA routes — anything else gets a real 404 (kills soft-404s in GSC).
 const KNOWN_PATHS = new Set([
-  "/", "/products", "/dropper-bottles", "/about", "/process", "/blog", "/contact", "/privacy",
+  "/", "/products", "/dropper-bottles", "/cream-jars", "/about", "/process", "/blog", "/contact", "/privacy",
   "/sitemap.xml", "/robots.txt", "/llms.txt", "/llms-full.txt", "/content-manifest.json",
   "/b4c8e9a2d1f3.txt",
 ]);

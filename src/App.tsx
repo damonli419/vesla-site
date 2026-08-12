@@ -14,6 +14,7 @@ import Home from "./pages/Home";
 const LazySampleModal = lazy(() => import("./components/SampleRequestModal"));
 
 const DropperBottles = lazy(() => import("./pages/DropperBottles"));
+const CreamJars = lazy(() => import("./pages/CreamJars"));
 const Products = lazy(() => import("./pages/Products"));
 const ProductDetail = lazy(() => import("./pages/ProductDetail"));
 const Process = lazy(() => import("./pages/Process"));
@@ -47,6 +48,7 @@ export default function App() {
                   <Route path="/" element={<Home />} />
                   <Route path="/products" element={<Products />} />
                   <Route path="/dropper-bottles" element={<DropperBottles />} />
+                  <Route path="/cream-jars" element={<CreamJars />} />
                   <Route path="/products/:id" element={<ProductDetail />} />
                   <Route path="/process" element={<Process />} />
                   <Route path="/about" element={<About />} />
