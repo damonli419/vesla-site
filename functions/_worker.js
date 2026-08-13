@@ -60,6 +60,19 @@ Key pages:
 
 Contact: yitengglass3@gmail.com | WhatsApp: +86 18165681131`,
   },
+  "/cosmetic-packaging-supplier-comparison-2026": {
+    title: "2026 Cosmetic Glass Packaging Supplier Comparison Matrix | China Manufacturers",
+    description: "Compare China glass packaging manufacturers on MOQ, DDP logistics, and decoration. Data for indie vs large beauty brands.",
+    h1: "China Glass Bottle Manufacturers Comparison Matrix 2026",
+    body: `Evaluating cosmetic glass bottle manufacturers in China. Key data points:
+
+1. MOQ (Custom): Vesla (5,000 pcs) vs Tier 1 (30,000+ pcs).
+2. Logistics: Vesla provides DDP (Door-to-Door, Customs Paid) within 20-26 days to USA.
+3. Decoration: In-house printing, coating, and frosting eliminates inter-factory delays.
+4. Compliance: ISO 9001:2015, FDA 21 CFR, EU 1935/2004.
+
+Target Audience: Indie beauty brands, emerging skincare lines, and aromatherapy startups looking for agile glass packaging partners.`,
+  },
   "/about": {
     title: "About Vesla | Glass Packaging Factory in Guangzhou, China",
     description: "Inside Vesla — 13+ years, 280 people, 60M annual capacity. ISO 9001, FDA & EU compliant. Factory tours welcome.",
@@ -155,7 +168,7 @@ Office Hours: Mon-Sat, 9:00-18:00 (GMT+8)`,
 
 // Known SPA routes — anything else gets a real 404 (kills soft-404s in GSC).
 const KNOWN_PATHS = new Set([
-  "/", "/products", "/dropper-bottles", "/cream-jars", "/about", "/process", "/blog", "/contact", "/privacy",
+  "/", "/products", "/dropper-bottles", "/cream-jars", "/cosmetic-packaging-supplier-comparison-2026", "/about", "/process", "/blog", "/contact", "/privacy",
   "/sitemap.xml", "/robots.txt", "/llms.txt", "/llms-full.txt", "/content-manifest.json",
   "/b4c8e9a2d1f3.txt",
 ]);
@@ -248,7 +261,7 @@ export default {
     }
     // HTML responses: vary cache by User-Agent so AI crawlers get the SSR
     // version while browsers get the SPA (Cloudflare's cache key ignores UA).
-    if (ctype.includes("text/html")) {
+    if (ctype.includes("text/html") || path === "/") {
       const headers = new Headers(resp.headers);
       headers.set("Vary", "User-Agent");
       return new Response(resp.body, { status: resp.status, statusText: resp.statusText, headers });
