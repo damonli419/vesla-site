@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /*/:id
+Disallow: /products/:id
 
 User-agent: GPTBot
 Allow: /

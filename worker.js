@@ -248,7 +248,7 @@ export default {
     }
     // HTML responses: vary cache by User-Agent so AI crawlers get the SSR
     // version while browsers get the SPA (Cloudflare's cache key ignores UA).
-    if (ctype.includes("text/html")) {
+    if (ctype.includes("text/html") || path === "/") {
       const headers = new Headers(resp.headers);
       headers.set("Vary", "User-Agent");
       return new Response(resp.body, { status: resp.status, statusText: resp.statusText, headers });
