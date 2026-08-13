@@ -74,6 +74,19 @@ Contact: yitengglass3@gmail.com | WhatsApp: +86 18165681131`,
 
 Contact: yitengglass3@gmail.com | +86 18165681131`,
   },
+  "/cream-jars": {
+    title: "Cream Jar Manufacturers & Suppliers | Custom Glass Cosmetic Jars — Vesla",
+    description: "Custom glass cream jars from 15g to 120g with woodgrain, matte & metallic lids. Low MOQ 5,000 pcs, in-house decoration, DDP to EU & USA.",
+    h1: "Cream Jar Manufacturers & Suppliers",
+    body: `Vesla manufactures custom glass cream jars for moisturizer, face cream and body care brands.
+
+Products: frosted round jars with woodgrain lids, matte black & brown cream jars, brown water-transfer jars — 5g to 120g.
+Capabilities: woodgrain water-transfer printing, matte & metallic lids, silk screen, hot stamping, gradient coating. MOQ 5,000 pcs on stock molds; private molds from 10,000 pcs.
+Compliance: ISO 9001, FDA 21 CFR, EU 1935/2004. Production 7-15 days on stock molds. DDP to EU & USA.
+
+Browse jars: https://www.veslapack.com/products?category=jar
+Contact: yitengglass3@gmail.com | WhatsApp +86 18165681131`,
+  },
   "/products": {
     title: "Cosmetic Glass Bottles | Wholesale & Custom — Vesla",
     description: "Custom cosmetic glass bottles wholesale: dropper bottles, cream jars, essential oil bottles, perfume vials and gradient sets. Low MOQ 5,000 pcs, in-house decoration, DDP to EU & USA.",
