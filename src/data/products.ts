@@ -506,8 +506,8 @@ export const products: Product[] = [
   {
     id: "amber-serum-vial-dropper",
     seoSlug: "amber-glass-serum-vial-dropper-bottle-supplier",
+    specTitle: "Amber Serum Vials: Wholesale Glass Vial Dropper Bottles (5ml-50ml)",
     name: "Amber Glass Serum Vial Dropper Bottle",
-    specTitle: "5ml-50ml Amber Glass Serum Vial Dropper Bottle",
     nameI18n: { kr: "앰버 글래스 세럼 바이알 드롭퍼", jp: "アンバーガラス セラム バイアル ドロッパー", tw: "茶色精華液拉管滴管瓶" },
     category: "vial",
     material: "Glass",
