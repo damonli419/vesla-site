@@ -41,7 +41,7 @@ export default function CreamJars() {
     <div dir={locale === "tw" ? "rtl" : "ltr"}>
       <Seo
         title="Cream Jar Manufacturers & Suppliers | Custom Glass Cosmetic Jars — Vesla"
-        description="Cream jar manufacturers & suppliers — custom glass cosmetic jars from 15g to 120g with woodgrain, matte & metallic lids. Low MOQ 5,000 pcs, free samples, in-house decoration, DDP to EU & USA. ISO 9001."
+        description="Premium glass cream jar manufacturers & suppliers. 15g-120g jars with woodgrain, matte & metallic lids. Custom branding, low MOQ 5,000 pcs, DDP shipping."
         path="/cream-jars"
       />
       <FAQSchema items={faqItems} />
@@ -69,6 +69,33 @@ export default function CreamJars() {
         </div>
       </section>
 
+      {/* Trust Bar */}
+      <section className="border-y border-gold/10 bg-white py-8">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5 items-center opacity-70 grayscale hover:grayscale-0 transition-all text-ink">
+            <div className="flex flex-col items-center text-center">
+              <span className="text-xl font-bold">ISO 9001:2015</span>
+              <span className="text-[10px] uppercase tracking-tighter">Quality Certified</span>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <span className="text-xl font-bold">FDA Compliant</span>
+              <span className="text-[10px] uppercase tracking-tighter">Food Grade Glass</span>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <span className="text-xl font-bold">SGS Audited</span>
+              <span className="text-[10px] uppercase tracking-tighter">Verified Factory</span>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <span className="text-xl font-bold">EU REACH</span>
+              <span className="text-[10px] uppercase tracking-tighter">Safety Standards</span>
+            </div>
+            <div className="hidden lg:block">
+              <img src="https://sc02.alicdn.com/kf/H9dabc8c4179c432e99d09e729e5b4e00a.jpg" alt="Vesla workshop" className="h-12 w-full object-cover rounded-lg" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Product grid */}
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <h2 className="mb-2 font-serif text-2xl text-ink sm:text-3xl">Our Glass Cream Jars</h2>
@@ -90,10 +117,31 @@ export default function CreamJars() {
       </section>
 
       {/* Buyer guide */}
-      <section className="bg-cream-dark/60 py-16">
-        <div className="mx-auto max-w-5xl px-6 lg:px-8">
-          <h2 className="mb-8 font-serif text-2xl text-ink sm:text-3xl">Choosing the Right Cream Jar Supplier</h2>
-          <div className="grid gap-8 md:grid-cols-2">
+      <section className="bg-cream-dark/60 py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mb-14 text-center">
+            <h2 className="font-serif text-3xl text-ink sm:text-4xl">Technical Specifications</h2>
+            <p className="mt-4 text-sm text-ink-soft">Industrial dimensions for glass cream jar series.</p>
+          </div>
+          <div className="overflow-x-auto rounded-3xl bg-white shadow-sm ring-1 ring-gold/15">
+            <table className="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr className="bg-ink text-white">
+                  <th className="p-5 font-semibold">Capacity (g)</th>
+                  <th className="p-5 font-semibold">Mouth Diameter</th>
+                  <th className="p-5 font-semibold">Height</th>
+                  <th className="p-5 font-semibold">Recommended Use</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gold/10">
+                <tr><td className="p-5 text-ink font-medium">15 g – 30 g</td><td className="p-5 text-ink-soft">42mm / 48mm</td><td className="p-5 text-ink-soft">35mm – 42mm</td><td className="p-5 text-ink-soft">Eye Cream / Travel Serum</td></tr>
+                <tr><td className="p-5 text-ink font-medium">50 g (Standard)</td><td className="p-5 text-ink-soft">54mm</td><td className="p-5 text-ink-soft">50mm</td><td className="p-5 text-ink-soft">Face Cream / Night Balm</td></tr>
+                <tr><td className="p-5 text-ink font-medium">100 g – 120 g</td><td className="p-5 text-ink-soft">68mm</td><td className="p-5 text-ink-soft">65mm</td><td className="p-5 text-ink-soft">Body Butter / Mask</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-20 grid gap-8 md:grid-cols-2">
             <div>
               <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-gold-dark">Why Buy Direct from a Manufacturer</h3>
               <ul className="space-y-3 text-sm leading-relaxed text-ink-soft">
@@ -113,6 +161,22 @@ export default function CreamJars() {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="mx-auto max-w-4xl px-6 py-16 lg:px-8">
+        <h2 className="mb-8 font-serif text-2xl text-ink sm:text-3xl">Cream Jar FAQ</h2>
+        <div className="space-y-4">
+          {faqItems.map((f) => (
+            <details key={f.q.en} className="group rounded-2xl bg-white p-6 ring-1 ring-gold/15 shadow-sm">
+              <summary className="flex cursor-pointer items-center justify-between font-serif text-lg text-ink">
+                {f.q.en}
+                <span className="text-gold transition group-open:rotate-45">+</span>
+              </summary>
+              <p className="mt-3 text-sm leading-relaxed text-ink-soft">{f.a.en}</p>
+            </details>
+          ))}
         </div>
       </section>
 

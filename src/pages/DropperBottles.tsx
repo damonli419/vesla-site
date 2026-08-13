@@ -44,8 +44,8 @@ export default function DropperBottles() {
   return (
     <div dir={locale === "tw" ? "rtl" : "ltr"}>
       <Seo
-        title="Dropper Bottles Suppliers & Manufacturers | Custom Glass Serum Bottles — Vesla"
-        description="Dropper bottles suppliers & manufacturers — custom glass serum dropper bottles from 5ml to 100ml. Low MOQ 5,000 pcs, free samples, in-house decoration, DDP to EU & USA. ISO 9001 certified."
+        title="Dropper Bottle Manufacturers & Suppliers | Custom Glass Serum Bottles — Vesla"
+        description="Custom glass dropper bottle manufacturers & suppliers in China. 5ml-100ml dropper bottles with custom colors, printing & low MOQ 5,000 pcs. DDP to USA & EU."
         path="/dropper-bottles"
       />
       <FAQSchema items={faqItems} />
@@ -73,6 +73,33 @@ export default function DropperBottles() {
         </div>
       </section>
 
+      {/* Trust Bar */}
+      <section className="border-y border-gold/10 bg-white py-8">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5 items-center opacity-70 grayscale hover:grayscale-0 transition-all text-ink">
+            <div className="flex flex-col items-center text-center">
+              <span className="text-xl font-bold">ISO 9001:2015</span>
+              <span className="text-[10px] uppercase tracking-tighter">Certified Factory</span>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <span className="text-xl font-bold">FDA Compliant</span>
+              <span className="text-[10px] uppercase tracking-tighter">21 CFR 175.300</span>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <span className="text-xl font-bold">SGS Audited</span>
+              <span className="text-[10px] uppercase tracking-tighter">Quality Assurance</span>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <span className="text-xl font-bold">EU Standard</span>
+              <span className="text-[10px] uppercase tracking-tighter">EC 1935/2004</span>
+            </div>
+            <div className="hidden lg:block">
+              <img src="https://sc02.alicdn.com/kf/H3ed4c7e33e7444e0b8776874383d6c0d2.jpg" alt="Vesla production line" className="h-12 w-full object-cover rounded-lg" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Product grid */}
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <h2 className="mb-2 font-serif text-2xl text-ink sm:text-3xl">Our Dropper Bottles</h2>
@@ -94,10 +121,32 @@ export default function DropperBottles() {
       </section>
 
       {/* Buyer guide */}
-      <section className="bg-cream-dark/60 py-16">
-        <div className="mx-auto max-w-5xl px-6 lg:px-8">
-          <h2 className="mb-8 font-serif text-2xl text-ink sm:text-3xl">Choosing the Right Dropper Bottle Supplier</h2>
-          <div className="grid gap-8 md:grid-cols-2">
+      <section className="bg-cream-dark/60 py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mb-14 text-center">
+            <h2 className="font-serif text-3xl text-ink sm:text-4xl">Technical Specifications</h2>
+            <p className="mt-4 text-sm text-ink-soft">Standard parameters for our stock dropper bottle molds.</p>
+          </div>
+          <div className="overflow-x-auto rounded-3xl bg-white shadow-sm ring-1 ring-gold/15">
+            <table className="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr className="bg-ink text-white">
+                  <th className="p-5 font-semibold">Capacity</th>
+                  <th className="p-5 font-semibold">Neck Finish</th>
+                  <th className="p-5 font-semibold">Material</th>
+                  <th className="p-5 font-semibold">Max Decoration Area</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gold/10">
+                <tr><td className="p-5 text-ink font-medium">10 ml – 15 ml</td><td className="p-5 text-ink-soft">18/410 DIN</td><td className="p-5 text-ink-soft">Type III Soda-Lime Glass</td><td className="p-5 text-ink-soft">35mm x 60mm</td></tr>
+                <tr><td className="p-5 text-ink font-medium">30 ml (Standard)</td><td className="p-5 text-ink-soft">20/410 DIN</td><td className="p-5 text-ink-soft">Type III Soda-Lime Glass</td><td className="p-5 text-ink-soft">42mm x 75mm</td></tr>
+                <tr><td className="p-5 text-ink font-medium">50 ml – 60 ml</td><td className="p-5 text-ink-soft">20/410 DIN</td><td className="p-5 text-ink-soft">Type III Soda-Lime Glass</td><td className="p-5 text-ink-soft">55mm x 90mm</td></tr>
+                <tr><td className="p-5 text-ink font-medium">100 ml</td><td className="p-5 text-ink-soft">22/410 DIN</td><td className="p-5 text-ink-soft">Type III Soda-Lime Glass</td><td className="p-5 text-ink-soft">68mm x 115mm</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-20 grid gap-12 md:grid-cols-2">
             <div>
               <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-gold-dark">Why Buy Direct from a Manufacturer</h3>
               <ul className="space-y-3 text-sm leading-relaxed text-ink-soft">
