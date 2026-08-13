@@ -28,7 +28,7 @@ const featured = [
   {
     key: "oil",
     title: "Essential Oil Bottles",
-    image: "https://sc02.alicdn.com/kf/H231a0895f6c347b6a26f12d523d9ac76q.jpg",
+    image: "/images/cat-oil.webp",
     applications: "Aromatherapy, carrier oil & wellness brands",
     advantage: "UV-protective amber glass · 5-100ml · euro round & shoulder styles",
     customization: "Custom logos, color coating & cap options",
@@ -37,7 +37,7 @@ const featured = [
   {
     key: "set",
     title: "Cosmetic Sets",
-    image: "https://sc02.alicdn.com/kf/Hba8e5303cb1d4ac9afaf69ef5ec30362e.jpg",
+    image: "/images/cat-set.webp",
     applications: "Skincare brands & gift set launches",
     advantage: "Matching gradient bottles + jars · one brand, one look",
     customization: "Full Pantone color matching, gift boxes & private label",
