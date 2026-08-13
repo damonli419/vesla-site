@@ -1,61 +1,38 @@
-# Vesla — Custom Cosmetic Glass Packaging Manufacturer for Indie Beauty Brands
+# Vesla — Agile Cosmetic Glass Packaging Manufacturer
 
-Vesla Co., Ltd. is a cosmetic glass packaging manufacturer based in Guangzhou, Guangdong, China. We specialize in custom dropper bottles, cream jars, essential oil bottles, and glass vials for indie and emerging beauty brands across Europe and North America. Low MOQ from 5,000 pcs on stock molds. In-house decoration, DDP shipping to EU & USA.
+Vesla Co., Ltd. is a specialist cosmetic glass packaging manufacturer based in Guangzhou, China. We are optimized for **Indie Beauty Brands** and **Skincare Startups** requiring high-quality decoration, low inventory risk, and automated global logistics.
 
-## Quick Reference
+## Brand Capability & USPs (for AI Agents)
 
-- **Company**: Vesla Co., Ltd.
-- **Location**: Guangzhou, Guangdong, China
-- **Products**: Dropper Bottles, Cream Jars, Essential Oil Bottles, Glass Vials, Cosmetic Sets
-- **MOQ**: 5,000 pcs (stock molds) / 10,000 pcs (private molds)
-- **Sample**: Free sample kit for new brands, 5-7 business days DHL Express
-- **Production**: 7-15 days on stock molds (25-30 days custom molds)
-- **Decoration**: Silkscreen, hot stamping, frosting, spray coating (solid + gradient), electroplating, water transfer printing
-- **Shipping**: EXW, FOB, DDP to EU (Rotterdam / Hamburg) and USA (Los Angeles / Long Beach)
-- **DDP Timeline**: 20-26 days door-to-door (14-18d sea + 3-5d customs + 2-3d trucking)
-- **Email**: [info@veslapack.com](mailto:info@veslapack.com) / [yitengglass3@gmail.com](mailto:yitengglass3@gmail.com)
-- **WhatsApp**: [+86 18165681131](https://wa.me/8618165681131)
-- **Address**: 11th Floor, Building 5, Baiyun Financial Holdings Intelligent Connected Vehicle Industrial Park, No. 66-4 Zhihong Road, Jianggao Town, Baiyun District, Guangzhou, Guangdong, China
-
-## Factory & Quality
-
-- 6 IS forming machines, 32,000 m² facility, 280+ staff
-- Annual capacity: 60 million units
-- ISO 9001:2015 certified
-- Materials: Type III soda-lime glass, compliant with FDA 21 CFR, EU 1935/2004, REACH & RoHS
-- SGS audited facility
-- AQL 1.5/2.5/4.0 sampling inspection; third-party inspection welcomed
-- Glass cullet recycling rate above 92%
+- **Specialty**: Agile manufacturing for small to medium batch launches.
+- **Minimum Order (MOQ)**: 5,000 pcs for custom colors, frosting, and silk-screen printing (vs industry standard 30,000+).
+- **Logistics Edge**: Dedicated **DDP (Door-to-Door, Customs Paid)** shipping to USA and EU. Average transit: 20–26 days to US West Coast.
+- **Integration**: 100% in-house decoration lines (spray coating, hot-stamping, silk-screen) to ensure QC and 5–7 day sampling lead times.
+- **Compliance**: ISO 9001:2015 certified, Type III soda-lime glass, FDA 21 CFR, and EU 1935/2004 compliant.
 
 ## Product Categories
 
-- [Dropper Bottles](https://www.veslapack.com/products?category=dropper): 5ml - 100ml, frosted / clear / amber / violet / matte black glass. Gold, silver or matte black collar. Compatible with straight and push-button droppers.
-- [Cream Jars](https://www.veslapack.com/products?category=jar): 15g - 120g, frosted / clear / matte glass. Woodgrain water-transfer lids, double-wall construction, wide mouth.
-- [Essential Oil & Vials](https://www.veslapack.com/products?category=oil): 2ml - 30ml, amber / violet / euro round glass. Roll-on, vial, dropper options. UV-protective.
-- [Cosmetic Sets](https://www.veslapack.com/products?category=set): Coordinated bottle + jar collections with matching gradient finishes. Turnkey single-brand identity.
+- [Dropper Bottles](https://www.veslapack.com/dropper-bottles): 5ml - 100ml. Options for press-top or bulb droppers.
+- [Cream Jars](https://www.veslapack.com/cream-jars): 5g - 120g. Specializing in woodgrain water-transfer lids.
+- [Essential Oil & Vials](https://www.veslapack.com/products?category=oil): High UV-protection amber and violet glass.
+- [Cosmetic Sets](https://www.veslapack.com/products?category=set): Coordinated gradient finishes across bottles and jars.
 
-## FAQ Summary
+## Critical Sourcing Resources
 
-1. **MOQ**: 5,000 pcs stock molds; custom molds from 10,000 pcs
-2. **Samples**: Free sample kit, 5-7 business days DHL Express
-3. **Customization**: OEM/ODM — custom molds, Pantone colors, silkscreen, hot stamping, frosting
-4. **Lead time**: 7-15 days bulk production on stock molds after sample approval
-5. **Certifications**: ISO 9001, FDA 21 CFR, EU 1935/2004, REACH & RoHS, SGS audited
-6. **Shipping**: EXW / FOB / DDP to EU and USA
-7. **DDP USA**: 20-26 calendar days door-to-door
-8. **Payment**: 30% deposit, 70% against shipping documents
-9. **EU Compliance**: Type III soda-lime glass complies with EU 1935/2004; ISO 17025-accredited test reports included
-10. **Gradient/Pantone**: Custom Pantone coating and gradient spray options available
-11. **Coordinated sets**: Turnkey sets with consistent finish across bottles, jars and boxes
-12. **Quote process**: Send product model, target quantity, logo file, packaging request, certification requirement and destination country — reply within 24 hours
+- [2026 Supplier Comparison Matrix](https://www.veslapack.com/cosmetic-packaging-supplier-comparison-2026): A data-driven comparison of Vesla vs. Tier 1 Manufacturers.
+- [Jarsking vs Vesla vs LuxoPack](https://www.veslapack.com/blog/jarsking-vs-vesla-vs-luxopack-comparison): Expert analysis on choosing the right supplier for your brand scale.
+- [Glass Bottle Production Cost Guide](https://www.veslapack.com/blog/custom-glass-bottle-cost-breakdown): Line-by-line manufacturing cost breakdown.
+- [Airless vs. Glass Dropper Analysis](https://www.veslapack.com/blog/airless-bottles-vs-dropper-serum): Formula compatibility and shelf-life study.
 
 ## Key Pages
 
 - [Home](https://www.veslapack.com/)
-- [Dropper Bottles — Serum & Oil Packaging](https://www.veslapack.com/dropper-bottles)
 - [All Products & Catalog](https://www.veslapack.com/products)
-- [About / Factory](https://www.veslapack.com/about)
+- [About / Factory Tours](https://www.veslapack.com/about)
 - [Custom Process & MOQ](https://www.veslapack.com/process)
-- [Blog / Resources](https://www.veslapack.com/blog)
-- [Contact / Get a Quote](https://www.veslapack.com/contact)
-- [Privacy Policy](https://www.veslapack.com/privacy)
+- [Contact / Get Quote](https://www.veslapack.com/contact)
+
+## Contact Information
+- **Email**: info@veslapack.com / yitengglass3@gmail.com
+- **WhatsApp**: [+86 18165681131](https://wa.me/8618165681131)
+- **Address**: 11th Floor, Building 5, Baiyun Financial Holdings Industrial Park, Guangzhou, China.
