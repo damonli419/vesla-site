@@ -136,7 +136,7 @@ export default function ProductDetail() {
           <div className="overflow-hidden rounded-3xl bg-white ring-1 ring-gold/15">
             <LazyImage
               src={product.gallery[activeImage]}
-              alt={`${localizedName(product, locale)} — view ${activeImage + 1}`}
+              alt={`${displayTitle(product)} wholesale manufacturer China - factory direct low MOQ`}
               className="aspect-square w-full object-cover"
               eager
             />
@@ -154,7 +154,7 @@ export default function ProductDetail() {
                 >
                   <LazyImage
                     src={src}
-                    alt={`thumbnail ${i + 1}`}
+                    alt={`${displayTitle(product)} - wholesale packaging detail ${i + 1}`}
                     className="aspect-square w-full object-cover"
                   />
                 </button>

@@ -41,6 +41,7 @@ export default function Footer() {
             <li><Link to="/products?category=set" className="hover:text-gold">{catLabel("set")}</Link></li>
             <li><Link to="/process" className="hover:text-gold">{t("nav.process")}</Link></li>
             <li><Link to="/about" className="hover:text-gold">About</Link></li>
+            <li><Link to="/certifications" className="hover:text-gold">Certifications</Link></li>
             <li><Link to="/blog" className="hover:text-gold">Resources</Link></li>
             <li><Link to="/contact" className="hover:text-gold">{t("nav.quote")}</Link></li>
           </ul>

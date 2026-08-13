@@ -202,7 +202,7 @@ export default function Products() {
                   <div className="aspect-square overflow-hidden bg-cream-dark/40">
                     <LazyImage
                       src={p.image}
-                      alt={p.name}
+                      alt={`${p.name} wholesale manufacturer China - factory direct low MOQ`}
                       className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                     />
                   </div>

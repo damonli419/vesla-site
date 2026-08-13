@@ -25,6 +25,7 @@ const Privacy = lazy(() => import("./pages/Privacy"));
 const BlogIndex = lazy(() => import("./pages/Blog").then((m) => ({ default: m.BlogIndex })));
 const BlogPostPage = lazy(() => import("./pages/Blog").then((m) => ({ default: m.BlogPost })));
 const Contact = lazy(() => import("./pages/Contact"));
+const Certifications = lazy(() => import("./pages/Certifications"));
 
 function PageLoader() {
   return (
@@ -57,6 +58,7 @@ export default function App() {
                   <Route path="/blog" element={<BlogIndex />} />
                   <Route path="/blog/:slug" element={<BlogPostPage />} />
                   <Route path="/contact" element={<Contact />} />
+                  <Route path="/certifications" element={<Certifications />} />
                   <Route path="/privacy" element={<Privacy />} />
                   {/* locale-prefixed SEO landing paths */}
                   <Route path="/kr" element={<Home />} />

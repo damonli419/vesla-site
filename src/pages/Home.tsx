@@ -279,7 +279,7 @@ export default function Home() {
               >
                 <img
                   src="/images/hero-poster.webp"
-                  alt="Vesla factory virtual tour preview"
+                  alt="Vesla cosmetic glass packaging factory - premium manufacturer"
                   width={800}
                   height={520}
                   className="h-full w-full object-cover"
@@ -353,7 +353,7 @@ export default function Home() {
               className="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gold/15 transition duration-300 hover:-translate-y-1.5 hover:shadow-xl"
             >
               <div className="aspect-[16/10] overflow-hidden">
-                <LazyImage src={f.image} alt={f.title} className="h-full w-full object-cover" />
+                <LazyImage src={f.image} alt={`${f.title} wholesale manufacturer China - factory direct low MOQ`} className="h-full w-full object-cover" />
               </div>
               <div className="p-7">
                 <h3 className="font-serif text-2xl text-ink">{f.title}</h3>
@@ -399,7 +399,7 @@ export default function Home() {
                 <div className="aspect-square overflow-hidden">
                   <LazyImage
                     src={s.img}
-                    alt={s.title}
+                    alt={`Inside Vesla Factory: ${s.title} - ISO 9001 certified manufacturer China`}
                     className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
                 </div>

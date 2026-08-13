@@ -226,7 +226,7 @@ export default function About() {
           ].map((s) => (
             <div key={s.n} className="group overflow-hidden rounded-2xl bg-white ring-1 ring-gold/20 transition-shadow hover:shadow-lg">
               <div className="relative aspect-square overflow-hidden">
-                <img src={s.img.startsWith("http") ? s.img : `https://sc02.alicdn.com/kf/${s.img}.png`} alt={s.title} width={800} height={800} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                <img src={s.img.startsWith("http") ? s.img : `https://sc02.alicdn.com/kf/${s.img}.png`} alt={`Vesla Factory Step ${s.n}: ${s.title} - Quality Glass Manufacturing China`} width={800} height={800} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                 <div className="absolute top-3 left-3 flex h-7 w-7 items-center justify-center rounded-full bg-white/90 text-xs font-bold text-gold-dark shadow-sm">{s.n}</div>
               </div>
               <div className="p-4">

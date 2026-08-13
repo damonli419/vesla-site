@@ -83,7 +83,7 @@ export default function DropperBottles() {
           {dropperProducts.map((p) => (
             <Link key={p.id} to={`/products/${p.seoSlug || p.id}`} className="group rounded-2xl bg-white p-4 ring-1 ring-gold/15 transition hover:shadow-lg">
               <div className="aspect-square overflow-hidden rounded-xl bg-cream-dark/40">
-                <img src={p.image} alt={p.name} width={800} height={800} className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105" loading="lazy" />
+                <img src={p.image} alt={`${p.name} wholesale manufacturer China - factory direct low MOQ`} width={800} height={800} className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105" loading="lazy" />
               </div>
               <h3 className="mt-3 text-sm font-medium text-ink">{p.name}</h3>
               <p className="mt-1 text-xs text-ink-soft">{p.capacity}</p>
