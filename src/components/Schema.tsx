@@ -43,8 +43,10 @@ export function ProductSchema({ product }: { product: Product }) {
     name: product.name,
     image: product.gallery,
     description: product.description,
-    brand: { "@type": "Brand", name: siteConfig.name },
+    brand: { "@type": "Brand", name: product.brandName || siteConfig.name },
     manufacturer: { "@type": "Organization", name: siteConfig.legalName },
+    mpn: product.mpn,
+    sku: product.sku,
     category: product.category,
     material: product.material,
     additionalProperty: [
