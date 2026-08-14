@@ -248,80 +248,69 @@ function notFound() {
 
 export default {
   async fetch(request, env) {
-    const url = new URL(request.url);
-    const path = url.pathname;
-    const ua = request.headers.get("user-agent") || "";
+    try {
+      const url = new URL(request.url);
+      const path = url.pathname;
+      const ua = request.headers.get("user-agent") || "";
 
-    // Canonical host: non-www → www (avoid duplicate content)
-    if (url.hostname === "veslapack.com") {
-      const canonical = new URL(request.url);
-      canonical.hostname = "www.veslapack.com";
-      return Response.redirect(canonical.toString(), 301);
-    }
+      // 1. Canonical Redirect
+      if (url.hostname === "veslapack.com") {
+        const canonical = new URL(request.url);
+        canonical.hostname = "www.veslapack.com";
+        return Response.redirect(canonical.toString(), 301);
+      }
 
-    // 1. SSR for AI crawlers (and Googlebot)
-    if (isAICrawler(ua)) {
-      try {
+      // 2. SSR for Crawlers
+      if (isAICrawler(ua)) {
         const page = STATIC_PAGES[path];
         if (page) return serveSSR({ ...page, url: url.toString() });
 
-        // Dynamic Product/Blog Detail
         if (/^\/(products|blog)\//.test(path)) {
-          const manifestUrl = new URL("/content-manifest.json", url.origin);
-          const manifestResp = await env.ASSETS.fetch(manifestUrl.toString());
-          const manifest = await manifestResp.json();
+          const manifest = await env.ASSETS.fetch(new URL("/content-manifest.json", url.origin).toString()).then(r => r.json());
           const slug = decodeURIComponent(path.split("/").pop() || "");
-          
           if (path.startsWith("/products/")) {
-            const prod = (manifest.products || []).find((p) => p.seoSlug === slug || p.id === slug);
+            const prod = (manifest.products || []).find(p => p.seoSlug === slug || p.id === slug);
             if (prod) return serveSSR({
               title: prod.name + " | Vesla Products",
               description: (prod.description || "").substring(0, 160),
               h1: prod.name,
               body: `${prod.name} — ${prod.capacity}. ${prod.description}`,
-              url: url.toString(),
+              url: url.toString()
             });
           } else {
-            const post = (manifest.blogs || []).find((b) => b.slug === slug);
+            const post = (manifest.blogs || []).find(b => b.slug === slug);
             if (post) return serveSSR({
               title: post.title + " | Vesla Blog",
               description: (post.body || "").substring(0, 160),
               h1: post.title,
               body: post.body,
-              url: url.toString(),
+              url: url.toString()
             });
           }
         }
-      } catch (e) {
-        // Fall through to SPA on error
       }
+
+      // 3. Valid Path Check
+      const isKnown = KNOWN_PATHS.has(path) || STATIC_FILE_RE.test(path) || /^\/(products|blog)\//.test(path);
+      if (!isKnown) return notFound();
+
+      // 4. Serve Asset
+      const resp = await env.ASSETS.fetch(request);
+      const ctype = resp.headers.get("content-type") || "";
+
+      // 5. Asset Guard
+      if (STATIC_FILE_RE.test(path) && ctype.includes("text/html")) return notFound();
+
+      // 6. Vary Header
+      if (ctype.includes("text/html") || path === "/") {
+        const h = new Headers(resp.headers);
+        h.set("Vary", "User-Agent");
+        return new Response(resp.body, { status: resp.status, statusText: resp.statusText, headers: h });
+      }
+
+      return resp;
+    } catch (e) {
+      return new Response(`Vesla Worker Error: ${e.message}\n${e.stack}`, { status: 500 });
     }
-
-    // 2. Real-404 guard for known invalid SPA routes
-    if (!KNOWN_PATHS.has(path) && !STATIC_FILE_RE.test(path) && !/^\/(products|blog)\//.test(path)) {
-      return notFound();
-    }
-
-    // 3. Default: serve SPA
-    const resp = await env.ASSETS.fetch(request);
-    const ctype = resp.headers.get("content-type") || "";
-
-    // 4. Missing static assets must return a real 404
-    if (STATIC_FILE_RE.test(path) && ctype.includes("text/html")) {
-      return notFound();
-    }
-
-    // 5. Inject Vary header
-    if (ctype.includes("text/html") || path === "/") {
-      const newHeaders = new Headers(resp.headers);
-      newHeaders.set("Vary", "User-Agent");
-      return new Response(resp.body, { 
-        status: resp.status, 
-        statusText: resp.statusText, 
-        headers: newHeaders 
-      });
-    }
-
-    return resp;
-  },
+  }
 };
