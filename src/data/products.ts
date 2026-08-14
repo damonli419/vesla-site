@@ -927,6 +927,9 @@ export const uses = [
   "Wellness Supplement",
 ];
 
+const PEXEL = (id: number, w = 1200) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
+
 // Case studies shown on the Custom Process page. Images are royalty-free
 // Pexels shots styled to look like real client brand assets.
 export const caseStudies = [
