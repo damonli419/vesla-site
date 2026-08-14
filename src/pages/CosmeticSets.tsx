@@ -86,20 +86,32 @@ export default function CosmeticSets() {
         <p className="mb-10 text-sm text-ink-soft">
           Explore our signature coordinated sets or build your own from our stock mold library.
         </p>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {setProducts.map((p) => (
-            <Link key={p.id} to={`/products/${p.seoSlug || p.id}`} className="group rounded-2xl bg-white p-4 ring-1 ring-gold/15 transition hover:shadow-lg">
-              <div className="aspect-[16/10] overflow-hidden rounded-xl bg-cream-dark/40 p-4">
-                <img src={p.image} alt={`${p.name} collection`} width={800} height={800} className="h-full w-full object-contain object-center transition duration-500 group-hover:scale-105" loading="lazy" />
+            <Link key={p.id} to={`/products/${p.seoSlug || p.id}`} className="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gold/15 transition duration-300 hover:-translate-y-1.5 hover:shadow-xl">
+              <div className="aspect-[16/10] overflow-hidden bg-cream-dark/40">
+                <img 
+                  src={p.image} 
+                  alt={`${p.name} collection`} 
+                  width={800} 
+                  height={500} 
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105" 
+                  loading="lazy" 
+                />
               </div>
-              <h3 className="mt-4 font-serif text-xl text-ink">{p.name}</h3>
-              <p className="mt-1 text-xs text-ink-soft">{p.capacity}</p>
-              <div className="mt-4 flex gap-2 flex-wrap">
-                {p.features.slice(0, 3).map(f => (
-                   <span key={f} className="text-[10px] bg-gold/5 text-gold-dark px-2 py-1 rounded-md border border-gold/10">{f}</span>
-                ))}
+              <div className="p-7">
+                <h3 className="font-serif text-2xl text-ink">{p.name}</h3>
+                <p className="mt-2 text-sm text-ink-soft">{p.capacity}</p>
+                <div className="mt-5 flex gap-2 flex-wrap">
+                  {(p.features || []).slice(0, 3).map(f => (
+                    <span key={f} className="text-[11px] font-semibold bg-gold/5 text-gold-dark px-2.5 py-1 rounded-md border border-gold/10">{f}</span>
+                  ))}
+                </div>
+                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold-dark">
+                  View Set Specs
+                  <span className="transition group-hover:translate-x-1">→</span>
+                </span>
               </div>
-              <p className="mt-4 text-xs font-semibold text-gold-dark border-t border-gold/5 pt-4">View Set Specs →</p>
             </Link>
           ))}
         </div>

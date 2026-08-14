@@ -86,20 +86,32 @@ export default function SerumBottles() {
         <p className="mb-10 text-sm text-ink-soft">
           High-clarity and UV-shielding glass solutions for premium skincare and wellness lines.
         </p>
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-7 sm:grid-cols-3 lg:grid-cols-4">
           {serumProducts.map((p) => (
-            <Link key={p.id} to={`/products/${p.seoSlug || p.id}`} className="group rounded-2xl bg-white p-4 ring-1 ring-gold/15 transition hover:shadow-lg">
-              <div className="aspect-square overflow-hidden rounded-xl bg-cream-dark/40 p-2">
-                <img src={p.image} alt={`${p.name} wholesale manufacturer China`} width={800} height={800} className="h-full w-full object-contain object-center transition duration-500 group-hover:scale-105" loading="lazy" />
+            <Link key={p.id} to={`/products/${p.seoSlug || p.id}`} className="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gold/15 transition duration-300 hover:-translate-y-1.5 hover:shadow-lg">
+              <div className="aspect-square overflow-hidden bg-cream-dark/40">
+                <img 
+                  src={p.image} 
+                  alt={`${p.name} wholesale manufacturer China`} 
+                  width={800} 
+                  height={800} 
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105" 
+                  loading="lazy" 
+                />
               </div>
-              <h3 className="mt-4 font-serif text-lg text-ink line-clamp-1">{p.name}</h3>
-              <p className="mt-1 text-xs text-ink-soft">{p.capacity}</p>
-              <div className="mt-4 flex gap-2 flex-wrap">
-                {(p.features || []).slice(0, 3).map(f => (
-                   <span key={f} className="text-[10px] font-semibold bg-gold/5 text-gold-dark px-2 py-1 rounded-md border border-gold/10 line-clamp-1">{f}</span>
-                ))}
+              <div className="p-5">
+                <h3 className="font-serif text-lg text-ink line-clamp-1">{p.name}</h3>
+                <p className="mt-1 text-xs text-ink-soft">{p.capacity}</p>
+                <div className="mt-5 flex gap-2 flex-wrap">
+                  {(p.features || []).slice(0, 3).map(f => (
+                    <span key={f} className="text-[10px] font-semibold bg-gold/5 text-gold-dark px-2.5 py-1 rounded-md border border-gold/10 line-clamp-1">{f}</span>
+                  ))}
+                </div>
+                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold-dark">
+                  View Details
+                  <span className="transition group-hover:translate-x-1">→</span>
+                </span>
               </div>
-              <p className="mt-4 text-xs font-semibold text-gold-dark border-t border-gold/5 pt-4">View Details →</p>
             </Link>
           ))}
         </div>
