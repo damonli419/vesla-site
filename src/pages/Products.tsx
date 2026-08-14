@@ -107,7 +107,7 @@ export default function Products() {
       <div className="border-b border-gold/15 pb-6">
         <h4 className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-ink">Category</h4>
         <div className="space-y-2.5">
-          {(["dropper", "jar", "oil", "set"] as Category[]).map((c) => (
+          {(["serum", "jar", "set", "vial"] as Category[]).map((c) => (
             <label key={c} className="flex cursor-pointer items-center gap-3 text-sm text-ink-soft hover:text-ink">
               <input
                 type="radio"

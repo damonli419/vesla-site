@@ -1,0 +1,34 @@
+export type Category = "serum" | "jar" | "set" | "vial";
+
+export const categoryLabels: Record<Category, { en: string; kr: string; jp: string; tw: string }> = {
+  serum: { en: "Serum Bottles", kr: "세럼 보틀", jp: "セラムボトル", tw: "精華液瓶" },
+  jar: { en: "Cream Jars", kr: "크림 자", jp: "クリームジャー", tw: "膏霜瓶" },
+  set: { en: "Cosmetic Sets", kr: "코스메틱 세트", jp: "コスメティックセット", tw: "化妝品套裝" },
+  vial: { en: "Glass Vials", kr: "유리 바이알", jp: "ガラスバイアル", tw: "玻璃瓶" },
+};
+
+export interface Product {
+  id: string;
+  seoSlug: string;
+  name: string;
+  specTitle?: string;
+  nameI18n: { kr: string; jp: string; tw: string };
+  category: Category;
+  material: string;
+  capacity: string;
+  capacityGroup: "mini" | "standard" | "large" | "set";
+  use: string;
+  moq: string;
+  leadTime: string;
+  decoration: string;
+  image: string;
+  gallery: string[];
+  description: string;
+  descriptionI18n: { kr: string; jp: string; tw: string };
+  features: string[];
+  brandName?: string;
+  mpn?: string;
+  sku?: string;
+  seoKeywords: string[];
+  seoTags: string[];
+}
