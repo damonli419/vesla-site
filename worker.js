@@ -86,6 +86,30 @@ Target Audience: Indie beauty brands, emerging skincare lines, and aromatherapy 
 
 We provide safety data sheets (SDS) and technical data sheets (TDS) with every bulk shipment.`,
   },
+  "/quality-control": {
+    title: "Quality Control & Manufacturing Standards | ISO 9001, FDA — Vesla",
+    description: "Learn about Vesla's rigorous quality control process for cosmetic glass manufacturing. From IS forming precision to AQL 1.5 inspection and DDP drop tests.",
+    h1: "Glass Manufacturing Quality Standards",
+    body: `Vesla integrates strict QC at every manufacturing station.
+1. IS Forming: dimensional laser scanning (+/- 0.5mm tolerance).
+2. Annealing: internal stress elimination for thermal shock resistance.
+3. AQL 1.5 Inspection: batch rejection threshold for critical defects.
+4. Adhesion: cross-hatch and tape tests for color coatings.
+5. Logistical: drop-test certified palletizing for sea freight.
+Compliance: ISO 9001:2015, FDA 21 CFR, EU 1935/2004.`,
+  },
+  "/quality-control": {
+    title: "Quality Control & Manufacturing Standards | ISO 9001, FDA — Vesla",
+    description: "Learn about Vesla's rigorous quality control process for cosmetic glass manufacturing. From IS forming precision to AQL 1.5 inspection and DDP drop tests.",
+    h1: "Glass Manufacturing Quality Standards",
+    body: `Vesla integrates strict QC at every manufacturing station.
+1. IS Forming: dimensional laser scanning (+/- 0.5mm tolerance).
+2. Annealing: internal stress elimination for thermal shock resistance.
+3. AQL 1.5 Inspection: batch rejection threshold for critical defects.
+4. Adhesion: cross-hatch and tape tests for color coatings.
+5. Logistical: drop-test certified palletizing for sea freight.
+Compliance: ISO 9001:2015, FDA 21 CFR, EU 1935/2004.`,
+  },
   "/about": {
     title: "About Vesla | Glass Packaging Factory in Guangzhou, China",
     description: "Inside Vesla — 13+ years, 280 people, 60M annual capacity. ISO 9001, FDA & EU compliant. Factory tours welcome.",
@@ -194,7 +218,7 @@ Office Hours: Mon-Sat, 9:00-18:00 (GMT+8)`,
 
 // Known SPA routes — anything else gets a real 404 (kills soft-404s in GSC).
 const KNOWN_PATHS = new Set([
-  "/", "/products", "/serum-bottles", "/cream-jars", "/glass-vials", "/cosmetic-packaging-supplier-comparison-2026", "/certifications", "/about", "/process", "/blog", "/contact", "/privacy",
+  "/", "/products", "/serum-bottles", "/cream-jars", "/glass-vials", "/cosmetic-packaging-supplier-comparison-2026", "/quality-control", "/certifications", "/about", "/process", "/blog", "/contact", "/privacy",
   "/sitemap.xml", "/robots.txt", "/llms.txt", "/llms-full.txt", "/content-manifest.json",
   "/b4c8e9a2d1f3.txt",
 ]);
