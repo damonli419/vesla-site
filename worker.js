@@ -141,6 +141,19 @@ Shipping: DDP shipping to USA and EU (20-26 days). ISO 9001 factory.
 Browse vials: https://www.veslapack.com/products?category=vial
 Contact: yitengglass3@gmail.com | WhatsApp +86 18165681131`,
   },
+  "/cosmetic-sets": {
+    title: "Cosmetic Glass Set Manufacturers | Coordinated Skincare Collections — Vesla",
+    description: "Premium cosmetic glass set manufacturers. Coordinated skincare collections: lotion bottles & jars with matching finishes. Low MOQ 5,000 pcs, DDP shipping.",
+    h1: "Cosmetic Glass Set Manufacturers",
+    body: `Vesla manufactures coordinated glass packaging sets for premium skincare regimens.
+
+Products: matching 30ml/50ml/100ml lotion bottles and 30g/50g cream jars. Gradient, matte, and solid color finishes.
+Capabilities: 100% color-match calibration across different bottle types, custom gift box inserts, silk-screen branding. MOQ 5,000 units per SKU.
+Logistics: Automated DDP shipping to USA and EU. ISO 9001 certified manufacturing.
+
+Browse collections: https://www.veslapack.com/products?category=set
+Contact: yitengglass3@gmail.com | WhatsApp +86 18165681131`,
+  },
   "/serum-bottles": {
     title: "Serum & Essential Oil Bottle Manufacturers | Custom Glass Dropper Bottles — Vesla",
     description: "Premium serum & essential oil bottle manufacturers. Custom glass dropper bottles from 5ml to 100ml with UV protection and in-house decoration. Low MOQ 5,000 pcs, DDP shipping.",

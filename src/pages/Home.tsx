@@ -41,7 +41,7 @@ const featured = [
     applications: "Skincare brands & gift set launches",
     advantage: "Matching gradient bottles + jars · one brand, one look",
     customization: "Full Pantone color matching, gift boxes & private label",
-    link: "/products?category=set",
+    link: "/cosmetic-sets",
   },
 ] as const;
 

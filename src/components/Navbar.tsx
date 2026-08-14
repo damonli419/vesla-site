@@ -12,6 +12,7 @@ export default function Navbar() {
     { to: "/serum-bottles", label: "Serum Bottles" },
     { to: "/cream-jars", label: "Cream Jars" },
     { to: "/glass-vials", label: "Glass Vials" },
+    { to: "/cosmetic-sets", label: "Cosmetic Sets" },
     { to: "/products", label: t("nav.products") },
     { to: "/process", label: t("nav.process") },
     { to: "/about", label: t("nav.about") },
