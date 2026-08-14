@@ -117,48 +117,48 @@ export function BlogPost() {
         {(local(post, "body", locale) || "").split("\n\n").filter(Boolean).map((para, i) => (
           <p key={i} className="mt-5">{para.trim()}</p>
         ))}
-        <div className="mt-8 border-t border-gold/15 pt-6">
-          <p className="text-xs font-semibold uppercase tracking-widest text-gold-dark mb-3">
-            {locale === "en" ? "Explore related products" : locale === "kr" ? "관련 제품 살펴보기" : locale === "jp" ? "関連製品を見る" : "探索相關產品"}
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {post.category === "guide" && (
-              <>
-                <a href="/products?category=dropper" className="rounded-full border border-gold/20 px-3 py-1 text-xs text-gold-dark hover:bg-gold/10 transition">Dropper Bottles</a>
-                <a href="/products?category=jar" className="rounded-full border border-gold/20 px-3 py-1 text-xs text-gold-dark hover:bg-gold/10 transition">Cream Jars</a>
-              </>
-            )}
-            {post.category === "material" && (
-              <>
-                <a href="/products?category=dropper" className="rounded-full border border-gold/20 px-3 py-1 text-xs text-gold-dark hover:bg-gold/10 transition">Dropper Bottles</a>
-                <a href="/products/matte-black-serum-bottle" className="rounded-full border border-gold/20 px-3 py-1 text-xs text-gold-dark hover:bg-gold/10 transition">Matte Black Serum</a>
-              </>
-            )}
-            {post.category === "logistics" && (
-              <>
-                <a href="/products" className="rounded-full border border-gold/20 px-3 py-1 text-xs text-gold-dark hover:bg-gold/10 transition">All Products</a>
-                <a href="/about" className="rounded-full border border-gold/20 px-3 py-1 text-xs text-gold-dark hover:bg-gold/10 transition">Factory Tour</a>
-              </>
-            )}
-            {post.category === "trend" && (
-              <>
-                <a href="/products?category=vial" className="rounded-full border border-gold/20 px-3 py-1 text-xs text-gold-dark hover:bg-gold/10 transition">Glass Vials</a>
-                <a href="/products/frosted-round-jar-woodgrain" className="rounded-full border border-gold/20 px-3 py-1 text-xs text-gold-dark hover:bg-gold/10 transition">Woodgrain Jars</a>
-              </>
-            )}
-            <a href="/products" className="rounded-full border border-gold/20 px-3 py-1 text-xs text-gold-dark hover:bg-gold/10 transition">
-              {locale === "en" ? "All Products →" : locale === "kr" ? "모든 제품 →" : locale === "jp" ? "全製品 →" : "所有產品 →"}
-            </a>
+        <div className="mt-12 rounded-3xl bg-cream-dark/40 p-8 ring-1 ring-gold/15">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div className="max-w-md">
+              <h3 className="font-serif text-xl text-ink">Ready to start your project?</h3>
+              <p className="mt-2 text-sm text-ink-soft">
+                Get a free technical consultation and a sample kit with our latest {post.category === "material" ? "glass bottles" : "packaging solutions"}.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Link
+                to="/contact?source=blog_sample"
+                className="rounded-full bg-gold px-7 py-3 text-center text-sm font-semibold text-white shadow-sm hover:bg-gold-dark transition"
+              >
+                Request Free Sample
+              </Link>
+              <Link
+                to="/contact"
+                className="rounded-full border border-gold px-7 py-3 text-center text-sm font-semibold text-gold-dark hover:bg-gold hover:text-white transition"
+              >
+                Get a Quote
+              </Link>
+            </div>
+          </div>
+          <div className="mt-8 border-t border-gold/10 pt-6">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-gold-dark mb-4">Related Categories</p>
+            <div className="flex flex-wrap gap-2">
+              <Link to="/serum-bottles" className="rounded-full bg-white px-4 py-1.5 text-xs font-medium text-ink ring-1 ring-gold/10 hover:ring-gold/30">Serum Bottles</Link>
+              <Link to="/cream-jars" className="rounded-full bg-white px-4 py-1.5 text-xs font-medium text-ink ring-1 ring-gold/10 hover:ring-gold/30">Cream Jars</Link>
+              <Link to="/glass-vials" className="rounded-full bg-white px-4 py-1.5 text-xs font-medium text-ink ring-1 ring-gold/10 hover:ring-gold/30">Glass Vials</Link>
+              <Link to="/products" className="rounded-full bg-white px-4 py-1.5 text-xs font-medium text-ink ring-1 ring-gold/10 hover:ring-gold/30">Full Catalog →</Link>
+            </div>
           </div>
         </div>
-        <p className="mt-6 text-sm">
+
+        <p className="mt-10 text-sm">
           {locale === "en" && "This guide is part of Vesla's ongoing series on cosmetic glass packaging. For project-specific questions, "}
           {locale === "kr" && "이 가이드는 Vesla의 화장품 유리 포장 시리즈의 일부입니다. 프로젝트별 문의는 "}
           {locale === "jp" && "本記事は Vesla の化粧品ガラス包装シリーズの一部です。プロジェクト別の質問は "}
           {locale === "tw" && "本篇為 Vesla 化妝品玻璃包裝系列文章之一。如需針對專案的諮詢，"}
-          <a href="/contact" className="font-semibold text-gold-dark hover:underline">
+          <Link to="/contact" className="font-semibold text-gold-dark hover:underline">
             {locale === "en" ? "contact our packaging engineers" : locale === "kr" ? "포장 엔지니어에게 문의하세요" : locale === "jp" ? "パッケージエンジニアにお問い合わせください" : "請聯繫我們的包裝工程師"}
-          </a>.
+          </Link>.
         </p>
       </div>
       <div className="mt-12 flex flex-col gap-4 sm:flex-row">
