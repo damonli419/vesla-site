@@ -90,7 +90,11 @@ export function UIProvider({ children }: { children: ReactNode }) {
       locale: "en",
       setLocale,
       t: (key: string) => translations[key] ?? key,
-      catLabel: (c: Category) => categoryLabels[c].en ?? c,
+      catLabel: (c: Category) => {
+        const label = categoryLabels[c];
+        if (!label) return c;
+        return label.en ?? c;
+      },
     }),
     []
   );
