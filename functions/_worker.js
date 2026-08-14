@@ -307,9 +307,13 @@ export default {
 
     // 5. Inject Vary header for SEO/Crawler cache segregation
     if (ctype.includes("text/html") || path === "/") {
-      const newResponse = new Response(resp.body, resp);
-      newResponse.headers.set("Vary", "User-Agent");
-      return newResponse;
+      const newHeaders = new Headers(resp.headers);
+      newHeaders.set("Vary", "User-Agent");
+      return new Response(resp.body, { 
+        status: resp.status, 
+        statusText: resp.statusText, 
+        headers: newHeaders 
+      });
     }
 
     return resp;
