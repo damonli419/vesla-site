@@ -1,10 +1,10 @@
-﻿export type Category = "serum" | "jar" | "set" | "vial";
+export type Category = "serum" | "jar" | "set" | "vial";
 
 export const categoryLabels: Record<Category, { en: string; kr: string; jp: string; tw: string }> = {
-  serum: { en: "Serum Bottles", kr: "靹鸽熂 氤错媭", jp: "銈汇儵銉犮儨銉堛儷", tw: "绮捐彲娑茬摱" },
-  jar: { en: "Cream Jars", kr: "韥 鞛?, jp: "銈儶銉笺儬銈搞儯銉?, tw: "鑶忛湝鐡? },
-  set: { en: "Cosmetic Sets", kr: "旖旍姢氅旐嫳 靹疙姼", jp: "銈炽偣銉°儐銈ｃ儍銈偦銉冦儓", tw: "鍖栧鍝佸瑁? },
-  vial: { en: "Glass Vials", kr: "鞙犽Μ 氚旍澊鞎?, jp: "銈儵銈广儛銈ゃ偄銉?, tw: "鐜荤拑鐡? },
+  serum: { en: "Serum Bottles", kr: "세럼 보틀", jp: "セラムボトル", tw: "精華液瓶" },
+  jar: { en: "Cream Jars", kr: "크림 자", jp: "クリームジャー", tw: "膏霜瓶" },
+  set: { en: "Cosmetic Sets", kr: "코스메틱 세트", jp: "コスメティックセット", tw: "化妝品套裝" },
+  vial: { en: "Glass Vials", kr: "유리 바이알", jp: "ガラスバイアル", tw: "玻璃瓶" },
 };
 
 export interface Product {
