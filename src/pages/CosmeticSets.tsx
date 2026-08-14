@@ -89,8 +89,8 @@ export default function CosmeticSets() {
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {setProducts.map((p) => (
             <Link key={p.id} to={`/products/${p.seoSlug || p.id}`} className="group rounded-2xl bg-white p-4 ring-1 ring-gold/15 transition hover:shadow-lg">
-              <div className="aspect-[16/10] overflow-hidden rounded-xl bg-cream-dark/40">
-                <img src={p.image} alt={`${p.name} collection`} width={800} height={800} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+              <div className="aspect-[16/10] overflow-hidden rounded-xl bg-cream-dark/40 p-4">
+                <img src={p.image} alt={`${p.name} collection`} width={800} height={800} className="h-full w-full object-contain object-center transition duration-500 group-hover:scale-105" loading="lazy" />
               </div>
               <h3 className="mt-4 font-serif text-xl text-ink">{p.name}</h3>
               <p className="mt-1 text-xs text-ink-soft">{p.capacity}</p>

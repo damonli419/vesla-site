@@ -89,12 +89,17 @@ export default function SerumBottles() {
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {serumProducts.map((p) => (
             <Link key={p.id} to={`/products/${p.seoSlug || p.id}`} className="group rounded-2xl bg-white p-4 ring-1 ring-gold/15 transition hover:shadow-lg">
-              <div className="aspect-square overflow-hidden rounded-xl bg-cream-dark/40">
-                <img src={p.image} alt={`${p.name} wholesale manufacturer China`} width={800} height={800} className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105" loading="lazy" />
+              <div className="aspect-square overflow-hidden rounded-xl bg-cream-dark/40 p-2">
+                <img src={p.image} alt={`${p.name} wholesale manufacturer China`} width={800} height={800} className="h-full w-full object-contain object-center transition duration-500 group-hover:scale-105" loading="lazy" />
               </div>
-              <h3 className="mt-3 text-sm font-medium text-ink">{p.name}</h3>
+              <h3 className="mt-4 font-serif text-lg text-ink line-clamp-1">{p.name}</h3>
               <p className="mt-1 text-xs text-ink-soft">{p.capacity}</p>
-              <p className="mt-2 text-xs font-semibold text-gold-dark">View Details →</p>
+              <div className="mt-4 flex gap-2 flex-wrap">
+                {(p.features || []).slice(0, 3).map(f => (
+                   <span key={f} className="text-[10px] font-semibold bg-gold/5 text-gold-dark px-2 py-1 rounded-md border border-gold/10 line-clamp-1">{f}</span>
+                ))}
+              </div>
+              <p className="mt-4 text-xs font-semibold text-gold-dark border-t border-gold/5 pt-4">View Details →</p>
             </Link>
           ))}
         </div>
