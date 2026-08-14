@@ -181,11 +181,14 @@ Office Hours: Mon-Sat, 9:00-18:00 (GMT+8)`,
 
 // Known SPA routes — anything else gets a real 404 (kills soft-404s in GSC).
 const KNOWN_PATHS = new Set([
-  "/", "/products", "/dropper-bottles", "/cream-jars", "/cosmetic-packaging-supplier-comparison-2026", "/certifications", "/about", "/process", "/blog", "/contact", "/privacy",
+  "/", "/products", "/serum-bottles", "/cream-jars", "/cosmetic-packaging-supplier-comparison-2026", "/certifications", "/about", "/process", "/blog", "/contact", "/privacy",
   "/sitemap.xml", "/robots.txt", "/llms.txt", "/llms-full.txt", "/content-manifest.json",
   "/b4c8e9a2d1f3.txt",
 ]);
-const STATIC_FILE_RE = /\.(js|css|png|jpg|jpeg|webp|avif|svg|ico|woff2?|ttf|mp4|xml|txt|json)$/i;
+const REDIRECTS = {
+  "/dropper-bottles": "/serum-bottles",
+  "/essential-oil-bottles": "/serum-bottles",
+};
 
 function notFound() {
   return new Response("Not Found", { status: 404, headers: { "Content-Type": "text/plain" } });
@@ -196,6 +199,13 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname;
     const ua = request.headers.get("user-agent") || "";
+
+    // 301 Redirects for merged categories
+    if (REDIRECTS[path]) {
+      const target = new URL(request.url);
+      target.pathname = REDIRECTS[path];
+      return Response.redirect(target.toString(), 301);
+    }
 
     // Canonical host: non-www → www (avoid duplicate content)
     if (url.hostname === "veslapack.com") {

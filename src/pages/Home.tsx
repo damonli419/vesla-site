@@ -8,13 +8,22 @@ import { faqItems } from "../data/content";
 
 const featured = [
   {
-    key: "dropper",
-    title: "Dropper Bottles",
+    key: "serum",
+    title: "Serum Bottles",
     image: "/images/cat-dropper.webp",
     applications: "Serum, essence & facial oil brands",
     advantage: "5-100ml straight-round, square & heart shapes · press-top or bulb droppers",
     customization: "Silk screen logos, frosted/gradient coating & cap options",
-    link: "/products?category=dropper",
+    link: "/serum-bottles",
+  },
+  {
+    key: "oil",
+    title: "Essential Oil Bottles",
+    image: "/images/cat-oil.webp",
+    applications: "Aromatherapy, carrier oil & wellness brands",
+    advantage: "UV-protective amber glass · 5-100ml · euro round & shoulder styles",
+    customization: "Custom logos, color coating & cap options",
+    link: "/serum-bottles",
   },
   {
     key: "jar",
@@ -32,7 +41,7 @@ const featured = [
     applications: "Aromatherapy, carrier oil & wellness brands",
     advantage: "UV-protective amber glass · 5-100ml · euro round & shoulder styles",
     customization: "Custom logos, color coating & cap options",
-    link: "/products?category=oil",
+    link: "/serum-bottles",
   },
   {
     key: "set",

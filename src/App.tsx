@@ -13,7 +13,7 @@ import Home from "./pages/Home";
 // critical main bundle stays small (Lighthouse: critical request chains).
 const LazySampleModal = lazy(() => import("./components/SampleRequestModal"));
 
-const DropperBottles = lazy(() => import("./pages/DropperBottles"));
+const SerumBottles = lazy(() => import("./pages/SerumBottles"));
 const CreamJars = lazy(() => import("./pages/CreamJars"));
 const SupplierComparison = lazy(() => import("./pages/SupplierComparison"));
 const Products = lazy(() => import("./pages/Products"));
@@ -49,7 +49,7 @@ export default function App() {
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/products" element={<Products />} />
-                  <Route path="/dropper-bottles" element={<DropperBottles />} />
+                  <Route path="/serum-bottles" element={<SerumBottles />} />
                   <Route path="/cream-jars" element={<CreamJars />} />
                   <Route path="/cosmetic-packaging-supplier-comparison-2026" element={<SupplierComparison />} />
                   <Route path="/products/:id" element={<ProductDetail />} />

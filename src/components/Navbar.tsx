@@ -9,7 +9,7 @@ export default function Navbar() {
 
   const links = [
     { to: "/", label: t("nav.home") },
-    { to: "/dropper-bottles", label: "Dropper Bottles" },
+    { to: "/serum-bottles", label: "Serum Bottles" },
     { to: "/cream-jars", label: "Cream Jars" },
     { to: "/products", label: t("nav.products") },
     { to: "/process", label: t("nav.process") },
