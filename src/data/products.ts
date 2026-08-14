@@ -892,6 +892,48 @@ export const products: Product[] = [
     seoKeywords: ["waistline glass cosmetic set wholesale", "hourglass glass bottle manufacturer", "textured glass skincare packaging set", "diamond pattern glass bottle set factory", "luxury glass lotion bottle pump set", "wholesale red glass jar bottle set", "blue gradient glass packaging collection", "amber textured glass cosmetic bottles", "50g 100g glass cream jar supplier", "custom glass set for luxury skincare"],
     seoTags: ["Cosmetic Set", "Textured Glass", "Hourglass Shape", "Gold Pump", "Lotion Bottle", "Cream Jar", "Luxury Packaging", "Custom OEM"],
   },
+  {
+    id: "classic-glass-dropper-bottle",
+    seoSlug: "classic-light-shielding-glass-dropper-bottle-wholesale",
+    specTitle: "Classic Glass Dropper Bottles — 5ml-100ml Opaque & Gradient Options",
+    name: "Classic Light-Shielding Glass Dropper Bottles",
+    nameI18n: { kr: "클래식 차광 유리 드롭퍼 보틀", jp: "クラシック遮光ガラスドロッパーボトル", tw: "經典避光玻璃滴管瓶" },
+    category: "dropper",
+    material: "Glass",
+    capacity: "5 / 10 / 15 / 20 / 30 / 50 / 100 ml",
+    capacityGroup: "standard",
+    use: "Serum / Essential Oil",
+    moq: "5,000 pcs",
+    leadTime: "25–30 days",
+    decoration: "Frosted, matte, gradient or opaque coating; silk screen & hot stamping",
+    image: "https://sc04.alicdn.com/kf/A8c40c1bd70844b9892be32649ef7035bs.jpg",
+    gallery: [
+      "https://sc04.alicdn.com/kf/A8c40c1bd70844b9892be32649ef7035bs.jpg",
+      "https://sc04.alicdn.com/kf/A08e6f6e3bd774e4980d3b68bf3aef0f06.jpg",
+      "https://sc04.alicdn.com/kf/A7ca8c3d1f5c04be68c110c69b0d01217K.jpg",
+      "https://sc04.alicdn.com/kf/A55b16ec03983478cad1f1c9a75a46ef7j.jpg",
+    ],
+    description:
+      "A versatile range of classic straight-round glass dropper bottles designed for maximum formula protection. These 'light-shielding' bottles feature high-quality opaque coatings and gradients that block harmful UV rays, making them ideal for high-potency serums, essential oils, and light-sensitive skincare actives. Available in a full size run from 5ml travel sizes to 100ml professional volumes, with your choice of silver or black metallic collars and precision glass pipettes.",
+    descriptionI18n: {
+      kr: "포뮬러를 최대한 보호하도록 설계된 다양한 클래식 스트레이트 라운드 유리 드롭퍼 보틀 제품군입니다. 이 '차광' 보틀은 유해한 자외선을 차단하는 고품질 불투명 코팅과 그라데이션이 특징으로, 고효능 세럼, 에센셜 오일 및 빛에 민감한 스킨케어 성분에 적합합니다. 5ml 여행용 사이즈부터 100ml 전문가용 용량까지 전체 사이즈가 제공되며, 실버 또는 블랙 메탈릭 컬러와 정밀 유리 피펫을 선택할 수 있습니다.",
+      jp: "成分の保護を最大限に高めるよう設計された、クラシックなストレートラウンドガラスドロッパーボトルの多用途なレンジです。これらの「遮光」ボトルは、有害な紫外線を遮断する高品質な不透明コーティングとグラデーションが特徴で、高濃度セラム、エッセンシャルオイル、光に敏感なスキンケア成分に最適です。5mlのトラベルサイズから100mlのプロフェッショナルボリュームまでフルサイズ展開で、シルバーまたはブラックのメタリックカラーと精密ガラスピペットを選択できます。",
+      tw: "一系列專為最大限度保護配方而設計的經典直圓玻璃滴管瓶。這些「避光」瓶具有高品質的不透明塗層和漸變色，可阻擋有害的紫外線，是高濃度精華液、精油和對光敏感的護膚活性成分的理想選擇。提供從 5ml 旅行裝到 100ml 專業容量的完整尺寸，可選配銀色或黑色金屬圈和精密玻璃吸管。",
+    },
+    features: [
+      "Classic light-shielding design for UV-sensitive formulas",
+      "Full size run: 5ml, 10ml, 15ml, 20ml, 30ml, 50ml, 100ml",
+      "Available in Opaque White, Blue Gradient, Light Blue, and Forest Green",
+      "Premium metallic collars (Silver/Black) and glass pipettes",
+      "Ideal for essential oils, vitamin C serums, and active facial oils",
+      "In-house custom color matching and logo printing",
+    ],
+    brandName: "Vesla",
+    mpn: "VSL-CLASSIC-UV-DROPPER",
+    sku: "VSL-CLASSIC-UV-DROPPER-5K",
+    seoKeywords: ["light shielding dropper bottle wholesale", "UV protection glass bottle manufacturer", "opaque glass serum bottle supplier", "essential oil dropper bottle factory", "bulk glass dropper bottles China", "5ml 100ml glass dropper set", "custom coated glass dropper bottles", "skincare packaging for light sensitive formulas", "wholesale blue gradient dropper bottles", "matte white glass dropper bottle manufacturer"],
+    seoTags: ["Dropper Bottle", "UV Protection", "Essential Oil", "Opaque Glass", "Custom OEM", "Wholesale Packaging", "China Manufacturer"],
+  },
 ];
 
 export const materials = ["Glass", "Plastic"];
