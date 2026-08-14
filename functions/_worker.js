@@ -73,6 +73,19 @@ Contact: yitengglass3@gmail.com | WhatsApp: +86 18165681131`,
 
 Target Audience: Indie beauty brands, emerging skincare lines, and aromatherapy startups looking for agile glass packaging partners.`,
   },
+  "/certifications": {
+    title: "Quality Certifications & Compliance | ISO 9001, FDA, EU — Vesla",
+    description: "Verify Vesla's quality certifications including ISO 9001:2015, FDA 21 CFR compliance, EU 1935/2004 standards, and SGS audited factory details.",
+    h1: "Vesla Quality Certifications",
+    body: `Vesla Co., Ltd. maintains rigorous quality standards for global cosmetic brands.
+- ISO 9001:2015 Quality Management System
+- FDA 21 CFR 175.300 compliant glass & coatings
+- EU 1935/2004 standard for food/cosmetic contact
+- SGS & Bureau Veritas factory audits
+- AQL 1.5/2.5/4.0 inspection standards
+
+We provide safety data sheets (SDS) and technical data sheets (TDS) with every bulk shipment.`,
+  },
   "/about": {
     title: "About Vesla | Glass Packaging Factory in Guangzhou, China",
     description: "Inside Vesla — 13+ years, 280 people, 60M annual capacity. ISO 9001, FDA & EU compliant. Factory tours welcome.",
@@ -98,6 +111,19 @@ Capabilities: woodgrain water-transfer printing, matte & metallic lids, silk scr
 Compliance: ISO 9001, FDA 21 CFR, EU 1935/2004. Production 7-15 days on stock molds. DDP to EU & USA.
 
 Browse jars: https://www.veslapack.com/products?category=jar
+Contact: yitengglass3@gmail.com | WhatsApp +86 18165681131`,
+  },
+  "/glass-vials": {
+    title: "Glass Vial Manufacturers & Suppliers | Custom Sample Vials — Vesla",
+    description: "Precision glass vial manufacturers & suppliers. 2ml-10ml vials for discovery sets, travel sizes & essential oils. Low MOQ 5,000 pcs, DDP shipping.",
+    h1: "Glass Vial Manufacturers & Suppliers",
+    body: `Vesla manufactures high-precision glass vials for skincare and fragrance brands.
+
+Products: 2ml to 10ml sample vials, discovery set tubes, essential oil mini-vials. Clear and amber glass options.
+Capabilities: in-house silk screen printing, custom gift box sourcing, insert tray design. MOQ 5,000 pcs.
+Shipping: DDP shipping to USA and EU (20-26 days). ISO 9001 factory.
+
+Browse vials: https://www.veslapack.com/products?category=vial
 Contact: yitengglass3@gmail.com | WhatsApp +86 18165681131`,
   },
   "/products": {
@@ -168,11 +194,14 @@ Office Hours: Mon-Sat, 9:00-18:00 (GMT+8)`,
 
 // Known SPA routes — anything else gets a real 404 (kills soft-404s in GSC).
 const KNOWN_PATHS = new Set([
-  "/", "/products", "/dropper-bottles", "/cream-jars", "/cosmetic-packaging-supplier-comparison-2026", "/about", "/process", "/blog", "/contact", "/privacy",
+  "/", "/products", "/serum-bottles", "/cream-jars", "/glass-vials", "/cosmetic-packaging-supplier-comparison-2026", "/certifications", "/about", "/process", "/blog", "/contact", "/privacy",
   "/sitemap.xml", "/robots.txt", "/llms.txt", "/llms-full.txt", "/content-manifest.json",
   "/b4c8e9a2d1f3.txt",
 ]);
-const STATIC_FILE_RE = /\.(js|css|png|jpg|jpeg|webp|avif|svg|ico|woff2?|ttf|mp4|xml|txt|json)$/i;
+const REDIRECTS = {
+  "/dropper-bottles": "/serum-bottles",
+  "/essential-oil-bottles": "/serum-bottles",
+};
 
 function notFound() {
   return new Response("Not Found", { status: 404, headers: { "Content-Type": "text/plain" } });
@@ -183,6 +212,13 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname;
     const ua = request.headers.get("user-agent") || "";
+
+    // 301 Redirects for merged categories
+    if (REDIRECTS[path]) {
+      const target = new URL(request.url);
+      target.pathname = REDIRECTS[path];
+      return Response.redirect(target.toString(), 301);
+    }
 
     // Canonical host: non-www → www (avoid duplicate content)
     if (url.hostname === "veslapack.com") {

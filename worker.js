@@ -113,6 +113,19 @@ Compliance: ISO 9001, FDA 21 CFR, EU 1935/2004. Production 7-15 days on stock mo
 Browse jars: https://www.veslapack.com/products?category=jar
 Contact: yitengglass3@gmail.com | WhatsApp +86 18165681131`,
   },
+  "/glass-vials": {
+    title: "Glass Vial Manufacturers & Suppliers | Custom Sample Vials — Vesla",
+    description: "Precision glass vial manufacturers & suppliers. 2ml-10ml vials for discovery sets, travel sizes & essential oils. Low MOQ 5,000 pcs, DDP shipping.",
+    h1: "Glass Vial Manufacturers & Suppliers",
+    body: `Vesla manufactures high-precision glass vials for skincare and fragrance brands.
+
+Products: 2ml to 10ml sample vials, discovery set tubes, essential oil mini-vials. Clear and amber glass options.
+Capabilities: in-house silk screen printing, custom gift box sourcing, insert tray design. MOQ 5,000 pcs.
+Shipping: DDP shipping to USA and EU (20-26 days). ISO 9001 factory.
+
+Browse vials: https://www.veslapack.com/products?category=vial
+Contact: yitengglass3@gmail.com | WhatsApp +86 18165681131`,
+  },
   "/products": {
     title: "Cosmetic Glass Bottles | Wholesale & Custom — Vesla",
     description: "Custom cosmetic glass bottles wholesale: dropper bottles, cream jars, essential oil bottles, perfume vials and gradient sets. Low MOQ 5,000 pcs, in-house decoration, DDP to EU & USA.",
@@ -181,7 +194,7 @@ Office Hours: Mon-Sat, 9:00-18:00 (GMT+8)`,
 
 // Known SPA routes — anything else gets a real 404 (kills soft-404s in GSC).
 const KNOWN_PATHS = new Set([
-  "/", "/products", "/serum-bottles", "/cream-jars", "/cosmetic-packaging-supplier-comparison-2026", "/certifications", "/about", "/process", "/blog", "/contact", "/privacy",
+  "/", "/products", "/serum-bottles", "/cream-jars", "/glass-vials", "/cosmetic-packaging-supplier-comparison-2026", "/certifications", "/about", "/process", "/blog", "/contact", "/privacy",
   "/sitemap.xml", "/robots.txt", "/llms.txt", "/llms-full.txt", "/content-manifest.json",
   "/b4c8e9a2d1f3.txt",
 ]);

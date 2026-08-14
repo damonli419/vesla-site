@@ -15,6 +15,7 @@ const LazySampleModal = lazy(() => import("./components/SampleRequestModal"));
 
 const SerumBottles = lazy(() => import("./pages/SerumBottles"));
 const CreamJars = lazy(() => import("./pages/CreamJars"));
+const GlassVials = lazy(() => import("./pages/GlassVials"));
 const SupplierComparison = lazy(() => import("./pages/SupplierComparison"));
 const Products = lazy(() => import("./pages/Products"));
 const ProductDetail = lazy(() => import("./pages/ProductDetail"));
@@ -51,6 +52,7 @@ export default function App() {
                   <Route path="/products" element={<Products />} />
                   <Route path="/serum-bottles" element={<SerumBottles />} />
                   <Route path="/cream-jars" element={<CreamJars />} />
+                  <Route path="/glass-vials" element={<GlassVials />} />
                   <Route path="/cosmetic-packaging-supplier-comparison-2026" element={<SupplierComparison />} />
                   <Route path="/products/:id" element={<ProductDetail />} />
                   <Route path="/process" element={<Process />} />
