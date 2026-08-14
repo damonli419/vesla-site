@@ -28,7 +28,7 @@ const featured = [
   {
     key: "jar",
     title: "Cream Jars",
-    image: "/images/cat-jar.webp",
+    image: "/images/cat-jar-v2.webp",
     applications: "Moisturizer, face cream & body care brands",
     advantage: "15-120g thick-wall jars · woodgrain, matte & metallic lids",
     customization: "Water-transfer woodgrain lids, Pantone coating & logo stamping",
