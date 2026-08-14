@@ -10,7 +10,7 @@ const featured = [
   {
     key: "serum",
     title: "Serum Bottles",
-    image: "/images/cat-dropper.webp",
+    image: "/images/cat-serum-v2.webp",
     applications: "Serum, essence & facial oil brands",
     advantage: "5-100ml straight-round, square & heart shapes · press-top or bulb droppers",
     customization: "Silk screen logos, frosted/gradient coating & cap options",
