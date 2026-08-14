@@ -236,86 +236,84 @@ function notFound() {
 
 export default {
   async fetch(request, env) {
-    const url = new URL(request.url);
-    const path = url.pathname;
-    const ua = request.headers.get("user-agent") || "";
+    try {
+      const url = new URL(request.url);
+      const path = url.pathname;
+      const ua = request.headers.get("user-agent") || "";
 
-    // 301 Redirects for merged categories
-    if (REDIRECTS[path]) {
-      const target = new URL(request.url);
-      target.pathname = REDIRECTS[path];
-      return Response.redirect(target.toString(), 301);
-    }
-
-    // Canonical host: non-www → www (avoid duplicate content)
-    if (url.hostname === "veslapack.com") {
-      const canonical = new URL(request.url);
-      canonical.hostname = "www.veslapack.com";
-      return Response.redirect(canonical.toString(), 301);
-    }
-
-    // 1. SSR for AI crawlers (and Googlebot)
-    if (isAICrawler(ua)) {
-      try {
-        const page = STATIC_PAGES[path];
-        if (page) return serveSSR({ ...page, url: url.toString() });
-
-        // Dynamic Product/Blog Detail
-        if (/^\/(products|blog)\//.test(path)) {
-          const manifest = await env.ASSETS.fetch(new Request(new URL("/content-manifest.json", url.origin))).then((r) => r.json());
-          const slug = decodeURIComponent(path.split("/").pop() || "");
-          
-          if (path.startsWith("/products/")) {
-            const prod = (manifest.products || []).find((p) => p.seoSlug === slug || p.id === slug);
-            if (prod) return serveSSR({
-              title: prod.name + " | Vesla Products",
-              description: (prod.description || "").substring(0, 160),
-              h1: prod.name,
-              body: `${prod.name} — ${prod.capacity}. ${prod.description}`,
-              url: url.toString(),
-            });
-          } else {
-            const post = (manifest.blogs || []).find((b) => b.slug === slug);
-            if (post) return serveSSR({
-              title: post.title + " | Vesla Blog",
-              description: (post.body || "").substring(0, 160),
-              h1: post.title,
-              body: post.body,
-              url: url.toString(),
-            });
-          }
-        }
-      } catch (e) {
-        // Fall through to SPA on error
+      // Canonical host: non-www → www (avoid duplicate content)
+      if (url.hostname === "veslapack.com") {
+        const canonical = new URL(request.url);
+        canonical.hostname = "www.veslapack.com";
+        return Response.redirect(canonical.toString(), 301);
       }
+
+      // 1. SSR for AI crawlers (and Googlebot)
+      if (isAICrawler(ua)) {
+        try {
+          const page = STATIC_PAGES[path];
+          if (page) return serveSSR({ ...page, url: url.toString() });
+
+          // Dynamic Product/Blog Detail
+          if (/^\/(products|blog)\//.test(path)) {
+            const manifestUrl = new URL("/content-manifest.json", url.origin);
+            const manifestResp = await env.ASSETS.fetch(manifestUrl.toString());
+            const manifest = await manifestResp.json();
+            const slug = decodeURIComponent(path.split("/").pop() || "");
+            
+            if (path.startsWith("/products/")) {
+              const prod = (manifest.products || []).find((p) => p.seoSlug === slug || p.id === slug);
+              if (prod) return serveSSR({
+                title: prod.name + " | Vesla Products",
+                description: (prod.description || "").substring(0, 160),
+                h1: prod.name,
+                body: `${prod.name} — ${prod.capacity}. ${prod.description}`,
+                url: url.toString(),
+              });
+            } else {
+              const post = (manifest.blogs || []).find((b) => b.slug === slug);
+              if (post) return serveSSR({
+                title: post.title + " | Vesla Blog",
+                description: (post.body || "").substring(0, 160),
+                h1: post.title,
+                body: post.body,
+                url: url.toString(),
+              });
+            }
+          }
+        } catch (e) {
+          // Fall through to SPA on error
+        }
+      }
+
+      // 2. Real-404 guard for known invalid SPA routes
+      if (!KNOWN_PATHS.has(path) && !STATIC_FILE_RE.test(path) && !/^\/(products|blog)\//.test(path)) {
+        return notFound();
+      }
+
+      // 3. Default: serve SPA
+      const resp = await env.ASSETS.fetch(request);
+      const ctype = resp.headers.get("content-type") || "";
+
+      // 4. Missing static assets must return a real 404
+      if (STATIC_FILE_RE.test(path) && ctype.includes("text/html")) {
+        return notFound();
+      }
+
+      // 5. Inject Vary header
+      if (ctype.includes("text/html") || path === "/") {
+        const newHeaders = new Headers(resp.headers);
+        newHeaders.set("Vary", "User-Agent");
+        return new Response(resp.body, { 
+          status: resp.status, 
+          statusText: resp.statusText, 
+          headers: newHeaders 
+        });
+      }
+
+      return resp;
+    } catch (err) {
+      return new Response(`Internal Worker Error: ${err.message}\n${err.stack}`, { status: 500 });
     }
-
-    // 2. Real-404 guard for known invalid SPA routes
-    // (prevents Google soft-404 flags on invalid URLs like /products/:id).
-    if (!KNOWN_PATHS.has(path) && !STATIC_FILE_RE.test(path) && !/^\/(products|blog)\//.test(path)) {
-      return notFound();
-    }
-
-    // 3. Default: serve SPA
-    const resp = await env.ASSETS.fetch(request);
-    const ctype = resp.headers.get("content-type") || "";
-
-    // 4. Missing static assets must return a real 404, not the SPA fallback HTML.
-    if (STATIC_FILE_RE.test(path) && ctype.includes("text/html")) {
-      return notFound();
-    }
-
-    // 5. Inject Vary header for SEO/Crawler cache segregation
-    if (ctype.includes("text/html") || path === "/") {
-      const newHeaders = new Headers(resp.headers);
-      newHeaders.set("Vary", "User-Agent");
-      return new Response(resp.body, { 
-        status: resp.status, 
-        statusText: resp.statusText, 
-        headers: newHeaders 
-      });
-    }
-
-    return resp;
   },
 };
