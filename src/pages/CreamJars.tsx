@@ -34,8 +34,7 @@ const faqItems = [
 ];
 
 export default function CreamJars() {
-  const { locale, catLabel } = useUI();
-  const lang = (obj: Record<string, string>) => obj[locale] ?? obj.en;
+  const { locale } = useUI();
 
   return (
     <div dir={locale === "tw" ? "rtl" : "ltr"}>
@@ -105,12 +104,12 @@ export default function CreamJars() {
         <div className="grid grid-cols-2 gap-7 sm:grid-cols-3 lg:grid-cols-4">
           {jarProducts.map((p) => (
             <Link key={p.id} to={`/products/${p.seoSlug || p.id}`} className="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gold/15 transition duration-300 hover:-translate-y-1.5 hover:shadow-lg">
-              <div className="aspect-[4/3] overflow-hidden bg-cream-dark/40">
+              <div className="aspect-square overflow-hidden bg-cream-dark/40">
                 <img 
                   src={p.image} 
                   alt={`${p.name} wholesale manufacturer China - factory direct low MOQ`} 
                   width={800} 
-                  height={600} 
+                  height={800} 
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-105" 
                   loading="lazy" 
                 />
@@ -120,7 +119,7 @@ export default function CreamJars() {
                 <p className="mt-1 text-xs text-ink-soft">{p.capacity}</p>
                 <div className="mt-5 flex gap-2 flex-wrap">
                   {(p.features || []).slice(0, 3).map(f => (
-                    <span key={f} className="text-[10px] font-semibold bg-gold/5 text-gold-dark px-2 py-1 rounded-md border border-gold/10 line-clamp-1">{f}</span>
+                    <span key={f} className="text-[10px] font-semibold bg-gold/5 text-gold-dark px-2.5 py-1 rounded-md border border-gold/10 line-clamp-1">{f}</span>
                   ))}
                 </div>
                 <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold-dark">

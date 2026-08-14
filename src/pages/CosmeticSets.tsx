@@ -86,25 +86,25 @@ export default function CosmeticSets() {
         <p className="mb-10 text-sm text-ink-soft">
           Explore our signature coordinated sets or build your own from our stock mold library.
         </p>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-7 sm:grid-cols-3 lg:grid-cols-4">
           {setProducts.map((p) => (
-            <Link key={p.id} to={`/products/${p.seoSlug || p.id}`} className="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gold/15 transition duration-300 hover:-translate-y-1.5 hover:shadow-xl">
-              <div className="aspect-[16/10] overflow-hidden bg-cream-dark/40">
+            <Link key={p.id} to={`/products/${p.seoSlug || p.id}`} className="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gold/15 transition duration-300 hover:-translate-y-1.5 hover:shadow-lg">
+              <div className="aspect-square overflow-hidden bg-cream-dark/40">
                 <img 
                   src={p.image} 
                   alt={`${p.name} collection`} 
                   width={800} 
-                  height={500} 
+                  height={800} 
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-105" 
                   loading="lazy" 
                 />
               </div>
-              <div className="p-7">
-                <h3 className="font-serif text-2xl text-ink">{p.name}</h3>
-                <p className="mt-2 text-sm text-ink-soft">{p.capacity}</p>
+              <div className="p-5">
+                <h3 className="font-serif text-lg text-ink line-clamp-1">{p.name}</h3>
+                <p className="mt-1 text-xs text-ink-soft">{p.capacity}</p>
                 <div className="mt-5 flex gap-2 flex-wrap">
                   {(p.features || []).slice(0, 3).map(f => (
-                    <span key={f} className="text-[11px] font-semibold bg-gold/5 text-gold-dark px-2.5 py-1 rounded-md border border-gold/10">{f}</span>
+                    <span key={f} className="text-[10px] font-semibold bg-gold/5 text-gold-dark px-2.5 py-1 rounded-md border border-gold/10 line-clamp-1">{f}</span>
                   ))}
                 </div>
                 <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold-dark">
