@@ -1,5 +1,5 @@
 // Worker — Pages Functions entry.
-// - AI crawler SSR: serves readable HTML to GPTBot/ClaudeBot/etc.
+// - AI crawler SSR: serves readable HTML to GPTBot/ClaudeBot/Googlebot/etc.
 // - Real 404 for missing static assets (no HTML-fallback broken images).
 // - non-www → www canonical redirect.
 // robots.txt / sitemap.xml are served from public/ (static, complete).
@@ -43,19 +43,19 @@ function serveSSR({ title, description, h1, body, url }) {
 
 const STATIC_PAGES = {
   "/": {
-    title: "Vesla | China Glass Packaging Manufacturer & Cosmetic Bottle Supplier",
-    description: "Vesla is a custom cosmetic glass packaging manufacturer in Guangzhou, China — dropper bottles, cream jars, essential oil bottles, perfume vials. 13+ years, OEM/ODM, low MOQ, DDP to EU & USA.",
+    title: "Vesla — China Glass Packaging Manufacturer | Cosmetic Bottle Supplier",
+    description: "Vesla provides premium glass packaging solutions for cosmetics, essential oils and beauty brands. OEM & ODM available — dropper bottles, cream jars & vials. Low MOQ 5,000 pcs, in-house decoration, DDP to EU & USA.",
     h1: "Vesla — Premium Glass Packaging Manufacturer for Beauty & Wellness Brands",
     body: `Vesla Co., Ltd. is a cosmetic glass packaging manufacturer in Guangzhou, China with 13+ years of experience and 500+ global customers.
 
-Products: dropper bottles (5-100ml), cream jars (15-120g), essential oil bottles, perfume bottles, roller bottles, sample vials, gradient cosmetic sets.
+Products: serum bottles (5-100ml), cream jars (15-120g), essential oil bottles, perfume bottles, roller bottles, sample vials, gradient cosmetic sets.
 Capabilities: OEM/ODM, custom molds from 10,000 pcs, stock molds from 5,000 pcs, in-house decoration (frosting, spray coating, silk screen, hot stamping, electroplating, water transfer).
 Production: 7-15 days on stock molds; 25-30 days custom molds. ISO 9001, FDA 21 CFR, EU 1935/2004, REACH & RoHS compliant.
 Shipping: EXW, FOB or DDP to EU & USA. Free sample kit for new brands.
 
 Key pages:
 - Products: https://www.veslapack.com/products
-- Dropper bottles: https://www.veslapack.com/dropper-bottles
+- Serum bottles: https://www.veslapack.com/serum-bottles
 - Factory: https://www.veslapack.com/about
 - Process: https://www.veslapack.com/process
 - Blog: https://www.veslapack.com/blog
@@ -88,18 +88,6 @@ Target Audience: Indie beauty brands, emerging skincare lines, and aromatherapy 
 - AQL 1.5/2.5/4.0 inspection standards
 
 We provide safety data sheets (SDS) and technical data sheets (TDS) with every bulk shipment.`,
-  },
-  "/quality-control": {
-    title: "Quality Control & Manufacturing Standards | ISO 9001, FDA — Vesla",
-    description: "Learn about Vesla's rigorous quality control process for cosmetic glass manufacturing. From IS forming precision to AQL 1.5 inspection and DDP drop tests.",
-    h1: "Glass Manufacturing Quality Standards",
-    body: `Vesla integrates strict QC at every manufacturing station.
-1. IS Forming: dimensional laser scanning (+/- 0.5mm tolerance).
-2. Annealing: internal stress elimination for thermal shock resistance.
-3. AQL 1.5 Inspection: batch rejection threshold for critical defects.
-4. Adhesion: cross-hatch and tape tests for color coatings.
-5. Logistical: drop-test certified palletizing for sea freight.
-Compliance: ISO 9001:2015, FDA 21 CFR, EU 1935/2004.`,
   },
   "/quality-control": {
     title: "Quality Control & Manufacturing Standards | ISO 9001, FDA — Vesla",
@@ -153,18 +141,30 @@ Shipping: DDP shipping to USA and EU (20-26 days). ISO 9001 factory.
 Browse vials: https://www.veslapack.com/products?category=vial
 Contact: yitengglass3@gmail.com | WhatsApp +86 18165681131`,
   },
+  "/serum-bottles": {
+    title: "Serum & Essential Oil Bottle Manufacturers | Custom Glass Dropper Bottles — Vesla",
+    description: "Premium serum & essential oil bottle manufacturers. Custom glass dropper bottles from 5ml to 100ml with UV protection and in-house decoration. Low MOQ 5,000 pcs, DDP shipping.",
+    h1: "Serum & Essential Oil Bottle Manufacturers",
+    body: `Vesla manufactures custom glass packaging for high-performance serums, facial oils, and aromatherapy blends.
+
+Products: glass serum bottles (5ml-100ml), essential oil bottles, classic droppers, push-button sprayers.
+Capabilities: UV-protective amber/violet glass, custom color spray, silk screen printing. MOQ 5,000 pcs.
+Shipping: DDP to USA/EU in 20-26 days. ISO 9001 certified.
+
+Browse collection: https://www.veslapack.com/serum-bottles
+Contact: yitengglass3@gmail.com | WhatsApp +86 18165681131`,
+  },
   "/products": {
     title: "Cosmetic Glass Bottles | Wholesale & Custom — Vesla",
-    description: "Custom cosmetic glass bottles wholesale: dropper bottles, cream jars, essential oil bottles, perfume vials and gradient sets. Low MOQ 5,000 pcs, in-house decoration, DDP to EU & USA.",
+    description: "Custom cosmetic glass bottles wholesale: serum bottles, cream jars, and gradient sets. Low MOQ 5,000 pcs, in-house decoration, DDP to EU & USA.",
     h1: "Cosmetic Glass Packaging Products",
     body: `Browse Vesla's stock and custom cosmetic glass packaging range. Every item is available with custom colors, decoration and closures. Private molds from 10,000 pcs.
 
 Categories:
-- Dropper Bottles (5-100ml): https://www.veslapack.com/products?category=dropper
-- Cream Jars (15-120g): https://www.veslapack.com/products?category=jar
-- Essential Oil Bottles: https://www.veslapack.com/products?category=oil
+- Serum Bottles (5-100ml): https://www.veslapack.com/serum-bottles
+- Cream Jars (15-120g): https://www.veslapack.com/cream-jars
+- Glass Vials: https://www.veslapack.com/glass-vials
 - Cosmetic Sets: https://www.veslapack.com/products?category=set
-- Glass Vials: https://www.veslapack.com/products?category=vial
 
 MOQ: 5,000 pcs (stock molds) | Production: 7-15 days | Samples: free kit, 5-7 days DHL
 
@@ -179,7 +179,7 @@ Contact: yitengglass3@gmail.com | WhatsApp: +86 18165681131`,
 Recent articles:
 - Glass vs. Plastic in Cosmetic Packaging: https://www.veslapack.com/blog/glass-vs-plastic-cosmetic-packaging
 - How to Choose the Right Neck Finish: https://www.veslapack.com/blog/how-to-choose-neck-finish
-- How Much Does Custom Glass Bottle Manufacturing Actually Cost?: https://www.veslapack.com/blog/custom-glass-bottle-cost-breakdown
+- Glass Bottle Production Cost Guide: https://www.veslapack.com/blog/custom-glass-bottle-cost-breakdown
 - How to Avoid Getting Scammed When Sourcing Packaging from China: https://www.veslapack.com/blog/avoid-scam-sourcing-packaging-china
 - Is Glass Packaging Actually Sustainable?: https://www.veslapack.com/blog/sustainable-cosmetic-glass-packaging
 - Low MOQ Cosmetic Packaging for Indie Brand Launches: https://www.veslapack.com/blog/low-moq-packaging-indie-brand-launch
@@ -219,27 +219,19 @@ Office Hours: Mon-Sat, 9:00-18:00 (GMT+8)`,
   },
 };
 
-// Known SPA routes — anything else gets a real 404 (kills soft-404s in GSC).
-const KNOWN_PATHS = new Set([
-  "/", "/products", "/serum-bottles", "/cream-jars", "/glass-vials", "/cosmetic-packaging-supplier-comparison-2026", "/quality-control", "/certifications", "/about", "/process", "/blog", "/contact", "/privacy",
-  "/sitemap.xml", "/robots.txt", "/llms.txt", "/llms-full.txt", "/content-manifest.json",
-  "/b4c8e9a2d1f3.txt",
-]);
 const REDIRECTS = {
   "/dropper-bottles": "/serum-bottles",
   "/essential-oil-bottles": "/serum-bottles",
 };
 
-function notFound() {
-  return new Response("Not Found", { status: 404, headers: { "Content-Type": "text/plain" } });
-}
-
-// Known SPA routes — anything else gets a real 404 (kills soft-404s in GSC).
 const KNOWN_PATHS = new Set([
-  "/", "/products", "/serum-bottles", "/cream-jars", "/glass-vials", "/cosmetic-packaging-supplier-comparison-2026", "/quality-control", "/certifications", "/about", "/process", "/blog", "/contact", "/privacy",
+  "/", "/products", "/serum-bottles", "/cream-jars", "/glass-vials", 
+  "/cosmetic-packaging-supplier-comparison-2026", "/quality-control", 
+  "/certifications", "/about", "/process", "/blog", "/contact", "/privacy",
   "/sitemap.xml", "/robots.txt", "/llms.txt", "/llms-full.txt", "/content-manifest.json",
   "/b4c8e9a2d1f3.txt",
 ]);
+
 const STATIC_FILE_RE = /\.(js|css|png|jpg|jpeg|webp|avif|svg|ico|woff2?|ttf|mp4|xml|txt|json)$/i;
 
 function notFound() {
@@ -253,21 +245,30 @@ export default {
       const path = url.pathname;
       const ua = request.headers.get("user-agent") || "";
 
-      // 1. Canonical Redirect
+      // 1. Host Canonicalization
       if (url.hostname === "veslapack.com") {
         const canonical = new URL(request.url);
         canonical.hostname = "www.veslapack.com";
         return Response.redirect(canonical.toString(), 301);
       }
 
-      // 2. SSR for Crawlers
+      // 2. 301 Redirects for Merged Categories
+      if (REDIRECTS[path]) {
+        const target = new URL(request.url);
+        target.pathname = REDIRECTS[path];
+        return Response.redirect(target.toString(), 301);
+      }
+
+      // 3. AI Crawler SSR
       if (isAICrawler(ua)) {
         const page = STATIC_PAGES[path];
         if (page) return serveSSR({ ...page, url: url.toString() });
 
+        // Dynamic Product/Blog Routing
         if (/^\/(products|blog)\//.test(path)) {
           const manifest = await env.ASSETS.fetch(new URL("/content-manifest.json", url.origin).toString()).then(r => r.json());
           const slug = decodeURIComponent(path.split("/").pop() || "");
+          
           if (path.startsWith("/products/")) {
             const prod = (manifest.products || []).find(p => p.seoSlug === slug || p.id === slug);
             if (prod) return serveSSR({
@@ -290,27 +291,33 @@ export default {
         }
       }
 
-      // 3. Valid Path Check
-      const isKnown = KNOWN_PATHS.has(path) || STATIC_FILE_RE.test(path) || /^\/(products|blog)\//.test(path);
-      if (!isKnown) return notFound();
+      // 4. SPA Validation Guard
+      const isDynamic = /^\/(products|blog)\//.test(path);
+      if (!KNOWN_PATHS.has(path) && !STATIC_FILE_RE.test(path) && !isDynamic) {
+        return notFound();
+      }
 
-      // 4. Serve Asset
+      // 5. Serve Static Asset
       const resp = await env.ASSETS.fetch(request);
       const ctype = resp.headers.get("content-type") || "";
 
-      // 5. Asset Guard
-      if (STATIC_FILE_RE.test(path) && ctype.includes("text/html")) return notFound();
+      // 6. Asset Existence Check
+      if (STATIC_FILE_RE.test(path) && ctype.includes("text/html")) {
+        return notFound();
+      }
 
-      // 6. Vary Header
-      if (ctype.includes("text/html") || path === "/") {
-        const h = new Headers(resp.headers);
-        h.set("Vary", "User-Agent");
-        return new Response(resp.body, { status: resp.status, statusText: resp.statusText, headers: h });
+      // 7. Inject Vary Header for Crawler Segregation
+      // Skip for No-Body responses (304, 204) to avoid constructor errors.
+      const hasBody = resp.status !== 304 && resp.status !== 204 && resp.body;
+      if (hasBody && (ctype.includes("text/html") || path === "/")) {
+        const newResponse = new Response(resp.body, resp);
+        newResponse.headers.set("Vary", "User-Agent");
+        return newResponse;
       }
 
       return resp;
     } catch (e) {
-      return new Response(`Vesla Worker Error: ${e.message}\n${e.stack}`, { status: 500 });
+      return new Response(`Vesla Worker Exception: ${e.message}\n${e.stack}`, { status: 500 });
     }
-  }
+  },
 };
