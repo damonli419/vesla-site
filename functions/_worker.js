@@ -6,7 +6,10 @@
 
 function isAICrawler(ua) {
   if (!ua) return false;
-  const bots = ["gptbot", "chatgpt-user", "claudebot", "google-extended", "anthropic-ai", "ccbot", "cohere-ai", "perplexitybot", "meta-externalagent"];
+  const bots = [
+    "gptbot", "chatgpt-user", "claudebot", "google-extended", "anthropic-ai", 
+    "ccbot", "cohere-ai", "perplexitybot", "meta-externalagent", "googlebot"
+  ];
   const lowered = ua.toLowerCase();
   return bots.some((b) => lowered.includes(b));
 }
@@ -251,19 +254,29 @@ export default {
       return Response.redirect(canonical.toString(), 301);
     }
 
-    // SSR for AI crawlers
+    // 1. SSR for AI crawlers (and Googlebot)
     if (isAICrawler(ua)) {
       try {
         const page = STATIC_PAGES[path];
         if (page) return serveSSR({ ...page, url: url.toString() });
 
-        // Blog post
-        const blogMatch = path.match(/^\/blog\/([a-z0-9-]+)$/);
-        if (blogMatch) {
+        // Dynamic Product/Blog Detail
+        if (/^\/(products|blog)\//.test(path)) {
           const manifest = await env.ASSETS.fetch(new Request(new URL("/content-manifest.json", url.origin))).then((r) => r.json());
-          const post = (manifest.blogs || []).find((b) => b.slug === blogMatch[1]);
-          if (post) {
-            return serveSSR({
+          const slug = decodeURIComponent(path.split("/").pop() || "");
+          
+          if (path.startsWith("/products/")) {
+            const prod = (manifest.products || []).find((p) => p.seoSlug === slug || p.id === slug);
+            if (prod) return serveSSR({
+              title: prod.name + " | Vesla Products",
+              description: (prod.description || "").substring(0, 160),
+              h1: prod.name,
+              body: `${prod.name} — ${prod.capacity}. ${prod.description}`,
+              url: url.toString(),
+            });
+          } else {
+            const post = (manifest.blogs || []).find((b) => b.slug === slug);
+            if (post) return serveSSR({
               title: post.title + " | Vesla Blog",
               description: (post.body || "").substring(0, 160),
               h1: post.title,
@@ -272,60 +285,33 @@ export default {
             });
           }
         }
-
-        // Product detail
-        const prodMatch = path.match(/^\/products\/([a-z0-9-]+)$/);
-        if (prodMatch) {
-          const manifest = await env.ASSETS.fetch(new Request(new URL("/content-manifest.json", url.origin))).then((r) => r.json());
-          const prod = (manifest.products || []).find((p) => p.seoSlug === prodMatch[1] || p.id === prodMatch[1]);
-          if (prod) {
-            return serveSSR({
-              title: prod.name + " | Vesla Products",
-              description: (prod.description || "").substring(0, 160),
-              h1: prod.name,
-              body: prod.name + " — " + prod.capacity + ". " + prod.description,
-              url: url.toString(),
-            });
-          }
-        }
       } catch (e) {
-        // fall through to SPA
+        // Fall through to SPA on error
       }
     }
 
-    // Real-404 guard: unknown paths return 404 instead of SPA-fallback HTML
+    // 2. Real-404 guard for known invalid SPA routes
     // (prevents Google soft-404 flags on invalid URLs like /products/:id).
     if (!KNOWN_PATHS.has(path) && !STATIC_FILE_RE.test(path) && !/^\/(products|blog)\//.test(path)) {
       return notFound();
     }
-    if (/^\/(products|blog)\//.test(path)) {
-      try {
-        const manifest = await env.ASSETS.fetch(new Request(new URL("/content-manifest.json", url.origin))).then((r) => r.json());
-        const slug = decodeURIComponent(path.split("/").pop() || "");
-        const ok = path.startsWith("/products/")
-          ? (manifest.products || []).some((p) => p.seoSlug === slug || p.id === slug)
-          : (manifest.blogs || []).some((b) => b.slug === slug);
-        if (!ok) return notFound();
-      } catch (e) {
-        // manifest unavailable — fall through and let the SPA handle it
-      }
-    }
 
-    // Default: serve SPA
+    // 3. Default: serve SPA
     const resp = await env.ASSETS.fetch(request);
     const ctype = resp.headers.get("content-type") || "";
-    // Missing static assets must return a real 404, not the SPA fallback HTML —
-    // otherwise browsers try to decode index.html as an image/font/script.
+
+    // 4. Missing static assets must return a real 404, not the SPA fallback HTML.
     if (STATIC_FILE_RE.test(path) && ctype.includes("text/html")) {
       return notFound();
     }
-    // HTML responses: vary cache by User-Agent so AI crawlers get the SSR
-    // version while browsers get the SPA (Cloudflare's cache key ignores UA).
+
+    // 5. Inject Vary header for SEO/Crawler cache segregation
     if (ctype.includes("text/html") || path === "/") {
-      const headers = new Headers(resp.headers);
-      headers.set("Vary", "User-Agent");
-      return new Response(resp.body, { status: resp.status, statusText: resp.statusText, headers });
+      const newResponse = new Response(resp.body, resp);
+      newResponse.headers.set("Vary", "User-Agent");
+      return newResponse;
     }
+
     return resp;
   },
 };
