@@ -8,16 +8,22 @@ import Analytics from "./components/Analytics";
 import FloatingWhatsapp from "./components/FloatingWhatsapp";
 import { UIProvider } from "./i18n/UIContext";
 import Home from "./pages/Home";
+// Core organic SEO landing pages — imported eagerly (NOT route-lazy).
+// Their chunks are tiny (~4-12 KB gzip) but lazy-loading them caused a
+// severe CLS (~0.4) on first visit: the <Suspense> PageLoader fallback
+// (min-h-50vh) renders first, then swaps to the much taller real content,
+// pushing the Footer down and registering as a huge layout shift.
+import SerumBottles from "./pages/SerumBottles";
+import CreamJars from "./pages/CreamJars";
+import GlassVials from "./pages/GlassVials";
+import QualityControl from "./pages/QualityControl";
+import CosmeticSets from "./pages/CosmeticSets";
+import Certifications from "./pages/Certifications";
 
 // Sample modal only matters 45s into the session — load it on demand so the
 // critical main bundle stays small (Lighthouse: critical request chains).
 const LazySampleModal = lazy(() => import("./components/SampleRequestModal"));
 
-const SerumBottles = lazy(() => import("./pages/SerumBottles"));
-const CreamJars = lazy(() => import("./pages/CreamJars"));
-const GlassVials = lazy(() => import("./pages/GlassVials"));
-const QualityControl = lazy(() => import("./pages/QualityControl"));
-const CosmeticSets = lazy(() => import("./pages/CosmeticSets"));
 const SupplierComparison = lazy(() => import("./pages/SupplierComparison"));
 const Products = lazy(() => import("./pages/Products"));
 const ProductDetail = lazy(() => import("./pages/ProductDetail"));
@@ -28,7 +34,6 @@ const Privacy = lazy(() => import("./pages/Privacy"));
 const BlogIndex = lazy(() => import("./pages/Blog").then((m) => ({ default: m.BlogIndex })));
 const BlogPostPage = lazy(() => import("./pages/Blog").then((m) => ({ default: m.BlogPost })));
 const Contact = lazy(() => import("./pages/Contact"));
-const Certifications = lazy(() => import("./pages/Certifications"));
 
 function PageLoader() {
   return (
