@@ -23,14 +23,22 @@ function copyPublicFiles(): Plugin {
         }
       }
 
-      // Copy all files in public/images/ (logo, poster, category images) to dist/images/
+      // Recursively copy all files in public/images/ (logo, poster, category, product images) to dist/images/
+      function copyDirRecursive(src: string, dest: string) {
+        if (!fs.existsSync(dest)) fs.mkdirSync(dest, { recursive: true });
+        for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+          const srcPath = path.join(src, entry.name);
+          const destPath = path.join(dest, entry.name);
+          if (entry.isDirectory()) {
+            copyDirRecursive(srcPath, destPath);
+          } else {
+            fs.copyFileSync(srcPath, destPath);
+          }
+        }
+      }
       const imgDir = path.join(publicDir, "images");
       if (fs.existsSync(imgDir)) {
-        const destImg = path.join(distDir, "images");
-        if (!fs.existsSync(destImg)) fs.mkdirSync(destImg, { recursive: true });
-        for (const f of fs.readdirSync(imgDir)) {
-          fs.copyFileSync(path.join(imgDir, f), path.join(destImg, f));
-        }
+        copyDirRecursive(imgDir, path.join(distDir, "images"));
       }
 
       // Inline the built CSS + preload the main JS to shorten the critical chain.

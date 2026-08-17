@@ -385,7 +385,7 @@ export const products: Product[] = [
     moq: "5,000 pcs",
     leadTime: "25–30 days",
     decoration: "Matte black-brown color coating, silk screen, hot stamping",
-    image: "https://sc02.alicdn.com/kf/H26ea55fdff4f4a46a7edd10aa62b12a53.jpg",
+    image: "/images/products/matte-black-brown-jar.webp",
     gallery: [
       "https://sc02.alicdn.com/kf/H26ea55fdff4f4a46a7edd10aa62b12a53.jpg",
       "https://sc02.alicdn.com/kf/H0a730bea773f46168eac091c1af974cbY.jpg",
@@ -427,7 +427,7 @@ export const products: Product[] = [
     moq: "5,000 pcs",
     leadTime: "25–30 days",
     decoration: "Frosted glass + water transfer-printed woodgrain lid, silk screen, hot stamping",
-    image: "https://sc02.alicdn.com/kf/H0f609b9793e24fcc9f75241a12481e575.jpg",
+    image: "/images/products/frosted-woodgrain-jar.webp",
     gallery: [
       "https://sc02.alicdn.com/kf/H0f609b9793e24fcc9f75241a12481e575.jpg",
       "https://sc02.alicdn.com/kf/H7054748f938d43b29d124381a13562257.jpg",
@@ -469,7 +469,7 @@ export const products: Product[] = [
     moq: "5,000 pcs",
     leadTime: "25–30 days",
     decoration: "Water transfer-printed woodgrain lid (brown), silk screen, hot stamping",
-    image: "https://sc02.alicdn.com/kf/H480cdc7a2da44b40a0e35a93e7fc988cV.jpg",
+    image: "/images/products/brown-woodgrain-transfer-jar.webp",
     gallery: [
       "https://sc02.alicdn.com/kf/H480cdc7a2da44b40a0e35a93e7fc988cV.jpg",
       "https://sc02.alicdn.com/kf/Hc233cbcbb1444c3c89383cdc48117e76F.jpg",
