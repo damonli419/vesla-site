@@ -51,12 +51,12 @@ export const products: Product[] = [
     moq: "5,000 pcs",
     leadTime: "25–30 days",
     decoration: "Frosting, silk screen, spray coating, gradient coating",
-    image: "https://sc02.alicdn.com/kf/H9480a26114b449b4948584468ac96fd4s.jpg",
+    image: "/images/products/heart-dropper-30ml/main.webp",
     gallery: [
-      "https://sc02.alicdn.com/kf/H9480a26114b449b4948584468ac96fd4s.jpg",
-      "https://sc02.alicdn.com/kf/He1f715286c1e4723b512574c0c0432cfs.jpg",
-      "https://sc02.alicdn.com/kf/Hf346d43529b6439eb5b57430ea58a182P.jpg",
-      "https://sc02.alicdn.com/kf/Hc47f9650e6b8433da2e00f1fba286803l.jpg",
+      "/images/products/heart-dropper-30ml/gallery-0.webp",
+      "/images/products/heart-dropper-30ml/gallery-1.webp",
+      "/images/products/heart-dropper-30ml/gallery-2.webp",
+      "/images/products/heart-dropper-30ml/gallery-3.webp"
     ],
     description:
       "A sculptural heart-shaped dropper bottle that doubles as a brand statement piece. Available in matte black, matte white, or translucent gradient glass with a matching heart-shaped dropper bulb — the ultimate holiday, Valentine's Day or love-themed beauty launch.",
@@ -93,12 +93,12 @@ export const products: Product[] = [
     moq: "5,000 pcs",
     leadTime: "25–30 days",
     decoration: "Frosting, gradient coating, silk screen, color spray",
-    image: "https://sc02.alicdn.com/kf/Hea7f2dc0d06b4c9b98aa8f4ef32ceb1bK.jpg",
+    image: "/images/products/flat-square-dropper/main.webp",
     gallery: [
-      "https://sc02.alicdn.com/kf/Hea7f2dc0d06b4c9b98aa8f4ef32ceb1bK.jpg",
-      "https://sc02.alicdn.com/kf/H4de983b9ff7343469eb1afb1a89af473I.jpg",
-      "https://sc02.alicdn.com/kf/Hd45a706cfca64e7fb385cc28c13d3a24r.jpg",
-      "https://sc02.alicdn.com/kf/H5862e998b47b43648101fa1926bb386cb.jpg",
+      "/images/products/flat-square-dropper/gallery-0.webp",
+      "/images/products/flat-square-dropper/gallery-1.webp",
+      "/images/products/flat-square-dropper/gallery-2.webp",
+      "/images/products/flat-square-dropper/gallery-3.webp"
     ],
     description:
       "A modern flat-square silhouette with softly rounded corners — a sleek alternative to the classic cylinder. Available in 30 ml and 50 ml with frosted, gradient, amber or matte beige finishes. A perfect fit for minimalist, gender-neutral and clinical skincare lines.",
@@ -135,12 +135,12 @@ export const products: Product[] = [
     moq: "5,000 pcs",
     leadTime: "25–30 days",
     decoration: "Silk screen, hot stamping, frosting, color spray coating",
-    image: "https://sc02.alicdn.com/kf/Hce1d7d3a3a524d28930433f17cc3f485d.jpg",
+    image: "/images/products/square-serum-dropper/main.webp",
     gallery: [
-      "https://sc02.alicdn.com/kf/Hce1d7d3a3a524d28930433f17cc3f485d.jpg",
-      "https://sc02.alicdn.com/kf/He88c97159491421090be6b950077dce1I.jpg",
-      "https://sc02.alicdn.com/kf/H142446aa73344ddc9e12c0470b21046cw.jpg",
-      "https://sc02.alicdn.com/kf/He3d7d042f0434cceb495dd49585e1581A.jpg",
+      "/images/products/square-serum-dropper/gallery-0.webp",
+      "/images/products/square-serum-dropper/gallery-1.webp",
+      "/images/products/square-serum-dropper/gallery-2.webp",
+      "/images/products/square-serum-dropper/gallery-3.webp"
     ],
     description:
       "A clean, architectural square dropper bottle with crisp edges and premium glass clarity. Available in 30 ml, 50 ml, and 100 ml — the 100 ml jumbo size is a standout for body serums and professional salon lines. Frosted or clear glass with gold, silver, or matte black collar options.",
@@ -177,12 +177,12 @@ export const products: Product[] = [
     moq: "5,000 pcs",
     leadTime: "25–30 days",
     decoration: "Color frosting (blue), silk screen, hot stamping",
-    image: "https://sc02.alicdn.com/kf/H11359603164444ee98ffc30910a22355w.jpg",
+    image: "/images/products/frosted-blue-dropper-30ml/main.webp",
     gallery: [
-      "https://sc02.alicdn.com/kf/H11359603164444ee98ffc30910a22355w.jpg",
-      "https://sc02.alicdn.com/kf/H18d7381ef2f44a66b11f95a70b907c39L.jpg",
-      "https://sc02.alicdn.com/kf/Hf4f69304a3684caba42d1137322211cdI.jpg",
-      "https://sc02.alicdn.com/kf/Hee1f17ccfa434f2baf809c424b140131q.jpg",
+      "/images/products/frosted-blue-dropper-30ml/gallery-0.webp",
+      "/images/products/frosted-blue-dropper-30ml/gallery-1.webp",
+      "/images/products/frosted-blue-dropper-30ml/gallery-2.webp",
+      "/images/products/frosted-blue-dropper-30ml/gallery-3.webp"
     ],
     description:
       "A popular 30 ml frosted blue dropper bottle with a vibrant, Instagram-ready aesthetic. The color frosting is baked into the glass for a permanent, scratch-resistant finish — ideal for hyaluronic acid, niacinamide, and vitamin C serums targeting Gen-Z and millennial skincare audiences.",
@@ -219,12 +219,12 @@ export const products: Product[] = [
     moq: "5,000 pcs",
     leadTime: "20–25 days",
     decoration: "Silk screen, hot stamping, frosting, color spray",
-    image: "https://sc02.alicdn.com/kf/Hf8141c781bab4805ad28c6ac4bc99918H.jpg",
+    image: "/images/products/flat-shoulder-dropper-30ml/main.webp",
     gallery: [
-      "https://sc02.alicdn.com/kf/Hf8141c781bab4805ad28c6ac4bc99918H.jpg",
-      "https://sc02.alicdn.com/kf/Hd3e33d0c552e4c6a8910491c237ac4ecU.jpg",
-      "https://sc02.alicdn.com/kf/H57d8d3032a44459b9f466ec5ea6998a5U.jpg",
-      "https://sc02.alicdn.com/kf/H533e00958cf14752a55e7167638661afy.jpg",
+      "/images/products/flat-shoulder-dropper-30ml/gallery-0.webp",
+      "/images/products/flat-shoulder-dropper-30ml/gallery-1.webp",
+      "/images/products/flat-shoulder-dropper-30ml/gallery-2.webp",
+      "/images/products/flat-shoulder-dropper-30ml/gallery-3.webp"
     ],
     description:
       "A classic flat-shoulder 30 ml dropper bottle with a low-profile, minimalist silhouette. The flat shoulder design creates a clean label area and a modern, understated look on shelf. Clear glass with gold or silver collar — an ideal entry-level serum bottle for new brand launches and private-label skincare lines.",
@@ -262,12 +262,12 @@ export const products: Product[] = [
     moq: "5,000 pcs",
     leadTime: "25–30 days",
     decoration: "Matte black spray coating, silk screen, hot stamping",
-    image: "https://sc02.alicdn.com/kf/Hd73aba00aa2d412fb9d20f842529adc5d.jpg",
+    image: "/images/products/matte-black-serum-bottle/main.webp",
     gallery: [
-      "https://sc02.alicdn.com/kf/Hd73aba00aa2d412fb9d20f842529adc5d.jpg",
-      "https://sc02.alicdn.com/kf/H3a52af65b9b5456886afd8b31672097d0.jpg",
-      "https://sc02.alicdn.com/kf/H703409b3f5d542afa63b4c6cd5fc0becb.jpg",
-      "https://sc02.alicdn.com/kf/H7ae74b6e8995433c89bfe1564ec01e9aX.jpg",
+      "/images/products/matte-black-serum-bottle/gallery-0.webp",
+      "/images/products/matte-black-serum-bottle/gallery-1.webp",
+      "/images/products/matte-black-serum-bottle/gallery-2.webp",
+      "/images/products/matte-black-serum-bottle/gallery-3.webp"
     ],
     description:
       "A sleek matte black glass serum bottle with a soft-touch feel and seven size options — from 5 ml sample vials to 100 ml professional sizes. The matte finish photographs with zero glare, making it a favorite for high-contrast e-commerce product imagery. One of our most requested bottles for premium actives and luxury serum launches.",
@@ -304,12 +304,12 @@ export const products: Product[] = [
     moq: "5,000 pcs",
     leadTime: "25–30 days",
     decoration: "Matte black spray coating, silk screen, hot stamping",
-    image: "https://sc02.alicdn.com/kf/H7831cce187174bfea5aab0d30287561e5.jpg",
+    image: "/images/products/black-flat-shoulder-dropper/main.webp",
     gallery: [
-      "https://sc02.alicdn.com/kf/H7831cce187174bfea5aab0d30287561e5.jpg",
-      "https://sc02.alicdn.com/kf/H87d1e982f47b474b9756c74c9f57fae9E.jpg",
-      "https://sc02.alicdn.com/kf/He90360b52b3d43c3b4ff8960f47da006b.jpg",
-      "https://sc02.alicdn.com/kf/H642fe9d31f0744ceb3374a0ba310562aE.jpg",
+      "/images/products/black-flat-shoulder-dropper/gallery-0.webp",
+      "/images/products/black-flat-shoulder-dropper/gallery-1.webp",
+      "/images/products/black-flat-shoulder-dropper/gallery-2.webp",
+      "/images/products/black-flat-shoulder-dropper/gallery-3.webp"
     ],
     description:
       "A flat-shoulder round dropper bottle in matte black — the clean, understated silhouette that brands return to season after season. The flat shoulder provides a generous, flat label area while the matte finish eliminates reflection in product photography. Four popular sizes from 20 ml to 60 ml cover the sweet spot for face serums and facial oils.",
@@ -346,12 +346,12 @@ export const products: Product[] = [
     moq: "5,000 pcs",
     leadTime: "25–30 days",
     decoration: "Silk screen, hot stamping, frosting, color spray",
-    image: "https://sc02.alicdn.com/kf/Hd61654b507dd4bb7b7d51edc1a830c1cy.jpg",
+    image: "/images/products/flat-shoulder-round-dropper-60ml/main.webp",
     gallery: [
-      "https://sc02.alicdn.com/kf/Hd61654b507dd4bb7b7d51edc1a830c1cy.jpg",
-      "https://sc02.alicdn.com/kf/H598ae33dfa8141549398186e93ca7ca00.jpg",
-      "https://sc02.alicdn.com/kf/H53abf040c1694d29b540b67e75a2907bX.jpg",
-      "https://sc02.alicdn.com/kf/H9fb050c9cc5142169a1964d346396700d.jpg",
+      "/images/products/flat-shoulder-round-dropper-60ml/gallery-0.webp",
+      "/images/products/flat-shoulder-round-dropper-60ml/gallery-1.webp",
+      "/images/products/flat-shoulder-round-dropper-60ml/gallery-2.webp",
+      "/images/products/flat-shoulder-round-dropper-60ml/gallery-3.webp"
     ],
     description:
       "A 60 ml flat-shoulder round dropper bottle — the larger sibling in our flat-shoulder family, ideal for facial oils, hair serums, and body treatment oils that call for a generous fill volume. Clear glass with gold or silver collar options, ready for custom decoration.",
@@ -390,10 +390,10 @@ export const products: Product[] = [
     decoration: "Matte black-brown color coating, silk screen, hot stamping",
     image: "/images/products/matte-black-brown-jar.webp",
     gallery: [
-      "https://sc02.alicdn.com/kf/H26ea55fdff4f4a46a7edd10aa62b12a53.jpg",
-      "https://sc02.alicdn.com/kf/H0a730bea773f46168eac091c1af974cbY.jpg",
-      "https://sc02.alicdn.com/kf/Hf0c29176f7d744cca13dc46e5d829308m.jpg",
-      "https://sc02.alicdn.com/kf/H60ed96b709de458fa5be26f8d4bfd8e17.jpg",
+      "/images/products/matte-black-brown-jar/gallery-0.webp",
+      "/images/products/matte-black-brown-jar/gallery-1.webp",
+      "/images/products/matte-black-brown-jar/gallery-2.webp",
+      "/images/products/matte-black-brown-jar/gallery-3.webp"
     ],
     description:
       "A refined matte black-brown cream jar with a soft, velvety surface that photographs beautifully for e-commerce. The double-wall glass body adds weight and perceived luxury, while the wide mouth makes formulation filling effortless. Available in 30 g and 50 g — a go-to for premium face creams, eye creams and overnight masks.",
@@ -432,10 +432,10 @@ export const products: Product[] = [
     decoration: "Frosted glass + water transfer-printed woodgrain lid, silk screen, hot stamping",
     image: "/images/products/frosted-woodgrain-jar.webp",
     gallery: [
-      "https://sc02.alicdn.com/kf/H0f609b9793e24fcc9f75241a12481e575.jpg",
-      "https://sc02.alicdn.com/kf/H7054748f938d43b29d124381a13562257.jpg",
-      "https://sc02.alicdn.com/kf/H7f81cc1bf50245c5a72485369c58a4e97.jpg",
-      "https://sc02.alicdn.com/kf/H308c47d1d8544cf386b3b27dafa4b851g.jpg",
+      "/images/products/frosted-round-jar-woodgrain/gallery-0.webp",
+      "/images/products/frosted-round-jar-woodgrain/gallery-1.webp",
+      "/images/products/frosted-round-jar-woodgrain/gallery-2.webp",
+      "/images/products/frosted-round-jar-woodgrain/gallery-3.webp"
     ],
     description:
       "A classic frosted round cream jar paired with a premium water transfer-printed woodgrain lid — delivering a warm, natural aesthetic at half the cost of real bamboo. Six sizes from 5 g sample jars to 100 g body butter jars make this one of our most versatile stock programs. Popular with natural and botanical skincare brands across Europe.",
@@ -474,10 +474,10 @@ export const products: Product[] = [
     decoration: "Water transfer-printed woodgrain lid (brown), silk screen, hot stamping",
     image: "/images/products/brown-woodgrain-transfer-jar.webp",
     gallery: [
-      "https://sc02.alicdn.com/kf/H480cdc7a2da44b40a0e35a93e7fc988cV.jpg",
-      "https://sc02.alicdn.com/kf/Hc233cbcbb1444c3c89383cdc48117e76F.jpg",
-      "https://sc02.alicdn.com/kf/H9d048c1bae5448288f48a020c4c909dbv.jpg",
-      "https://sc02.alicdn.com/kf/H3f6934ba3bf548649593fa7580099609M.jpg",
+      "/images/products/brown-woodgrain-jar/gallery-0.webp",
+      "/images/products/brown-woodgrain-jar/gallery-1.webp",
+      "/images/products/brown-woodgrain-jar/gallery-2.webp",
+      "/images/products/brown-woodgrain-jar/gallery-3.webp"
     ],
     description:
       "A warm brown woodgrain cream jar — the rich espresso tone reads as organic skincare, perfect for brands positioning in the botanical, Ayurvedic, and craft-beauty space. The water transfer-printed lid delivers the look and feel of solid wood at one-third the cost and weight. Available in four sizes from 10 g travel minis to 50 g full-size jars.",
@@ -527,12 +527,12 @@ export const products: Product[] = [
     moq: "5,000 pcs",
     leadTime: "25–30 days",
     decoration: "Amber glass + silk screen, hot stamping",
-    image: "https://sc02.alicdn.com/kf/H231a0895f6c347b6a26f12d523d9ac76q.jpg",
+    image: "/images/products/matte-black-brown-jar/main.webp",
     gallery: [
-      "https://sc02.alicdn.com/kf/H231a0895f6c347b6a26f12d523d9ac76q.jpg",
-      "https://sc02.alicdn.com/kf/Ha22653cdda814a9b87e93bdd84cad586Z.jpg",
-      "https://sc02.alicdn.com/kf/H4bb57840910548c0ba2c59e3b725d702t.jpg",
-      "https://sc02.alicdn.com/kf/H34fc23c1ede247bba7e7886fd5f7d5ecz.jpg",
+      "/images/products/amber-serum-vial-dropper/gallery-0.webp",
+      "/images/products/amber-serum-vial-dropper/gallery-1.webp",
+      "/images/products/amber-serum-vial-dropper/gallery-2.webp",
+      "/images/products/amber-serum-vial-dropper/gallery-3.webp"
     ],
     description:
       "A classic amber glass vial dropper bottle — the workhorse of serum, essential oil and wellness packaging. Five sizes from 5 ml sample vials to 50 ml full-size droppers. Amber glass provides natural UV protection for light-sensitive formulations like vitamin C, retinol and essential oils. Compatible with rubber teat and screw-cap dropper assemblies.",
@@ -579,12 +579,12 @@ export const products: Product[] = [
     moq: "5,000 pcs per SKU",
     leadTime: "30–35 days",
     decoration: "Gradient spray coating, hot stamping, silk screen, electroplated gold cap",
-    image: "https://sc02.alicdn.com/kf/Hba8e5303cb1d4ac9afaf69ef5ec30362e.jpg",
+    image: "/images/products/frosted-round-jar-woodgrain/main.webp",
     gallery: [
-      "https://sc02.alicdn.com/kf/Hba8e5303cb1d4ac9afaf69ef5ec30362e.jpg",
-      "https://sc02.alicdn.com/kf/H073d9e4fe8de4560a4a065ae3381beccC.jpg",
-      "https://sc02.alicdn.com/kf/H3bdd96a0038d4539bfcdd921c5f0cdcei.jpg",
-      "https://sc02.alicdn.com/kf/Hc826a59c9b3b481792cbbb75bb402505d.jpg",
+      "/images/products/gradient-green-cosmetic-set/gallery-0.webp",
+      "/images/products/gradient-green-cosmetic-set/gallery-1.webp",
+      "/images/products/gradient-green-cosmetic-set/gallery-2.webp",
+      "/images/products/gradient-green-cosmetic-set/gallery-3.webp"
     ],
     description:
       "A full-range coordinated cosmetic glass set in deep forest green to seafoam gradient. Includes teardrop lotion bottles (40–150 ml) with gold pump caps, serum droppers, and round cream jars (30–100 g) with domed gold lids. Every piece shares the same gradient finish and gold hardware — a turnkey packaging identity for a single-brand skincare launch.",
@@ -622,12 +622,12 @@ export const products: Product[] = [
     moq: "5,000 pcs per SKU",
     leadTime: "30–35 days",
     decoration: "Gradient spray coating, hot stamping, silk screen, electroplated gold cap & pump",
-    image: "https://sc02.alicdn.com/kf/H580bd8b39ed044d28b04d1cd8238eacfC.jpg",
+    image: "/images/products/brown-woodgrain-jar/main.webp",
     gallery: [
-      "https://sc02.alicdn.com/kf/H580bd8b39ed044d28b04d1cd8238eacfC.jpg",
-      "https://sc02.alicdn.com/kf/H6fcc5e2ba24a4b8c81e9db29f2e604f0w.jpg",
-      "https://sc02.alicdn.com/kf/H0fd222abea1a40e9afc9363d2e43a872w.jpg",
-      "https://sc02.alicdn.com/kf/Hfcd2384531ea43108aa8470ab7ce6c13O.jpg",
+      "/images/products/gradient-green-pump-set/gallery-0.webp",
+      "/images/products/gradient-green-pump-set/gallery-1.webp",
+      "/images/products/gradient-green-pump-set/gallery-2.webp",
+      "/images/products/gradient-green-pump-set/gallery-3.webp"
     ],
     description:
       "A 5-piece coordinated lotion + cream set with forest-green gradient glass and polished gold hardware. Includes three teardrop pump bottles (40 / 100 / 120 ml) and two domed cream jars (50 / 100 g). Available in green gradient, black-to-gold gradient or solid amber — the perfect turnkey packaging for a single-brand skincare collection launch.",
@@ -665,12 +665,12 @@ export const products: Product[] = [
     moq: "5,000 pcs per SKU",
     leadTime: "30–35 days",
     decoration: "Red gradient spray coating, silk screen, hot stamping, metallic red cap",
-    image: "https://sc02.alicdn.com/kf/H81b7e5b0bfbb42989d73eaf28d9106cb7.jpg",
+    image: "/images/products/amber-serum-vial-dropper/main.webp",
     gallery: [
-      "https://sc02.alicdn.com/kf/H81b7e5b0bfbb42989d73eaf28d9106cb7.jpg",
-      "https://sc02.alicdn.com/kf/Hd4329c0c0ffb424cb90ab2dae8a61171l.jpg",
-      "https://sc02.alicdn.com/kf/H17aad3d85d2b479fa608719d468d58b2r.jpg",
-      "https://sc02.alicdn.com/kf/H38fb1dad05ac4f1393fee7e6dddf9b63f.jpg",
+      "/images/products/gradient-red-cosmetic-set/gallery-0.webp",
+      "/images/products/gradient-red-cosmetic-set/gallery-1.webp",
+      "/images/products/gradient-red-cosmetic-set/gallery-2.webp",
+      "/images/products/gradient-red-cosmetic-set/gallery-3.webp"
     ],
     description:
       "A coordinated red gradient cosmetic set built on classic straight-round bottles and cream jars. Deep crimson spray coating melts into clear glass at the base, paired with satin metallic red caps and gold foil branding. Covers 30–120 ml lotion and serum bottles plus 30–100 g cream jars — one consistent, eye-catching identity for a single-brand skincare or gift-set launch.",
@@ -708,12 +708,12 @@ export const products: Product[] = [
     moq: "5,000 pcs",
     leadTime: "25–30 days",
     decoration: "Silk screen, hot stamping, frosting, color spray coating, gold/silver collar",
-    image: "https://sc02.alicdn.com/kf/H7992e5d9f9c64887aba3dc4b4db434fa4.jpg",
+    image: "/images/products/gradient-green-cosmetic-set/main.webp",
     gallery: [
-      "https://sc02.alicdn.com/kf/H7992e5d9f9c64887aba3dc4b4db434fa4.jpg",
-      "https://sc02.alicdn.com/kf/H60f29d5cc9b4430fb100fe29f5ef07edt.jpg",
-      "https://sc02.alicdn.com/kf/H13d5954a17cc476683c98b755b611c41i.jpg",
-      "https://sc02.alicdn.com/kf/Ha23a1b2586854eeda64d36bca1ea1b64w.jpg",
+      "/images/products/small-round-dropper-10ml-15ml/gallery-0.webp",
+      "/images/products/small-round-dropper-10ml-15ml/gallery-1.webp",
+      "/images/products/small-round-dropper-10ml-15ml/gallery-2.webp",
+      "/images/products/small-round-dropper-10ml-15ml/gallery-3.webp"
     ],
     description:
       "Compact 10ml and 15ml straight-round dropper bottles in translucent purple, matte white or teal glass. Small enough for travel-size serums, essential oil blends and sample kits — premium enough to sit beside full-size SKUs. Choose between gold knurled collars with white squeeze bulbs, silver push-button droppers or matte white caps, with glass pipettes inside every bottle.",
@@ -751,12 +751,12 @@ export const products: Product[] = [
     moq: "5,000 pcs per SKU",
     leadTime: "30–35 days",
     decoration: "Matte white spray coating, silk screen, hot stamping, silver metal caps",
-    image: "https://sc02.alicdn.com/kf/H13a0c4c52f64454fa4da3904e0668a58A.jpg",
+    image: "/images/products/gradient-green-pump-set/main.webp",
     gallery: [
-      "https://sc02.alicdn.com/kf/H13a0c4c52f64454fa4da3904e0668a58A.jpg",
-      "https://sc02.alicdn.com/kf/H01c3cc391cd34b02890f52bd30443966r.jpg",
-      "https://sc02.alicdn.com/kf/H1e4771e465994f6aac8c4b9d8cf19112B.jpg",
-      "https://sc02.alicdn.com/kf/H805713bae49b4562bba0c436499579f3S.jpg",
+      "/images/products/stone-texture-white-cosmetic-set/gallery-0.webp",
+      "/images/products/stone-texture-white-cosmetic-set/gallery-1.webp",
+      "/images/products/stone-texture-white-cosmetic-set/gallery-2.webp",
+      "/images/products/stone-texture-white-cosmetic-set/gallery-3.webp"
     ],
     description:
       "A stone-texture matte white cosmetic set with high-polish silver caps — the 'ceramic' look that reads premium on any shelf. Three straight-round lotion bottles (40, 100, 120 ml) and two dome-lid cream jars (30, 50 g) in one coordinated identity, with soft-touch white coating and gold or silver logo stamping. Works as a full skincare regimen set, a retail gift collection or a hotel & spa amenity line.",
@@ -794,12 +794,12 @@ export const products: Product[] = [
     moq: "5,000 pcs per SKU",
     leadTime: "30–35 days",
     decoration: "Black spray coating, gold metal pump, silk screen, hot stamping",
-    image: "https://sc02.alicdn.com/kf/He40bf9490b9242f19c8612d4cbac2026I.jpg",
+    image: "/images/products/gradient-red-cosmetic-set/main.webp",
     gallery: [
-      "https://sc02.alicdn.com/kf/He40bf9490b9242f19c8612d4cbac2026I.jpg",
-      "https://sc02.alicdn.com/kf/Hb118f16cbbf741fe89df0fb95f380ae1o.jpg",
-      "https://sc02.alicdn.com/kf/H47f109f7a8de490eb70d148aa8b768d39.jpg",
-      "https://sc02.alicdn.com/kf/H2a98dce4c152490cbe5714f127490d20A.jpg",
+      "/images/products/gold-pump-black-cosmetic-set/gallery-0.webp",
+      "/images/products/gold-pump-black-cosmetic-set/gallery-1.webp",
+      "/images/products/gold-pump-black-cosmetic-set/gallery-2.webp",
+      "/images/products/gold-pump-black-cosmetic-set/gallery-3.webp"
     ],
     description:
       "A statement black cosmetic set with gold pumps and black caps — deep matte black bottles and cream jars in a single coordinated identity. Three lotion bottles (40, 100, 120 ml) with gold pump dispensers and two cream jars (30, 50 g) with black screw lids, finished with your logo in silk screen or hot stamping. The gold-on-black contrast reads premium and gender-neutral, fitting men's grooming, luxury skincare and hotel amenity lines.",
@@ -837,12 +837,12 @@ export const products: Product[] = [
     moq: "5,000 pcs per SKU",
     leadTime: "30–35 days",
     decoration: "Diamond texture glass, color spray (gradient/solid), gold metallic pump & cap, silk screen",
-    image: "https://sc04.alicdn.com/kf/A70de88116f054a6f908cdd4b62f1ba6e0.jpg",
+    image: "/images/products/small-round-dropper-10ml-15ml/main.webp",
     gallery: [
-      "https://sc04.alicdn.com/kf/A70de88116f054a6f908cdd4b62f1ba6e0.jpg",
-      "https://sc04.alicdn.com/kf/Af8f1dae488664091a90334b0798cab1bd.jpg",
-      "https://sc04.alicdn.com/kf/Aca66993d274a41728672ba4643c8253b5.jpg",
-      "https://sc04.alicdn.com/kf/Afcfeea38c118450086b5baffa00544d18.jpg",
+      "/images/products/waistline-textured-glass-set/gallery-0.webp",
+      "/images/products/waistline-textured-glass-set/gallery-1.webp",
+      "/images/products/waistline-textured-glass-set/gallery-2.webp",
+      "/images/products/waistline-textured-glass-set/gallery-3.webp"
     ],
     description:
       "A premium hourglass-shaped glass cosmetic set featuring a distinct diamond textured surface and metallic gold accents. The 'waistline' design offers an ergonomic grip and a unique visual silhouette that stands out in the luxury skincare market. Available in royal blue gradient, ice blue, ruby red, and amber gold finishes. This collection includes high-capacity 40-120ml lotion bottles with pumps and 50-100g wide-mouth cream jars, making it ideal for complete high-end anti-aging or moisturizing regimens.",
@@ -880,12 +880,12 @@ export const products: Product[] = [
     moq: "5,000 pcs",
     leadTime: "25–30 days",
     decoration: "Frosted, matte, gradient or opaque coating; silk screen & hot stamping",
-    image: "https://sc04.alicdn.com/kf/A8c40c1bd70844b9892be32649ef7035bs.jpg",
+    image: "/images/products/stone-texture-white-cosmetic-set/main.webp",
     gallery: [
-      "https://sc04.alicdn.com/kf/A8c40c1bd70844b9892be32649ef7035bs.jpg",
-      "https://sc04.alicdn.com/kf/A08e6f6e3bd774e4980d3b68bf3aef0f06.jpg",
-      "https://sc04.alicdn.com/kf/A7ca8c3d1f5c04be68c110c69b0d01217K.jpg",
-      "https://sc04.alicdn.com/kf/A55b16ec03983478cad1f1c9a75a46ef7j.jpg",
+      "/images/products/classic-glass-dropper-bottle/gallery-0.webp",
+      "/images/products/classic-glass-dropper-bottle/gallery-1.webp",
+      "/images/products/classic-glass-dropper-bottle/gallery-2.webp",
+      "/images/products/classic-glass-dropper-bottle/gallery-3.webp"
     ],
     description:
       "A versatile range of classic straight-round glass dropper bottles designed for maximum formula protection. These 'light-shielding' bottles feature high-quality opaque coatings and gradients that block harmful UV rays, making them ideal for high-potency serums, essential oils, and light-sensitive skincare actives. Available in a full size run from 5ml travel sizes to 100ml professional volumes, with your choice of silver or black metallic collars and precision glass pipettes.",

@@ -46,11 +46,11 @@ const featured = [
 ] as const;
 
 const factorySteps = [
-  { title: "Production Line", desc: "6 IS forming machines run 24/7 with 60M units annual capacity.", img: "https://sc02.alicdn.com/kf/H3ed4c7e33e7444e0b8776874383d6c0d2.jpg" },
-  { title: "Glass Inspection", desc: "AQL sampling, drop tests & dimensional checks before any bottle ships.", img: "https://sc02.alicdn.com/kf/A3fa0a4dee6c14803924e1a1558cc248c1.png" },
-  { title: "Printing Workshop", desc: "In-house silk screen, hot stamping & pad printing lines.", img: "https://sc02.alicdn.com/kf/H9dabc8c4179c432e99d09e729e5b4e00a.jpg" },
-  { title: "Coating Workshop", desc: "Frosting, spray & gradient coating with full Pantone color control.", img: "https://sc02.alicdn.com/kf/Abc9e1f5ec8f84484a9665349e9ac77eca.png" },
-  { title: "Packaging Process", desc: "Drop-test certified export cartons, palletized. EXW / FOB / DDP.", img: "https://sc02.alicdn.com/kf/H95b280256ba04004af162257b20eb19au.jpg" },
+  { title: "Production Line", desc: "6 IS forming machines run 24/7 with 60M units annual capacity.", img: "/images/factory/production-line.webp" },
+  { title: "Glass Inspection", desc: "AQL sampling, drop tests & dimensional checks before any bottle ships.", img: "/images/factory/glass-inspection.webp" },
+  { title: "Printing Workshop", desc: "In-house silk screen, hot stamping & pad printing lines.", img: "/images/factory/printing-workshop.webp" },
+  { title: "Coating Workshop", desc: "Frosting, spray & gradient coating with full Pantone color control.", img: "/images/factory/coating-workshop.webp" },
+  { title: "Packaging Process", desc: "Drop-test certified export cartons, palletized. EXW / FOB / DDP.", img: "/images/factory/packaging-process.webp" },
 ] as const;
 
 const processSteps = [
