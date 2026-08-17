@@ -141,19 +141,6 @@ Shipping: DDP shipping to USA and EU (20-26 days). ISO 9001 factory.
 Browse vials: https://www.veslapack.com/products?category=vial
 Contact: yitengglass3@gmail.com | WhatsApp +86 18165681131`,
   },
-  "/cosmetic-sets": {
-    title: "Cosmetic Glass Set Manufacturers | Coordinated Skincare Collections — Vesla",
-    description: "Premium cosmetic glass set manufacturers. Coordinated skincare collections: lotion bottles & jars with matching finishes. Low MOQ 5,000 pcs, DDP shipping.",
-    h1: "Cosmetic Glass Set Manufacturers",
-    body: `Vesla manufactures coordinated glass packaging sets for premium skincare regimens.
-
-Products: matching 30ml/50ml/100ml lotion bottles and 30g/50g cream jars. Gradient, matte, and solid color finishes.
-Capabilities: 100% color-match calibration across different bottle types, custom gift box inserts, silk-screen branding. MOQ 5,000 units per SKU.
-Logistics: Automated DDP shipping to USA and EU. ISO 9001 certified manufacturing.
-
-Browse collections: https://www.veslapack.com/products?category=set
-Contact: yitengglass3@gmail.com | WhatsApp +86 18165681131`,
-  },
   "/serum-bottles": {
     title: "Serum & Essential Oil Bottle Manufacturers | Custom Glass Dropper Bottles — Vesla",
     description: "Premium serum & essential oil bottle manufacturers. Custom glass dropper bottles from 5ml to 100ml with UV protection and in-house decoration. Low MOQ 5,000 pcs, DDP shipping.",
@@ -165,6 +152,19 @@ Capabilities: UV-protective amber/violet glass, custom color spray, silk screen 
 Shipping: DDP to USA/EU in 20-26 days. ISO 9001 certified.
 
 Browse collection: https://www.veslapack.com/serum-bottles
+Contact: yitengglass3@gmail.com | WhatsApp +86 18165681131`,
+  },
+  "/cosmetic-sets": {
+    title: "Cosmetic Set Bottle Manufacturers | Custom Glass Skincare Sets — Vesla",
+    description: "Custom cosmetic set bottle manufacturers. Coordinated glass skincare sets — droppers, pump lotion bottles & cream jars with gradient coating & electroplated caps. Low MOQ 5,000 pcs, DDP to EU & USA.",
+    h1: "Cosmetic Set Bottle Manufacturers & Suppliers",
+    body: `Vesla manufactures coordinated glass cosmetic sets for premium skincare and gift-box brands.
+
+Products: gradient-color skincare sets, pump lotion + cream jar combos, straight-round & hourglass 'waistline' textured sets — droppers, pumps and jars matched as one family (40/100/120 ml + 30/50/100 g).
+Capabilities: custom gradient coating (green, red, blue, amber), electroplated gold/silver caps & pump heads, stone-texture & diamond/prism molded glass, gold foil logo stamping. MOQ 5,000 pcs on stock molds; private molds from 10,000 pcs.
+Compliance: ISO 9001, FDA 21 CFR, EU 1935/2004. Production 7-15 days on stock molds. DDP to EU & USA.
+
+Browse sets: https://www.veslapack.com/products?category=set
 Contact: yitengglass3@gmail.com | WhatsApp +86 18165681131`,
   },
   "/products": {
@@ -238,7 +238,7 @@ const REDIRECTS = {
 };
 
 const KNOWN_PATHS = new Set([
-  "/", "/products", "/serum-bottles", "/cream-jars", "/glass-vials", 
+  "/", "/products", "/serum-bottles", "/cream-jars", "/glass-vials", "/cosmetic-sets",
   "/cosmetic-packaging-supplier-comparison-2026", "/quality-control", 
   "/certifications", "/about", "/process", "/blog", "/contact", "/privacy",
   "/sitemap.xml", "/robots.txt", "/llms.txt", "/llms-full.txt", "/content-manifest.json",
@@ -311,8 +311,18 @@ export default {
       }
 
       // 5. Serve Static Asset
-      const resp = await env.ASSETS.fetch(request);
-      const ctype = resp.headers.get("content-type") || "";
+      let resp = await env.ASSETS.fetch(request);
+      let ctype = resp.headers.get("content-type") || "";
+
+      // 5b. SPA Fallback — Pages ASSETS does NOT auto-serve index.html for
+      // client-side routes (e.g. /cosmetic-sets has no .html file). If a KNOWN
+      // SPA route 404s, rewrite to index.html so the router can render it.
+      const isSpaRoute = KNOWN_PATHS.has(path) && !STATIC_FILE_RE.test(path);
+      if (resp.status === 404 && (isSpaRoute || isDynamic)) {
+        const indexReq = new Request(new URL("/index.html", url.origin).toString(), request);
+        resp = await env.ASSETS.fetch(indexReq);
+        ctype = resp.headers.get("content-type") || "";
+      }
 
       // 6. Asset Existence Check
       if (STATIC_FILE_RE.test(path) && ctype.includes("text/html")) {
