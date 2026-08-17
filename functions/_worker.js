@@ -311,8 +311,18 @@ export default {
       }
 
       // 5. Serve Static Asset
-      const resp = await env.ASSETS.fetch(request);
-      const ctype = resp.headers.get("content-type") || "";
+      let resp = await env.ASSETS.fetch(request);
+      let ctype = resp.headers.get("content-type") || "";
+
+      // 5b. SPA Fallback — Pages ASSETS does NOT auto-serve index.html for
+      // client-side routes (e.g. /cosmetic-sets has no .html file). If a KNOWN
+      // SPA route 404s, rewrite to index.html so the router can render it.
+      const isSpaRoute = KNOWN_PATHS.has(path) && !STATIC_FILE_RE.test(path);
+      if (resp.status === 404 && (isSpaRoute || isDynamic)) {
+        const indexReq = new Request(new URL("/index.html", url.origin).toString(), request);
+        resp = await env.ASSETS.fetch(indexReq);
+        ctype = resp.headers.get("content-type") || "";
+      }
 
       // 6. Asset Existence Check
       if (STATIC_FILE_RE.test(path) && ctype.includes("text/html")) {
