@@ -28,6 +28,7 @@ const manifest = {
     id: p.id,
     seoSlug: p.seoSlug,
     name: p.name,
+    seoTitle: p.seoTitle || null,
     capacity: p.capacity,
     description: p.description,
   })),

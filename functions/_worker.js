@@ -285,7 +285,7 @@ export default {
           if (path.startsWith("/products/")) {
             const prod = (manifest.products || []).find(p => p.seoSlug === slug || p.id === slug);
             if (prod) return serveSSR({
-              title: prod.name + " | Vesla Products",
+              title: prod.seoTitle || (prod.name + " | Vesla Products"),
               description: (prod.description || "").substring(0, 160),
               h1: prod.name,
               body: `${prod.name} — ${prod.capacity}. ${prod.description}`,

@@ -12,6 +12,8 @@ export interface Product {
   seoSlug: string;
   name: string;
   specTitle?: string;
+  /** Override the auto-generated <title> tag with a CTR-optimized version (MOQ/price/DDP hooks). */
+  seoTitle?: string;
   nameI18n: { kr: string; jp: string; tw: string };
   category: Category;
   material: string;
@@ -250,6 +252,7 @@ export const products: Product[] = [
     seoSlug: "custom-matte-black-glass-serum-bottle-manufacturer",
     name: "Matte Black Glass Serum Bottle",
     specTitle: "5ml-100ml Matte Black Glass Serum Bottle",
+    seoTitle: "Matte Black Serum Bottle Manufacturer | 5-100ml, Low MOQ 5,000 — Vesla",
     nameI18n: { kr: "매트 블랙 글래스 세럼 보틀", jp: "マットブラック ガラス セラムボトル", tw: "霧面黑玻璃精華液瓶" },
     category: "serum",
     material: "Glass",
@@ -513,6 +516,7 @@ export const products: Product[] = [
     id: "amber-serum-vial-dropper",
     seoSlug: "amber-glass-serum-vial-dropper-bottle-supplier",
     specTitle: "Amber Serum Vials: Wholesale Glass Vial Dropper Bottles (5ml-50ml)",
+    seoTitle: "Amber Serum Vials Wholesale | 5-50ml, MOQ 5,000 pcs — Vesla Factory Direct",
     name: "Amber Glass Serum Vial Dropper Bottle",
     nameI18n: { kr: "앰버 글래스 세럼 바이알 드롭퍼", jp: "アンバーガラス セラム バイアル ドロッパー", tw: "茶色精華液拉管滴管瓶" },
     category: "vial",

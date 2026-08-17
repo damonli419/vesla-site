@@ -111,7 +111,7 @@ export default function ProductDetail() {
   return (
     <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
       <Seo
-        title={`${displayTitle(product)} | Custom Cosmetic Glass Packaging — Vesla`}
+        title={product.seoTitle ?? `${displayTitle(product)} | Custom Cosmetic Glass Packaging — Vesla`}
         description={localizedDesc(product, locale).slice(0, 155)}
         path={`/products/${product.seoSlug}`}
         keywords={product.seoKeywords?.join(", ")}
