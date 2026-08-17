@@ -272,32 +272,45 @@ export default {
         return Response.redirect(target.toString(), 301);
       }
 
-      // 3. AI Crawler SSR
+      // 3. Dynamic Product/Blog Routing — validate slug/id against manifest for
+      // BOTH crawlers and real browsers. A route like /blog/:slug or /products/:id
+      // that doesn't resolve to a real entry MUST return a true 404 — previously
+      // any /products/* or /blog/* path was blindly passed through to the SPA
+      // (200 OK), which is why Google flagged leaked template paths like
+      // /blog/:slug and /products/:id as "soft 404" / duplicate content.
+      const isDynamic = /^\/(products|blog)\/[^/]+$/.test(path);
+      let dynamicEntry = null;
+      if (isDynamic) {
+        const manifest = await env.ASSETS.fetch(new URL("/content-manifest.json", url.origin).toString()).then(r => r.json());
+        const slug = decodeURIComponent(path.split("/").pop() || "");
+        if (path.startsWith("/products/")) {
+          dynamicEntry = (manifest.products || []).find(p => p.seoSlug === slug || p.id === slug) || null;
+        } else {
+          dynamicEntry = (manifest.blogs || []).find(b => b.slug === slug) || null;
+        }
+        if (!dynamicEntry) return notFound();
+      }
+
+      // 3b. AI Crawler SSR
       if (isAICrawler(ua)) {
         const page = STATIC_PAGES[path];
         if (page) return serveSSR({ ...page, url: url.toString() });
 
-        // Dynamic Product/Blog Routing
-        if (/^\/(products|blog)\//.test(path)) {
-          const manifest = await env.ASSETS.fetch(new URL("/content-manifest.json", url.origin).toString()).then(r => r.json());
-          const slug = decodeURIComponent(path.split("/").pop() || "");
-          
+        if (isDynamic && dynamicEntry) {
           if (path.startsWith("/products/")) {
-            const prod = (manifest.products || []).find(p => p.seoSlug === slug || p.id === slug);
-            if (prod) return serveSSR({
-              title: prod.seoTitle || (prod.name + " | Vesla Products"),
-              description: (prod.description || "").substring(0, 160),
-              h1: prod.name,
-              body: `${prod.name} — ${prod.capacity}. ${prod.description}`,
+            return serveSSR({
+              title: dynamicEntry.seoTitle || (dynamicEntry.name + " | Vesla Products"),
+              description: (dynamicEntry.description || "").substring(0, 160),
+              h1: dynamicEntry.name,
+              body: `${dynamicEntry.name} — ${dynamicEntry.capacity}. ${dynamicEntry.description}`,
               url: url.toString()
             });
           } else {
-            const post = (manifest.blogs || []).find(b => b.slug === slug);
-            if (post) return serveSSR({
-              title: post.title + " | Vesla Blog",
-              description: (post.body || "").substring(0, 160),
-              h1: post.title,
-              body: post.body,
+            return serveSSR({
+              title: dynamicEntry.title + " | Vesla Blog",
+              description: (dynamicEntry.body || "").substring(0, 160),
+              h1: dynamicEntry.title,
+              body: dynamicEntry.body,
               url: url.toString()
             });
           }
@@ -305,7 +318,6 @@ export default {
       }
 
       // 4. SPA Validation Guard
-      const isDynamic = /^\/(products|blog)\//.test(path);
       if (!KNOWN_PATHS.has(path) && !STATIC_FILE_RE.test(path) && !isDynamic) {
         return notFound();
       }

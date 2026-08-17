@@ -211,7 +211,7 @@ export default function CreamJars() {
             <Link to="/contact" className="rounded-full bg-gold px-8 py-3.5 text-sm font-semibold text-white shadow-lg hover:bg-gold-dark transition">
               Start Your Project
             </Link>
-            <Link to="/products?category=jar" className="rounded-full border border-white/40 px-8 py-3.5 text-sm font-medium text-white hover:bg-white/10 transition">
+            <Link to="/products" className="rounded-full border border-white/40 px-8 py-3.5 text-sm font-medium text-white hover:bg-white/10 transition">
               Browse All Jars
             </Link>
           </div>

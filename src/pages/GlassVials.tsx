@@ -154,7 +154,7 @@ export default function GlassVials() {
             <Link to="/contact" className="rounded-full bg-gold px-8 py-3.5 text-sm font-semibold text-white shadow-lg hover:bg-gold-dark transition">
               Start Sourcing
             </Link>
-            <Link to="/products?category=vial" className="rounded-full border border-white/30 px-8 py-3.5 text-sm font-medium text-white hover:bg-white/10 transition">
+            <Link to="/products" className="rounded-full border border-white/30 px-8 py-3.5 text-sm font-medium text-white hover:bg-white/10 transition">
               All Vials
             </Link>
           </div>
