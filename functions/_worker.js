@@ -154,6 +154,19 @@ Shipping: DDP to USA/EU in 20-26 days. ISO 9001 certified.
 Browse collection: https://www.veslapack.com/serum-bottles
 Contact: yitengglass3@gmail.com | WhatsApp +86 18165681131`,
   },
+  "/cosmetic-sets": {
+    title: "Cosmetic Set Bottle Manufacturers | Custom Glass Skincare Sets — Vesla",
+    description: "Custom cosmetic set bottle manufacturers. Coordinated glass skincare sets — droppers, pump lotion bottles & cream jars with gradient coating & electroplated caps. Low MOQ 5,000 pcs, DDP to EU & USA.",
+    h1: "Cosmetic Set Bottle Manufacturers & Suppliers",
+    body: `Vesla manufactures coordinated glass cosmetic sets for premium skincare and gift-box brands.
+
+Products: gradient-color skincare sets, pump lotion + cream jar combos, straight-round & hourglass 'waistline' textured sets — droppers, pumps and jars matched as one family (40/100/120 ml + 30/50/100 g).
+Capabilities: custom gradient coating (green, red, blue, amber), electroplated gold/silver caps & pump heads, stone-texture & diamond/prism molded glass, gold foil logo stamping. MOQ 5,000 pcs on stock molds; private molds from 10,000 pcs.
+Compliance: ISO 9001, FDA 21 CFR, EU 1935/2004. Production 7-15 days on stock molds. DDP to EU & USA.
+
+Browse sets: https://www.veslapack.com/products?category=set
+Contact: yitengglass3@gmail.com | WhatsApp +86 18165681131`,
+  },
   "/products": {
     title: "Cosmetic Glass Bottles | Wholesale & Custom — Vesla",
     description: "Custom cosmetic glass bottles wholesale: serum bottles, cream jars, and gradient sets. Low MOQ 5,000 pcs, in-house decoration, DDP to EU & USA.",
@@ -225,7 +238,7 @@ const REDIRECTS = {
 };
 
 const KNOWN_PATHS = new Set([
-  "/", "/products", "/serum-bottles", "/cream-jars", "/glass-vials", 
+  "/", "/products", "/serum-bottles", "/cream-jars", "/glass-vials", "/cosmetic-sets",
   "/cosmetic-packaging-supplier-comparison-2026", "/quality-control", 
   "/certifications", "/about", "/process", "/blog", "/contact", "/privacy",
   "/sitemap.xml", "/robots.txt", "/llms.txt", "/llms-full.txt", "/content-manifest.json",
