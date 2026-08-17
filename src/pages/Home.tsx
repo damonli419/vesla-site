@@ -23,7 +23,7 @@ const featured = [
     applications: "Sampling, travel sets & discovery collections",
     advantage: "2-10ml precision vials & tubes · high-clarity borosilicate glass",
     customization: "Branded caps, silk screen printing & display packaging",
-    link: "/products?category=vial",
+    link: "/glass-vials",
   },
   {
     key: "jar",

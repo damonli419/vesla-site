@@ -38,7 +38,7 @@ export default function Footer() {
             <li><Link to="/serum-bottles" className="hover:text-gold">Serum Bottles</Link></li>
             <li><Link to="/cream-jars" className="hover:text-gold">Cream Jars</Link></li>
             <li><Link to="/glass-vials" className="hover:text-gold">Glass Vials</Link></li>
-            <li><Link to="/products?category=set" className="hover:text-gold">Cosmetic Sets</Link></li>
+            <li><Link to="/cosmetic-sets" className="hover:text-gold">Cosmetic Sets</Link></li>
             <li><Link to="/process" className="hover:text-gold">{t("nav.process")}</Link></li>
             <li><Link to="/about" className="hover:text-gold">About</Link></li>
             <li><Link to="/certifications" className="hover:text-gold">Certifications</Link></li>

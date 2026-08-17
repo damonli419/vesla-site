@@ -146,6 +146,8 @@ export function BlogPost() {
               <Link to="/serum-bottles" className="rounded-full bg-white px-4 py-1.5 text-xs font-medium text-ink ring-1 ring-gold/10 hover:ring-gold/30">Serum Bottles</Link>
               <Link to="/cream-jars" className="rounded-full bg-white px-4 py-1.5 text-xs font-medium text-ink ring-1 ring-gold/10 hover:ring-gold/30">Cream Jars</Link>
               <Link to="/glass-vials" className="rounded-full bg-white px-4 py-1.5 text-xs font-medium text-ink ring-1 ring-gold/10 hover:ring-gold/30">Glass Vials</Link>
+              <Link to="/cosmetic-sets" className="rounded-full bg-white px-4 py-1.5 text-xs font-medium text-ink ring-1 ring-gold/10 hover:ring-gold/30">Cosmetic Sets</Link>
+              <Link to="/certifications" className="rounded-full bg-white px-4 py-1.5 text-xs font-medium text-ink ring-1 ring-gold/10 hover:ring-gold/30">Certifications</Link>
               <Link to="/products" className="rounded-full bg-white px-4 py-1.5 text-xs font-medium text-ink ring-1 ring-gold/10 hover:ring-gold/30">Full Catalog →</Link>
             </div>
           </div>
