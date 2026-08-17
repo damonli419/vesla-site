@@ -388,7 +388,7 @@ export const products: Product[] = [
     moq: "5,000 pcs",
     leadTime: "25–30 days",
     decoration: "Matte black-brown color coating, silk screen, hot stamping",
-    image: "/images/products/matte-black-brown-jar.webp",
+    image: "/images/products/matte-black-brown-jar/main.webp",
     gallery: [
       "/images/products/matte-black-brown-jar/gallery-0.webp",
       "/images/products/matte-black-brown-jar/gallery-1.webp",
@@ -430,7 +430,7 @@ export const products: Product[] = [
     moq: "5,000 pcs",
     leadTime: "25–30 days",
     decoration: "Frosted glass + water transfer-printed woodgrain lid, silk screen, hot stamping",
-    image: "/images/products/frosted-woodgrain-jar.webp",
+    image: "/images/products/frosted-round-jar-woodgrain/main.webp",
     gallery: [
       "/images/products/frosted-round-jar-woodgrain/gallery-0.webp",
       "/images/products/frosted-round-jar-woodgrain/gallery-1.webp",
@@ -472,7 +472,7 @@ export const products: Product[] = [
     moq: "5,000 pcs",
     leadTime: "25–30 days",
     decoration: "Water transfer-printed woodgrain lid (brown), silk screen, hot stamping",
-    image: "/images/products/brown-woodgrain-transfer-jar.webp",
+    image: "/images/products/brown-woodgrain-jar/main.webp",
     gallery: [
       "/images/products/brown-woodgrain-jar/gallery-0.webp",
       "/images/products/brown-woodgrain-jar/gallery-1.webp",
@@ -527,7 +527,7 @@ export const products: Product[] = [
     moq: "5,000 pcs",
     leadTime: "25–30 days",
     decoration: "Amber glass + silk screen, hot stamping",
-    image: "/images/products/matte-black-brown-jar/main.webp",
+    image: "/images/products/amber-serum-vial-dropper/main.webp",
     gallery: [
       "/images/products/amber-serum-vial-dropper/gallery-0.webp",
       "/images/products/amber-serum-vial-dropper/gallery-1.webp",
@@ -579,7 +579,7 @@ export const products: Product[] = [
     moq: "5,000 pcs per SKU",
     leadTime: "30–35 days",
     decoration: "Gradient spray coating, hot stamping, silk screen, electroplated gold cap",
-    image: "/images/products/frosted-round-jar-woodgrain/main.webp",
+    image: "/images/products/gradient-green-cosmetic-set/main.webp",
     gallery: [
       "/images/products/gradient-green-cosmetic-set/gallery-0.webp",
       "/images/products/gradient-green-cosmetic-set/gallery-1.webp",
@@ -622,7 +622,7 @@ export const products: Product[] = [
     moq: "5,000 pcs per SKU",
     leadTime: "30–35 days",
     decoration: "Gradient spray coating, hot stamping, silk screen, electroplated gold cap & pump",
-    image: "/images/products/brown-woodgrain-jar/main.webp",
+    image: "/images/products/gradient-green-pump-set/main.webp",
     gallery: [
       "/images/products/gradient-green-pump-set/gallery-0.webp",
       "/images/products/gradient-green-pump-set/gallery-1.webp",
@@ -665,7 +665,7 @@ export const products: Product[] = [
     moq: "5,000 pcs per SKU",
     leadTime: "30–35 days",
     decoration: "Red gradient spray coating, silk screen, hot stamping, metallic red cap",
-    image: "/images/products/amber-serum-vial-dropper/main.webp",
+    image: "/images/products/gradient-red-cosmetic-set/main.webp",
     gallery: [
       "/images/products/gradient-red-cosmetic-set/gallery-0.webp",
       "/images/products/gradient-red-cosmetic-set/gallery-1.webp",
@@ -708,7 +708,7 @@ export const products: Product[] = [
     moq: "5,000 pcs",
     leadTime: "25–30 days",
     decoration: "Silk screen, hot stamping, frosting, color spray coating, gold/silver collar",
-    image: "/images/products/gradient-green-cosmetic-set/main.webp",
+    image: "/images/products/small-round-dropper-10ml-15ml/main.webp",
     gallery: [
       "/images/products/small-round-dropper-10ml-15ml/gallery-0.webp",
       "/images/products/small-round-dropper-10ml-15ml/gallery-1.webp",
@@ -751,7 +751,7 @@ export const products: Product[] = [
     moq: "5,000 pcs per SKU",
     leadTime: "30–35 days",
     decoration: "Matte white spray coating, silk screen, hot stamping, silver metal caps",
-    image: "/images/products/gradient-green-pump-set/main.webp",
+    image: "/images/products/stone-texture-white-cosmetic-set/main.webp",
     gallery: [
       "/images/products/stone-texture-white-cosmetic-set/gallery-0.webp",
       "/images/products/stone-texture-white-cosmetic-set/gallery-1.webp",
@@ -794,7 +794,7 @@ export const products: Product[] = [
     moq: "5,000 pcs per SKU",
     leadTime: "30–35 days",
     decoration: "Black spray coating, gold metal pump, silk screen, hot stamping",
-    image: "/images/products/gradient-red-cosmetic-set/main.webp",
+    image: "/images/products/gold-pump-black-cosmetic-set/main.webp",
     gallery: [
       "/images/products/gold-pump-black-cosmetic-set/gallery-0.webp",
       "/images/products/gold-pump-black-cosmetic-set/gallery-1.webp",
@@ -837,7 +837,7 @@ export const products: Product[] = [
     moq: "5,000 pcs per SKU",
     leadTime: "30–35 days",
     decoration: "Diamond texture glass, color spray (gradient/solid), gold metallic pump & cap, silk screen",
-    image: "/images/products/small-round-dropper-10ml-15ml/main.webp",
+    image: "/images/products/waistline-textured-glass-set/main.webp",
     gallery: [
       "/images/products/waistline-textured-glass-set/gallery-0.webp",
       "/images/products/waistline-textured-glass-set/gallery-1.webp",
@@ -880,7 +880,7 @@ export const products: Product[] = [
     moq: "5,000 pcs",
     leadTime: "25–30 days",
     decoration: "Frosted, matte, gradient or opaque coating; silk screen & hot stamping",
-    image: "/images/products/stone-texture-white-cosmetic-set/main.webp",
+    image: "/images/products/classic-glass-dropper-bottle/main.webp",
     gallery: [
       "/images/products/classic-glass-dropper-bottle/gallery-0.webp",
       "/images/products/classic-glass-dropper-bottle/gallery-1.webp",
