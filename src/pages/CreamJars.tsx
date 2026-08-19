@@ -43,7 +43,7 @@ export default function CreamJars() {
         description="Premium glass cream jar manufacturers & suppliers. 15g-120g jars with woodgrain, matte & metallic lids. Custom branding, low MOQ 5,000 pcs, DDP shipping."
         path="/cream-jars"
       />
-      <FAQSchema items={faqItems} />
+      <FAQSchema items={faqItems} locale={locale} />
 
       {/* Hero */}
       <section className="bg-ink py-20 text-center">

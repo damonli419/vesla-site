@@ -251,7 +251,7 @@ export default function Contact() {
         </aside>
       </div>
 
-      <FAQSchema items={faqItems} />
+      <FAQSchema items={faqItems} locale={locale} />
       {/* ── FAQ for SEO + UX ─────────────────────── */}
       <section className="mt-24">
         <h2 className="mb-10 text-center font-serif text-3xl text-ink sm:text-4xl">

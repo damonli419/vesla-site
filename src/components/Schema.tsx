@@ -11,7 +11,7 @@ export function OrganizationSchema() {
     url: siteConfig.url,
     logo: `${siteConfig.url}/images/logo.png`,
     description:
-      "Custom cosmetic glass packaging supplier. Dropper bottles, cream jars and essential oil bottles for indie beauty brands in Europe and North America.",
+      "Custom cosmetic glass packaging supplier. Specializing in low MOQ dropper bottles, cream jars and sets for indie beauty brands. Global DDP shipping.",
     email: siteConfig.email,
     telephone: siteConfig.phone,
     address: {
@@ -22,6 +22,15 @@ export function OrganizationSchema() {
       postalCode: siteConfig.address.postal,
       addressCountry: siteConfig.address.country,
     },
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: siteConfig.phone,
+        contactType: "sales",
+        areaServed: ["US", "EU", "KR", "JP"],
+        availableLanguage: ["English", "Chinese", "Korean", "Japanese"],
+      },
+    ],
     sameAs: [
       siteConfig.social.instagram,
       siteConfig.social.tiktok,
@@ -36,23 +45,62 @@ export function OrganizationSchema() {
   );
 }
 
+export function LocalBusinessSchema() {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "WholesaleStore",
+    name: siteConfig.name,
+    image: `${siteConfig.url}/images/factory-hero.webp`,
+    "@id": `${siteConfig.url}/#organization`,
+    url: siteConfig.url,
+    telephone: siteConfig.phone,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: siteConfig.address.street,
+      addressLocality: siteConfig.address.city,
+      addressRegion: siteConfig.address.region,
+      postalCode: siteConfig.address.postal,
+      addressCountry: siteConfig.address.country,
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 23.1291,
+      longitude: 113.2644,
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+  };
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(data)}</script>
+    </Helmet>
+  );
+}
+
 export function ProductSchema({ product }: { product: Product }) {
   const data = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.name,
-    image: product.gallery,
+    image: product.gallery.map(img => img.startsWith("http") ? img : `${siteConfig.url}${img}`),
     description: product.description,
     brand: { "@type": "Brand", name: product.brandName || siteConfig.name },
     manufacturer: { "@type": "Organization", name: siteConfig.legalName },
-    mpn: product.mpn,
-    sku: product.sku,
+    mpn: product.mpn || `VSL-${product.id.toUpperCase()}`,
+    sku: product.sku || `VSL-${product.id.toUpperCase()}-5K`,
     category: product.category,
     material: product.material,
+    color: product.seoTags?.find(tag => ["Amber", "Clear", "Frosted", "Matte", "Gradient"].includes(tag)),
+    keywords: product.seoKeywords?.join(", "),
     additionalProperty: [
       { "@type": "PropertyValue", name: "Capacity", value: product.capacity },
       { "@type": "PropertyValue", name: "MOQ", value: product.moq },
       { "@type": "PropertyValue", name: "Lead time", value: product.leadTime },
+      { "@type": "PropertyValue", name: "Customization", value: product.decoration },
     ],
     aggregateRating: {
       "@type": "AggregateRating",
@@ -82,7 +130,7 @@ export function ProductSchema({ product }: { product: Product }) {
       "@type": "Offer",
       url: `${siteConfig.url}/products/${product.seoSlug || product.id}`,
       priceCurrency: "USD",
-      price: "0",
+      price: "0.45", // Typical starting price for wholesale reference
       priceValidUntil: "2027-12-31",
       validFrom: "2026-01-01",
       availability: "https://schema.org/InStock",
@@ -92,7 +140,7 @@ export function ProductSchema({ product }: { product: Product }) {
         "@type": "OfferShippingDetails",
         shippingDestination: {
           "@type": "DefinedRegion",
-          addressCountry: ["US", "FR", "DE", "GB", "NL", "CA"],
+          addressCountry: ["US", "FR", "DE", "GB", "NL", "CA", "AU"],
         },
         deliveryTime: {
           "@type": "ShippingDeliveryTime",
@@ -102,7 +150,7 @@ export function ProductSchema({ product }: { product: Product }) {
         shippingRate: {
           "@type": "MonetaryAmount",
           currency: "USD",
-          value: "0",
+          value: "0.12", // Reference shipping cost per unit
         },
       },
       hasMerchantReturnPolicy: {
@@ -129,6 +177,7 @@ export function WebsiteSchema() {
     url: siteConfig.url,
     name: siteConfig.name,
     inLanguage: ["en", "ko", "ja", "zh-Hant"],
+    publisher: { "@type": "Organization", name: siteConfig.legalName },
     potentialAction: {
       "@type": "SearchAction",
       target: `${siteConfig.url}/products?q={search_term_string}`,
@@ -149,7 +198,7 @@ export function ProductListSchema({ items }: { items: Product[] }) {
     itemListElement: items.map((p, i) => ({
       "@type": "ListItem",
       position: i + 1,
-      url: `${siteConfig.url}/products/${p.id}`,
+      url: `${siteConfig.url}/products/${p.seoSlug || p.id}`,
       name: p.name,
     })),
   };
@@ -160,14 +209,14 @@ export function ProductListSchema({ items }: { items: Product[] }) {
   );
 }
 
-export function FAQSchema({ items }: { items: { q: { [k: string]: string }; a: { [k: string]: string } }[] }) {
+export function FAQSchema({ items, locale = "en" }: { items: { q: { [k: string]: string }; a: { [k: string]: string } }[], locale?: string }) {
   const data = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: items.map((i) => ({
       "@type": "Question",
-      name: i.q.en,
-      acceptedAnswer: { "@type": "Answer", text: i.a.en },
+      name: i.q[locale] || i.q.en,
+      acceptedAnswer: { "@type": "Answer", text: i.a[locale] || i.a.en },
     })),
   };
   return (

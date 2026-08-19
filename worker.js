@@ -14,7 +14,8 @@ function isAICrawler(ua) {
   return bots.some((b) => lowered.includes(b));
 }
 
-function serveSSR({ title, description, h1, body, url }) {
+function serveSSR({ title, description, h1, body, url, jsonLd }) {
+  const ldScript = jsonLd ? `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>` : "";
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +23,7 @@ function serveSSR({ title, description, h1, body, url }) {
 <title>${title || "Vesla"}</title>
 <meta name="description" content="${(description || "").replace(/"/g, "&quot;")}">
 <link rel="canonical" href="${url || "https://www.veslapack.com/"}">
+${ldScript}
 </head>
 <body>
 <h1>${h1 || title}</h1>
@@ -294,24 +296,62 @@ export default {
       // 3b. AI Crawler SSR
       if (isAICrawler(ua)) {
         const page = STATIC_PAGES[path];
-        if (page) return serveSSR({ ...page, url: url.toString() });
+        if (page) return serveSSR({ 
+          ...page, 
+          url: url.toString(),
+          jsonLd: {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Vesla Co., Ltd.",
+            "url": "https://www.veslapack.com/",
+            "logo": "https://www.veslapack.com/images/logo.png"
+          }
+        });
 
         if (isDynamic && dynamicEntry) {
           if (path.startsWith("/products/")) {
+            const product = dynamicEntry;
+            const jsonLd = {
+              "@context": "https://schema.org",
+              "@type": "Product",
+              "name": product.name,
+              "description": product.description,
+              "brand": { "@type": "Brand", "name": "Vesla" },
+              "sku": product.sku || `VSL-${product.id.toUpperCase()}-5K`,
+              "mpn": product.mpn || `VSL-${product.id.toUpperCase()}`,
+              "offers": {
+                "@type": "Offer",
+                "url": url.toString(),
+                "priceCurrency": "USD",
+                "price": "0.45",
+                "availability": "https://schema.org/InStock"
+              }
+            };
             return serveSSR({
-              title: dynamicEntry.seoTitle || (dynamicEntry.name + " | Vesla Products"),
-              description: (dynamicEntry.description || "").substring(0, 160),
-              h1: dynamicEntry.name,
-              body: `${dynamicEntry.name} — ${dynamicEntry.capacity}. ${dynamicEntry.description}`,
-              url: url.toString()
+              title: product.seoTitle || (product.name + " | Vesla Products"),
+              description: (product.description || "").substring(0, 160),
+              h1: product.name,
+              body: `${product.name} — ${product.capacity}. ${product.description}`,
+              url: url.toString(),
+              jsonLd
             });
           } else {
+            const post = dynamicEntry;
+            const jsonLd = {
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "headline": post.title,
+              "description": (post.body || "").substring(0, 160),
+              "url": url.toString(),
+              "author": { "@type": "Organization", "name": "Vesla" }
+            };
             return serveSSR({
-              title: dynamicEntry.title + " | Vesla Blog",
-              description: (dynamicEntry.body || "").substring(0, 160),
-              h1: dynamicEntry.title,
-              body: dynamicEntry.body,
-              url: url.toString()
+              title: post.title + " | Vesla Blog",
+              description: (post.body || "").substring(0, 160),
+              h1: post.title,
+              body: post.body,
+              url: url.toString(),
+              jsonLd
             });
           }
         }

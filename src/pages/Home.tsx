@@ -2,9 +2,10 @@
 import { Link } from "react-router-dom";
 import LazyImage from "../components/LazyImage";
 import Seo from "../components/Seo";
-import { OrganizationSchema, WebsiteSchema, FAQSchema } from "../components/Schema";
+import { OrganizationSchema, WebsiteSchema, FAQSchema, LocalBusinessSchema } from "../components/Schema";
 import PdfGuideBanner from "../components/PdfGuideBanner";
 import { faqItems } from "../data/content";
+import { useUI } from "../i18n/UIContext";
 
 const featured = [
   {
@@ -150,6 +151,7 @@ const ctaCopy = {
 };
 
 export default function Home() {
+  const { locale } = useUI();
   const hero = heroCopy;
   const why = whyStats;
   const cta = ctaCopy;
@@ -191,6 +193,7 @@ export default function Home() {
       />
       <OrganizationSchema />
       <WebsiteSchema />
+      <LocalBusinessSchema />
 
       {/* ── Hero ─────────────────────────────────────── */}
       <section className="relative flex min-h-[92vh] items-center justify-center overflow-hidden">
@@ -471,7 +474,7 @@ export default function Home() {
 
       {/* ── FAQ ──────────────────────────────────────── */}
       <section className="mx-auto max-w-4xl px-6 py-24 lg:px-8">
-        <FAQSchema items={faqItems} />
+        <FAQSchema items={faqItems} locale={locale} />
         <div className="mb-12 text-center">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold-dark">FAQ</p>
           <h2 className="font-serif text-3xl font-medium text-ink sm:text-4xl">Frequently Asked Questions</h2>

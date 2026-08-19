@@ -31,7 +31,7 @@ export default function GlassVials() {
         description="Premium glass vial manufacturers & suppliers. 2ml-10ml precision vials for discovery sets, travel sizes & essential oils. Low MOQ 5,000 pcs, DDP shipping to USA & EU."
         path="/glass-vials"
       />
-      <FAQSchema items={faqItems} />
+      <FAQSchema items={faqItems} locale={locale} />
 
       {/* Hero */}
       <section className="bg-ink py-20 text-center text-white">

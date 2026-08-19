@@ -31,7 +31,7 @@ export default function SerumBottles() {
         description="Premium serum & essential oil bottle manufacturers. Custom glass dropper bottles from 5ml to 100ml with UV protection and in-house decoration. Low MOQ 5,000 pcs, DDP shipping."
         path="/serum-bottles"
       />
-      <FAQSchema items={faqItems} />
+      <FAQSchema items={faqItems} locale={locale} />
 
       {/* Hero */}
       <section className="bg-ink py-20 text-center">

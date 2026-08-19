@@ -31,7 +31,7 @@ export default function CosmeticSets() {
         description="Premium cosmetic glass set manufacturers. Coordinated skincare collections including lotion bottles, serum droppers & cream jars with matching gradient finishes. Low MOQ 5,000 pcs."
         path="/cosmetic-sets"
       />
-      <FAQSchema items={faqItems} />
+      <FAQSchema items={faqItems} locale={locale} />
 
       {/* Hero */}
       <section className="bg-ink py-20 text-center text-white">

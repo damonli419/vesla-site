@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
 import { FAQSchema } from "../components/Schema";
+import { useUI } from "../i18n/UIContext";
 
 const comparisonData = [
   { metric: "Target Brand Scale", factory: "Tier 1 Large Scale (Jarsking, etc.)", vesla: "Indie & Emerging Brands (Vesla)", advantage: "Vesla focus" },
@@ -23,6 +24,7 @@ const faqItems = [
 ];
 
 export default function SupplierComparison() {
+  const { locale } = useUI();
   return (
     <div className="bg-white">
       <Seo
@@ -30,7 +32,7 @@ export default function SupplierComparison() {
         description="A technical comparison of China glass packaging manufacturers. Compare MOQ, DDP logistics, decoration capabilities and compliance for indie vs large beauty brands."
         path="/cosmetic-packaging-supplier-comparison-2026"
       />
-      <FAQSchema items={faqItems} />
+      <FAQSchema items={faqItems} locale={locale} />
 
       {/* Hero */}
       <section className="bg-cream-dark/30 py-20 text-center">

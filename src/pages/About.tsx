@@ -1,6 +1,7 @@
 ﻿import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
 import LazyImage from "../components/LazyImage";
+import { OrganizationSchema, LocalBusinessSchema } from "../components/Schema";
 import { useUI } from "../i18n/UIContext";
 
 const PEXEL = (id: number, w = 1200) =>
@@ -121,6 +122,8 @@ export default function About() {
 
   return (
     <div>
+      <OrganizationSchema />
+      <LocalBusinessSchema />
       <Seo
         title="About"
         description="Inside Vesla — 13+ years, 280 people, 60M annual capacity. ISO 9001, FDA & EU compliant. Factory tours welcome."
