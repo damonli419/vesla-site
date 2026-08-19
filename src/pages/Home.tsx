@@ -4,6 +4,7 @@ import LazyImage from "../components/LazyImage";
 import Seo from "../components/Seo";
 import { OrganizationSchema, WebsiteSchema, FAQSchema, LocalBusinessSchema } from "../components/Schema";
 import PdfGuideBanner from "../components/PdfGuideBanner";
+import TrustWidget from "../components/TrustWidget";
 import { faqItems } from "../data/content";
 import { useUI } from "../i18n/UIContext";
 
@@ -470,6 +471,10 @@ export default function Home() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+        <TrustWidget />
       </section>
 
       {/* ── FAQ ──────────────────────────────────────── */}

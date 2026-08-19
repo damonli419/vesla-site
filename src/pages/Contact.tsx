@@ -64,6 +64,16 @@ const formCopy = {
   },
 };
 
+const TrustBadge = ({ title, sub }: { title: string; sub: string }) => (
+  <div className="flex items-center gap-2.5 rounded-xl border border-gold/10 bg-gold/5 px-4 py-2.5">
+    <div className="h-2 w-2 rounded-full bg-gold" />
+    <div>
+      <p className="text-[10px] font-bold uppercase tracking-widest text-gold-dark">{title}</p>
+      <p className="text-[9px] font-medium text-ink-soft/70 leading-none mt-0.5">{sub}</p>
+    </div>
+  </div>
+);
+
 export default function Contact() {
   const [searchParams] = useSearchParams();
   const prefilledProduct = searchParams.get("product") ?? "";
@@ -198,13 +208,20 @@ export default function Contact() {
                   <textarea required rows={5} value={form.message} onChange={update("message")} className={inputCls} placeholder={fc.placeholder} />
                 </div>
               </div>
-              <button
-                type="submit"
-                disabled={state === "sending"}
-                className="mt-8 w-full rounded-full bg-gold px-8 py-4 text-sm font-semibold tracking-wide text-white shadow-md transition hover:bg-gold-dark disabled:opacity-60 sm:w-auto sm:px-14"
-              >
-                {state === "sending" ? fc.sending : fc.submit}
-              </button>
+                <button
+                  type="submit"
+                  disabled={state === "sending"}
+                  className="w-full rounded-full bg-gold px-8 py-4 text-sm font-semibold tracking-wide text-white shadow-md transition hover:bg-gold-dark disabled:opacity-60 sm:w-auto sm:px-14"
+                >
+                  {state === "sending" ? fc.sending : fc.submit}
+                </button>
+                <div className="flex flex-wrap gap-3 mt-8 pt-8 border-t border-gold/10">
+                  <TrustBadge title="ISO 9001:2015" sub="Certified Factory" />
+                  <TrustBadge title="SGS Audited" sub="Verified Supplier" />
+                  <TrustBadge title="AQL 1.5" sub="QC Standard" />
+                  <TrustBadge title="DDP" sub="Customs Paid" />
+                </div>
+
               <p className="mt-4 text-xs text-ink-soft">{fc.note}</p>
             </form>
           )}

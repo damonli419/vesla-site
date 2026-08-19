@@ -1,9 +1,20 @@
+import { useLocation } from "react-router-dom";
 import { whatsappLink } from "../config/site";
 
 export default function FloatingWhatsapp() {
+  const { pathname } = useLocation();
+  
+  const getContextMessage = () => {
+    if (pathname === "/") return "Hi Vesla, I'm visiting your website and would like to learn more about your glass packaging services.";
+    if (pathname.includes("/products/")) return `Hi Vesla, I'm interested in the product at ${window.location.origin}${pathname}. Could you please share a quote?`;
+    if (pathname === "/serum-bottles") return "Hi Vesla, I'm interested in your serum and dropper bottle collection. Could you share your catalog?";
+    if (pathname === "/cream-jars") return "Hi Vesla, I'm interested in your cream and moisturizer jar collection. Do you have a spec sheet?";
+    return "Hi Vesla, I have a packaging inquiry. Could you please help?";
+  };
+
   return (
     <a
-      href={whatsappLink()}
+      href={whatsappLink(getContextMessage())}
       target="_blank"
       rel="noreferrer"
       className="fixed bottom-6 left-6 z-50 flex items-center gap-3 rounded-full bg-[#25D366] px-5 py-3 text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl"

@@ -6,6 +6,7 @@ import Seo from "../components/Seo";
 import LazyImage from "../components/LazyImage";
 import { trackEvent } from "../components/Analytics";
 import { ProductSchema, OrganizationSchema, BreadcrumbSchema } from "../components/Schema";
+import TrustWidget from "../components/TrustWidget";
 import { whatsappLink } from "../config/site";
 
 function localizedName(p: Product, locale: "en" | "kr" | "jp" | "tw") {
@@ -275,6 +276,10 @@ export default function ProductDetail() {
           </p>
         </section>
       )}
+
+      <div className="mt-20">
+        <TrustWidget />
+      </div>
 
       {related.length > 0 && (
         <section className="mt-28">
