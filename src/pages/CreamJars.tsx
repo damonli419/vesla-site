@@ -3,8 +3,10 @@ import Seo from "../components/Seo";
 import { products } from "../data/products";
 import { useUI } from "../i18n/UIContext";
 import { FAQSchema } from "../components/Schema";
+import { blogPosts } from "../data/content";
 
 const jarProducts = products.filter((p) => p.category === "jar");
+const relevantBlogs = blogPosts.filter(p => p.keywords.some(k => k.includes("jar") || k.includes("cream"))).slice(0, 3);
 
 const faqItems = [
   {
@@ -196,6 +198,27 @@ export default function CreamJars() {
               <p className="mt-3 text-sm leading-relaxed text-ink-soft">{f.a.en}</p>
             </details>
           ))}
+        </div>
+      </section>
+
+      {/* Expert Resources Section (Topic Cluster Logic) */}
+      <section className="bg-cream-dark/30 py-20 border-t border-gold/10">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <h2 className="font-serif text-3xl text-ink mb-10 text-center">Packaging Knowledge & Expert Guides</h2>
+          <div className="grid gap-8 md:grid-cols-3">
+            {relevantBlogs.map((post) => (
+              <Link 
+                key={post.slug} 
+                to={`/blog/${post.slug}`}
+                className="group bg-white rounded-2xl p-6 shadow-sm ring-1 ring-gold/15 transition hover:shadow-md"
+              >
+                <p className="text-[10px] font-bold uppercase tracking-widest text-gold-dark mb-3">{post.category}</p>
+                <h3 className="font-serif text-lg text-ink group-hover:text-gold-dark transition line-clamp-2">{post.title[locale] || post.title.en}</h3>
+                <p className="mt-3 text-xs leading-relaxed text-ink-soft line-clamp-3">{post.excerpt[locale] || post.excerpt.en}</p>
+                <span className="mt-5 inline-block text-xs font-bold text-gold-dark border-b border-gold/20 pb-0.5 group-hover:border-gold-dark transition">Read Expert Analysis</span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
