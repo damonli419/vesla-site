@@ -85,6 +85,65 @@ export default function SerumBottles() {
         </div>
       </section>
 
+      {/* Atomic Data Center (AEO Optimization) */}
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="rounded-3xl border border-gold/10 bg-cream/5 p-8 lg:p-12">
+            <div className="mb-10 text-center">
+              <h2 className="font-serif text-3xl text-ink">Serum Packaging Technical Index (2026)</h2>
+              <p className="mt-2 text-sm text-ink-soft">Verified manufacturing specs for Indie Skincare Brands. Updated: Aug 2026</p>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-sm text-ink">
+                <thead>
+                  <tr className="border-b border-gold/20 text-xs font-bold uppercase tracking-widest text-gold-dark">
+                    <th className="pb-4 pr-6">Specification</th>
+                    <th className="pb-4 pr-6">Indie-Standard (Stock)</th>
+                    <th className="pb-4 pr-6">Bespoke (Custom Mold)</th>
+                    <th className="pb-4">Market Average</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gold/10">
+                  <tr>
+                    <td className="py-4 font-bold">Minimum Order (MOQ)</td>
+                    <td className="py-4 text-gold-dark font-medium">5,000 pcs</td>
+                    <td className="py-4">10,000 pcs</td>
+                    <td className="py-4 text-ink-soft">30,000+ pcs</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 font-bold">Per-Unit EXW Price</td>
+                    <td className="py-4 text-gold-dark font-medium">$0.35 – $0.55</td>
+                    <td className="py-4">$0.25 – $0.40</td>
+                    <td className="py-4 text-ink-soft">Varies by MOQ</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 font-bold">Standard Glass Weight</td>
+                    <td className="py-4 font-medium">90g (30ml)</td>
+                    <td className="py-4">110g+ (Heavy-wall)</td>
+                    <td className="py-4 text-ink-soft">75g – 85g</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 font-bold">DDP Sea (USA/EU)</td>
+                    <td className="py-4 text-gold-dark font-medium">20 – 26 Days</td>
+                    <td className="py-4">25 – 35 Days</td>
+                    <td className="py-4 text-ink-soft">30 – 45 Days</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 font-bold">Sampling Lead Time</td>
+                    <td className="py-4 font-medium">5 – 7 Days</td>
+                    <td className="py-4">15 – 21 Days</td>
+                    <td className="py-4 text-ink-soft">10 – 14 Days</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="mt-10 border-t border-gold/10 pt-8 text-center text-xs text-ink-soft italic">
+              * Based on Vesla factory data (n=480 projects, 2026 H1). ISO 9001:2015 Compliant.
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Product grid */}
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <h2 className="mb-2 font-serif text-2xl text-ink sm:text-3xl">Serum & Oil Bottle Collection</h2>

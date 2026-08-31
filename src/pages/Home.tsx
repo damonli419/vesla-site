@@ -473,6 +473,36 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Featured Focus: Best Seller (Weight Activation) ──── */}
+      <section className="bg-ink py-24 text-white overflow-hidden">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-2 items-center">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-gold mb-4">Market Trend</p>
+              <h2 className="font-serif text-4xl sm:text-5xl leading-tight">Agile Sourcing for <span className="text-gold-light italic">Heart-Shaped</span> Glass Droppers.</h2>
+              <p className="mt-6 text-cream/70 text-lg leading-relaxed">
+                Optimized for Valentine's limited editions and luxury skincare launches. We provide the industry's only heart-shaped glass mold ready for 5,000 unit batch runs.
+              </p>
+              <div className="mt-10">
+                <Link 
+                  to="/products/heart-shaped-glass-dropper-bottle-manufacturer" 
+                  className="inline-block rounded-full bg-gold px-10 py-4 text-sm font-bold text-white shadow-lg hover:bg-gold-dark transition"
+                >
+                  View Expert Analysis & Quote →
+                </Link>
+              </div>
+            </div>
+            <div className="relative aspect-square rounded-3xl overflow-hidden ring-1 ring-white/10 shadow-2xl">
+              <LazyImage 
+                src="/images/products/heart-shaped-glass-dropper-bottle-manufacturer/main.webp" 
+                alt="Heart Shaped Glass Dropper Bottle Factory Direct"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
         <TrustWidget />
       </section>

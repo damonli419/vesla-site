@@ -7,8 +7,8 @@ export const siteConfig = {
   name: "Vesla",
   legalName: "Vesla Co., Ltd.",
   url: "https://veslapack.com",
-  email: env.VITE_COMPANY_EMAIL || "yitengglass3@gmail.com",
-  emailDomain: "info@veslapack.com",
+  email: env.VITE_COMPANY_EMAIL || "sales@veslapack.com",
+  emailDomain: "sales@veslapack.com",
   phone: env.VITE_COMPANY_PHONE || "+86 18165681131",
   // WhatsApp numbers must be digits only, no plus sign.
   whatsapp: env.VITE_COMPANY_WHATSAPP || "8618165681131",
