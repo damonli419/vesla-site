@@ -5,6 +5,7 @@ import Seo from "../components/Seo";
 import { OrganizationSchema, WebsiteSchema, FAQSchema, LocalBusinessSchema } from "../components/Schema";
 import PdfGuideBanner from "../components/PdfGuideBanner";
 import TrustWidget from "../components/TrustWidget";
+import SampleCalculator from "../components/SampleCalculator";
 import { faqItems } from "../data/content";
 import { useUI } from "../i18n/UIContext";
 
@@ -505,6 +506,14 @@ export default function Home() {
 
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
         <TrustWidget />
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+        <div className="mb-12 text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-gold mb-3">Transparency Tool</p>
+          <h2 className="font-serif text-3xl sm:text-4xl text-ink">Estimate Your Landing Cost</h2>
+        </div>
+        <SampleCalculator />
       </section>
 
       {/* ── FAQ ──────────────────────────────────────── */}

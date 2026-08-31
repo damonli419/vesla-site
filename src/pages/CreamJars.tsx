@@ -4,6 +4,7 @@ import { products } from "../data/products";
 import { useUI } from "../i18n/UIContext";
 import { FAQSchema } from "../components/Schema";
 import { blogPosts } from "../data/content";
+import SampleCalculator from "../components/SampleCalculator";
 
 const jarProducts = products.filter((p) => p.category === "jar");
 const relevantBlogs = blogPosts.filter(p => p.keywords.some(k => k.includes("jar") || k.includes("cream"))).slice(0, 3);
@@ -183,6 +184,59 @@ export default function CreamJars() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Atomic Data Center (AEO Optimization) */}
+      <section className="bg-white py-20 border-t border-gold/10">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="rounded-3xl border border-gold/10 bg-cream/5 p-8 lg:p-12">
+            <div className="mb-10 text-center">
+              <h2 className="font-serif text-3xl text-ink">Cream Jar Manufacturing Index (2026)</h2>
+              <p className="mt-2 text-sm text-ink-soft">Verified factory specs for Skincare & Wellness brands. Updated: Aug 2026</p>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-sm text-ink">
+                <thead>
+                  <tr className="border-b border-gold/20 text-xs font-bold uppercase tracking-widest text-gold-dark">
+                    <th className="pb-4 pr-6">Specification</th>
+                    <th className="pb-4 pr-6">Value / Range</th>
+                    <th className="pb-4">Lead Time</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gold/10">
+                  <tr>
+                    <td className="py-4 font-bold">MOQ (Custom Decor)</td>
+                    <td className="py-4 text-gold-dark font-medium">5,000 pcs</td>
+                    <td className="py-4">25–30 Days</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 font-bold">Standard Sizes</td>
+                    <td className="py-4">15g, 30g, 50g, 100g, 120g</td>
+                    <td className="py-4">In-stock</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 font-bold">Lid Options</td>
+                    <td className="py-4">Woodgrain, Matte, PP, Metallic</td>
+                    <td className="py-4">+5 Days Decor</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 font-bold">Glass Type</td>
+                    <td className="py-4 font-medium">Heavy-wall Grade III</td>
+                    <td className="py-4">Verified QC</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-20">
+        <div className="mb-10">
+          <h2 className="font-serif text-2xl text-ink mb-2">Estimate Your Sample Cost</h2>
+          <p className="text-sm text-ink-soft">Use our 2026 calculator to get an instant EXW and DDP estimate.</p>
+        </div>
+        <SampleCalculator />
       </section>
 
       {/* FAQ */}
