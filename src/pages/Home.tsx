@@ -1,13 +1,15 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 import LazyImage from "../components/LazyImage";
 import Seo from "../components/Seo";
 import { OrganizationSchema, WebsiteSchema, FAQSchema, LocalBusinessSchema } from "../components/Schema";
 import PdfGuideBanner from "../components/PdfGuideBanner";
 import TrustWidget from "../components/TrustWidget";
-import SampleCalculator from "../components/SampleCalculator";
 import { faqItems } from "../data/content";
 import { useUI } from "../i18n/UIContext";
+
+// Lazy load heavy interactive components
+const SampleCalculator = lazy(() => import("../components/SampleCalculator"));
 
 const featured = [
   {
@@ -192,6 +194,7 @@ export default function Home() {
         title="Vesla — China Glass Packaging Manufacturer | Cosmetic Bottle Supplier"
         description="Vesla provides premium glass packaging solutions for cosmetics, essential oils and beauty brands. OEM &amp; ODM available — dropper bottles, cream jars &amp; vials. Low MOQ 5,000 pcs, in-house decoration, DDP to EU &amp; USA."
         path="/"
+        preloadImage="/images/hero-poster.webp"
       />
       <OrganizationSchema />
       <WebsiteSchema />
@@ -504,7 +507,9 @@ export default function Home() {
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-gold mb-3">Transparency Tool</p>
           <h2 className="font-serif text-3xl sm:text-4xl text-ink">Estimate Your Landing Cost</h2>
         </div>
-        <SampleCalculator />
+        <Suspense fallback={<div className="h-96 w-full animate-pulse rounded-3xl bg-cream-dark/20" />}>
+          <SampleCalculator />
+        </Suspense>
       </section>
 
       {/* ── FAQ ──────────────────────────────────────── */}
@@ -562,4 +567,4 @@ export default function Home() {
       </section>
     </div>
   );
-}
+                      }
