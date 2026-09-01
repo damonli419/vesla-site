@@ -9,7 +9,8 @@ export function OrganizationSchema() {
     name: siteConfig.legalName,
     alternateName: siteConfig.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/images/logo.png`,
+    logo: `${siteConfig.url}/images/logo-small.png`,
+    image: `${siteConfig.url}/images/hero-poster.webp`,
     description:
       "Custom cosmetic glass packaging supplier. Specializing in low MOQ dropper bottles, cream jars and sets for indie beauty brands. Global DDP shipping.",
     email: siteConfig.email,
@@ -50,7 +51,7 @@ export function LocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "WholesaleStore",
     name: siteConfig.name,
-    image: `${siteConfig.url}/images/factory-hero.webp`,
+    image: `${siteConfig.url}/images/hero-poster.webp`,
     "@id": `${siteConfig.url}/#organization`,
     url: siteConfig.url,
     telephone: siteConfig.phone,
@@ -82,11 +83,14 @@ export function LocalBusinessSchema() {
 }
 
 export function ProductSchema({ product }: { product: Product }) {
+  const mainImage = product.image.startsWith("http") ? product.image : `${siteConfig.url}${product.image}`;
+  const galleryImages = product.gallery?.map(img => img.startsWith("http") ? img : `${siteConfig.url}${img}`) || [];
+  
   const data = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.name,
-    image: product.gallery.map(img => img.startsWith("http") ? img : `${siteConfig.url}${img}`),
+    image: [mainImage, ...galleryImages],
     description: product.description,
     brand: { "@type": "Brand", name: product.brandName || siteConfig.name },
     manufacturer: { "@type": "Organization", name: siteConfig.legalName },
