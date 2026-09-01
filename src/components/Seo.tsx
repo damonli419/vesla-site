@@ -1,4 +1,4 @@
-﻿import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet-async";
 import { useUI } from "../i18n/UIContext";
 
 interface SeoProps {
@@ -6,9 +6,10 @@ interface SeoProps {
   description: string;
   path?: string;
   keywords?: string;
+  preloadImage?: string;
 }
 
-export default function Seo({ title, description, path = "/", keywords }: SeoProps) {
+export default function Seo({ title, description, path = "/", keywords, preloadImage }: SeoProps) {
   const { locale } = useUI();
   const site = "Vesla";
   const fullTitle = title === site ? title : `${title} · ${site}`;
@@ -18,6 +19,7 @@ export default function Seo({ title, description, path = "/", keywords }: SeoPro
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
+      {preloadImage && <link rel="preload" as="image" href={preloadImage} fetchpriority="high" />}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
