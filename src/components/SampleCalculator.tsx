@@ -32,10 +32,17 @@ export default function SampleCalculator() {
         
         <div className="grid gap-6 md:grid-cols-3">
           <div>
-            <label className="block text-[10px] uppercase tracking-widest text-cream/50 mb-2 font-bold">Category</label>
+            <label 
+              htmlFor="category-select"
+              className="block text-[10px] uppercase tracking-widest text-cream/50 mb-2 font-bold"
+            >
+              Category
+            </label>
             <select 
+              id="category-select"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
+              aria-label="Product Category"
               className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-gold transition"
             >
               <option value="serum">Serum Bottles</option>
@@ -46,11 +53,18 @@ export default function SampleCalculator() {
           </div>
           
           <div>
-            <label className="block text-[10px] uppercase tracking-widest text-cream/50 mb-2 font-bold">Order Quantity</label>
+            <label 
+              htmlFor="order-quantity"
+              className="block text-[10px] uppercase tracking-widest text-cream/50 mb-2 font-bold"
+            >
+              Order Quantity
+            </label>
             <input 
+              id="order-quantity"
               type="number"
               value={qty}
               step="5000"
+              aria-label="Order Quantity"
               onChange={(e) => setQuantity(parseInt(e.target.value))}
               className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-gold transition"
             />
