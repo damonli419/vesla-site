@@ -89,6 +89,26 @@ export function UIProvider({ children }: { children: ReactNode }) {
 
   const setLocale = (l: Locale) => {
     setLocaleState(l);
+    // Navigate to localized URL
+    const path = window.location.pathname;
+    const parts = path.split("/").filter(Boolean);
+    const firstPart = parts[0] as Locale;
+    
+    let newPath = "";
+    if (Object.keys(localeMeta).includes(firstPart)) {
+      // Replace existing prefix
+      const rest = parts.slice(1).join("/");
+      newPath = l === "en" ? `/${rest}` : `/${l}/${rest}`;
+    } else {
+      // Add new prefix
+      newPath = l === "en" ? path : `/${l}${path.startsWith("/") ? "" : "/"}${path}`;
+    }
+    
+    // Ensure clean trailing slash and double slash prevention
+    newPath = newPath.replace(/\/+/g, "/");
+    if (newPath === "") newPath = "/";
+    
+    window.location.href = newPath;
   };
 
   // Sync state if URL changes (handling browser back/forward)
