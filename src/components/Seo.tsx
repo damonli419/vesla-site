@@ -13,6 +13,15 @@ export default function Seo({ title, description, path = "/", keywords, preloadI
   const { locale } = useUI();
   const site = "Vesla";
   const fullTitle = title === site ? title : `${title} · ${site}`;
+
+  const getFullUrl = (l: string) => {
+    const prefix = l === "en" ? "" : l === "tw" ? "/tw" : l === "kr" ? "/kr" : "/jp";
+    const cleanPath = path === "/" ? "" : path;
+    return `https://www.veslapack.com${prefix}${cleanPath}`;
+  };
+
+  const canonicalUrl = getFullUrl(locale);
+
   return (
     <Helmet>
       <html lang={locale === "tw" ? "zh-Hant" : locale === "kr" ? "ko" : locale === "jp" ? "ja" : "en"} />
@@ -23,7 +32,7 @@ export default function Seo({ title, description, path = "/", keywords, preloadI
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={`https://www.veslapack.com${path}`} />
+      <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content="https://www.veslapack.com/og-image.jpg" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
@@ -32,12 +41,12 @@ export default function Seo({ title, description, path = "/", keywords, preloadI
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content="https://www.veslapack.com/og-image.jpg" />
       <meta name="pinterest-rich-pin" content="true" />
-      <link rel="canonical" href={`https://www.veslapack.com${path}`} />
-      <link rel="alternate" hrefLang="en" href={`https://www.veslapack.com${path}`} />
-      <link rel="alternate" hrefLang="ko" href={`https://www.veslapack.com${path}`} />
-      <link rel="alternate" hrefLang="ja" href={`https://www.veslapack.com${path}`} />
-      <link rel="alternate" hrefLang="zh-Hant" href={`https://www.veslapack.com${path}`} />
-      <link rel="alternate" hrefLang="x-default" href={`https://www.veslapack.com${path}`} />
+      <link rel="canonical" href={canonicalUrl} />
+      <link rel="alternate" hrefLang="en" href={getFullUrl("en")} />
+      <link rel="alternate" hrefLang="ko" href={getFullUrl("kr")} />
+      <link rel="alternate" hrefLang="ja" href={getFullUrl("jp")} />
+      <link rel="alternate" hrefLang="zh-Hant" href={getFullUrl("tw")} />
+      <link rel="alternate" hrefLang="x-default" href={getFullUrl("en")} />
     </Helmet>
   );
 }
