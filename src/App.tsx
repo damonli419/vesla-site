@@ -43,6 +43,30 @@ function PageLoader() {
   );
 }
 
+function AppRoutes() {
+  return (
+    <Routes>
+      <Route index element={<Home />} />
+      <Route path="products" element={<Products />} />
+      <Route path="serum-bottles" element={<SerumBottles />} />
+      <Route path="cream-jars" element={<CreamJars />} />
+      <Route path="glass-vials" element={<GlassVials />} />
+      <Route path="cosmetic-packaging-supplier-comparison-2026" element={<SupplierComparison />} />
+      <Route path="cosmetic-sets" element={<CosmeticSets />} />
+      <Route path="quality-control" element={<QualityControl />} />
+      <Route path="products/:id" element={<ProductDetail />} />
+      <Route path="process" element={<Process />} />
+      <Route path="about" element={<About />} />
+      <Route path="blog" element={<BlogIndex />} />
+      <Route path="blog/:slug" element={<BlogPostPage />} />
+      <Route path="contact" element={<Contact />} />
+      <Route path="certifications" element={<Certifications />} />
+      <Route path="privacy" element={<Privacy />} />
+      <Route path="*" element={<Home />} />
+    </Routes>
+  );
+}
+
 export default function App() {
   return (
     <HelmetProvider>
@@ -55,30 +79,10 @@ export default function App() {
             <main className="flex-1">
               <Suspense fallback={<PageLoader />}>
                 <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/products" element={<Products />} />
-                  <Route path="/serum-bottles" element={<SerumBottles />} />
-                  <Route path="/cream-jars" element={<CreamJars />} />
-                  <Route path="/glass-vials" element={<GlassVials />} />
-                  <Route path="/cosmetic-packaging-supplier-comparison-2026" element={<SupplierComparison />} />
-                  <Route path="/cosmetic-sets" element={<CosmeticSets />} />
-                  <Route path="/quality-control" element={<QualityControl />} />
-                  <Route path="/products/:id" element={<ProductDetail />} />
-                  <Route path="/process" element={<Process />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/blog" element={<BlogIndex />} />
-                  <Route path="/blog/:slug" element={<BlogPostPage />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/certifications" element={<Certifications />} />
-                  <Route path="/privacy" element={<Privacy />} />
-                  {/* locale-prefixed SEO landing paths */}
-                  <Route path="/kr" element={<Home />} />
-                  <Route path="/kr/*" element={<Home />} />
-                  <Route path="/jp" element={<Home />} />
-                  <Route path="/jp/*" element={<Home />} />
-                  <Route path="/tw" element={<Home />} />
-                  <Route path="/tw/*" element={<Home />} />
-                  <Route path="*" element={<Home />} />
+                  <Route path="/*" element={<AppRoutes />} />
+                  <Route path="/kr/*" element={<AppRoutes />} />
+                  <Route path="/jp/*" element={<AppRoutes />} />
+                  <Route path="/tw/*" element={<AppRoutes />} />
                 </Routes>
               </Suspense>
             </main>
