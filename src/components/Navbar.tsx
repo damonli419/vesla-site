@@ -1,29 +1,31 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useUI } from "../i18n/UIContext";
 
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const { t } = useUI();
+  const { t, localizePath } = useUI();
+
+  const homeTo = localizePath("/");
 
   const links = [
-    { to: "/", label: t("nav.home") },
-    { to: "/serum-bottles", label: "Serum Bottles" },
-    { to: "/cream-jars", label: "Cream Jars" },
-    { to: "/glass-vials", label: "Glass Vials" },
-    { to: "/cosmetic-sets", label: "Cosmetic Sets" },
-    { to: "/products", label: t("nav.products") },
-    { to: "/process", label: t("nav.process") },
-    { to: "/about", label: t("nav.about") },
-    { to: "/blog", label: t("nav.resources") },
-    { to: "/contact", label: t("nav.contact") },
+    { to: homeTo, label: t("nav.home") },
+    { to: localizePath("/serum-bottles"), label: "Serum Bottles" },
+    { to: localizePath("/cream-jars"), label: "Cream Jars" },
+    { to: localizePath("/glass-vials"), label: "Glass Vials" },
+    { to: localizePath("/cosmetic-sets"), label: "Cosmetic Sets" },
+    { to: localizePath("/products"), label: t("nav.products") },
+    { to: localizePath("/process"), label: t("nav.process") },
+    { to: localizePath("/about"), label: t("nav.about") },
+    { to: localizePath("/blog"), label: t("nav.resources") },
+    { to: localizePath("/contact"), label: t("nav.contact") },
   ];
 
   return (
     <header className="sticky top-0 z-50 border-b border-gold/20 bg-cream/90 backdrop-blur-md">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
-        <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
+        <Link to={localizePath("/")} className="flex items-center" onClick={() => setOpen(false)}>
           <span className="font-serif text-2xl font-bold tracking-tight text-ink">Vesla</span>
         </Link>
 
@@ -32,7 +34,7 @@ export default function Navbar() {
             <NavLink
               key={l.to}
               to={l.to}
-              end={l.to === "/"}
+              end={l.to === homeTo}
               className={({ isActive }) =>
                 `text-sm font-medium tracking-wide transition-colors ${
                   isActive ? "text-gold-dark" : "text-ink-soft hover:text-ink"
@@ -43,7 +45,7 @@ export default function Navbar() {
             </NavLink>
           ))}
           <Link
-            to="/contact"
+            to={localizePath("/contact")}
             className="rounded-full bg-gold px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-gold-dark"
           >
             {t("nav.quote")}
@@ -69,7 +71,7 @@ export default function Navbar() {
             <NavLink
               key={l.to}
               to={l.to}
-              end={l.to === "/"}
+              end={l.to === homeTo}
               onClick={() => setOpen(false)}
               className={({ isActive }) =>
                 `block py-3 text-base font-medium ${isActive ? "text-gold-dark" : "text-ink-soft"}`
@@ -79,7 +81,7 @@ export default function Navbar() {
             </NavLink>
           ))}
           <Link
-            to="/contact"
+            to={localizePath("/contact")}
             onClick={() => setOpen(false)}
             className="mt-3 block rounded-full bg-gold px-6 py-3 text-center text-sm font-semibold text-white"
           >
