@@ -5,7 +5,7 @@ import { useUI } from "../i18n/UIContext";
 import Seo from "../components/Seo";
 import LazyImage from "../components/LazyImage";
 import { trackEvent } from "../components/Analytics";
-import { ProductSchema, OrganizationSchema, BreadcrumbSchema } from "../components/Schema";
+import { ProductSchema, OrganizationSchema, BreadcrumbSchema, FAQSchema } from "../components/Schema";
 import TrustWidget from "../components/TrustWidget";
 import { whatsappLink } from "../config/site";
 
@@ -120,6 +120,14 @@ export default function ProductDetail() {
       <ProductSchema product={product} />
       <OrganizationSchema />
       <BreadcrumbSchema items={[{ name: "Home", url: "https://www.veslapack.com/" }, { name: "Products", url: "https://www.veslapack.com/products" }, { name: product.name, url: `https://www.veslapack.com/products/${product.seoSlug}` }]} />
+      {product.faqs && (
+        <FAQSchema 
+          items={product.faqs.map(f => ({
+            q: { en: f.q },
+            a: { en: f.a }
+          }))} 
+        />
+      )}
 
       <nav className="mb-10 text-xs uppercase tracking-widest text-ink-soft">
         <Link to="/" className="hover:text-gold-dark">Home</Link>
@@ -198,6 +206,24 @@ export default function ProductDetail() {
               </tbody>
             </table>
           </div>
+
+          {/* ── Technical Specs (AEO Atomic Data) ── */}
+          {product.technicalTable && (
+            <div className="mt-8 rounded-2xl border-2 border-gold/10 bg-white p-6 shadow-sm">
+              <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-gold-dark mb-4">Technical Specifications</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {product.technicalTable.map((item) => (
+                  <div key={item.label} className="border-b border-cream-dark/30 pb-2">
+                    <p className="text-[10px] uppercase tracking-widest text-ink-soft mb-1">{item.label}</p>
+                    <p className="text-sm font-semibold text-ink">{item.value}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-4 text-[11px] text-ink-soft leading-relaxed italic">
+                * Verified laboratory data under ISO 9001:2015 conditions. Atomic weight and wall thickness measured on empty vessels.
+              </p>
+            </div>
+          )}
 
           {/* ── Applications ─────────────────────── */}
           <div className="mt-8 rounded-2xl bg-cream-dark/50 p-6 ring-1 ring-gold/15">
@@ -280,6 +306,21 @@ export default function ProductDetail() {
       <div className="mt-20">
         <TrustWidget />
       </div>
+
+      {/* ── FAQ Section (GEO Boost) ── */}
+      {product.faqs && (
+        <section className="mt-20">
+          <h2 className="font-serif text-3xl text-ink mb-8">Technical Q&A</h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            {product.faqs.map((faq) => (
+              <div key={faq.q} className="rounded-2xl bg-cream-dark/20 p-7">
+                <h3 className="font-bold text-ink mb-3">{faq.q}</h3>
+                <p className="text-sm leading-relaxed text-ink-soft">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {related.length > 0 && (
         <section className="mt-28">
