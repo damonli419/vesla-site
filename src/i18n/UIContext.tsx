@@ -66,6 +66,7 @@ interface Ctx {
   setLocale: (l: Locale) => void;
   t: (key: string) => string;
   catLabel: (c: Category) => string;
+  localizePath: (path: string) => string;
 }
 
 const UICtx = createContext<Ctx | null>(null);
@@ -73,30 +74,54 @@ const UICtx = createContext<Ctx | null>(null);
 const STORAGE_KEY = "yt-locale";
 
 export function UIProvider({ children }: { children: ReactNode }) {
-  // English-only site. Locale is locked to "en" (multilingual data is retained
-  // but never switched in the UI).
-  const [locale] = useState<Locale>("en");
-
-  const setLocale = (_l: Locale) => {
-    // No-op — English only.
+  // Extract locale from URL path (e.g., /kr/products -> kr)
+  const getLocaleFromPath = () => {
+    const path = window.location.pathname;
+    const parts = path.split("/").filter(Boolean);
+    const firstPart = parts[0] as Locale;
+    if (Object.keys(localeMeta).includes(firstPart)) {
+      return firstPart;
+    }
+    return "en";
   };
 
+  const [locale, setLocaleState] = useState<Locale>(getLocaleFromPath());
+
+  const setLocale = (l: Locale) => {
+    setLocaleState(l);
+  };
+
+  // Sync state if URL changes (handling browser back/forward)
   useEffect(() => {
-    document.documentElement.lang = "en";
+    const handleLocationChange = () => {
+      setLocaleState(getLocaleFromPath());
+    };
+    window.addEventListener("popstate", handleLocationChange);
+    return () => window.removeEventListener("popstate", handleLocationChange);
   }, []);
+
+  useEffect(() => {
+    document.documentElement.lang = localeMeta[locale].htmlLang;
+  }, [locale]);
 
   const value = useMemo<Ctx>(
     () => ({
-      locale: "en",
+      locale,
       setLocale,
       t: (key: string) => translations[key] ?? key,
       catLabel: (c: Category) => {
         const label = categoryLabels[c];
         if (!label) return c;
-        return label.en ?? c;
+        return label[locale] ?? label.en ?? c;
+      },
+      localizePath: (path: string) => {
+        if (locale === "en") return path;
+        const prefix = `/${locale}`;
+        if (path === "/") return prefix;
+        return `${prefix}${path.startsWith("/") ? "" : "/"}${path}`;
       },
     }),
-    []
+    [locale]
   );
 
   return <UICtx.Provider value={value}>{children}</UICtx.Provider>;
