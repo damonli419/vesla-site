@@ -33,6 +33,8 @@ export interface Product {
   sku?: string;
   seoKeywords: string[];
   seoTags: string[];
+  technicalTable?: { label: string; value: string }[];
+  faqs?: { q: string; a: string }[];
 }
 
 
@@ -78,6 +80,20 @@ export const products: Product[] = [
     sku: "VSL-HEART-DROPPER-30ML-5K",
     seoKeywords: ["heart shaped glass dropper bottle", "valentine edition serum bottle wholesale", "unique cosmetic glass bottle shape", "limited edition skincare packaging", "gift ready glass dropper bottle", "heart silhouette perfume oil bottle", "custom shape glass dropper OEM", "Instagram worthy serum bottle design", "small batch unique glass bottle", "heart dropper bottle private label", "luxury gift packaging glass bottle", "beauty brand limited run packaging"],
     seoTags: ["Serum Packaging", "Dropper Bottle", "Skincare Glass", "Custom OEM", "Low MOQ", "FDA Approved", "DDP Shipping"],
+    technicalTable: [
+      { label: "Glass Wall Thickness", value: "4.5mm (Premium Heavy-Base)" },
+      { label: "Empty Weight", value: "92g (±2g)" },
+      { label: "Neck Finish", value: "18/415 Standard" },
+      { label: "Glass Grade", value: "Grade A Flint Glass (High Clarity)" },
+      { label: "Light Transmission", value: "Opaque (Matte versions) / 92% (Clear)" },
+      { label: "Coating Durability", value: "Passes 3M tape & alcohol rub tests" },
+      { label: "Lead Content", value: "0% (Lead-free eco glass)" },
+    ],
+    faqs: [
+      { q: "Is the heart-shaped bottle compatible with standard serum droppers?", a: "Yes, it uses an 18/415 standard neck. We provide matching heart-shaped bulbs, but standard round bulbs also fit perfectly." },
+      { q: "What is the MOQ for custom gradient colors?", a: "The minimum order quantity for custom Pantone gradient coating is 5,000 units per color scheme." },
+      { q: "Is this glass bottle suitable for high-viscosity gels?", a: "The 18/415 neck and our standard pipette work best for low to medium viscosity serums and oils. For very thick gels, we recommend testing with our wide-pipette sample first." }
+    ]
   },
   {
     id: "flat-square-dropper",
