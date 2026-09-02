@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useUI } from "../i18n/UIContext";
+import LocaleSwitcher from "./LocaleSwitcher";
 
 
 export default function Navbar() {
@@ -44,6 +45,9 @@ export default function Navbar() {
               {l.label}
             </NavLink>
           ))}
+          <div className="ml-4 mr-2">
+            <LocaleSwitcher />
+          </div>
           <Link
             to={localizePath("/contact")}
             className="rounded-full bg-gold px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-gold-dark"
