@@ -78,12 +78,7 @@ export default function App() {
             <Navbar />
             <main className="flex-1">
               <Suspense fallback={<PageLoader />}>
-                <Routes>
-                  <Route path="/*" element={<AppRoutes />} />
-                  <Route path="/kr/*" element={<AppRoutes />} />
-                  <Route path="/jp/*" element={<AppRoutes />} />
-                  <Route path="/tw/*" element={<AppRoutes />} />
-                </Routes>
+                <AppRoutes />
               </Suspense>
             </main>
             <Suspense fallback={null}>
