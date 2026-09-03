@@ -1,4 +1,4 @@
-import { createContext, useContext, useMemo, useState, useEffect, ReactNode } from "react";
+import { createContext, useContext, useMemo, useEffect, ReactNode } from "react";
 import { categoryLabels, type Category } from "../data/products";
 
 export type Locale = "en" | "kr" | "jp" | "tw";
@@ -71,77 +71,29 @@ interface Ctx {
 
 const UICtx = createContext<Ctx | null>(null);
 
-const STORAGE_KEY = "yt-locale";
-
 export function UIProvider({ children }: { children: ReactNode }) {
-  // Extract locale from URL path (e.g., /kr/products -> kr)
-  const getLocaleFromPath = () => {
-    const path = window.location.pathname;
-    const parts = path.split("/").filter(Boolean);
-    const firstPart = parts[0] as Locale;
-    if (Object.keys(localeMeta).includes(firstPart)) {
-      return firstPart;
-    }
-    return "en";
-  };
-
-  const [locale, setLocaleState] = useState<Locale>(getLocaleFromPath());
-
-  const setLocale = (l: Locale) => {
-    setLocaleState(l);
-    // Navigate to localized URL
-    const path = window.location.pathname;
-    const parts = path.split("/").filter(Boolean);
-    const firstPart = parts[0] as Locale;
-    
-    let newPath = "";
-    if (Object.keys(localeMeta).includes(firstPart)) {
-      // Replace existing prefix
-      const rest = parts.slice(1).join("/");
-      newPath = l === "en" ? `/${rest}` : `/${l}/${rest}`;
-    } else {
-      // Add new prefix
-      newPath = l === "en" ? path : `/${l}${path.startsWith("/") ? "" : "/"}${path}`;
-    }
-    
-    // Ensure clean trailing slash and double slash prevention
-    newPath = newPath.replace(/\/+/g, "/");
-    if (newPath === "") newPath = "/";
-    
-    window.location.href = newPath;
-  };
-
-  // Sync state if URL changes (handling browser back/forward)
+  // English-only site. The locale is locked to "en": no URL-path detection,
+  // no locale persistence and no locale switching (refactor: remove
+  // multi-language support and language-prefixed routing).
   useEffect(() => {
-    const handleLocationChange = () => {
-      setLocaleState(getLocaleFromPath());
-    };
-    window.addEventListener("popstate", handleLocationChange);
-    return () => window.removeEventListener("popstate", handleLocationChange);
+    document.documentElement.lang = "en";
   }, []);
-
-  useEffect(() => {
-    document.documentElement.lang = localeMeta[locale].htmlLang;
-  }, [locale]);
 
   const value = useMemo<Ctx>(
     () => ({
-      locale,
-      setLocale,
+      locale: "en",
+      setLocale: () => {
+        // No-op — the site is English only.
+      },
       t: (key: string) => translations[key] ?? key,
       catLabel: (c: Category) => {
         const label = categoryLabels[c];
         if (!label) return c;
-        return label[locale] ?? label.en ?? c;
+        return label.en ?? c;
       },
-      localizePath: (path: string) => {
-        if (locale === "en") return path;
-        const prefix = `/${locale}`;
-        if (path === "/") return prefix;
-        return `${prefix}${path.startsWith("/") ? "" : "/"}${path}`;
-      },
+      localizePath: (path: string) => path,
     }),
-    [locale]
+    []
   );
 
   return <UICtx.Provider value={value}>{children}</UICtx.Provider>;
