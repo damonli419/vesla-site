@@ -17,7 +17,6 @@ const SESSION_KEY = "yt-sample-shown";
 const SHOW_DELAY_MS = 45_000; // 45s
 
 export default function SampleRequestModal() {
-  const { locale } = useUI();
   const [open, setOpen] = useState(false);
   const location = useLocation();
 
@@ -37,11 +36,11 @@ export default function SampleRequestModal() {
     const t = setTimeout(() => {
       setOpen(true);
       sessionStorage.setItem(SESSION_KEY, "1");
-      trackEvent("show_sample_modal", { locale });
+      trackEvent("show_sample_modal");
     }, SHOW_DELAY_MS);
 
     return () => clearTimeout(t);
-  }, [location.pathname, locale]);
+  }, [location.pathname]);
 
   const dismiss = (permanent: boolean) => {
     setOpen(false);

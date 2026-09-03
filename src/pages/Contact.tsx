@@ -12,10 +12,23 @@ const inputCls =
 
 const heroCopy = {
   en: { titleA: "Let's Talk ", titleB: "Packaging", body: "Send us your project details — we respond within 24 hours on business days, in English, with real answers from real packaging engineers." },
-  kr: { titleA: "포장에 대해 ", titleB: "이야기해요", body: "프로젝트 세부사항을 보내주세요. 영업일 기준 24시간 이내에, 실제 포장 엔지니어의 진지한 답변과 함께 회신드립니다." },
-  jp: { titleA: "パッケージを", titleB: "語りましょう", body: "プロジェクトの詳細をお送りください。営業日24時間以内に、現場のパッケージエンジニアから具体的な回答をご返信します。" },
-  tw: { titleA: "讓我們聊聊", titleB: "包裝這件事", body: "請提供您的專案細節 — 我們將於營業日 24 小時內,由真正的包裝工程師以英文回覆具體答案。" },
 };
+
+const formCopy = {
+  en: {
+    name: "Name *", email: "Work Email *", company: "Company / Brand", country: "Country",
+    product: "Product of Interest", quantity: "Estimated Quantity", details: "Project Details *",
+    capacity: "Capacity Required", decoration: "Decoration Technique", market: "Target Market",
+    selectRange: "Select a range", q1: "5,000 – 10,000 pcs", q2: "10,000 – 30,000 pcs", q3: "30,000 – 100,000 pcs", q4: "100,000+ pcs", q5: "Not sure yet",
+    submit: "Send Inquiry", sending: "Sending…", success: "Inquiry Received", successBody: "Thank you for reaching out. Our export team will reply to your email within 24 hours. For urgent matters, message us on WhatsApp anytime.",
+    again: "Send Another Inquiry", note: "We never share your information. NDA available on request.",
+    hoursTitle: "Office Hours", hoursBody: "Mon – Sat · 9:00 – 18:00 (GMT+8)\nOverlap coverage for EU mornings and US East Coast evenings.", response: "Average response time", responseVal: "< 24 hours",
+    direct: "Direct Channels", placeholder: "Tell us about colors, closures and your target launch date…",
+    errTitle: "Something went wrong", errBody: "We couldn't deliver your message. Please email us directly or try again.", errRetry: "Try again", errMail: "Open my mail app",
+    gotIt: "Got it",
+  },
+};
+
 
 const formCopy = {
   en: {
@@ -84,7 +97,9 @@ export default function Contact() {
   const [errorDetail, setErrorDetail] = useState<string>("");
   const [form, setForm] = useState({
     name: "", email: "", company: "", country: "",
-    product: prefilledProduct, quantity: "", message: prefilledMessage, hp: "",
+    product: prefilledProduct, quantity: "", 
+    capacity: "", decoration: "", market: "",
+    message: prefilledMessage, hp: "",
   });
   const { locale } = useUI();
   const hero = heroCopy[locale];
@@ -118,7 +133,7 @@ export default function Contact() {
     <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
       <Seo
         title="Contact"
-        description="Contact Vesla — request a quote, custom mold drawings or a sample shipment. Replies within 24 hours, English / Korean / Japanese / Chinese."
+        description="Contact Vesla — request a quote, custom mold drawings or a sample shipment. Replies within 24 hours from real packaging engineers."
         path="/contact"
       />
       <div className="mb-14 max-w-2xl">
@@ -137,10 +152,11 @@ export default function Contact() {
               <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gold/15 text-3xl text-gold-dark">✓</div>
               <h2 className="font-serif text-3xl text-ink">{fc.success}</h2>
               <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-ink-soft">{fc.successBody}</p>
-              <button
-                onClick={() => { setState("idle"); setForm({ name: "", email: "", company: "", country: "", product: "", quantity: "", message: "", hp: "" }); }}
+               <button
+                onClick={() => { setState("idle"); setForm({ name: "", email: "", company: "", country: "", product: "", quantity: "", capacity: "", decoration: "", market: "", message: "", hp: "" }); }}
                 className="mt-8 rounded-full border border-gold px-8 py-3 text-sm font-semibold text-gold-dark transition hover:bg-gold hover:text-white"
               >
+
                 {fc.again}
               </button>
             </div>
@@ -192,7 +208,7 @@ export default function Contact() {
                   <label className="mb-2 block text-xs font-semibold uppercase tracking-widest text-ink">{fc.product}</label>
                   <input value={form.product} onChange={update("product")} className={inputCls} placeholder="Frosted Dropper Bottle 30 ml" />
                 </div>
-                <div>
+                 <div>
                   <label className="mb-2 block text-xs font-semibold uppercase tracking-widest text-ink">{fc.quantity}</label>
                   <select value={form.quantity} onChange={update("quantity")} className={inputCls}>
                     <option value="">{fc.selectRange}</option>
@@ -203,6 +219,41 @@ export default function Contact() {
                     <option>{fc.q5}</option>
                   </select>
                 </div>
+                <div>
+                  <label className="mb-2 block text-xs font-semibold uppercase tracking-widest text-ink">{fc.capacity}</label>
+                  <select value={form.capacity} onChange={update("capacity")} className={inputCls}>
+                    <option value="">Select capacity</option>
+                    <option>5 ml – 15 ml (Sample/Travel)</option>
+                    <option>20 ml – 40 ml (Standard Serum)</option>
+                    <option>50 ml – 100 ml (Large/Body)</option>
+                    <option>Custom Size</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="mb-2 block text-xs font-semibold uppercase tracking-widest text-ink">{fc.decoration}</label>
+                  <select value={form.decoration} onChange={update("decoration")} className={inputCls}>
+                    <option value="">Select technique</option>
+                    <option>Clear / Natural</option>
+                    <option>Frosting (Acid Etched)</option>
+                    <option>Silk Screen Printing</option>
+                    <option>Hot Stamping (Gold/Silver)</option>
+                    <option>Color Spray / Gradient</option>
+                    <option>Custom OEM Design</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="mb-2 block text-xs font-semibold uppercase tracking-widest text-ink">{fc.market}</label>
+                  <select value={form.market} onChange={update("market")} className={inputCls}>
+                    <option value="">Select target region</option>
+                    <option>North America (US/Canada)</option>
+                    <option>Europe (EU/UK)</option>
+                    <option>Middle East / Dubai</option>
+                    <option>Southeast Asia</option>
+                    <option>Australia / NZ</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+
                 <div className="sm:col-span-2">
                   <label className="mb-2 block text-xs font-semibold uppercase tracking-widest text-ink">{fc.details}</label>
                   <textarea required rows={5} value={form.message} onChange={update("message")} className={inputCls} placeholder={fc.placeholder} />
@@ -272,19 +323,16 @@ export default function Contact() {
       {/* ── FAQ for SEO + UX ─────────────────────── */}
       <section className="mt-24">
         <h2 className="mb-10 text-center font-serif text-3xl text-ink sm:text-4xl">
-          {locale === "en" && "Frequently Asked Questions"}
-          {locale === "kr" && "자주 묻는 질문"}
-          {locale === "jp" && "よくあるご質問"}
-          {locale === "tw" && "常見問題"}
+          Frequently Asked Questions
         </h2>
         <div className="mx-auto max-w-3xl divide-y divide-gold/20 rounded-3xl bg-white ring-1 ring-gold/20">
           {faqItems.map((f, i) => (
             <details key={i} className="group p-6 open:bg-cream-dark/30">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-sm font-semibold text-ink">
-                <span>{f.q[locale]}</span>
+                <span>{f.q.en}</span>
                 <span className="ml-4 text-gold transition group-open:rotate-45 text-lg leading-none">+</span>
               </summary>
-              <p className="mt-3 text-sm leading-relaxed text-ink-soft">{f.a[locale]}</p>
+              <p className="mt-3 text-sm leading-relaxed text-ink-soft">{f.a.en}</p>
             </details>
           ))}
         </div>
