@@ -2,6 +2,13 @@ import { Link, useParams } from "react-router-dom";
 import Seo from "../components/Seo";
 import { BlogPostSchema } from "../components/Schema";
 import { blogPosts, type BlogPost } from "../data/content";
+import { products } from "../data/products";
+
+const recommendedProducts = [
+  products.find(p => p.id === "heart-dropper-30ml"),
+  products.find(p => p.id === "flat-square-dropper"),
+  products.find(p => p.id === "square-serum-dropper")
+].filter(Boolean);
 
 const categoryLabels: Record<BlogPost["category"], string> = {
   guide: "Buyer's Guide",
@@ -130,6 +137,26 @@ export function BlogPost() {
               >
                 Get a Quote
               </Link>
+            </div>
+          </div>
+          <div className="mt-8 border-t border-gold/10 pt-8">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-gold-dark mb-5">Top Packaging Recommendations</p>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+              {recommendedProducts.map((rp) => (
+                rp && (
+                  <Link 
+                    key={rp.id}
+                    to={`/products/${rp.seoSlug}`}
+                    className="group block rounded-2xl bg-white p-4 ring-1 ring-gold/10 hover:ring-gold/30 transition shadow-sm"
+                  >
+                    <div className="aspect-square overflow-hidden rounded-lg bg-cream-dark/30">
+                      <img src={rp.image} alt={rp.name} className="h-full w-full object-cover transition group-hover:scale-105" />
+                    </div>
+                    <p className="mt-3 text-xs font-bold text-ink group-hover:text-gold-dark truncate">{rp.name}</p>
+                    <p className="mt-1 text-[10px] text-ink-soft">MOQ: {rp.moq}</p>
+                  </Link>
+                )
+              ))}
             </div>
           </div>
           <div className="mt-8 border-t border-gold/10 pt-6">
