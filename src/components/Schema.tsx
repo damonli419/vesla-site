@@ -108,9 +108,9 @@ export function ProductSchema({ product }: { product: Product }) {
     ],
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "4.8",
-      bestRating: "5",
-      reviewCount: "27",
+      ratingValue: 4.8,
+      bestRating: 5,
+      reviewCount: 27,
     },
     review: [
       {
@@ -119,7 +119,7 @@ export function ProductSchema({ product }: { product: Product }) {
         datePublished: "2026-06-15",
         reviewBody:
           "Custom glass dropper bottles with gold collars — photographed beautifully for our launch. Samples arrived in 6 days via DHL.",
-        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+        reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
       },
       {
         "@type": "Review",
@@ -127,14 +127,14 @@ export function ProductSchema({ product }: { product: Product }) {
         datePublished: "2026-07-20",
         reviewBody:
           "Started us at 5,000 pcs on stock molds with custom silk-screen decoration. QC reports came with every shipment.",
-        reviewRating: { "@type": "Rating", ratingValue: "4.5", bestRating: "5" },
+        reviewRating: { "@type": "Rating", ratingValue: 4.5, bestRating: 5 },
       },
     ],
     offers: {
       "@type": "Offer",
       url: `${siteConfig.url}/products/${product.seoSlug || product.id}`,
       priceCurrency: "USD",
-      price: "0.45", // Typical starting price for wholesale reference
+      price: 0.45, // Typical starting price for wholesale reference
       priceValidUntil: "2027-12-31",
       validFrom: "2026-01-01",
       availability: "https://schema.org/InStock",
@@ -154,7 +154,7 @@ export function ProductSchema({ product }: { product: Product }) {
         shippingRate: {
           "@type": "MonetaryAmount",
           currency: "USD",
-          value: "0.12", // Reference shipping cost per unit
+          value: 0.12, // Reference shipping cost per unit
         },
       },
       hasMerchantReturnPolicy: {

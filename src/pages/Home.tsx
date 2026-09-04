@@ -477,23 +477,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Featured Focus: Best Seller (Weight Activation) ──── */}
-      <section className="bg-ink py-16 text-white overflow-hidden">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          <div className="text-center">
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-gold mb-4">Market Trend</p>
-            <h2 className="font-serif text-3xl sm:text-4xl leading-tight">Agile Sourcing for <span className="text-gold-light italic">Heart-Shaped</span> Glass Droppers.</h2>
-            <p className="mt-5 mx-auto max-w-2xl text-cream/70 text-base leading-relaxed">
-              Optimized for Valentine's limited editions and luxury skincare launches. We provide the industry's only heart-shaped glass mold ready for 5,000 unit batch runs.
-            </p>
-            <div className="mt-8">
-              <Link 
-                to="/products/heart-shaped-glass-dropper-bottle-manufacturer" 
-                className="inline-block rounded-full bg-gold px-10 py-3.5 text-sm font-bold text-white shadow-lg hover:bg-gold-dark transition"
-              >
-                View Expert Analysis & Quote →
-              </Link>
-            </div>
+      {/* ── Featured Focus: Strategic Recovery (Weight Activation) ──── */}
+      <section className="bg-ink py-20 text-white overflow-hidden border-y border-gold/10">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-gold mb-4">Technical Spotlights</p>
+            <h2 className="font-serif text-3xl sm:text-4xl">Engineered for <span className="text-gold-light italic">High-Performance</span> Beauty.</h2>
+          </div>
+          
+          <div className="grid gap-6 sm:grid-cols-3">
+            {/* Spotlight 1: Heart (Fixing Merchant Errors) */}
+            <Link to="/products/heart-shaped-glass-dropper-bottle-manufacturer" className="group rounded-3xl bg-white/5 p-8 ring-1 ring-white/10 hover:ring-gold/50 transition">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-gold mb-3">Best Seller</p>
+              <h3 className="font-serif text-xl mb-4">Heart-Shaped Dropper</h3>
+              <p className="text-sm text-cream/60 leading-relaxed">Sculptural body with 4.5mm wall thickness. ISO 9001 verified data available.</p>
+              <p className="mt-6 text-xs font-semibold text-gold-light group-hover:underline">View Spec Sheet →</p>
+            </Link>
+
+            {/* Spotlight 2: Flat Square (Breaking Duplicate Issue) */}
+            <Link to="/products/custom-flat-square-glass-dropper-bottle-supplier" className="group rounded-3xl bg-white/5 p-8 ring-1 ring-white/10 hover:ring-gold/50 transition">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-gold mb-3">New Arrival</p>
+              <h3 className="font-serif text-xl mb-4">Flat Square Dropper</h3>
+              <p className="text-sm text-cream/60 leading-relaxed">Modern 90° architectural design. Perfect for labels and minimalist branding.</p>
+              <p className="mt-6 text-xs font-semibold text-gold-light group-hover:underline">Explore Engineering →</p>
+            </Link>
+
+            {/* Spotlight 3: 100ml Square (Forcing First Crawl) */}
+            <Link to="/products/square-glass-serum-dropper-bottle-manufacturer-100ml" className="group rounded-3xl bg-white/5 p-8 ring-1 ring-white/10 hover:ring-gold/50 transition">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-gold mb-3">Jumbo Series</p>
+              <h3 className="font-serif text-xl mb-4">100ml Square Glass</h3>
+              <p className="text-sm text-cream/60 leading-relaxed">Heavy-base reinforced glass for body serums and professional salon lines.</p>
+              <p className="mt-6 text-xs font-semibold text-gold-light group-hover:underline">View Wholesale MOQ →</p>
+            </Link>
           </div>
         </div>
       </section>
