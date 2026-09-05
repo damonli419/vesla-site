@@ -18,22 +18,6 @@ const formCopy = {
   en: {
     name: "Name *", email: "Work Email *", company: "Company / Brand", country: "Country",
     product: "Product of Interest", quantity: "Estimated Quantity", details: "Project Details *",
-    capacity: "Capacity Required", decoration: "Decoration Technique", market: "Target Market",
-    selectRange: "Select a range", q1: "5,000 – 10,000 pcs", q2: "10,000 – 30,000 pcs", q3: "30,000 – 100,000 pcs", q4: "100,000+ pcs", q5: "Not sure yet",
-    submit: "Send Inquiry", sending: "Sending…", success: "Inquiry Received", successBody: "Thank you for reaching out. Our export team will reply to your email within 24 hours. For urgent matters, message us on WhatsApp anytime.",
-    again: "Send Another Inquiry", note: "We never share your information. NDA available on request.",
-    hoursTitle: "Office Hours", hoursBody: "Mon – Sat · 9:00 – 18:00 (GMT+8)\nOverlap coverage for EU mornings and US East Coast evenings.", response: "Average response time", responseVal: "< 24 hours",
-    direct: "Direct Channels", placeholder: "Tell us about colors, closures and your target launch date…",
-    errTitle: "Something went wrong", errBody: "We couldn't deliver your message. Please email us directly or try again.", errRetry: "Try again", errMail: "Open my mail app",
-    gotIt: "Got it",
-  },
-};
-
-
-const formCopy = {
-  en: {
-    name: "Name *", email: "Work Email *", company: "Company / Brand", country: "Country",
-    product: "Product of Interest", quantity: "Estimated Quantity", details: "Project Details *",
     selectRange: "Select a range", q1: "5,000 – 10,000 pcs", q2: "10,000 – 30,000 pcs", q3: "30,000 – 100,000 pcs", q4: "100,000+ pcs", q5: "Not sure yet",
     submit: "Send Inquiry", sending: "Sending…", success: "Inquiry Received", successBody: "Thank you for reaching out. Our export team will reply to your email within 24 hours. For urgent matters, message us on WhatsApp anytime.",
     again: "Send Another Inquiry", note: "We never share your information. NDA available on request.",

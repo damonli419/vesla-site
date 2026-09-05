@@ -217,6 +217,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-08-05", readMinutes: 6, category: "guide",
     keywords: ["indie perfume bottle manufacturer", "custom glass perfume bottle MOQ", "how to make perfume bottles small batch", "perfume vial wholesale glass", "fragrance brand launch packaging"],
   },
+  {
     slug: "glass-vs-plastic-sunscreen-packaging",
     title: { en: "Is glass or plastic better for mineral sunscreen packaging? 2026 Material Analysis", kr: "선크림은 유리에 담길 수 있나? 2026 포장 현실 점검", jp: "日焼け止めはガラスに入れられる？2026年パッケージング検証", tw: "防曬乳可以裝在玻璃裡嗎？2026 包裝現實檢驗" },
     excerpt: { en: "Updated for 2026: Why high-end brands are switching to sunscreen in glass bottles to prevent active ingredient degradation and UV-induced oxidation.", kr: "2026년 업데이트: 고기능성 브랜드들이 왜 플라스틱 튜브 대신 유리병을 선택하는지 분석합니다.", jp: "2026年最新版：高機能ブランドがなぜプラスチックチューブではなくガラス瓶を選ぶのかを検証。", tw: "2026 最新更新：為何高階品牌正轉向使用玻璃瓶裝防曬，以防止活性成分降解與紫外線引起的氧化。" },
