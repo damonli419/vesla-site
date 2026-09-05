@@ -1,7 +1,3 @@
-# Apex to WWW Redirect
-https://veslapack.com/* https://www.veslapack.com/:splat 301
-http://veslapack.com/* https://www.veslapack.com/:splat 301
-http://www.veslapack.com/* https://www.veslapack.com/:splat 301
-
 # Single Page App Routing
+# This ensures React Router handles all sub-paths without 404s.
 /* /index.html 200
