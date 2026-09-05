@@ -502,14 +502,25 @@ export default function Home() {
               <p className="mt-6 text-xs font-semibold text-gold-light group-hover:underline">Explore Engineering →</p>
             </Link>
 
-            {/* Spotlight 3: 100ml Square (Forcing First Crawl) */}
+             {/* Spotlight 3: 100ml Square (Forcing First Crawl) */}
             <Link to="/products/square-glass-serum-dropper-bottle-manufacturer-100ml" className="group rounded-3xl bg-white/5 p-8 ring-1 ring-white/10 hover:ring-gold/50 transition">
               <p className="text-[10px] font-bold uppercase tracking-widest text-gold mb-3">Jumbo Series</p>
               <h3 className="font-serif text-xl mb-4">100ml Square Glass</h3>
               <p className="text-sm text-cream/60 leading-relaxed">Heavy-base reinforced glass for body serums and professional salon lines.</p>
               <p className="mt-6 text-xs font-semibold text-gold-light group-hover:underline">View Wholesale MOQ →</p>
             </Link>
+
+            {/* NEW: Blog Authority Pump (Forcing Indexing) */}
+            <Link to="/blog/indie-beauty-brand-budgeting-2026-moq-mold-guide" className="group col-span-full rounded-3xl bg-gold/10 p-8 ring-1 ring-gold/30 hover:bg-gold/20 transition flex items-center justify-between">
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-gold mb-2">Latest Insights</p>
+                <h3 className="font-serif text-2xl text-white">Indie Beauty Brand Budgeting 2026: The Truth About MOQs and Molds</h3>
+                <p className="text-sm text-cream/60 mt-2">A technical deep-dive into startup costs, mold fees, and the 5,000-unit fast-track.</p>
+              </div>
+              <span className="text-2xl text-gold-light group-hover:translate-x-2 transition">→</span>
+            </Link>
           </div>
+
         </div>
       </section>
 

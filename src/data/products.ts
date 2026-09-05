@@ -81,6 +81,7 @@ export const products: Product[] = [
     seoKeywords: ["heart shaped glass dropper bottle", "valentine edition serum bottle wholesale", "unique cosmetic glass bottle shape", "limited edition skincare packaging", "gift ready glass dropper bottle", "heart silhouette perfume oil bottle", "custom shape glass dropper OEM", "Instagram worthy serum bottle design", "small batch unique glass bottle", "heart dropper bottle private label", "luxury gift packaging glass bottle", "beauty brand limited run packaging"],
     seoTags: ["Serum Packaging", "Dropper Bottle", "Skincare Glass", "Custom OEM", "Low MOQ", "FDA Approved", "DDP Shipping"],
     technicalTable: [
+      { label: "Manufacturing Mode", value: "Stock Mold (Agile Ready)" },
       { label: "Glass Wall Thickness", value: "4.5mm (Premium Heavy-Base)" },
       { label: "Empty Weight", value: "92g (±2g)" },
       { label: "Neck Finish", value: "18/415 Standard" },
@@ -137,6 +138,7 @@ export const products: Product[] = [
     seoKeywords: ["flat square glass dropper bottle", "geometric shape serum bottle wholesale", "modern architectural glass packaging", "square glass bottle custom decoration", "matte finish square dropper OEM", "minimalist skincare bottle supplier", "flat side label area dropper bottle", "premium square glass serum container", "architectural beauty packaging bottle", "square dropper bottle low MOQ China", "custom Pantone color square glass"],
     seoTags: ["Serum Packaging", "Dropper Bottle", "Skincare Glass", "Custom OEM", "Low MOQ", "FDA Approved", "DDP Shipping"],
     technicalTable: [
+      { label: "Manufacturing Mode", value: "Stock Mold (Agile Ready)" },
       { label: "Base Thickness", value: "8mm (Heavy-Base Architectural)" },
       { label: "Wall Thickness", value: "3.8mm" },
       { label: "Neck Finish", value: "18/415 Crimp" },
@@ -191,6 +193,7 @@ export const products: Product[] = [
     seoKeywords: ["square glass serum bottle 100ml", "jumbo size dropper bottle wholesale", "body serum square glass packaging", "professional salon size serum bottle", "large capacity square dropper OEM", "clear square glass bottle bulk", "salon grade skincare glass packaging", "custom frosted square serum bottle", "square dropper with hot stamp logo", "gradient spray square glass bottle", "branded square serum bottle supplier"],
     seoTags: ["Serum Packaging", "Square Bottle", "Dropper Bottle", "Custom OEM", "Low MOQ", "Jumbo Size", "FDA Approved"],
     technicalTable: [
+      { label: "Manufacturing Mode", value: "Stock Mold (Agile Ready)" },
       { label: "Design", value: "90° Sharp-Edge Architectural" },
       { label: "Transparency", value: "92.5% (High-Clarity Glass)" },
       { label: "Wall Thickness", value: "4.0mm" },
@@ -244,6 +247,7 @@ export const products: Product[] = [
     seoKeywords: ["frosted blue glass dropper bottle OEM", "baked in color glass bottle factory", "permanent color frosting dropper bottle", "blue matte glass serum packaging", "scratch resistant colored glass bottle", "Instagram friendly blue serum bottle", "Gen Z skincare packaging glass", "vibrant colored glass dropper supplier", "custom color frosted glass manufacturer", "pantone matched blue glass bottle", "durable color glass dropper wholesale", "trending blue skincare bottle 2026"],
     seoTags: ["Serum Packaging", "Frosted Blue Glass", "Dropper Bottle", "Custom OEM", "Low MOQ", "Color Frosting", "FDA Approved"],
     technicalTable: [
+      { label: "Manufacturing Mode", value: "Stock Mold (Agile Ready)" },
       { label: "Frosting Type", value: "Baked-In Ceramic (Scratch-Resistant)" },
       { label: "UV Barrier", value: "85% Blue Light Filtering" },
       { label: "Neck Finish", value: "18/415" },
@@ -296,6 +300,7 @@ export const products: Product[] = [
     seoKeywords: ["flat shoulder dropper bottle clear glass", "classic clear dropper bottle wholesale", "label ready glass serum bottle", "entry level cosmetic glass packaging", "startup skincare brand dropper bottle", "clear glass dropper bottle stock mold", "minimal clean serum bottle design", "low cost glass dropper bottle OEM", "affordable custom glass serum packaging", "standard flat shoulder bottle bulk", "clear glass dropper gold collar option"],
     seoTags: ["Serum Packaging", "Flat Shoulder Bottle", "Dropper Bottle", "Custom OEM", "Low MOQ", "Clear Glass", "FDA Approved"],
     technicalTable: [
+      { label: "Manufacturing Mode", value: "Stock Mold (Agile Ready)" },
       { label: "Shoulder Style", value: "90° Flat-Flush Design" },
       { label: "Label Area", value: "Maximum Cylindrical Surface" },
       { label: "Wall Thickness", value: "3.2mm" },
@@ -348,6 +353,7 @@ export const products: Product[] = [
     seoKeywords: ["matte black spray coated glass bottle", "soft touch black glass serum packaging", "zero glare cosmetic photography bottle", "luxury black dropper bottle wholesale", "black glass vitamin C serum container", "premium dark glass skincare packaging", "elegant black matte bottle OEM China", "matte black dropper 5ml to 100ml", "custom silk screen black glass bottle", "upscale serum packaging glass black", "black bottle gold collar dropper set", "high end cosmetic glass manufacturer"],
     seoTags: ["Serum Packaging", "Matte Black Glass", "Dropper Bottle", "Custom OEM", "Low MOQ", "Luxury Finish", "FDA Approved"],
     technicalTable: [
+      { label: "Manufacturing Mode", value: "Stock Mold (Agile Ready)" },
       { label: "Coating Type", value: "Soft-Touch Matte (Velvet Feel)" },
       { label: "Light Protection", value: "100% UV/Visible Block" },
       { label: "Material", value: "Recyclable Flint Glass" },
@@ -399,6 +405,7 @@ export const products: Product[] = [
     seoKeywords: ["black flat shoulder round dropper OEM", "matte black dropper bottle 20ml 30ml", "flat shoulder dark glass serum bottle", "no reflection black glass packaging", "black dropper bottle gold collar set", "round shoulder matte black bottle factory", "custom logo black glass dropper", "professional skincare black bottle bulk", "clean label black flat shoulder bottle", "modern matte black serum glass supplier"],
     seoTags: ["Serum Packaging", "Flat Shoulder", "Matte Black", "Custom OEM", "Low MOQ", "Dropper Bottle", "FDA Approved"],
     technicalTable: [
+      { label: "Manufacturing Mode", value: "Stock Mold (Agile Ready)" },
       { label: "Design", value: "Flat-Shoulder Minimalist" },
       { label: "Coating", value: "Matte Black (Non-Reflective)" },
       { label: "Closure Fit", value: "18/415 or 18/410" },
@@ -449,6 +456,7 @@ export const products: Product[] = [
     seoKeywords: ["60ml clear glass dropper bottle wholesale", "body oil large dropper bottle OEM", "hair serum 60ml glass container", "jumbo clear flat shoulder dropper", "60ml cosmetic glass bottle factory", "large format serum packaging glass", "clear dropper bottle with gold collar", "bulk 60ml cosmetic glass dropper", "treatment oil bottle China supplier", "oversized clear glass serum dropper"],
     seoTags: ["Serum Packaging", "60ml Dropper", "Flat Shoulder", "Custom OEM", "Low MOQ", "Clear Glass", "FDA Approved"],
     technicalTable: [
+      { label: "Manufacturing Mode", value: "Stock Mold (Agile Ready)" },
       { label: "Capacity", value: "60ml (Jumbo Facial Oil)" },
       { label: "Wall Thickness", value: "4.5mm" },
       { label: "Neck Standard", value: "20/410" },
@@ -499,6 +507,7 @@ export const products: Product[] = [
     seoKeywords: ["matte black brown cream jar OEM", "soft touch matte glass jar wholesale", "velvet finish face cream container", "double wall glass cream jar factory", "fingerprint resistant cosmetic jar", "premium skincare jar matte coating", "custom color spray coated glass jar", "matte glass cream jar 30g 50g", "luxury face cream packaging glass jar", "thick wall matte finish jar supplier", "brown black matte cosmetic jar China", "private label matte glass cream jar"],
     seoTags: ["Cream Jar", "Matte Finish", "Skincare Packaging", "Custom OEM", "Low MOQ", "Double Wall Glass", "FDA Compliant"],
     technicalTable: [
+      { label: "Manufacturing Mode", value: "Stock Mold (Agile Ready)" },
       { label: "Structure", value: "Double-Wall Glass (Inner/Outer Vessel)" },
       { label: "Empty Weight", value: "125g (50g Jar)" },
       { label: "Sealing", value: "Hand-Applied Gasket + Inner Liner" },
@@ -549,6 +558,7 @@ export const products: Product[] = [
     seoKeywords: ["frosted round jar woodgrain lid OEM", "water transfer wood grain cream jar", "natural aesthetic cosmetic glass jar", "botanical skincare packaging supplier", "bamboo alternative lid glass jar", "eco friendly look cosmetic glass package", "warm natural cream jar bulk wholesale", "wood effect lid frosted glass jar", "green beauty packaging glass container", "natural skincare jar 5g to 100g", "rustic chic cosmetic glass packaging"],
     seoTags: ["Cream Jar", "Woodgrain Lid", "Natural Packaging", "Custom OEM", "Low MOQ", "Frosted Glass", "FDA Compliant"],
     technicalTable: [
+      { label: "Manufacturing Mode", value: "Stock Mold (Agile Ready)" },
       { label: "Lid Material", value: "Water-Transfer Printed PP (Wood Effect)" },
       { label: "Body", value: "Acid-Etched Frosted Glass" },
       { label: "Weight", value: "95g (50g jar)" },
@@ -611,6 +621,7 @@ export const products: Product[] = [
     ],
     seoTags: ["Cream Jar", "Woodgrain Lid", "Organic Aesthetic", "Custom OEM", "Low MOQ", "Botanical Packaging", "FDA Compliant"],
     technicalTable: [
+      { label: "Manufacturing Mode", value: "Stock Mold (Agile Ready)" },
       { label: "Finish", value: "Espresso Toned Woodgrain" },
       { label: "Glass Color", value: "Natural Amber or Frosted Brown" },
     ],
@@ -671,6 +682,7 @@ export const products: Product[] = [
     ],
     seoTags: ["Glass Vial", "Amber Glass", "Serum Dropper", "UV Protection", "Custom OEM", "Low MOQ", "FDA Compliant"],
     technicalTable: [
+      { label: "Manufacturing Mode", value: "Stock Mold (Agile Ready)" },
       { label: "Glass Grade", value: "USP Type III Amber Glass" },
       { label: "UV Protection", value: "Filters 98% of harmful wavelengths" },
       { label: "Durability", value: "Hydrolytic Resistance Grade 1" },
@@ -722,6 +734,7 @@ export const products: Product[] = [
     seoKeywords: ["gradient green glass cosmetic set OEM", "color matched skincare packaging collection", "ombre green dropper jar set wholesale", "pantone matched green glass set", "bundled cosmetic glass packaging supplier", "regimen skincare set glass bottles", "gradient spray coat glass collection", "matching bottle jar set factory China", "full skincare line glass packaging", "4 piece cosmetic glass set OEM", "green gradient luxury skincare set"],
     seoTags: ["Cosmetic Set", "Glass Collection", "Luxury Packaging", "Custom OEM", "Low MOQ", "Gradient Glass", "Wholesale Set"],
     technicalTable: [
+      { label: "Manufacturing Mode", value: "Stock Mold (Agile Ready)" },
       { label: "Set Consistency", value: "Color-Matched Across All SKUs" },
       { label: "Hardware", value: "Electroplated Anti-Oxidation Gold" },
       { label: "Leak Testing", value: "100% Vacuum-Pressure Tested" },
@@ -773,6 +786,7 @@ export const products: Product[] = [
     seoKeywords: ["gradient green pump bottle set OEM", "lotion pump glass cosmetic set wholesale", "color coordinated pump jar skincare set", "modern dispensing glass bottle set", "matching pump jar cosmetic collection", "full regimen pump dispenser glass set", "skincare routine glass set packaging", "pump bottle jar gradient green factory", "coordinated cosmetic packaging China OEM", "pump dispenser green glass bottle set", "all in one skincare glass set supplier", "luxury pump jar cosmetic gift set"],
     seoTags: ["Cosmetic Set", "Glass Collection", "Luxury Packaging", "Custom OEM", "Low MOQ", "Gradient Glass", "Wholesale Set"],
     technicalTable: [
+      { label: "Manufacturing Mode", value: "Stock Mold (Agile Ready)" },
       { label: "Set Consistency", value: "Color-Matched Across All SKUs" },
       { label: "Hardware", value: "Electroplated Anti-Oxidation Gold" },
       { label: "Leak Testing", value: "100% Vacuum-Pressure Tested" },
@@ -824,6 +838,7 @@ export const products: Product[] = [
     seoKeywords: ["red gradient glass cosmetic set wholesale", "crimson ombre bottle jar packaging set", "red round cosmetic bottle set factory", "matching red lotion jar set OEM China", "red spray coat glass set manufacturer", "wine red gradient skincare collection", "red pump lotion bottle cream jar set", "brand matched red glass packaging set", "luxury red cosmetic gift set packaging", "straight round red bottle jar supplier"],
     seoTags: ["Cosmetic Set", "Red Gradient", "Lotion Bottle", "Cream Jar", "Custom OEM", "Gift Set Packaging", "Gradient Glass"],
     technicalTable: [
+      { label: "Manufacturing Mode", value: "Stock Mold (Agile Ready)" },
       { label: "Coating", value: "Crimson-to-Clear Ombre Spray" },
       { label: "Lid Style", value: "Satin Metallic Red" },
       { label: "Material", value: "High-Density Recyclable Glass" },
@@ -875,6 +890,7 @@ export const products: Product[] = [
     seoKeywords: ["10ml small glass dropper bottle supplier", "15ml straight round dropper bottle wholesale", "mini essential oil dropper bottle 10ml 15ml", "small capacity glass serum bottle travel size", "10ml purple glass dropper bottle OEM", "15ml matte white dropper bottle factory", "compact straight round dropper glass manufacturer", "small dropper bottle sample size bulk", "10ml 15ml dropper bottle with glass pipette", "travel size essential oil dropper packaging"],
     seoTags: ["Dropper Bottle", "Small Capacity", "Essential Oil", "Travel Size", "Sample Bottle", "Custom OEM", "Glass Pipette"],
     technicalTable: [
+      { label: "Manufacturing Mode", value: "Stock Mold (Agile Ready)" },
       { label: "Glass Type", value: "Borosilicate (High Durability)" },
       { label: "Neck Finish", value: "13/415" },
       { label: "Wall Thickness", value: "2.8mm" },
@@ -926,6 +942,7 @@ export const products: Product[] = [
     seoKeywords: ["white coated glass cosmetic set wholesale", "stone texture white bottle jar set factory", "matte white cosmetic set silver cap", "white ceramic look glass set OEM", "silver cap white bottle jar packaging set", "matte white lotion jar set China supplier", "white cosmetic set gift packaging wholesale", "pearl white glass set manufacturer", "silver lid white cream jar set", "white coating bottle jar collection OEM"],
     seoTags: ["Cosmetic Set", "White Coating", "Matte Finish", "Silver Cap", "Lotion Bottle", "Cream Jar", "Custom OEM"],
     technicalTable: [
+      { label: "Manufacturing Mode", value: "Stock Mold (Agile Ready)" },
       { label: "Visual Effect", value: "Matte Ceramic/Porcelain Look" },
       { label: "Texture", value: "Stone-Texture (Enhanced Grip)" },
       { label: "Durability", value: "Passes 300+ alcohol rub cycles" },
@@ -977,6 +994,7 @@ export const products: Product[] = [
     seoKeywords: ["black glass lotion bottle pump set", "gold pump black cosmetic bottle set", "black cream jar set gold cap", "black cosmetic set luxury packaging", "gold pump bottle black glass OEM", "black lotion jar set China supplier", "black glass cosmetic set wholesale", "gold pump black jar set factory", "matte black pump bottle jar set", "black gold luxury cosmetic set"],
     seoTags: ["Cosmetic Set", "Black Coating", "Gold Pump", "Lotion Bottle", "Cream Jar", "Luxury Packaging", "Custom OEM"],
     technicalTable: [
+      { label: "Manufacturing Mode", value: "Stock Mold (Agile Ready)" },
       { label: "Hardware", value: "Gold-Anodized Precision Pumps" },
       { label: "Coating", value: "Stealth Matte Black" },
       { label: "Gasket", value: "A-Grade Silicone (Anti-Leak)" },
@@ -1028,6 +1046,7 @@ export const products: Product[] = [
     seoKeywords: ["waistline glass cosmetic set wholesale", "hourglass glass bottle manufacturer", "textured glass skincare packaging set", "diamond pattern glass bottle set factory", "luxury glass lotion bottle pump set", "wholesale red glass jar bottle set", "blue gradient glass packaging collection", "amber textured glass cosmetic bottles", "50g 100g glass cream jar supplier", "custom glass set for luxury skincare"],
     seoTags: ["Cosmetic Set", "Textured Glass", "Hourglass Shape", "Gold Pump", "Lotion Bottle", "Cream Jar", "Luxury Packaging", "Custom OEM"],
     technicalTable: [
+      { label: "Manufacturing Mode", value: "Stock Mold (Agile Ready)" },
       { label: "Shape", value: "Ergonomic Hourglass (Waistline)" },
       { label: "Glass Pattern", value: "Geometric Diamond Prism" },
       { label: "Wall Strength", value: "Heavy-Wall Reinforced Glass" },
@@ -1078,6 +1097,7 @@ export const products: Product[] = [
     seoKeywords: ["light shielding dropper bottle wholesale", "UV protection glass bottle manufacturer", "opaque glass serum bottle supplier", "essential oil dropper bottle factory", "bulk glass dropper bottles China", "5ml 100ml glass dropper set", "custom coated glass dropper bottles", "skincare packaging for light sensitive formulas", "wholesale blue gradient dropper bottles", "matte white glass dropper bottle manufacturer"],
     seoTags: ["Dropper Bottle", "UV Protection", "Essential Oil", "Opaque Glass", "Custom OEM", "Wholesale Packaging", "China Manufacturer"],
     technicalTable: [
+      { label: "Manufacturing Mode", value: "Stock Mold (Agile Ready)" },
       { label: "Design", value: "Classic Straight-Round" },
       { label: "Light Blocking", value: "99% UV Protection (Opaque versions)" },
       { label: "Safety", value: "Child-Resistant Cap Compatible" },
