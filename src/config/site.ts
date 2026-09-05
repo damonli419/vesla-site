@@ -6,7 +6,7 @@ const env = import.meta.env;
 export const siteConfig = {
   name: "Vesla",
   legalName: "Vesla Co., Ltd.",
-  url: "https://veslapack.com",
+  url: "https://www.veslapack.com",
   email: env.VITE_COMPANY_EMAIL || "sales@veslapack.com",
   emailDomain: "sales@veslapack.com",
   phone: env.VITE_COMPANY_PHONE || "+86 18165681131",

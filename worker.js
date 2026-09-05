@@ -237,6 +237,12 @@ Office Hours: Mon-Sat, 9:00-18:00 (GMT+8)`,
 const REDIRECTS = {
   "/dropper-bottles": "/serum-bottles",
   "/essential-oil-bottles": "/serum-bottles",
+  // Retire legacy article slugs with one-hop 301s to the current canonical pages.
+  "/blog/frosted-vs-clear-glass": "/blog/frosted-vs-clear-glass-packaging",
+  "/blog/shipping-glass-bottles-international": "/blog/ship-glass-bottles-china-usa",
+  "/blog/cosmetic-set-packaging-guide": "/blog/matching-cosmetic-packaging-set-guide-2026",
+  "/blog/how-to-estimate-packaging-budget": "/blog/custom-glass-bottle-cost-breakdown",
+  "/blog/k-beauty-packaging-trends-2026": "/blog/2026-cosmetic-glass-packaging-trends-report",
 };
 
 const KNOWN_PATHS = new Set([
