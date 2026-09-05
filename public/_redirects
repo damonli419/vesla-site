@@ -1,3 +1,2 @@
-# Single Page App Routing
-# This ensures React Router handles all sub-paths without 404s.
-/* /index.html 200
+# Intentionally empty for Cloudflare Workers.
+# SPA fallback and canonical redirects are handled by worker.js.
