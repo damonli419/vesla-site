@@ -249,6 +249,7 @@ const KNOWN_PATHS = new Set([
   "/", "/products", "/serum-bottles", "/cream-jars", "/glass-vials", "/cosmetic-sets",
   "/cosmetic-packaging-supplier-comparison-2026", "/quality-control", 
   "/certifications", "/about", "/process", "/blog", "/contact", "/privacy",
+  "/api/contact",
   "/sitemap.xml", "/robots.txt", "/llms.txt", "/llms-full.txt", "/content-manifest.json",
   "/b4c8e9a2d1f3.txt",
 ]);
