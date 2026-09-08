@@ -307,12 +307,19 @@ async function handleContact(request, env) {
     const from = env.CONTACT_FROM || "no-reply@veslapack.com";
     const text = `Name: ${body.name}\nEmail: ${body.email}\nCompany: ${body.company || "N/A"}\nCountry: ${body.country || "N/A"}\nProduct: ${body.product || "N/A"}\nQuantity: ${body.quantity || "N/A"}\n\nMessage:\n${body.message}`;
 
-    const headers = { "content-type": "application/json" };
-    if (env.MAILCHANNELS_API_KEY) headers["x-api-key"] = env.MAILCHANNELS_API_KEY;
+    const requestId = crypto.randomUUID();
+    const apiKey = env.MAILCHANNELS_API_KEY;
+    if (!apiKey) {
+      console.error("[contact] MailChannels API key is not configured", { requestId });
+      return new Response(JSON.stringify({ error: "Email delivery is temporarily unavailable", requestId }), {
+        status: 503,
+        headers: { "content-type": "application/json", "access-control-allow-origin": "*" },
+      });
+    }
 
-    await fetch("https://api.mailchannels.net/tx/v1/send", {
+    const upstream = await fetch("https://api.mailchannels.net/tx/v1/send", {
       method: "POST",
-      headers,
+      headers: { "content-type": "application/json", "x-api-key": apiKey },
       body: JSON.stringify({
         personalizations: [{ to: [{ email: to, name: "Vesla Sales" }] }],
         from: { email: from, name: "Vesla Website" },
@@ -322,12 +329,27 @@ async function handleContact(request, env) {
       }),
     });
 
-    return new Response(JSON.stringify({ ok: true }), { 
-      status: 200, 
-      headers: { "content-type": "application/json", "access-control-allow-origin": "*" } 
+    if (!upstream.ok) {
+      const providerDetail = (await upstream.text()).slice(0, 500);
+      console.error("[contact] MailChannels rejected delivery", { requestId, status: upstream.status, providerDetail });
+      return new Response(JSON.stringify({ error: "Email delivery failed", requestId }), {
+        status: 502,
+        headers: { "content-type": "application/json", "access-control-allow-origin": "*" },
+      });
+    }
+
+    console.log("[contact] MailChannels accepted delivery", { requestId, to, from });
+    return new Response(JSON.stringify({ ok: true, requestId }), {
+      status: 200,
+      headers: { "content-type": "application/json", "access-control-allow-origin": "*" },
     });
   } catch (e) {
-    return new Response(JSON.stringify({ error: e.message }), { status: 500 });
+    const requestId = crypto.randomUUID();
+    console.error("[contact] Unexpected delivery error", { requestId, error: e instanceof Error ? e.message : String(e) });
+    return new Response(JSON.stringify({ error: "Email delivery is temporarily unavailable", requestId }), {
+      status: 502,
+      headers: { "content-type": "application/json", "access-control-allow-origin": "*" },
+    });
   }
 }
 
