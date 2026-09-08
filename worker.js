@@ -143,6 +143,38 @@ Shipping: DDP shipping to USA and EU (20-26 days). ISO 9001 factory.
 Browse vials: https://www.veslapack.com/products?category=vial
 Contact: sale@veslapack.com | WhatsApp +86 19926004078`,
   },
+  "/cosmetic-glass-packaging-manufacturer": {
+    title: "Cosmetic Glass Packaging Manufacturer | Vesla",
+    description: "Factory-direct cosmetic glass packaging: serum bottles, cream jars, vials and sets. Stock molds from 5,000 pcs and private molds from 10,000 pcs.",
+    h1: "Cosmetic Glass Packaging Manufacturer",
+    body: `Vesla supports skincare, fragrance and wellness brands with glass bottles, jars, vials and coordinated sets.
+
+Stock-mold MOQ: 5,000 pcs with custom decoration. Private-mold projects: from 10,000 pcs.
+Options: frosting, spray coating, silk screen, hot stamping and compatible closures.
+
+Explore: https://www.veslapack.com/serum-bottles | https://www.veslapack.com/cream-jars
+Contact: sale@veslapack.com | WhatsApp +86 19926004078`,
+  },
+  "/low-moq-cosmetic-packaging": {
+    title: "Low MOQ Cosmetic Packaging | Vesla",
+    description: "Low MOQ cosmetic glass packaging for indie beauty brands. Stock-mold bottles, jars, vials and sets from 5,000 pcs with custom decoration.",
+    h1: "Low MOQ Cosmetic Packaging",
+    body: `Vesla offers stock-mold cosmetic glass packaging from 5,000 pcs with custom color, frosting, print and closure options.
+
+Best for: first launches, limited runs and SKU validation. Private molds start from 10,000 pcs.
+Read the MOQ guide: https://www.veslapack.com/blog/indie-beauty-brand-budgeting-2026-moq-mold-guide
+Contact: sale@veslapack.com | WhatsApp +86 19926004078`,
+  },
+  "/custom-cosmetic-packaging-manufacturer": {
+    title: "Custom Cosmetic Packaging Manufacturer | Vesla",
+    description: "Custom cosmetic packaging manufacturer for private-mold glass bottles, jars and matching skincare sets. Compare custom stock molds and private-mold development.",
+    h1: "Custom Cosmetic Packaging Manufacturer",
+    body: `Vesla helps brands evaluate customized stock-mold packaging and private-mold glass development.
+
+Private-mold projects start from 10,000 pcs. Provide capacity, formula, closure, visual brief and expected quantity for a feasibility review.
+Explore coordinated sets: https://www.veslapack.com/cosmetic-sets
+Contact: sale@veslapack.com | WhatsApp +86 19926004078`,
+  },
   "/serum-bottles": {
     title: "Serum & Essential Oil Bottle Manufacturers | Custom Glass Dropper Bottles — Vesla",
     description: "Premium serum & essential oil bottle manufacturers. Custom glass dropper bottles from 5ml to 100ml with UV protection and in-house decoration. Low MOQ 5,000 pcs, DDP shipping.",
@@ -247,6 +279,7 @@ const REDIRECTS = {
 
 const KNOWN_PATHS = new Set([
   "/", "/products", "/serum-bottles", "/cream-jars", "/glass-vials", "/cosmetic-sets",
+  "/cosmetic-glass-packaging-manufacturer", "/low-moq-cosmetic-packaging", "/custom-cosmetic-packaging-manufacturer",
   "/cosmetic-packaging-supplier-comparison-2026", "/quality-control", 
   "/certifications", "/about", "/process", "/blog", "/contact", "/privacy",
   "/api/contact",

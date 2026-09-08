@@ -34,6 +34,7 @@ const Privacy = lazy(() => import("./pages/Privacy"));
 const BlogIndex = lazy(() => import("./pages/Blog").then((m) => ({ default: m.BlogIndex })));
 const BlogPostPage = lazy(() => import("./pages/Blog").then((m) => ({ default: m.BlogPost })));
 const Contact = lazy(() => import("./pages/Contact"));
+const CommercialHub = lazy(() => import("./pages/CommercialHubs"));
 
 function PageLoader() {
   return (
@@ -52,6 +53,9 @@ function AppRoutes() {
       <Route path="cream-jars" element={<CreamJars />} />
       <Route path="glass-vials" element={<GlassVials />} />
       <Route path="cosmetic-packaging-supplier-comparison-2026" element={<SupplierComparison />} />
+      <Route path="cosmetic-glass-packaging-manufacturer" element={<CommercialHub hub="glass" />} />
+      <Route path="low-moq-cosmetic-packaging" element={<CommercialHub hub="lowMoq" />} />
+      <Route path="custom-cosmetic-packaging-manufacturer" element={<CommercialHub hub="custom" />} />
       <Route path="cosmetic-sets" element={<CosmeticSets />} />
       <Route path="quality-control" element={<QualityControl />} />
       <Route path="products/:id" element={<ProductDetail />} />

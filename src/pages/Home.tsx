@@ -389,6 +389,37 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Sourcing paths ───────────────────────────── */}
+      <section className="bg-cream-dark/45 py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mb-10 max-w-2xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-dark">For packaging buyers</p>
+            <h2 className="mt-3 font-serif text-3xl font-medium text-ink sm:text-4xl">Choose the sourcing route that fits your launch</h2>
+            <p className="mt-4 text-sm leading-relaxed text-ink-soft">Compare factory-direct glass packaging, lower-risk stock-mold customization and private-mold development before requesting a quote.</p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            <Link to="/cosmetic-glass-packaging-manufacturer" className="group rounded-2xl bg-white p-7 shadow-sm ring-1 ring-gold/15 transition hover:-translate-y-1 hover:shadow-lg">
+              <p className="text-xs font-bold uppercase tracking-widest text-gold-dark">Full range</p>
+              <h3 className="mt-3 font-serif text-2xl text-ink">Cosmetic Glass Packaging</h3>
+              <p className="mt-3 text-sm leading-relaxed text-ink-soft">Compare bottles, jars, vials and coordinated sets from one manufacturing partner.</p>
+              <span className="mt-6 inline-block text-sm font-semibold text-gold-dark">Explore manufacturer options →</span>
+            </Link>
+            <Link to="/low-moq-cosmetic-packaging" className="group rounded-2xl bg-white p-7 shadow-sm ring-1 ring-gold/15 transition hover:-translate-y-1 hover:shadow-lg">
+              <p className="text-xs font-bold uppercase tracking-widest text-gold-dark">Stock-mold route</p>
+              <h3 className="mt-3 font-serif text-2xl text-ink">Low MOQ Packaging</h3>
+              <p className="mt-3 text-sm leading-relaxed text-ink-soft">Start from 5,000 pcs and differentiate through color, print, finish and closures.</p>
+              <span className="mt-6 inline-block text-sm font-semibold text-gold-dark">Plan a lower-risk launch →</span>
+            </Link>
+            <Link to="/custom-cosmetic-packaging-manufacturer" className="group rounded-2xl bg-white p-7 shadow-sm ring-1 ring-gold/15 transition hover:-translate-y-1 hover:shadow-lg">
+              <p className="text-xs font-bold uppercase tracking-widest text-gold-dark">Private-mold route</p>
+              <h3 className="mt-3 font-serif text-2xl text-ink">Custom Packaging Development</h3>
+              <p className="mt-3 text-sm leading-relaxed text-ink-soft">Review bottle geometry, closure and decoration requirements for private-mold projects.</p>
+              <span className="mt-6 inline-block text-sm font-semibold text-gold-dark">Start a custom brief →</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── Inside Veslapack Factory ─────────────────── */}
       <section className="bg-ink py-24 text-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">

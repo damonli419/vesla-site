@@ -144,6 +144,25 @@ export default function SerumBottles() {
         </div>
       </section>
 
+      <section className="border-y border-gold/10 bg-cream-dark/35 py-14">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-gold/15">
+              <p className="text-xs font-bold uppercase tracking-widest text-gold-dark">Launching with a stock mold?</p>
+              <h2 className="mt-3 font-serif text-2xl text-ink">Plan a low MOQ serum bottle launch</h2>
+              <p className="mt-3 text-sm leading-relaxed text-ink-soft">Compare 5,000-piece stock-mold packaging with custom color, print and closure options before you commit to private tooling.</p>
+              <Link to="/low-moq-cosmetic-packaging" className="mt-5 inline-block text-sm font-semibold text-gold-dark">Explore low MOQ packaging →</Link>
+            </div>
+            <div className="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-gold/15">
+              <p className="text-xs font-bold uppercase tracking-widest text-gold-dark">Developing a new silhouette?</p>
+              <h2 className="mt-3 font-serif text-2xl text-ink">Review private-mold packaging options</h2>
+              <p className="mt-3 text-sm leading-relaxed text-ink-soft">Use a custom development brief when bottle geometry, capacity, closure and brand differentiation require a dedicated glass mold.</p>
+              <Link to="/custom-cosmetic-packaging-manufacturer" className="mt-5 inline-block text-sm font-semibold text-gold-dark">Explore custom packaging development →</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Product grid */}
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <h2 className="mb-2 font-serif text-2xl text-ink sm:text-3xl">Serum & Oil Bottle Collection</h2>
