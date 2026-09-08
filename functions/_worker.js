@@ -260,12 +260,65 @@ function notFound() {
   return new Response("Not Found", { status: 404, headers: { "Content-Type": "text/plain" } });
 }
 
+async function handleContact(request, env) {
+  try {
+    const body = await request.json();
+    // Simple validation
+    if (!body.name || !body.email || !body.message) {
+      return new Response(JSON.stringify({ error: "Missing required fields" }), { status: 400 });
+    }
+    // Honeypot check
+    if (body.hp) return new Response(JSON.stringify({ ok: true, discarded: true }), { status: 200 });
+
+    const to = env.CONTACT_TO || "sale@veslapack.com";
+    const from = env.CONTACT_FROM || "no-reply@veslapack.com";
+    const text = `Name: ${body.name}\nEmail: ${body.email}\nCompany: ${body.company || "N/A"}\nCountry: ${body.country || "N/A"}\nProduct: ${body.product || "N/A"}\nQuantity: ${body.quantity || "N/A"}\n\nMessage:\n${body.message}`;
+
+    const headers = { "content-type": "application/json" };
+    if (env.MAILCHANNELS_API_KEY) headers["x-api-key"] = env.MAILCHANNELS_API_KEY;
+
+    await fetch("https://api.mailchannels.net/tx/v1/send", {
+      method: "POST",
+      headers,
+      body: JSON.stringify({
+        personalizations: [{ to: [{ email: to, name: "Vesla Sales" }] }],
+        from: { email: from, name: "Vesla Website" },
+        reply_to: { email: body.email, name: body.name },
+        subject: `New inquiry from ${body.name}`,
+        content: [{ type: "text/plain", value: text }],
+      }),
+    });
+
+    return new Response(JSON.stringify({ ok: true }), { 
+      status: 200, 
+      headers: { "content-type": "application/json", "access-control-allow-origin": "*" } 
+    });
+  } catch (e) {
+    return new Response(JSON.stringify({ error: e.message }), { status: 500 });
+  }
+}
+
 export default {
   async fetch(request, env) {
     try {
       const url = new URL(request.url);
       const path = url.pathname;
       const ua = request.headers.get("user-agent") || "";
+
+      // 0. API Handlers
+      if (path === "/api/contact" && request.method === "POST") {
+        return handleContact(request, env);
+      }
+      if (path === "/api/contact" && request.method === "OPTIONS") {
+        return new Response(null, {
+          status: 204,
+          headers: {
+            "access-control-allow-origin": "*",
+            "access-control-allow-methods": "POST, OPTIONS",
+            "access-control-allow-headers": "content-type",
+          },
+        });
+      }
 
       // 1. Host Canonicalization
       if (url.hostname === "veslapack.com") {
