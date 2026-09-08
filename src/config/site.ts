@@ -7,14 +7,14 @@ export const siteConfig = {
   name: "Vesla",
   legalName: "Vesla Co., Ltd.",
   url: "https://www.veslapack.com",
-  email: env.VITE_COMPANY_EMAIL || "sales@veslapack.com",
-  emailDomain: "sales@veslapack.com",
-  phone: env.VITE_COMPANY_PHONE || "+86 18165681131",
+  email: env.VITE_COMPANY_EMAIL || "sale@veslapack.com",
+  emailDomain: "sale@veslapack.com",
+  phone: env.VITE_COMPANY_PHONE || "+86 19926004078",
   // WhatsApp numbers must be digits only, no plus sign.
-  whatsapp: env.VITE_COMPANY_WHATSAPP || "8618165681131",
+  whatsapp: env.VITE_COMPANY_WHATSAPP || "8619926004078",
   whatsappDisplay: env.VITE_COMPANY_WHATSAPP
     ? `+${env.VITE_COMPANY_WHATSAPP}`
-    : "+86 18165681131",
+    : "+86 19926004078",
   address: {
     street: "11th Floor, Building 5, Baiyun Financial Holdings Intelligent Connected Vehicle Industrial Park, No. 66-4 Zhihong Road, Jianggao Town, Baiyun District",
     city: "Guangzhou",

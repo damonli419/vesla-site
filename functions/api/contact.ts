@@ -5,7 +5,7 @@
 // The MailChannels key is optional — without it the function still works
 // but MailChannels applies a 1,000 msg/day cap per zone.
 //
-// Set the env variable CONTACT_TO (default sales@veslapack.com) to
+// Set the env variable CONTACT_TO (default sale@veslapack.com) to
 // forward the email to the right inbox.
 
 interface Env {
@@ -62,7 +62,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     return json({ ok: true, discarded: true });
   }
 
-  const to = env.CONTACT_TO || "yitengglass3@gmail.com";
+  const to = env.CONTACT_TO || "sale@veslapack.com";
   const from = env.CONTACT_FROM || "no-reply@veslapack.com";
   const subject = `New inquiry from ${body.name}${body.company ? ` (${body.company})` : ""}`;
   const text = [

@@ -6,8 +6,8 @@ const contentSrc = fs.readFileSync("src/data/content.ts", "utf-8");
 const siteCfgSrc = fs.readFileSync("src/config/site.ts", "utf-8");
 
 // Extract company info
-const email = "yitengglass3@gmail.com";
-const phone = "+86 18165681131";
+const email = "sale@veslapack.com";
+const phone = "+86 19926004078";
 const address = "11th Floor, Building 5, Guangzhou, Guangdong, China";
 
 // Parse product list

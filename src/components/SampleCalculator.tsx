@@ -107,7 +107,7 @@ export default function SampleCalculator() {
         <div className="mt-8 flex flex-col sm:flex-row items-center gap-6 justify-between border-t border-white/5 pt-8">
           <p className="text-xs text-cream/40 italic">* Estimates based on factory-direct benchmarks (n=480, 2026 Q3). Real quotes may vary.</p>
           <a 
-            href={`https://wa.me/8618165681131?text=${encodeURIComponent(`Hi Vesla, I just used your calculator for ${qty} ${category} bottles. I'd like a formal quote for DDP to my zip code.`)}`}
+            href={`https://wa.me/8619926004078?text=${encodeURIComponent(`Hi Vesla, I just used your calculator for ${qty} ${category} bottles. I'd like a formal quote for DDP to my zip code.`)}`}
             className="w-full sm:w-auto bg-gold hover:bg-gold-dark text-white px-8 py-4 rounded-full text-sm font-bold shadow-xl transition-all hover:scale-105"
           >
             Lock-in This Price on WhatsApp →

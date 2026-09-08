@@ -30,7 +30,7 @@ ${ldScript}
 <pre style="white-space:pre-wrap;font-family:sans-serif;max-width:800px;margin:20px auto;line-height:1.6;font-size:16px">${body || ""}</pre>
 <footer style="text-align:center;margin-top:40px;color:#888">
 <p>Vesla Co., Ltd. — Custom Cosmetic Glass Packaging Manufacturer | Guangzhou, China</p>
-<p>yitengglass3@gmail.com | +86 18165681131 | ISO 9001 Certified</p>
+<p>sale@veslapack.com | +86 19926004078 | ISO 9001 Certified</p>
 </footer>
 </body>
 </html>`;
@@ -63,7 +63,7 @@ Key pages:
 - Blog: https://www.veslapack.com/blog
 - Contact: https://www.veslapack.com/contact
 
-Contact: yitengglass3@gmail.com | WhatsApp: +86 18165681131`,
+Contact: sale@veslapack.com | WhatsApp: +86 19926004078`,
   },
   "/cosmetic-packaging-supplier-comparison-2026": {
     title: "2026 Cosmetic Glass Packaging Supplier Comparison Matrix | China Manufacturers",
@@ -115,7 +115,7 @@ Compliance: ISO 9001:2015, FDA 21 CFR, EU 1935/2004.`,
 - Materials: Type III soda-lime glass, FDA 21 CFR, EU 1935/2004, REACH & RoHS compliant
 - 92% glass cullet recycling rate
 
-Contact: yitengglass3@gmail.com | +86 18165681131`,
+Contact: sale@veslapack.com | +86 19926004078`,
   },
   "/cream-jars": {
     title: "Cream Jar Manufacturers & Suppliers | Custom Glass Cosmetic Jars — Vesla",
@@ -128,7 +128,7 @@ Capabilities: woodgrain water-transfer printing, matte & metallic lids, silk scr
 Compliance: ISO 9001, FDA 21 CFR, EU 1935/2004. Production 7-15 days on stock molds. DDP to EU & USA.
 
 Browse jars: https://www.veslapack.com/products?category=jar
-Contact: yitengglass3@gmail.com | WhatsApp +86 18165681131`,
+Contact: sale@veslapack.com | WhatsApp +86 19926004078`,
   },
   "/glass-vials": {
     title: "Glass Vial Manufacturers & Suppliers | Custom Sample Vials — Vesla",
@@ -141,7 +141,7 @@ Capabilities: in-house silk screen printing, custom gift box sourcing, insert tr
 Shipping: DDP shipping to USA and EU (20-26 days). ISO 9001 factory.
 
 Browse vials: https://www.veslapack.com/products?category=vial
-Contact: yitengglass3@gmail.com | WhatsApp +86 18165681131`,
+Contact: sale@veslapack.com | WhatsApp +86 19926004078`,
   },
   "/serum-bottles": {
     title: "Serum & Essential Oil Bottle Manufacturers | Custom Glass Dropper Bottles — Vesla",
@@ -154,7 +154,7 @@ Capabilities: UV-protective amber/violet glass, custom color spray, silk screen 
 Shipping: DDP to USA/EU in 20-26 days. ISO 9001 certified.
 
 Browse collection: https://www.veslapack.com/serum-bottles
-Contact: yitengglass3@gmail.com | WhatsApp +86 18165681131`,
+Contact: sale@veslapack.com | WhatsApp +86 19926004078`,
   },
   "/cosmetic-sets": {
     title: "Cosmetic Set Bottle Manufacturers | Custom Glass Skincare Sets — Vesla",
@@ -167,7 +167,7 @@ Capabilities: custom gradient coating (green, red, blue, amber), electroplated g
 Compliance: ISO 9001, FDA 21 CFR, EU 1935/2004. Production 7-15 days on stock molds. DDP to EU & USA.
 
 Browse sets: https://www.veslapack.com/products?category=set
-Contact: yitengglass3@gmail.com | WhatsApp +86 18165681131`,
+Contact: sale@veslapack.com | WhatsApp +86 19926004078`,
   },
   "/products": {
     title: "Cosmetic Glass Bottles | Wholesale & Custom — Vesla",
@@ -183,7 +183,7 @@ Categories:
 
 MOQ: 5,000 pcs (stock molds) | Production: 7-15 days | Samples: free kit, 5-7 days DHL
 
-Contact: yitengglass3@gmail.com | WhatsApp: +86 18165681131`,
+Contact: sale@veslapack.com | WhatsApp: +86 19926004078`,
   },
   "/blog": {
     title: "Resources | Cosmetic Glass Packaging Guides — Vesla",
@@ -211,17 +211,17 @@ Full list: https://www.veslapack.com/blog`,
 4. Mass Production (7-15 days on stock molds; 25-30 days custom): ISO 9001, AQL sampling, weekly updates.
 5. Global Shipping: EXW, FOB or DDP to EU/USA. Drop-test certified cartons, breakage guarantee.
 
-Contact: yitengglass3@gmail.com | WhatsApp: +86 18165681131`,
+Contact: sale@veslapack.com | WhatsApp: +86 19926004078`,
   },
   "/contact": {
     title: "Contact Us | Vesla Glass Packaging",
-    description: "Get a free quote and custom sample kit. Reply within 24 hours. WhatsApp +86 18165681131, yitengglass3@gmail.com.",
+    description: "Get a free quote and custom sample kit. Reply within 24 hours. WhatsApp +86 19926004078, sale@veslapack.com.",
     h1: "Contact Vesla — Get a Free Quote",
     body: `Send your project details and we respond within 24 hours on business days with real answers from packaging engineers.
 
-Email: yitengglass3@gmail.com
-WhatsApp: +86 18165681131
-Phone: +86 18165681131
+Email: sale@veslapack.com
+WhatsApp: +86 19926004078
+Phone: +86 19926004078
 Address: 11th Floor, Building 5, Baiyun Financial Holdings Intelligent Connected Vehicle Industrial Park, No. 66-4 Zhihong Road, Jianggao Town, Baiyun District, Guangzhou, Guangdong, China
 
 Office Hours: Mon-Sat, 9:00-18:00 (GMT+8)`,
