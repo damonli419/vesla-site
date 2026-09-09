@@ -329,10 +329,15 @@ async function handleContact(request, env) {
       }),
     });
 
+    const rawResponse = await upstream.text();
+
     if (!upstream.ok) {
-      const providerDetail = (await upstream.text()).slice(0, 500);
-      console.error("[contact] MailChannels rejected delivery", { requestId, status: upstream.status, providerDetail });
-      return new Response(JSON.stringify({ error: "Email delivery failed", requestId }), {
+      console.error("[contact] MailChannels rejected delivery", { 
+        requestId, 
+        status: upstream.status, 
+        providerDetail: rawResponse.slice(0, 500) 
+      });
+      return new Response(JSON.stringify({ error: "Email delivery failed", requestId, detail: rawResponse.slice(0, 100) }), {
         status: 502,
         headers: { "content-type": "application/json", "access-control-allow-origin": "*" },
       });
