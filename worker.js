@@ -556,9 +556,11 @@ export default {
       if (isDynamic) {
         let manifest;
         try {
-          const manifestResponse = await env.ASSETS.fetch(
+          const manifestRequest = new Request(
             new URL("/content-manifest.json", url.origin).toString(),
+            request,
           );
+          const manifestResponse = await env.ASSETS.fetch(manifestRequest);
           if (!manifestResponse.ok) return notFound();
           manifest = await manifestResponse.json();
         } catch {
