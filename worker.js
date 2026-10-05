@@ -776,14 +776,19 @@ export default {
       let ctype = resp.headers.get("content-type") || "";
 
       // 5b. SPA Fallback — Pages ASSETS does NOT auto-serve index.html for
-      // client-side routes (e.g. /cosmetic-sets has no .html file). If a KNOWN
-      // SPA route 404s, rewrite to index.html so the router can render it.
+      // client-side routes (e.g. /cosmetic-sets has no .html file). Some
+      // deployed Assets responses return a redirect to `/` instead of a 404
+      // for these extensionless routes; treat that as a missing route asset and
+      // load the SPA shell so real browsers keep the requested pathname.
       const isSpaRoute = KNOWN_PATHS.has(path) && !STATIC_FILE_RE.test(path);
-       if (resp.status === 404 && (isSpaRoute || isDynamic)) {
-         const indexReq = new Request(new URL("/index.html", url.origin).toString(), request);
-         resp = await env.ASSETS.fetch(indexReq);
-         ctype = resp.headers.get("content-type") || "";
-       }
+      const assetLocation = resp.headers.get("Location") || "";
+      const isRootRedirect = /^\/$/.test(assetLocation);
+      const needsSpaFallback = resp.status === 404 || (resp.status >= 300 && resp.status < 400 && isRootRedirect);
+      if (needsSpaFallback && (isSpaRoute || isDynamic)) {
+        const indexReq = new Request(new URL("/index.html", url.origin).toString(), request);
+        resp = await env.ASSETS.fetch(indexReq);
+        ctype = resp.headers.get("content-type") || "";
+      }
 
        // 5c. Inject product-specific SEO into the SPA shell for every user agent.
        // The React app still hydrates normally, but social crawlers and no-JS
