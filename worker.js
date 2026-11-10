@@ -138,6 +138,54 @@ function injectParameterizedSeo(html, { title, description, canonical }) {
   return cleanHead.replace(/<\/head>/i, `${head}\n</head>`);
 }
 
+// Convert the plain-text SSR body into semantic HTML WITHOUT changing any
+// wording. Conventions used across STATIC_PAGES and dynamic bodies:
+//   - lines starting with "- " become <li> items (grouped into one <ul>)
+//   - lines starting with "N. " become <li> items (grouped into one <ol>)
+//   - bare https://www.veslapack.com URLs inside a line become <a> links
+//   - everything else becomes a <p>
+function structuredBodyHtml(rawBody = "") {
+  const lines = String(rawBody).split("\n").map((l) => l.trim());
+  const blocks = [];
+  let listBuffer = [];
+  let listOrdered = false;
+
+  const flushList = () => {
+    if (!listBuffer.length) return;
+    const tag = listOrdered ? "ol" : "ul";
+    blocks.push(
+      `<${tag}>${listBuffer.map((li) => `<li>${li}</li>`).join("")}</${tag}>`,
+    );
+    listBuffer = [];
+  };
+
+  const linkify = (text) =>
+    escapeHtml(text).replace(
+      /https:\/\/www\.veslapack\.com[^\s|)]*/g,
+      (u) => `<a href="${u}">${u}</a>`,
+    );
+
+  for (const line of lines) {
+    if (!line) {
+      flushList();
+      continue;
+    }
+    const ulMatch = line.match(/^-\s+(.*)$/);
+    const olMatch = line.match(/^\d+\.\s+(.*)$/);
+    if (ulMatch || olMatch) {
+      const ordered = Boolean(olMatch);
+      if (listBuffer.length && listOrdered !== ordered) flushList();
+      listOrdered = ordered;
+      listBuffer.push(linkify(ulMatch ? ulMatch[1] : olMatch[1]));
+      continue;
+    }
+    flushList();
+    blocks.push(`<p>${linkify(line)}</p>`);
+  }
+  flushList();
+  return blocks.join("\n");
+}
+
 function serveSSR({ title, description, h1, body, url, image, ogType = "website", noindex = false, jsonLd }) {
   const ldScript = jsonLd
     ? `<script type="application/ld+json">${JSON.stringify(jsonLd).replace(/</g, "\\u003c")}</script>`
@@ -147,6 +195,7 @@ function serveSSR({ title, description, h1, body, url, image, ogType = "website"
   const safeDescription = escapeHtml(description || "");
   const safeUrl = escapeHtml(canonical);
   const safeImage = image ? `<meta property="og:image" content="${escapeHtml(image)}">` : "";
+  const bodyHtml = structuredBodyHtml(body);
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -164,8 +213,10 @@ ${safeImage}
 ${ldScript}
 </head>
 <body>
+<main style="max-width:800px;margin:20px auto;font-family:sans-serif;line-height:1.6;font-size:16px">
 <h1>${escapeHtml(h1 || title)}</h1>
-<pre style="white-space:pre-wrap;font-family:sans-serif;max-width:800px;margin:20px auto;line-height:1.6;font-size:16px">${escapeHtml(body || "")}</pre>
+${bodyHtml}
+</main>
 <footer style="text-align:center;margin-top:40px;color:#888">
 <p>Vesla Co., Ltd. — Custom Cosmetic Glass Packaging Manufacturer | Guangzhou, China</p>
 <p>sale@veslapack.com | +86 19926004078 | ISO 9001 Certified</p>
