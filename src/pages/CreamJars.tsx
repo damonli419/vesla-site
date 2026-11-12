@@ -1,10 +1,12 @@
+import { lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
 import { products } from "../data/products";
 import { useUI } from "../i18n/UIContext";
 import { FAQSchema } from "../components/Schema";
 import { blogPosts } from "../data/content";
-import SampleCalculator from "../components/SampleCalculator";
+
+const SampleCalculator = lazy(() => import("../components/SampleCalculator"));
 
 const jarProducts = products.filter((p) => p.category === "jar");
 const relevantBlogs = blogPosts.filter(p => p.keywords.some(k => k.includes("jar") || k.includes("cream"))).slice(0, 3);
@@ -236,7 +238,9 @@ export default function CreamJars() {
           <h2 className="font-serif text-2xl text-ink mb-2">Estimate Your Sample Cost</h2>
           <p className="text-sm text-ink-soft">Use our 2026 calculator to get an instant EXW and DDP estimate.</p>
         </div>
-        <SampleCalculator />
+        <Suspense fallback={<div className="h-72 animate-pulse rounded-2xl bg-ink/5" />}>
+          <SampleCalculator />
+        </Suspense>
       </section>
 
       {/* FAQ */}
