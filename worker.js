@@ -839,19 +839,6 @@ export default {
         const indexReq = new Request(new URL("/index.html", url.origin).toString(), request);
         resp = await env.ASSETS.fetch(indexReq);
         ctype = resp.headers.get("content-type") || "";
-        // Defense against asset-layer cache poisoning: Cloudflare's asset
-        // layer normalizes /index.html to / and can serve a previously cached
-        // variant of the homepage that already contains the 5d hero-lcp
-        // injection. On any non-home SPA route that block is wrong (it
-        // overlays page content until React mounts), so strip it here.
-        if (path !== "/" && ctype.includes("text/html")) {
-          const poisoned = await resp.text();
-          if (poisoned.includes('id="hero-lcp"')) {
-            const clean = poisoned.replace(/<div id="hero-lcp"[\s\S]*?<\/div>\s*<\/div>/, "");
-            resp = new Response(clean.replace(/<div id="root"><div id="root">/, '<div id="root">')
-              .replace(/<\/div><\/div>(\s*)<script/, "</div>$1<script"), resp);
-          }
-        }
       }
 
        // 5c. Inject product-specific SEO into the SPA shell for every user agent.
@@ -885,31 +872,11 @@ export default {
           resp.headers.set("Cache-Control", "no-store, no-cache, must-revalidate");
         }
  
-        // 5d. Homepage LCP fast-paint for real browsers — serve the hero
-        // poster as a real <img> inside #root in the initial HTML so the LCP
-        // element does not wait for the JS bundle to parse and React to
-        // mount. The React hero (same poster, gradient overlay) paints on
-        // top when it mounts, so the visual transition is seamless. AI
-        // crawlers are unaffected: they already receive full SSR documents
-        // from STATIC_PAGES.
-        if (path === "/" && ctype.includes("text/html") && !isAICrawler(ua)) {
-          const shellHtml = await resp.text();
-          const lcpImg = '<div id="hero-lcp" aria-hidden="true" style="position:absolute;inset:0;overflow:hidden">' +
-            '<img src="/images/hero-poster.webp" alt="" width="1280" height="853" ' +
-            'style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover" ' +
-            'fetchpriority="high" decoding="async" /></div>';
-          const withLcp = shellHtml.replace(
-            /<div id="root"><\/div>/,
-            `<div id="root">${lcpImg}</div>`
-          );
-          resp = new Response(withLcp, resp);
-          ctype = "text/html; charset=utf-8";
-          // CRITICAL: never cache the injected variant. Cloudflare's asset
-          // layer normalizes /index.html to / internally, so a cached injected
-          // "/" response leaks back into every SPA fallback (ASSETS.fetch in
-          // step 5b) and poisons all SPA routes with the homepage hero.
-          resp.headers.set("Cache-Control", "no-store, no-cache, must-revalidate");
-        }
+        // 5d. Homepage LCP fast-paint — REMOVED. The hero poster <img> is now
+        // part of the static index.html shell itself (build-time), so every
+        // cached variant (including previously poisoned asset-layer entries)
+        // already carries the LCP image. React's HeroLcpCleanup removes the
+        // node on non-home routes; the homepage hero <video poster> covers it.
 
         // 6. Asset Existence Check
       if (STATIC_FILE_RE.test(path) && ctype.includes("text/html")) {

@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -47,6 +47,15 @@
     <title>Vesla — China Glass Packaging Manufacturer | Cosmetic Bottle Supplier</title>
   </head>
   <body>
+    <!-- LCP fast-paint: the hero poster ships in the static shell itself so
+         the LCP element renders before the JS bundle parses. React removes
+         this node on non-home routes (App.tsx) and lets the real hero
+         <video poster> take over on the homepage. -->
+    <div id="hero-lcp" aria-hidden="true" style="position:fixed;inset:0;z-index:0;overflow:hidden">
+      <img src="/images/hero-poster.webp" alt="" width="1280" height="853"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover"
+        fetchpriority="high" decoding="async" />
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <!-- Static, AI-crawler readable content (GPTBot/ClaudeBot/Perplexity fetch raw HTML) -->

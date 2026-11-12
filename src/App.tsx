@@ -1,5 +1,5 @@
-import { Suspense, lazy } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Suspense, lazy, useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -71,6 +71,25 @@ function AppRoutes() {
   );
 }
 
+// Must live inside <BrowserRouter> to access useLocation.
+function HeroLcpCleanup() {
+  const location = useLocation();
+  // The static shell ships a full-viewport hero-lcp image (LCP fast-paint).
+  // On the homepage the real hero section covers it seamlessly; on every
+  // other route it would overlay page content, so remove it immediately.
+  // This also neutralizes any cached homepage variant served for SPA
+  // fallback routes (Cloudflare asset-layer poisoning) — React cleans up
+  // whatever the cache returns.
+  useEffect(() => {
+    const el = document.getElementById("hero-lcp");
+    if (!el) return;
+    if (location.pathname !== "/") {
+      el.remove();
+    }
+  }, [location.pathname]);
+  return null;
+}
+
 export default function App() {
   return (
     <HelmetProvider>
@@ -78,6 +97,7 @@ export default function App() {
         <BrowserRouter>
           <ScrollToTop />
           <Analytics />
+          <HeroLcpCleanup />
           <div className="flex min-h-screen flex-col">
             <Navbar />
             <main className="flex-1">
