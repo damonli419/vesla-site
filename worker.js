@@ -83,7 +83,7 @@ function productSeoHead(product) {
       }
     : null;
   const schemas = [productSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
-  const jsonLd = schemas.map((schema) => `<script type="application/ld+json">${JSON.stringify(schema).replace(/</g, "\\u003c")}</script>`).join("\\n");
+  const jsonLd = schemas.map((schema) => `<script type="application/ld+json" data-vl="worker">${JSON.stringify(schema).replace(/</g, "\\u003c")}</script>`).join("\\n");
   const head = `
 <title>${escapeHtml(title)}</title>
 <meta name="description" content="${escapeHtml(description)}">
@@ -156,7 +156,7 @@ function injectBlogSeo(html, post) {
 <meta property="og:title" content="${escapeHtml(title)}">
 <meta property="og:description" content="${escapeHtml(description)}">
 <meta property="og:url" content="${escapeHtml(canonical)}">
-<script type="application/ld+json">${JSON.stringify({
+<script type="application/ld+json" data-vl="worker">${JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": post.title,
@@ -218,7 +218,7 @@ function structuredBodyHtml(rawBody = "") {
 
 function serveSSR({ title, description, h1, body, url, image, ogType = "website", noindex = false, jsonLd }) {
   const ldScript = jsonLd
-    ? `<script type="application/ld+json">${JSON.stringify(jsonLd).replace(/</g, "\\u003c")}</script>`
+    ? `<script type="application/ld+json" data-vl="worker">${JSON.stringify(jsonLd).replace(/</g, "\\u003c")}</script>`
     : "";
   const canonical = url || "https://www.veslapack.com/";
   const safeTitle = escapeHtml(title || "Vesla");

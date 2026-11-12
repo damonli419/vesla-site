@@ -6,24 +6,15 @@ import type { Product } from "../data/products";
 /**
  * The Worker injects JSON-LD (Product/BreadcrumbList/FAQPage/BlogPosting)
  * into the initial HTML shell so social crawlers and no-JS consumers see
- * structured data before hydration. Once React mounts, the Helmet-managed
- * schemas below replace them — the worker-injected copies would otherwise
- * remain in <head>, producing duplicate JSON-LD in the final DOM.
+ * structured data before hydration. Those scripts carry data-vl="worker".
+ * Once React mounts and the Helmet-managed schemas below take over, the
+ * worker-injected copies are removed to avoid duplicate JSON-LD.
  */
-function useDedupeJsonLd(types: string[]) {
+function useDedupeJsonLd() {
   useEffect(() => {
-    const stale = [...document.querySelectorAll('script[type="application/ld+json"]')].filter((el) => {
-      // Helmet-managed scripts render with data-rh="true"; worker-injected ones don't.
-      if (el.hasAttribute("data-rh")) return false;
-      try {
-        const parsed = JSON.parse(el.textContent || "");
-        return types.includes(parsed["@type"]);
-      } catch {
-        return false;
-      }
-    });
+    const stale = document.querySelectorAll('script[type="application/ld+json"][data-vl="worker"]');
     stale.forEach((el) => el.remove());
-  }, [types.join("|")]);
+  }, []);
 }
 
 export function OrganizationSchema() {
@@ -107,7 +98,7 @@ export function LocalBusinessSchema() {
 }
 
 export function ProductSchema({ product }: { product: Product }) {
-  useDedupeJsonLd(["Product", "BreadcrumbList", "FAQPage"]);
+  useDedupeJsonLd();
   const mainImage = product.image.startsWith("http") ? product.image : `${siteConfig.url}${product.image}`;
   const galleryImages = product.gallery?.map(img => img.startsWith("http") ? img : `${siteConfig.url}${img}`) || [];
   
@@ -274,7 +265,7 @@ export function BreadcrumbSchema({ items }: { items: { name: string; url: string
 }
 
 export function BlogPostSchema({ title, excerpt, date, slug }: { title: string; excerpt: string; date: string; slug: string }) {
-  useDedupeJsonLd(["BlogPosting"]);
+  useDedupeJsonLd();
   const data = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
