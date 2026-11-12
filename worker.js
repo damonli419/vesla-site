@@ -144,6 +144,36 @@ function injectParameterizedSeo(html, { title, description, canonical }) {
 //   - lines starting with "N. " become <li> items (grouped into one <ol>)
 //   - bare https://www.veslapack.com URLs inside a line become <a> links
 //   - everything else becomes a <p>
+function injectBlogSeo(html, post) {
+  const title = `${post.title} | Vesla Blog`;
+  const description = String(post.body || "").replace(/\s+/g, " ").trim().substring(0, 155);
+  const canonical = `https://www.veslapack.com/blog/${post.slug}`;
+  const head = `
+<title>${escapeHtml(title)}</title>
+<meta name="description" content="${escapeHtml(description)}">
+<link rel="canonical" href="${escapeHtml(canonical)}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="${escapeHtml(title)}">
+<meta property="og:description" content="${escapeHtml(description)}">
+<meta property="og:url" content="${escapeHtml(canonical)}">
+<script type="application/ld+json">${JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.title,
+  "description": description,
+  "url": canonical,
+  "author": { "@type": "Organization", "name": "Vesla" }
+})}</script>`;
+  const cleanHead = html
+    .replace(/<title>[\s\S]*?<\/title>/i, "")
+    .replace(/<meta\s+name=["']description["'][^>]*>/gi, "")
+    .replace(/<link\s+rel=["']canonical["'][^>]*>/gi, "")
+    .replace(/<meta\s+property=["']og:[^"']+["'][^>]*>/gi, "")
+    .replace(/<meta\s+name=["']twitter:[^"']+["'][^>]*>/gi, "");
+  return cleanHead.replace(/<\/head>/i, `${head}\n</head>`);
+}
+
+
 function structuredBodyHtml(rawBody = "") {
   const lines = String(rawBody).split("\n").map((l) => l.trim());
   const blocks = [];
@@ -862,6 +892,16 @@ export default {
          ctype = resp.headers.get("content-type") || "text/html; charset=utf-8";
           resp.headers.set("Cache-Control", "no-store, no-cache, must-revalidate");
         }
+       // 5c-b. Blog SEO injection for non-AI user agents - same rationale as
+       // 5c: social crawlers and no-JS consumers of /blog/* got the homepage
+       // shell title/canonical because the React title lands only after JS.
+       if (isDynamic && path.startsWith("/blog/") && dynamicEntry && ctype.includes("text/html")) {
+         const shellHtml = await resp.text();
+         const blogHtml = injectBlogSeo(shellHtml, dynamicEntry);
+         resp = new Response(blogHtml, resp);
+         ctype = resp.headers.get("content-type") || "text/html; charset=utf-8";
+         resp.headers.set("Cache-Control", "no-store, no-cache, must-revalidate");
+       }
 
         // Parameterized catalog/contact pages remain useful for users, but are
         // not standalone indexable documents. Keep links crawlable while
