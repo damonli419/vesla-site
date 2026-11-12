@@ -891,6 +891,11 @@ export default {
           );
           resp = new Response(withLcp, resp);
           ctype = "text/html; charset=utf-8";
+          // CRITICAL: never cache the injected variant. Cloudflare's asset
+          // layer normalizes /index.html to / internally, so a cached injected
+          // "/" response leaks back into every SPA fallback (ASSETS.fetch in
+          // step 5b) and poisons all SPA routes with the homepage hero.
+          resp.headers.set("Cache-Control", "no-store, no-cache, must-revalidate");
         }
 
         // 6. Asset Existence Check
