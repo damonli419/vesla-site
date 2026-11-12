@@ -10,7 +10,7 @@ interface SeoProps {
 
 export default function Seo({ title, description, path = "/", keywords, preloadImage }: SeoProps) {
   const site = "Vesla";
-  const fullTitle = title === site || title.endsWith(`| ${site}`) || title.endsWith(`· ${site}`)
+  const fullTitle = title === site || title.endsWith(`| ${site}`) || title.endsWith(`· ${site}`) || title.endsWith(`— ${site}`)
     ? title
     : `${title} · ${site}`;
   const canonicalUrl = `https://www.veslapack.com${path}`;
