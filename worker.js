@@ -852,7 +852,7 @@ export default {
       // slash-less path so link equity is not lost on a hard 404.
       if (path.length > 1 && path.endsWith("/")) {
         const trimmed = path.replace(/\/+$/, "");
-        if (KNOWN_PATHS.has(trimmed) || isDynamic) {
+        if (KNOWN_PATHS.has(trimmed) || isDynamic || /^\/(products|blog)\/[^/]+$/.test(trimmed)) {
           const target = new URL(trimmed + url.search, url.origin);
           target.protocol = "https:";
           target.hostname = "www.veslapack.com";
