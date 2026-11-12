@@ -826,19 +826,30 @@ export default {
       let resp = await env.ASSETS.fetch(request);
       let ctype = resp.headers.get("content-type") || "";
 
-      // 5b. SPA Fallback — Pages ASSETS does NOT auto-serve index.html for
-      // client-side routes (e.g. /cosmetic-sets has no .html file). Some
-      // deployed Assets responses return a redirect to `/` instead of a 404
-      // for these extensionless routes; treat that as a missing route asset and
-      // load the SPA shell so real browsers keep the requested pathname.
+      // 5b. SPA Fallback — the assets config now uses
+      // not_found_handling: "single-page-application", so ASSETS serves the
+      // index.html shell (200) for every extensionless route itself. This
+      // branch only fires if that behavior regresses (e.g. a 404 or a
+      // redirect to "/" leaks through); refetching /index.html restores the
+      // SPA shell so real browsers keep the requested pathname.
       const isSpaRoute = KNOWN_PATHS.has(path) && !STATIC_FILE_RE.test(path);
       const assetLocation = resp.headers.get("Location") || "";
       const isRootRedirect = /^\/$/.test(assetLocation);
       const needsSpaFallback = resp.status === 404 || (resp.status >= 300 && resp.status < 400 && isRootRedirect);
       if (needsSpaFallback && (isSpaRoute || isDynamic)) {
-        const indexReq = new Request(new URL("/index.html", url.origin).toString(), request);
+        const indexReq = new Request(new URL("/index.html", url.origin).toString(), { method: "GET", redirect: "manual" });
         resp = await env.ASSETS.fetch(indexReq);
         ctype = resp.headers.get("content-type") || "";
+        // Last-resort: if /index.html itself comes back as a redirect or
+        // error from the asset layer, fall back to the "/" document so the
+        // browser still gets a working HTML shell instead of a 3xx leak.
+        if (resp.status >= 300 || resp.status === 404) {
+          const homeReq = new Request(new URL("/", url.origin).toString(), { method: "GET", redirect: "manual" });
+          resp = await env.ASSETS.fetch(homeReq);
+          ctype = resp.headers.get("content-type") || "";
+          resp = new Response(resp.body, resp);
+          resp.headers.set("Cache-Control", "no-store, no-cache, must-revalidate");
+        }
       }
 
        // 5c. Inject product-specific SEO into the SPA shell for every user agent.
