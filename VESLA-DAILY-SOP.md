@@ -33,6 +33,6 @@
 ---
 
 ## 🛠️ 专家级工具快捷包
-- **IndexNow 接口**: 已集成于 `scripts/push-index-now.mjs`
+- **IndexNow 接口**: `pnpm run indexnow`(即 `scripts/push-index-now.mjs`);无参数时提交默认批次,也可 `pnpm run indexnow /blog/xxx /products/yyy` 提交指定路径。Google 不参与 IndexNow,GSC 需逐条请求(每天约 10 条,2026-11-15 前暂停)。
 - **Schema 验证器**: [Google Rich Results Test](https://search.google.com/test/rich-results)
 - **UTM 规范**: `utm_source=email-sig | whatsapp | reddit | linkedin`
