@@ -872,6 +872,27 @@ export default {
           resp.headers.set("Cache-Control", "no-store, no-cache, must-revalidate");
         }
  
+        // 5d. Homepage LCP fast-paint for real browsers — serve the hero
+        // poster as a real <img> inside #root in the initial HTML so the LCP
+        // element does not wait for the JS bundle to parse and React to
+        // mount. The React hero (same poster, gradient overlay) paints on
+        // top when it mounts, so the visual transition is seamless. AI
+        // crawlers are unaffected: they already receive full SSR documents
+        // from STATIC_PAGES.
+        if (path === "/" && ctype.includes("text/html") && !isAICrawler(ua)) {
+          const shellHtml = await resp.text();
+          const lcpImg = '<div id="hero-lcp" aria-hidden="true" style="position:absolute;inset:0;overflow:hidden">' +
+            '<img src="/images/hero-poster.webp" alt="" width="1280" height="853" ' +
+            'style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover" ' +
+            'fetchpriority="high" decoding="async" /></div>';
+          const withLcp = shellHtml.replace(
+            /<div id="root"><\/div>/,
+            `<div id="root">${lcpImg}</div>`
+          );
+          resp = new Response(withLcp, resp);
+          ctype = "text/html; charset=utf-8";
+        }
+
         // 6. Asset Existence Check
       if (STATIC_FILE_RE.test(path) && ctype.includes("text/html")) {
         return notFound();
