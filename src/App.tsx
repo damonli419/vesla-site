@@ -74,18 +74,29 @@ function AppRoutes() {
 // Must live inside <BrowserRouter> to access useLocation.
 function HeroLcpCleanup() {
   const location = useLocation();
-  // The static shell ships a full-viewport hero-lcp image (LCP fast-paint).
-  // On the homepage the real hero section covers it seamlessly; on every
-  // other route it would overlay page content, so remove it immediately.
-  // This also neutralizes any cached homepage variant served for SPA
-  // fallback routes (Cloudflare asset-layer poisoning) — React cleans up
-  // whatever the cache returns.
+  // The static shell ships a first-viewport hero-lcp image (LCP fast-paint).
+  // On the homepage the real hero section covers it; once React has mounted
+  // that hero it takes over completely, so the paint image can go. On every
+  // other route it would sit behind page content, so remove it immediately.
   useEffect(() => {
     const el = document.getElementById("hero-lcp");
     if (!el) return;
-    if (location.pathname !== "/") {
-      el.remove();
+    // Homepage: wait for the real hero <video>/<section> to exist, then drop
+    // the paint image (avoids the image peeking below the 92vh hero fold).
+    if (location.pathname === "/") {
+      let tries = 0;
+      const t = setInterval(() => {
+        tries += 1;
+        const heroMounted = document.querySelector("section video, section[class*='min-h']");
+        const cur = document.getElementById("hero-lcp");
+        if ((heroMounted && cur) || tries > 40) {
+          if (cur) cur.remove();
+          clearInterval(t);
+        }
+      }, 250);
+      return () => clearInterval(t);
     }
+    el.remove();
   }, [location.pathname]);
   return null;
 }
