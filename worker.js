@@ -847,6 +847,19 @@ export default {
         }
       }
 
+      // 3c. Trailing-slash normalization - external backlinks sometimes
+      // carry a trailing slash; canonical form is slash-less. 301 to the
+      // slash-less path so link equity is not lost on a hard 404.
+      if (path.length > 1 && path.endsWith("/")) {
+        const trimmed = path.replace(/\/+$/, "");
+        if (KNOWN_PATHS.has(trimmed) || isDynamic) {
+          const target = new URL(trimmed + url.search, url.origin);
+          target.protocol = "https:";
+          target.hostname = "www.veslapack.com";
+          return Response.redirect(target.toString(), 301);
+        }
+      }
+
       // 4. SPA Validation Guard
       if (!KNOWN_PATHS.has(path) && !STATIC_FILE_RE.test(path) && !isDynamic) {
         return notFound();
