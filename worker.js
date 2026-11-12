@@ -839,6 +839,19 @@ export default {
         const indexReq = new Request(new URL("/index.html", url.origin).toString(), request);
         resp = await env.ASSETS.fetch(indexReq);
         ctype = resp.headers.get("content-type") || "";
+        // Defense against asset-layer cache poisoning: Cloudflare's asset
+        // layer normalizes /index.html to / and can serve a previously cached
+        // variant of the homepage that already contains the 5d hero-lcp
+        // injection. On any non-home SPA route that block is wrong (it
+        // overlays page content until React mounts), so strip it here.
+        if (path !== "/" && ctype.includes("text/html")) {
+          const poisoned = await resp.text();
+          if (poisoned.includes('id="hero-lcp"')) {
+            const clean = poisoned.replace(/<div id="hero-lcp"[\s\S]*?<\/div>\s*<\/div>/, "");
+            resp = new Response(clean.replace(/<div id="root"><div id="root">/, '<div id="root">')
+              .replace(/<\/div><\/div>(\s*)<script/, "</div>$1<script"), resp);
+          }
+        }
       }
 
        // 5c. Inject product-specific SEO into the SPA shell for every user agent.
