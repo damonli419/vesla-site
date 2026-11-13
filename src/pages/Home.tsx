@@ -212,7 +212,9 @@ export default function Home() {
           preload="none"
           fetchPriority="high"
           poster="/images/hero-poster.webp"
-        />
+        >
+          <track kind="captions" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/50 to-ink/70" />
 
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
@@ -283,7 +285,7 @@ export default function Home() {
                 type="button"
                 onClick={() => setPanoOpen(true)}
                 className="group relative block h-[420px] w-full cursor-pointer sm:h-[520px]"
-                aria-label="Enter 360 virtual factory tour"
+                aria-label="Enter 360 virtual factory tour — Walk Through Our Factory"
               >
                 <img
                   src="/images/hero-poster.webp"

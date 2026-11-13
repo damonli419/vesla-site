@@ -27,13 +27,13 @@ export default function Footer() {
               <LinkedinIcon />
             </a>
           </div>
-          <p className="mt-6 text-[10px] uppercase tracking-widest text-gold/80">
+          <p className="mt-6 text-[10px] uppercase tracking-widest text-gold-light/90">
             ISO 9001 · SGS Audited
           </p>
         </div>
 
         <div>
-          <h4 className="mb-4 text-sm font-semibold uppercase tracking-widest text-white">{t("footer.explore")}</h4>
+          <h3 className="mb-4 text-sm font-semibold uppercase tracking-widest text-white">{t("footer.explore")}</h3>
           <ul className="space-y-3 text-sm">
             <li><Link to="/serum-bottles" className="hover:text-gold">Serum Bottles</Link></li>
             <li><Link to="/cream-jars" className="hover:text-gold">Cream Jars</Link></li>
@@ -46,7 +46,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="mb-4 text-sm font-semibold uppercase tracking-widest text-white">Best Sellers</h4>
+          <h3 className="mb-4 text-sm font-semibold uppercase tracking-widest text-white">Best Sellers</h3>
           <ul className="space-y-3 text-sm">
             <li><Link to="/products/heart-shaped-glass-dropper-bottle-manufacturer" className="hover:text-gold">Heart Shaped Bottles</Link></li>
             <li><Link to="/products/custom-matte-black-glass-serum-bottle-manufacturer" className="hover:text-gold">Matte Black Droppers</Link></li>
@@ -57,7 +57,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="mb-4 text-sm font-semibold uppercase tracking-widest text-white">{t("footer.contact")}</h4>
+          <h3 className="mb-4 text-sm font-semibold uppercase tracking-widest text-white">{t("footer.contact")}</h3>
           <ul className="space-y-3 text-sm text-cream/70">
             <li>
               <a href={`mailto:${siteConfig.email}`} className="hover:text-gold">{siteConfig.email}</a>

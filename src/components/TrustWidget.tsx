@@ -25,7 +25,7 @@ export default function TrustWidget() {
               <div key={p.title} className="flex gap-4">
                 <span className="text-gold text-lg mt-0.5">{p.icon}</span>
                 <div>
-                  <h4 className="font-bold text-ink text-sm uppercase tracking-wider">{p.title}</h4>
+                  <h3 className="font-bold text-ink text-sm uppercase tracking-wider">{p.title}</h3>
                   <p className="mt-1 text-xs text-ink-soft leading-relaxed">{p.desc}</p>
                 </div>
               </div>
