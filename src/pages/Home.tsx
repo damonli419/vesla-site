@@ -310,7 +310,7 @@ export default function Home() {
               </button>
             )}
           </div>
-          <p className="mt-6 text-center text-xs text-white/40">
+          <p className="mt-6 text-center text-xs text-white/60">
             Can't wait?{" "}
             <Link to="/contact" className="text-gold-light underline hover:text-gold">
               Book a live video factory tour
@@ -470,7 +470,7 @@ export default function Home() {
         <div className="grid gap-6 md:grid-cols-5">
           {processSteps.map((s) => (
             <div key={s.n} className="relative rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gold/15">
-              <div className="font-serif text-3xl text-gold/70">{s.n}</div>
+              <div className="font-serif text-3xl text-gold-light">{s.n}</div>
               <h3 className="mt-3 font-serif text-lg text-ink">{s.title}</h3>
               <p className="mt-2 text-xs leading-relaxed text-ink-soft">{s.desc}</p>
               {s.n !== "05" && (
@@ -514,14 +514,14 @@ export default function Home() {
       <section className="bg-ink py-20 text-white overflow-hidden border-y border-gold/10">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-gold mb-4">Technical Spotlights</p>
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-gold-light mb-4">Technical Spotlights</p>
             <h2 className="font-serif text-3xl sm:text-4xl">Engineered for <span className="text-gold-light italic">High-Performance</span> Beauty.</h2>
           </div>
           
           <div className="grid gap-6 sm:grid-cols-3">
             {/* Spotlight 1: Heart (Fixing Merchant Errors) */}
             <Link to="/products/heart-shaped-glass-dropper-bottle-manufacturer" className="group rounded-3xl bg-white/5 p-8 ring-1 ring-white/10 hover:ring-gold/50 transition">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-gold mb-3">Best Seller</p>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-gold-light mb-3">Best Seller</p>
               <h3 className="font-serif text-xl mb-4">Heart-Shaped Dropper</h3>
               <p className="text-sm text-cream/60 leading-relaxed">Sculptural body with 4.5mm wall thickness. ISO 9001 verified data available.</p>
               <p className="mt-6 text-xs font-semibold text-gold-light group-hover:underline">View Spec Sheet →</p>
@@ -529,7 +529,7 @@ export default function Home() {
 
             {/* Spotlight 2: Flat Square (Breaking Duplicate Issue) */}
             <Link to="/products/custom-flat-square-glass-dropper-bottle-supplier" className="group rounded-3xl bg-white/5 p-8 ring-1 ring-white/10 hover:ring-gold/50 transition">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-gold mb-3">New Arrival</p>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-gold-light mb-3">New Arrival</p>
               <h3 className="font-serif text-xl mb-4">Flat Square Dropper</h3>
               <p className="text-sm text-cream/60 leading-relaxed">Modern 90° architectural design. Perfect for labels and minimalist branding.</p>
               <p className="mt-6 text-xs font-semibold text-gold-light group-hover:underline">Explore Engineering →</p>
@@ -537,7 +537,7 @@ export default function Home() {
 
              {/* Spotlight 3: 100ml Square (Forcing First Crawl) */}
             <Link to="/products/square-glass-serum-dropper-bottle-manufacturer-100ml" className="group rounded-3xl bg-white/5 p-8 ring-1 ring-white/10 hover:ring-gold/50 transition">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-gold mb-3">Jumbo Series</p>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-gold-light mb-3">Jumbo Series</p>
               <h3 className="font-serif text-xl mb-4">100ml Square Glass</h3>
               <p className="text-sm text-cream/60 leading-relaxed">Heavy-base reinforced glass for body serums and professional salon lines.</p>
               <p className="mt-6 text-xs font-semibold text-gold-light group-hover:underline">View Wholesale MOQ →</p>
@@ -546,7 +546,7 @@ export default function Home() {
             {/* NEW: Blog Authority Pump (Forcing Indexing) */}
             <Link to="/blog/indie-beauty-brand-budgeting-2026-moq-mold-guide" className="group col-span-full rounded-3xl bg-gold/10 p-8 ring-1 ring-gold/30 hover:bg-gold/20 transition flex items-center justify-between">
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-gold mb-2">Latest Insights</p>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-gold-light mb-2">Latest Insights</p>
                 <h3 className="font-serif text-2xl text-white">Indie Beauty Brand Budgeting 2026: The Truth About MOQs and Molds</h3>
                 <p className="text-sm text-cream/60 mt-2">A technical deep-dive into startup costs, mold fees, and the 5,000-unit fast-track.</p>
               </div>
@@ -563,7 +563,7 @@ export default function Home() {
 
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
         <div className="mb-12 text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-gold mb-3">Transparency Tool</p>
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-gold-dark mb-3">Transparency Tool</p>
           <h2 className="font-serif text-3xl sm:text-4xl text-ink">Estimate Your Landing Cost</h2>
         </div>
         <Suspense fallback={<div className="h-96 w-full animate-pulse rounded-3xl bg-cream-dark/20" />}>

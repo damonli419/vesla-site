@@ -52,7 +52,7 @@ export default function SerumBottles() {
               Get a Free Quote
             </Link>
           </div>
-          <p className="mt-5 text-xs font-medium uppercase tracking-wide text-gold/80">
+          <p className="mt-5 text-xs font-medium uppercase tracking-wide text-gold-dark">
             24h Quote Reply · MOQ 5,000 pcs · DDP to US &amp; EU
           </p>
         </div>
