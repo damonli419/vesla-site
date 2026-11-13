@@ -3,7 +3,7 @@ import Seo from "../components/Seo";
 import { products } from "../data/products";
 import { useUI } from "../i18n/UIContext";
 import { FAQSchema } from "../components/Schema";
-import { blogPosts } from "../data/content";
+import { blogMeta as blogPosts } from "../data/blogMeta";
 
 const serumProducts = products.filter((p) => p.category === "serum");
 const relevantBlogs = blogPosts.filter(p => p.keywords.some(k => k.includes("serum") || k.includes("dropper") || k.includes("essential oil"))).slice(0, 3);

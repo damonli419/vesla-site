@@ -5,7 +5,7 @@ import Seo from "../components/Seo";
 import { OrganizationSchema, WebsiteSchema, FAQSchema, LocalBusinessSchema } from "../components/Schema";
 import PdfGuideBanner from "../components/PdfGuideBanner";
 import TrustWidget from "../components/TrustWidget";
-import { faqItems } from "../data/content";
+import { faqItems } from "../data/faq";
 import { useUI } from "../i18n/UIContext";
 
 // Lazy load heavy interactive components

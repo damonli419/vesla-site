@@ -1,10 +1,10 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Seo from "../components/Seo";
 import { FAQSchema } from "../components/Schema";
 import { trackEvent } from "../components/Analytics";
 import { siteConfig, whatsappLink } from "../config/site";
-import { faqItems } from "../data/content";
+import { faqItems } from "../data/faq";
 import { useUI } from "../i18n/UIContext";
 
 const inputCls =
