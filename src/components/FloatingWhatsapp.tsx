@@ -1,9 +1,10 @@
 import { useLocation } from "react-router-dom";
 import { whatsappLink } from "../config/site";
+import { trackEvent } from "./Analytics";
 
 export default function FloatingWhatsapp() {
   const { pathname } = useLocation();
-  
+
   const getContextMessage = () => {
     if (pathname === "/") return "Hi Vesla, I'm visiting your website and would like to learn more about your glass packaging services.";
     if (pathname.includes("/products/")) return `Hi Vesla, I'm interested in the product at ${window.location.origin}${pathname}. Could you please share a quote?`;
@@ -17,6 +18,7 @@ export default function FloatingWhatsapp() {
       href={whatsappLink(getContextMessage())}
       target="_blank"
       rel="noreferrer"
+      onClick={() => trackEvent("generate_lead", { method: "whatsapp_floating", page: pathname })}
       className="fixed bottom-6 left-6 z-50 flex items-center gap-3 rounded-full bg-[#128C4A] px-5 py-3 text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl"
       aria-label="Inquiry on WhatsApp — Chat on WhatsApp"
     >

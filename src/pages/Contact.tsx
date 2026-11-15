@@ -104,6 +104,7 @@ export default function Contact() {
         body: JSON.stringify({ ...form, locale }),
       });
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      trackEvent("generate_lead", { method: "contact_form", product: form.product });
       setState("sent");
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (err) {
@@ -154,7 +155,7 @@ export default function Contact() {
                 <button onClick={() => setState("idle")} className="rounded-full border border-gold px-6 py-3 text-sm font-semibold text-gold-dark transition hover:bg-gold hover:text-white">
                   {fc.errRetry}
                 </button>
-                <a href={`mailto:${siteConfig.email}?subject=Inquiry&body=${encodeURIComponent(form.message)}`} className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink/80">
+                <a onClick={() => trackEvent("generate_lead", { method: "email_click" })} href={`mailto:${siteConfig.email}?subject=Inquiry&body=${encodeURIComponent(form.message)}`} className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink/80">
                   {fc.errMail}
                 </a>
               </div>
@@ -266,14 +267,14 @@ export default function Contact() {
           <div className="rounded-3xl bg-ink p-8 text-cream">
             <h3 className="font-serif text-2xl text-white">{fc.direct}</h3>
             <div className="mt-6 space-y-5 text-sm">
-              <a href={`mailto:${siteConfig.email}`} className="group flex items-start gap-4">
+              <a onClick={() => trackEvent("generate_lead", { method: "email_click" })} href={`mailto:${siteConfig.email}`} className="group flex items-start gap-4">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold/20 text-gold-light">✉</span>
                 <span>
                   <span className="block text-xs uppercase tracking-widest text-cream/50">Email</span>
                   <span className="font-medium group-hover:text-gold-light">{siteConfig.email}</span>
                 </span>
               </a>
-              <a href={whatsappLink()} target="_blank" rel="noreferrer" className="group flex items-start gap-4">
+              <a onClick={() => trackEvent("generate_lead", { method: "whatsapp_click" })} href={whatsappLink()} target="_blank" rel="noreferrer" className="group flex items-start gap-4">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold/20 text-gold-light">✆</span>
                 <span>
                   <span className="block text-xs uppercase tracking-widest text-cream/50">WhatsApp</span>

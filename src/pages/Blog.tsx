@@ -17,6 +17,40 @@ const categoryLabels: Record<BlogPost["category"], string> = {
   trend: "Trends",
 };
 
+// Contextual keyword → internal page mapping. First occurrence per paragraph is
+// linked (SEO internal-link matrix: blog bodies → money/category/product pages).
+const inlineLinks: { pattern: RegExp; to: string; label: string }[] = [
+  { pattern: /dropper bottles?/i, to: "/serum-bottles", label: "dropper bottles" },
+  { pattern: /serum bottles?/i, to: "/serum-bottles", label: "serum bottles" },
+  { pattern: /cream jars?/i, to: "/cream-jars", label: "cream jars" },
+  { pattern: /glass vials?/i, to: "/glass-vials", label: "glass vials" },
+  { pattern: /cosmetic packaging sets?|packaging sets?/i, to: "/cosmetic-sets", label: "cosmetic packaging sets" },
+  { pattern: /low (?:minimum order|MOQ)/i, to: "/low-moq-cosmetic-packaging", label: "low MOQ cosmetic packaging" },
+  { pattern: /custom (?:glass )?(?:packaging|bottles?)/i, to: "/custom-cosmetic-packaging-manufacturer", label: "custom cosmetic packaging" },
+  { pattern: /amber glass/i, to: "/products/amber-serum-vial-dropper-bottle-supplier", label: "amber glass serum vials" },
+];
+
+function AutoLinkParagraph({ text }: { text: string }) {
+  // Find the earliest-matching keyword and link just that occurrence.
+  let best: { index: number; length: number; to: string; label: string } | null = null;
+  for (const rule of inlineLinks) {
+    const m = text.match(rule.pattern);
+    if (m && m.index !== undefined && (best === null || m.index < best.index)) {
+      best = { index: m.index, length: m[0].length, to: rule.to, label: m[0] };
+    }
+  }
+  if (!best) return <>{text}</>;
+  return (
+    <>
+      {text.slice(0, best.index)}
+      <Link to={best.to} className="font-medium text-gold-dark underline decoration-gold/40 underline-offset-2 hover:text-gold">
+        {best.label}
+      </Link>
+      {text.slice(best.index + best.length)}
+    </>
+  );
+}
+
 const copy = {
   eyebrow: "Resources",
   title: "Insights from the Glass Line",
@@ -114,7 +148,7 @@ export function BlogPost() {
       <div className="prose mt-10 text-[15px] leading-relaxed text-ink-soft">
         <p className="text-lg text-ink">{post.excerpt.en}</p>
         {(post.body.en || "").split("\n\n").filter(Boolean).map((para, i) => (
-          <p key={i} className="mt-5">{para.trim()}</p>
+          <p key={i} className="mt-5"><AutoLinkParagraph text={para.trim()} /></p>
         ))}
         <div className="mt-12 rounded-3xl bg-cream-dark/40 p-8 ring-1 ring-gold/15">
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">

@@ -2,10 +2,12 @@ import { useEffect, useRef, useState, lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 import LazyImage from "../components/LazyImage";
 import Seo from "../components/Seo";
+import { trackEvent } from "../components/Analytics";
 import { OrganizationSchema, WebsiteSchema, FAQSchema, LocalBusinessSchema } from "../components/Schema";
 import PdfGuideBanner from "../components/PdfGuideBanner";
 import TrustWidget from "../components/TrustWidget";
 import { faqItems } from "../data/faq";
+import { whatsappLink } from "../config/site";
 import { useUI } from "../i18n/UIContext";
 
 // Lazy load heavy interactive components
@@ -253,6 +255,36 @@ export default function Home() {
                 <div className="mt-1 text-xs uppercase tracking-widest text-cream/60">{s.label}</div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── B2B Inquiry Strip ─────────────────────────── */}
+      <section className="border-b border-gold/15 bg-cream-dark/40">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 py-8 text-center lg:flex-row lg:justify-between lg:px-8 lg:text-left">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-dark">For Beauty Brands &amp; Importers</p>
+            <p className="mt-2 text-base text-ink sm:text-lg">
+              <span className="font-semibold">MOQ 5,000 pcs</span> · <span className="font-semibold">Free samples in 5–7 days</span> · DDP shipping to EU &amp; USA
+            </p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Link
+              to="/contact"
+              className="rounded-full bg-gold px-8 py-3.5 text-sm font-semibold tracking-wide text-white shadow-md transition hover:bg-gold-dark"
+              onClick={() => trackEvent("cta_inquiry_strip", { placement: "home_top" })}
+            >
+              Request a Quote
+            </Link>
+            <a
+              href={whatsappLink("Hi Vesla, I'd like to discuss a custom glass packaging project. Could you share your catalog and MOQ?")}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-ink/20 bg-white px-8 py-3.5 text-sm font-semibold text-ink transition hover:border-gold hover:text-gold-dark"
+              onClick={() => trackEvent("generate_lead", { method: "whatsapp_strip", page: "home" })}
+            >
+              WhatsApp Us Directly
+            </a>
           </div>
         </div>
       </section>
