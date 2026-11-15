@@ -2,3 +2,17 @@ node_modules
 dist
 .DS_Store
 *.log
+diag*.py
+probe_*.cjs
+worker_dump.txt
+worker_*.js.tmp
+poll_*.py
+verify_*.py
+check_*.py
+read_*.py
+split_*.py
+strip_*.py
+find_*.py
+crawl_*.py
+ssr_*.py
+fix_*.py
