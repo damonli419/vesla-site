@@ -118,6 +118,27 @@ function injectNoindex(html) {
   return html.replace(/<\/head>/i, '<meta name="robots" content="noindex,follow">\n</head>');
 }
 
+function injectStaticSeo(html, page, canonical) {
+  const cleanHead = html
+    .replace(/<title>[\s\S]*?<\/title>/i, "")
+    .replace(/<meta\s+name=["']description["'][^>]*>/gi, "")
+    .replace(/<link\s+rel=["']canonical["'][^>]*>/gi, "")
+    .replace(/<meta\s+property=["']og:[^"']+["'][^>]*>/gi, "")
+    .replace(/<meta\s+name=["']twitter:[^"']+["'][^>]*>/gi, "");
+  const head = `
+<title>${escapeHtml(page.title)}</title>
+<meta name="description" content="${escapeHtml(page.description)}">
+<link rel="canonical" href="${escapeHtml(canonical)}">
+<meta property="og:title" content="${escapeHtml(page.title)}">
+<meta property="og:description" content="${escapeHtml(page.description)}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="${escapeHtml(canonical)}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${escapeHtml(page.title)}">
+<meta name="twitter:description" content="${escapeHtml(page.description)}">`;
+  return cleanHead.replace(/<\/head>/i, `${head}\n</head>`);
+}
+
 function injectParameterizedSeo(html, { title, description, canonical }) {
   const cleanHead = html
     .replace(/<title>[\s\S]*?<\/title>/i, "")
@@ -913,6 +934,17 @@ export default {
          const shellHtml = await resp.text();
          const blogHtml = injectBlogSeo(shellHtml, dynamicEntry);
          resp = new Response(blogHtml, resp);
+         ctype = resp.headers.get("content-type") || "text/html; charset=utf-8";
+         resp.headers.set("Cache-Control", "no-store, no-cache, must-revalidate");
+       }
+
+       // 5c-c. Static route SEO injection — ensures Bingbot and non-JS
+       // crawlers see unique <title>, <meta description>, and canonical tags
+       // on every static page instead of the default homepage shell metadata.
+       if (!isDynamic && path !== "/" && !url.search && STATIC_PAGES[path] && ctype.includes("text/html")) {
+         const shellHtml = await resp.text();
+         const staticHtml = injectStaticSeo(shellHtml, STATIC_PAGES[path], `https://www.veslapack.com${path}`);
+         resp = new Response(staticHtml, resp);
          ctype = resp.headers.get("content-type") || "text/html; charset=utf-8";
          resp.headers.set("Cache-Control", "no-store, no-cache, must-revalidate");
        }
