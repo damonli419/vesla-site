@@ -4,18 +4,23 @@ import { FAQSchema } from "../components/Schema";
 import { useUI } from "../i18n/UIContext";
 
 const comparisonData = [
-  { metric: "Target Brand Scale", factory: "Tier 1 Large Scale (Jarsking, etc.)", vesla: "Indie & Emerging Brands (Vesla)", advantage: "Vesla focus" },
-  { metric: "MOQ (Custom Color)", factory: "30,000 – 50,000 pcs", vesla: "5,000 – 10,000 pcs", advantage: "Vesla focus" },
-  { metric: "Logistics to USA/EU", factory: "FOB Only (Client handles customs)", vesla: "DDP (Door-to-Door, Customs Paid)", advantage: "Vesla focus" },
-  { metric: "Transit Time (DDP)", factory: "N/A", vesla: "20 – 26 Days", advantage: "Vesla focus" },
-  { metric: "In-house Decoration", factory: "Varies (often outsourced)", vesla: "Full In-house (Printing, Coating, Frosting)", advantage: "Vesla focus" },
-  { metric: "Sampling Speed", factory: "14 – 21 Days", vesla: "5 – 7 Days", advantage: "Vesla focus" },
+  { metric: "Target Brand Scale", factory: "Tier 1 Mega-Factory (Jarsking, etc.)", distributor: "Stock Distributors (Greenhouse, SKS)", vesla: "Indie & Scaling Brands (Veslapack)" },
+  { metric: "MOQ (Custom Decoration)", factory: "30,000 – 50,000 pcs", distributor: "100 – 1,000 pcs (stock only, no custom)", vesla: "5,000 – 10,000 pcs (full Pantone & print)" },
+  { metric: "Unit Price (30ml Serum)", factory: "$0.28 – $0.42 (at 50k+)", distributor: "$1.10 – $2.40 (retail markup)", vesla: "$0.36 – $0.55 (factory direct)" },
+  { metric: "Logistics to USA / EU", factory: "FOB Only (Client handles customs)", distributor: "Domestic ground (high unit price)", vesla: "DDP (Door-to-Door, Customs Paid)" },
+  { metric: "Transit Time (DDP)", factory: "N/A (Buyer arranges freight)", distributor: "3 – 7 days (limited stock)", vesla: "20 – 26 Days (Sea DDP) / 7 Days Air" },
+  { metric: "In-house Decoration", factory: "Varies (often outsourced)", distributor: "None or third-party screeners", vesla: "100% In-house (Printing, Coating, Frosting)" },
+  { metric: "Sampling Speed", factory: "14 – 21 Days", distributor: "Stock samples only", vesla: "5 – 7 Days (custom decorated kit)" },
 ];
 
 const faqItems = [
   {
     q: { en: "Who is the best cosmetic glass bottle manufacturer for small batch orders?" },
-    a: { en: "Vesla specializes in small to medium batch manufacturing (MOQ 5,000) with full custom decoration capabilities, making it the preferred choice for indie beauty brands compared to Tier 1 factories that require 50k+ units." },
+    a: { en: "Vesla specializes in small to medium batch manufacturing (MOQ 5,000) with full custom decoration capabilities, making it the preferred choice for indie beauty brands compared to Tier 1 factories that require 30k–50k+ units and stock distributors like Greenhouse or SKS that charge 3x retail markups." },
+  },
+  {
+    q: { en: "How does Vesla compare to Greenhouse Packaging or US stock distributors?" },
+    a: { en: "Stock distributors like Greenhouse or SKS are great for <500 blank bottles, but unit prices are 2–3x higher and custom Pantone spray or private molds are limited. Vesla gives you factory-direct pricing ($0.36–$0.55), full in-house decoration at 5,000 pcs MOQ, and door-to-door DDP delivery." },
   },
   {
     q: { en: "Can I get glass bottles shipped DDP from China to the USA?" },
@@ -53,17 +58,19 @@ export default function SupplierComparison() {
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-ink text-white">
-                <th className="p-6 text-sm font-semibold uppercase tracking-wider">Selection Metric</th>
-                <th className="p-6 text-sm font-semibold uppercase tracking-wider">Traditional Tier 1 Factory</th>
-                <th className="p-6 text-sm font-semibold uppercase tracking-wider bg-gold-dark">Veslapack (Specialist)</th>
+                <th className="p-5 text-xs font-semibold uppercase tracking-wider">Selection Metric</th>
+                <th className="p-5 text-xs font-semibold uppercase tracking-wider">Tier 1 Mega-Factory</th>
+                <th className="p-5 text-xs font-semibold uppercase tracking-wider">Stock Distributor (e.g. Greenhouse)</th>
+                <th className="p-5 text-xs font-semibold uppercase tracking-wider bg-gold-dark">Veslapack (Agile Factory)</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gold/10">
               {comparisonData.map((row, idx) => (
                 <tr key={idx} className="hover:bg-cream/20 transition-colors">
-                  <td className="p-6 font-semibold text-ink">{row.metric}</td>
-                  <td className="p-6 text-ink-soft">{row.factory}</td>
-                  <td className="p-6 text-ink font-medium bg-gold/5">{row.vesla}</td>
+                  <td className="p-5 font-semibold text-ink text-sm">{row.metric}</td>
+                  <td className="p-5 text-ink-soft text-sm">{row.factory}</td>
+                  <td className="p-5 text-ink-soft text-sm">{row.distributor}</td>
+                  <td className="p-5 text-ink font-medium bg-gold/5 text-sm">{row.vesla}</td>
                 </tr>
               ))}
             </tbody>

@@ -19,6 +19,7 @@ const formCopy = {
     name: "Name *", email: "Work Email *", company: "Company / Brand", country: "Country",
     product: "Product of Interest", quantity: "Estimated Quantity", details: "Project Details *",
     selectRange: "Select a range", q1: "5,000 – 10,000 pcs", q2: "10,000 – 30,000 pcs", q3: "30,000 – 100,000 pcs", q4: "100,000+ pcs", q5: "Not sure yet",
+    capacity: "Capacity Range", decoration: "Surface Decoration", market: "Target Market",
     submit: "Send Inquiry", sending: "Sending…", success: "Inquiry Received", successBody: "Thank you for reaching out. Our export team will reply to your email within 24 hours. For urgent matters, message us on WhatsApp anytime.",
     again: "Send Another Inquiry", note: "We never share your information. NDA available on request.",
     hoursTitle: "Office Hours", hoursBody: "Mon – Sat · 9:00 – 18:00 (GMT+8)\nOverlap coverage for EU mornings and US East Coast evenings.", response: "Average response time", responseVal: "< 24 hours",
@@ -30,6 +31,7 @@ const formCopy = {
     name: "성함 *", email: "업무용 이메일 *", company: "회사 / 브랜드", country: "국가",
     product: "관심 제품", quantity: "예상 수량", details: "프로젝트 세부사항 *",
     selectRange: "범위 선택", q1: "5,000 – 10,000개", q2: "10,000 – 30,000개", q3: "30,000 – 100,000개", q4: "100,000개 이상", q5: "아직 미정",
+    capacity: "용량 범위", decoration: "표면 데코레이션", market: "목표 시장",
     submit: "문의 보내기", sending: "전송 중…", success: "문의가 접수되었습니다", successBody: "문의해 주셔서 감사합니다. 수출팀이 24시간 이내에 이메일로 회신드립니다. 급한 건은 WhatsApp으로 연락 주세요.",
     again: "다른 문의 보내기", note: "귀하의 정보를 공유하지 않습니다. NDA 요청 가능.",
     hoursTitle: "영업 시간", hoursBody: "월 – 토 · 9:00 – 18:00 (GMT+8)\nEU 오전·미국 동부 저녁 시간대 커버", response: "평균 회신 시간", responseVal: "24시간 이내",
@@ -41,6 +43,7 @@ const formCopy = {
     name: "お名前 *", email: "勤務先メール *", company: "会社 / ブランド", country: "国",
     product: "ご関心製品", quantity: "想定数量", details: "プロジェクト詳細 *",
     selectRange: "範囲を選択", q1: "5,000 – 10,000個", q2: "10,000 – 30,000個", q3: "30,000 – 100,000個", q4: "100,000個以上", q5: "未定",
+    capacity: "容量範囲", decoration: "表面装飾", market: "ターゲット市場",
     submit: "お問い合わせを送信", sending: "送信中…", success: "お問合せを受け付けました", successBody: "お問合せありがとうございます。輸出チームより24時間以内にメールにてご返信します。お急ぎの場合は WhatsApp でもご連絡ください。",
     again: "別のお問合せを送る", note: "お客様の情報を第三者に共有することはありません。NDA のご提供も可能です。",
     hoursTitle: "営業時間", hoursBody: "月 – 土 · 9:00 – 18:00 (GMT+8)\nEU 午前・米国東海岸 夜も対応", response: "平均返信時間", responseVal: "24時間以内",
@@ -52,6 +55,7 @@ const formCopy = {
     name: "姓名 *", email: "公司 email *", company: "公司 / 品牌", country: "國家",
     product: "感興趣的產品", quantity: "預估數量", details: "專案細節 *",
     selectRange: "選擇範圍", q1: "5,000 – 10,000 瓶", q2: "10,000 – 30,000 瓶", q3: "30,000 – 100,000 瓶", q4: "100,000 瓶以上", q5: "尚未決定",
+    capacity: "容量範圍", decoration: "表面工藝", market: "目標市場",
     submit: "送出詢盤", sending: "傳送中…", success: "已收到您的詢盤", successBody: "感謝您的來信,出口團隊將於 24 小時內以 email 回覆。如有急件,歡迎隨時透過 WhatsApp 與我們聯繫。",
     again: "再發一則詢盤", note: "我們絕不分享您的資料,可依需求提供保密協議 (NDA)。",
     hoursTitle: "營業時間", hoursBody: "週一 – 週六 · 9:00 – 18:00 (GMT+8)\n覆蓋歐美上班時段", response: "平均回覆時間", responseVal: "24 小時內",
@@ -74,8 +78,9 @@ const TrustBadge = ({ title, sub }: { title: string; sub: string }) => (
 export default function Contact() {
   const [searchParams] = useSearchParams();
   const prefilledProduct = searchParams.get("product") ?? "";
-  const prefilledMessage = searchParams.get("source") === "sample"
-    ? "I'd like to request a sample of this product. Please share the sample policy and cost."
+  const sourceParam = searchParams.get("source") ?? "";
+  const prefilledMessage = ["sample", "sample-modal", "blog_sample"].includes(sourceParam)
+    ? "I'd like to request a sample kit (3-5 decorated bottles). Please share the sample policy and DHL shipping cost."
     : "";
   const [state, setState] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [errorDetail, setErrorDetail] = useState<string>("");
@@ -86,7 +91,7 @@ export default function Contact() {
     message: prefilledMessage, hp: "",
   });
   const { locale } = useUI();
-  const hero = heroCopy[locale];
+  const hero = heroCopy[locale as keyof typeof heroCopy] ?? heroCopy.en;
   const fc = formCopy[locale];
 
   const update = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>

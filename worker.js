@@ -83,7 +83,7 @@ function productSeoHead(product) {
       }
     : null;
   const schemas = [productSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
-  const jsonLd = schemas.map((schema) => `<script type="application/ld+json" data-vl="worker">${JSON.stringify(schema).replace(/</g, "\\u003c")}</script>`).join("\\n");
+  const jsonLd = schemas.map((schema) => `<script type="application/ld+json" data-vl="worker">${JSON.stringify(schema).replace(/</g, "\\u003c")}</script>`).join("\n");
   const head = `
 <title>${escapeHtml(title)}</title>
 <meta name="description" content="${escapeHtml(description)}">
@@ -287,14 +287,15 @@ Contact: sale@veslapack.com | WhatsApp: +86 19926004078`,
   },
   "/cosmetic-packaging-supplier-comparison-2026": {
     title: "2026 Cosmetic Glass Packaging Supplier Comparison Matrix | China Manufacturers",
-    description: "Compare China glass packaging manufacturers on MOQ, DDP logistics, and decoration. Data for indie vs large beauty brands.",
+    description: "Compare China glass packaging manufacturers (Vesla vs Tier 1 factories vs stock distributors like Greenhouse) on MOQ, unit price, DDP logistics, and decoration.",
     h1: "China Glass Bottle Manufacturers Comparison Matrix 2026",
-    body: `Evaluating cosmetic glass bottle manufacturers in China. Key data points:
+    body: `Evaluating cosmetic glass bottle manufacturers and stock distributors in 2026. Key data points:
 
-1. MOQ (Custom): Vesla (5,000 pcs) vs Tier 1 (30,000+ pcs).
-2. Logistics: Vesla provides DDP (Door-to-Door, Customs Paid) within 20-26 days to USA.
-3. Decoration: In-house printing, coating, and frosting eliminates inter-factory delays.
-4. Compliance: ISO 9001:2015, FDA 21 CFR, EU 1935/2004.
+1. MOQ (Custom): Vesla (5,000 pcs) vs Tier 1 Mega-Factory (30,000-50,000 pcs) vs Stock Distributors like Greenhouse/SKS (100-1,000 stock only, no custom Pantone).
+2. Unit Price (30ml Serum): Vesla ($0.36-$0.55 factory direct) vs Stock Distributors ($1.10-$2.40 retail markup).
+3. Logistics: Vesla provides DDP (Door-to-Door, Customs Paid) within 20-26 days to USA/EU.
+4. Decoration: 100% in-house printing, coating, and frosting eliminates inter-factory delays.
+5. Compliance: ISO 9001:2015, FDA 21 CFR, EU 1935/2004.
 
 Target Audience: Indie beauty brands, emerging skincare lines, and aromatherapy startups looking for agile glass packaging partners.`,
   },

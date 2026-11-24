@@ -59,14 +59,14 @@
 
 | # | 意图聚类 | 目标词（KD 估计） | 建议落地页 | 意图类型 | 优先级 | 现有状态 | 风险组 |
 |---|---|---|---|---|---|---|---|
-| G1 | 采购流程 | how to import glass bottles from china (KD~22) | 新博客（1200-1800 词） | Informational | P0 | **缺失** | — |
-| G2 | 验厂 | how to verify glass bottle factory audit (KD~16) | 新博客 + 内链 /quality-control | Informational | P0 | **缺失** | — |
-| G3 | 印刷 | glass bottle screen printing vs frosting (KD~12) | 新博客（工艺对比，内链定制页） | Comparison | P0 | **缺失** | — |
-| G4 | 规格 | dropper bottle sizes guide ml chart (KD~14) | 新博客（规格表 = 引流利器，内链 10 个产品页） | Informational | P0 | **缺失** | — |
-| G5 | 材质 | borosilicate vs soda lime glass cosmetic (KD~13) | 新博客（内链 C2/C3 类目页） | Comparison | P0 | **缺失** | — |
-| G6 |Versus| vesla vs greenhouse packaging supplier (KD~8) | 改造 /supplier-comparison 增加竞品对比表 | Comparison | P1 | 部分已有 | — |
-| G7 | 批量价 | wholesale cosmetic bottles price list (KD~20) | 新博客或 money page 扩展（报价逻辑+表单） | Transactional | P1 | **缺失** | — |
-| G8 | 场景词 | essential oil bottle manufacturer (KD~18) | /serum-bottles H1/Title 扩展收录（不新建页，避免撞 C2） | Transactional | P1 | 重叠风险 | ⚠ 归 C2 页，勿新建独立页 |
+| G1 | 采购流程 | how to import glass bottles from china (KD~22) | `/blog/how-to-import-glass-bottles-from-china` | Informational | P0 | **已补齐** | — |
+| G2 | 验厂 | how to verify glass bottle factory audit (KD~16) | `/blog/how-to-verify-glass-bottle-factory-audit` | Informational | P0 | **已补齐** | — |
+| G3 | 印刷 | glass bottle screen printing vs frosting (KD~12) | `/blog/glass-bottle-screen-printing-vs-frosting` | Comparison | P0 | **已补齐** | — |
+| G4 | 规格 | dropper bottle sizes guide ml chart (KD~14) | `/blog/dropper-bottle-sizes-guide-ml-chart` | Informational | P0 | **已补齐** | — |
+| G5 | 材质 | borosilicate vs soda lime glass cosmetic (KD~13) | `/blog/borosilicate-vs-soda-lime-glass-cosmetic` | Comparison | P0 | **已补齐** | — |
+| G6 | Versus | vesla vs greenhouse packaging supplier (KD~8) | `/cosmetic-packaging-supplier-comparison-2026`（3列对比矩阵） | Comparison | P1 | **已补齐** | — |
+| G7 | 批量价 | wholesale cosmetic bottles price list (KD~20) | `/blog/wholesale-cosmetic-bottles-price-list` | Transactional | P1 | **已补齐** | — |
+| G8 | 场景词 | essential oil bottle manufacturer (KD~18) | `/serum-bottles` H1/Title 扩展收录（不新建页，避免撞 C2） | Transactional | P1 | **已扩展** | ⚠ 归 C2 页，勿新建独立页 |
 
 ## 防撞车检查记录
 

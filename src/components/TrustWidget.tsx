@@ -1,4 +1,3 @@
-import React from "react";
 import LazyImage from "./LazyImage";
 
 export default function TrustWidget() {

@@ -1,3 +1,4 @@
+import { useMemo, useState, type ReactNode } from "react";
 import { Link, useParams } from "react-router-dom";
 import Seo from "../components/Seo";
 import { BlogPostSchema } from "../components/Schema";
@@ -27,26 +28,157 @@ const inlineLinks: { pattern: RegExp; to: string; label: string }[] = [
   { pattern: /cosmetic packaging sets?|packaging sets?/i, to: "/cosmetic-sets", label: "cosmetic packaging sets" },
   { pattern: /low (?:minimum order|MOQ)/i, to: "/low-moq-cosmetic-packaging", label: "low MOQ cosmetic packaging" },
   { pattern: /custom (?:glass )?(?:packaging|bottles?)/i, to: "/custom-cosmetic-packaging-manufacturer", label: "custom cosmetic packaging" },
-  { pattern: /amber glass/i, to: "/products/amber-serum-vial-dropper-bottle-supplier", label: "amber glass serum vials" },
+  { pattern: /amber glass/i, to: "/products/amber-glass-serum-vial-dropper-bottle-supplier", label: "amber glass serum vials" },
 ];
 
-function AutoLinkParagraph({ text }: { text: string }) {
-  // Find the earliest-matching keyword and link just that occurrence.
-  let best: { index: number; length: number; to: string; label: string } | null = null;
-  for (const rule of inlineLinks) {
-    const m = text.match(rule.pattern);
-    if (m && m.index !== undefined && (best === null || m.index < best.index)) {
-      best = { index: m.index, length: m[0].length, to: rule.to, label: m[0] };
+function renderInlineMarkdown(text: string, allowAutoLink = true): ReactNode[] {
+  // Parse [label](url) and **bold** tokens first.
+  const tokenRe = /(\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*)/g;
+  const parts = text.split(tokenRe);
+  let autoLinked = !allowAutoLink;
+
+  return parts.map((part, idx) => {
+    const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (linkMatch) {
+      const [, label, href] = linkMatch;
+      const internal = href.startsWith("https://www.veslapack.com")
+        ? href.replace("https://www.veslapack.com", "") || "/"
+        : href.startsWith("/")
+        ? href
+        : null;
+      if (internal) {
+        return (
+          <Link key={idx} to={internal} className="font-medium text-gold-dark underline decoration-gold/40 underline-offset-2 hover:text-gold">
+            {label}
+          </Link>
+        );
+      }
+      return (
+        <a key={idx} href={href} target="_blank" rel="noreferrer" className="font-medium text-gold-dark underline decoration-gold/40 underline-offset-2 hover:text-gold">
+          {label}
+        </a>
+      );
     }
-  }
-  if (!best) return <>{text}</>;
+
+    const boldMatch = part.match(/^\*\*([^*]+)\*\*$/);
+    if (boldMatch) {
+      return <strong key={idx} className="font-semibold text-ink">{boldMatch[1]}</strong>;
+    }
+
+    if (!autoLinked) {
+      let best: { index: number; length: number; to: string; label: string } | null = null;
+      for (const rule of inlineLinks) {
+        const m = part.match(rule.pattern);
+        if (m && m.index !== undefined && (best === null || m.index < best.index)) {
+          best = { index: m.index, length: m[0].length, to: rule.to, label: m[0] };
+        }
+      }
+      if (best) {
+        autoLinked = true;
+        return (
+          <span key={idx}>
+            {part.slice(0, best.index)}
+            <Link to={best.to} className="font-medium text-gold-dark underline decoration-gold/40 underline-offset-2 hover:text-gold">
+              {best.label}
+            </Link>
+            {part.slice(best.index + best.length)}
+          </span>
+        );
+      }
+    }
+
+    return <span key={idx}>{part}</span>;
+  });
+}
+
+function RichBlogBody({ body }: { body: string }) {
+  const blocks = body.split("\n\n").map((b) => b.trim()).filter(Boolean);
   return (
     <>
-      {text.slice(0, best.index)}
-      <Link to={best.to} className="font-medium text-gold-dark underline decoration-gold/40 underline-offset-2 hover:text-gold">
-        {best.label}
-      </Link>
-      {text.slice(best.index + best.length)}
+      {blocks.map((block, i) => {
+        const lines = block.split("\n").map((l) => l.trim()).filter(Boolean);
+
+        // Markdown table
+        if (lines.length >= 2 && lines[0].startsWith("|") && lines[1].startsWith("|")) {
+          const parseRow = (r: string) => r.replace(/^\||\|$/g, "").split("|").map((c) => c.trim());
+          const headers = parseRow(lines[0]);
+          const rows = lines.slice(2).map(parseRow);
+          return (
+            <div key={i} className="my-8 overflow-x-auto rounded-2xl ring-1 ring-gold/15">
+              <table className="w-full border-collapse text-left text-sm">
+                <thead>
+                  <tr className="bg-ink text-white">
+                    {headers.map((h, hi) => (
+                      <th key={hi} className="px-4 py-3 text-xs font-semibold uppercase tracking-wider">{h}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gold/10 bg-white">
+                  {rows.map((row, ri) => (
+                    <tr key={ri} className="hover:bg-cream/30">
+                      {row.map((cell, ci) => (
+                        <td key={ci} className="px-4 py-3 text-ink-soft">{renderInlineMarkdown(cell, false)}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+
+        // Heading + optional trailing lines in same block
+        if (lines[0].startsWith("### ") || lines[0].startsWith("## ")) {
+          const headingText = lines[0].replace(/^#{2,3}\s+/, "");
+          const rest = lines.slice(1);
+          return (
+            <div key={i} className="mt-9">
+              <h2 className="font-serif text-2xl font-medium text-ink">{headingText}</h2>
+              {rest.length > 0 && (
+                rest.every((l) => /^-\s+/.test(l)) ? (
+                  <ul className="mt-3 list-disc space-y-2 pl-5">
+                    {rest.map((l, li) => (
+                      <li key={li}>{renderInlineMarkdown(l.replace(/^-\s+/, ""))}</li>
+                    ))}
+                  </ul>
+                ) : rest.every((l) => /^\d+\.\s+/.test(l)) ? (
+                  <ol className="mt-3 list-decimal space-y-2 pl-5">
+                    {rest.map((l, li) => (
+                      <li key={li}>{renderInlineMarkdown(l.replace(/^\d+\.\s+/, ""))}</li>
+                    ))}
+                  </ol>
+                ) : (
+                  <p className="mt-3">{renderInlineMarkdown(rest.join(" "))}</p>
+                )
+              )}
+            </div>
+          );
+        }
+
+        // Pure bullet list
+        if (lines.every((l) => /^-\s+/.test(l))) {
+          return (
+            <ul key={i} className="mt-5 list-disc space-y-2 pl-5">
+              {lines.map((l, li) => (
+                <li key={li}>{renderInlineMarkdown(l.replace(/^-\s+/, ""))}</li>
+              ))}
+            </ul>
+          );
+        }
+
+        // Pure numbered list
+        if (lines.every((l) => /^\d+\.\s+/.test(l))) {
+          return (
+            <ol key={i} className="mt-5 list-decimal space-y-2 pl-5">
+              {lines.map((l, li) => (
+                <li key={li}>{renderInlineMarkdown(l.replace(/^\d+\.\s+/, ""))}</li>
+              ))}
+            </ol>
+          );
+        }
+
+        return <p key={i} className="mt-5">{renderInlineMarkdown(block)}</p>;
+      })}
     </>
   );
 }
@@ -59,6 +191,24 @@ const copy = {
 };
 
 export function BlogIndex() {
+  const [selectedCat, setSelectedCat] = useState<"all" | BlogPost["category"]>("all");
+  const [query, setQuery] = useState("");
+
+  const filteredPosts = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return [...blogPosts]
+      .sort((a, b) => (a.date < b.date ? 1 : -1))
+      .filter((p) => {
+        if (selectedCat !== "all" && p.category !== selectedCat) return false;
+        if (!q) return true;
+        return (
+          p.title.en.toLowerCase().includes(q) ||
+          p.excerpt.en.toLowerCase().includes(q) ||
+          p.keywords.some((k) => k.toLowerCase().includes(q))
+        );
+      });
+  }, [selectedCat, query]);
+
   return (
     <div className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
       <Seo
@@ -66,39 +216,79 @@ export function BlogIndex() {
         description="Buyer's guides, material comparisons and trend reports on cosmetic glass packaging — written for indie beauty brand owners."
         path="/blog"
       />
-      <div className="mb-12 max-w-2xl">
-        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold-dark">{copy.eyebrow}</p>
-        <h1 className="font-serif text-4xl font-medium text-ink sm:text-5xl">{copy.title}</h1>
-        <p className="mt-4 text-[15px] leading-relaxed text-ink-soft">{copy.sub}</p>
+      <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div className="max-w-2xl">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold-dark">{copy.eyebrow}</p>
+          <h1 className="font-serif text-4xl font-medium text-ink sm:text-5xl">{copy.title}</h1>
+          <p className="mt-4 text-[15px] leading-relaxed text-ink-soft">{copy.sub}</p>
+        </div>
+        <input
+          type="search"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search guides (e.g. DDP, MOQ, frosting)..."
+          aria-label="Search blog articles"
+          className="w-full rounded-full border border-gold/25 bg-white px-5 py-2.5 text-sm text-ink placeholder:text-ink-soft/60 outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 md:w-72"
+        />
       </div>
 
-      <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
-        {blogPosts.map((p) => (
-          <Link
-            key={p.slug}
-            to={`/blog/${p.slug}`}
-            className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gold/15 transition hover:-translate-y-1 hover:shadow-lg"
+      <div className="mb-10 flex flex-wrap gap-2">
+        {(["all", "guide", "material", "logistics", "trend"] as const).map((cat) => (
+          <button
+            key={cat}
+            type="button"
+            onClick={() => setSelectedCat(cat)}
+            className={`rounded-full px-4 py-2 text-xs font-semibold transition ${
+              selectedCat === cat
+                ? "bg-ink text-white"
+                : "bg-white text-ink-soft ring-1 ring-gold/20 hover:text-ink"
+            }`}
           >
-            <div className="aspect-[16/10] overflow-hidden bg-gradient-to-br from-cream-dark to-cream">
-              <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-ink to-ink/70 p-8 text-center">
-                <span className="font-serif text-2xl italic text-gold-light">
-                  {categoryLabels[p.category]}
-                </span>
-              </div>
-            </div>
-            <div className="flex flex-1 flex-col p-6">
-              <p className="text-[11px] font-semibold uppercase tracking-widest text-gold-dark">
-                {categoryLabels[p.category]} · {p.readMinutes} {copy.read}
-              </p>
-              <h2 className="mt-2 font-serif text-xl leading-snug text-ink group-hover:text-gold-dark">
-                {p.title.en}
-              </h2>
-              <p className="mt-2 flex-1 text-sm text-ink-soft">{p.excerpt.en}</p>
-              <p className="mt-4 text-xs text-ink-soft">{new Date(p.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</p>
-            </div>
-          </Link>
+            {cat === "all" ? `All Guides (${blogPosts.length})` : categoryLabels[cat]}
+          </button>
         ))}
       </div>
+
+      {filteredPosts.length === 0 ? (
+        <div className="rounded-2xl bg-white p-12 text-center ring-1 ring-gold/15">
+          <p className="text-sm text-ink-soft">No guides match "{query}".</p>
+          <button
+            type="button"
+            onClick={() => { setSelectedCat("all"); setQuery(""); }}
+            className="mt-4 text-xs font-semibold text-gold-dark hover:underline"
+          >
+            Reset filters
+          </button>
+        </div>
+      ) : (
+        <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
+          {filteredPosts.map((p) => (
+            <Link
+              key={p.slug}
+              to={`/blog/${p.slug}`}
+              className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gold/15 transition hover:-translate-y-1 hover:shadow-lg"
+            >
+              <div className="aspect-[16/10] overflow-hidden bg-gradient-to-br from-cream-dark to-cream">
+                <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-ink to-ink/70 p-8 text-center">
+                  <span className="font-serif text-2xl italic text-gold-light">
+                    {categoryLabels[p.category]}
+                  </span>
+                </div>
+              </div>
+              <div className="flex flex-1 flex-col p-6">
+                <p className="text-[11px] font-semibold uppercase tracking-widest text-gold-dark">
+                  {categoryLabels[p.category]} · {p.readMinutes} {copy.read}
+                </p>
+                <h2 className="mt-2 font-serif text-xl leading-snug text-ink group-hover:text-gold-dark">
+                  {p.title.en}
+                </h2>
+                <p className="mt-2 flex-1 text-sm text-ink-soft">{p.excerpt.en}</p>
+                <p className="mt-4 text-xs text-ink-soft">{new Date(p.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -147,9 +337,7 @@ export function BlogPost() {
       </header>
       <div className="prose mt-10 text-[15px] leading-relaxed text-ink-soft">
         <p className="text-lg text-ink">{post.excerpt.en}</p>
-        {(post.body.en || "").split("\n\n").filter(Boolean).map((para, i) => (
-          <p key={i} className="mt-5"><AutoLinkParagraph text={para.trim()} /></p>
-        ))}
+        <RichBlogBody body={post.body.en || ""} />
         <div className="mt-12 rounded-3xl bg-cream-dark/40 p-8 ring-1 ring-gold/15">
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div className="max-w-md">

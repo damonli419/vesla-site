@@ -172,6 +172,8 @@ export default function Home() {
     let started = false;
     const startVideo = () => {
       if (started || cancelled || !videoEl.current) return;
+      // Don't compete with below-the-fold product images if the user already scrolled past the hero.
+      if (window.scrollY > 450) return;
       started = true;
       videoEl.current.src = "/factory-hero.mp4";
       videoEl.current.play().catch(() => {});
@@ -212,7 +214,6 @@ export default function Home() {
           loop
           playsInline
           preload="none"
-          fetchPriority="high"
           poster="/images/hero-poster.webp"
         >
           <track kind="captions" />
@@ -250,7 +251,7 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 right-0 z-10 hidden border-t border-white/15 bg-ink/40 backdrop-blur-md md:block">
           <div className="mx-auto grid max-w-6xl grid-cols-4 divide-x divide-white/10 px-6">
             {stats.map((s) => (
-              <div key={s.label.en} className="py-6 text-center">
+              <div key={s.label} className="py-6 text-center">
                 <div className="font-serif text-3xl text-gold-light">{s.value}</div>
                 <div className="mt-1 text-xs uppercase tracking-widest text-cream/60">{s.label}</div>
               </div>
@@ -395,7 +396,7 @@ export default function Home() {
               className="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gold/15 transition duration-300 hover:-translate-y-1.5 hover:shadow-xl"
             >
               <div className="aspect-[16/10] overflow-hidden">
-                <LazyImage src={f.image} alt={`${f.title} wholesale manufacturer China - factory direct low MOQ`} className="h-full w-full object-cover" />
+                <LazyImage src={f.image} alt={`${f.title} wholesale manufacturer China - factory direct low MOQ`} width={800} height={500} eager className="h-full w-full object-cover" />
               </div>
               <div className="p-7">
                 <h3 className="font-serif text-2xl text-ink">{f.title}</h3>

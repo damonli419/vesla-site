@@ -29,9 +29,10 @@ export default function SerumBottles() {
   return (
     <div dir={locale === "tw" ? "rtl" : "ltr"}>
       <Seo
-        title="Serum & Essential Oil Bottle Manufacturers | Custom Glass Dropper Bottles — Vesla"
-        description="Premium serum & essential oil bottle manufacturers. Custom glass dropper bottles from 5ml to 100ml with UV protection and in-house decoration. Low MOQ 5,000 pcs, DDP shipping."
+        title="Serum & Essential Oil Bottle Manufacturer | Custom Glass Dropper Bottles — Vesla"
+        description="Direct serum & essential oil bottle manufacturer in China. Custom glass dropper bottles (5ml–100ml) with UV-protective amber/violet glass, in-house decoration, MOQ 5,000 pcs & DDP shipping."
         path="/serum-bottles"
+        keywords="essential oil bottle manufacturer, glass serum bottle manufacturer, custom dropper bottles wholesale"
       />
       <FAQSchema items={faqItems} locale={locale} />
 
@@ -40,7 +41,7 @@ export default function SerumBottles() {
         <div className="mx-auto max-w-4xl px-6">
           <p className="text-xs font-semibold uppercase tracking-widest text-gold">Custom Glass Packaging · Made to Order</p>
           <h1 className="mt-4 font-serif text-4xl font-medium text-white sm:text-5xl">
-            Serum & Essential Oil Bottle Manufacturers
+            Serum &amp; Essential Oil Bottle Manufacturer
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-white/70">
             Vesla manufactures custom glass packaging for high-performance serums, facial oils, and aromatherapy blends.

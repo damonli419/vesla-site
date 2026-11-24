@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useUI } from "../i18n/UIContext";
 import { trackEvent } from "./Analytics";
 import { siteConfig } from "../config/site";
 

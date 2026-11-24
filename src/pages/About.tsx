@@ -118,7 +118,7 @@ const copy = {
 
 export default function About() {
   const { locale } = useUI();
-  const c = copy[locale];
+  const c = copy[locale as keyof typeof copy] ?? copy.en;
 
   return (
     <div>

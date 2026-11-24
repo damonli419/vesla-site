@@ -340,13 +340,151 @@ export const blogPosts: BlogPost[] = [
       tw: "並非所有琥珀色玻璃都一樣。了解我們如何使用分光光度計測試協議，確保對光敏感的維生素 C 和視黃醇配方達到 98% 以上的紫外線阻隔率。" 
     },
     body: { 
-      en: "For high-performance skincare brands, the [serum bottles](https://www.veslapack.com/serum-bottles) are the primary defense against formula oxidation. When you claim your product is 'stabilized,' you are relying on the glass's ability to block specific wavelengths of light. At Vesla, we don't just ship amber glass; we validate its shielding capacity using ISO-calibrated spectrophotometry.\n\n### The 200nm - 400nm Critical Window\nMost botanical extracts and active ingredients (like Retinol or L-Ascorbic Acid) degrade when exposed to the 200nm to 400nm spectrum. Low-quality 'spray-coated' amber may look dark to the eye but can leak significantly in the UV-A range. True Type III Amber Glass, which we manufacture at our Guangzhou facility, incorporates iron oxide and sulfur directly into the molten glass batch. This creates a molecular barrier that is part of the glass itself.\n\n### How We Test Each Batch\n1. **Spectral Transmission Test**: We use a dual-beam UV-Vis spectrophotometer to measure the percentage of light passing through a 2mm glass section. Our benchmark for premium [glass vials](https://www.veslapack.com/glass-vials) is < 2% transmission at 400nm.\n2. **Accelerated Stability Testing**: We place filled bottles in a UV aging chamber for 72 hours (simulating 6 months of retail shelf exposure) and then chemically assay the active ingredient concentration.\n3. **Cross-Hatch Adhesion (for coated colors)**: If the UV protection is achieved via opaque coating, we perform tape-pull tests to ensure the barrier never flakes or degrades during shipping.\n\n### What Buyers Should Ask Their Factory\nWhen sourcing from a [China glass bottle manufacturer](https://www.veslapack.com/cosmetic-packaging-supplier-comparison-2026), never accept 'it looks dark enough' as a QC standard. Request a **Spectral Transmission Report** and ensure the testing was done on the actual production batch, not a generic sample. This technical due diligence is what separates profess...", 
+      en: "For high-performance skincare brands, the [serum bottles](https://www.veslapack.com/serum-bottles) are the primary defense against formula oxidation. When you claim your product is 'stabilized,' you are relying on the glass's ability to block specific wavelengths of light. At Vesla, we don't just ship amber glass; we validate its shielding capacity using ISO-calibrated spectrophotometry.\n\n### The 200nm - 400nm Critical Window\nMost botanical extracts and active ingredients (like Retinol or L-Ascorbic Acid) degrade when exposed to the 200nm to 400nm spectrum. Low-quality 'spray-coated' amber may look dark to the eye but can leak significantly in the UV-A range. True Type III Amber Glass, which we manufacture at our Guangzhou facility, incorporates iron oxide and sulfur directly into the molten glass batch. This creates a molecular barrier that is part of the glass itself.\n\n### How We Test Each Batch\n1. **Spectral Transmission Test**: We use a dual-beam UV-Vis spectrophotometer to measure the percentage of light passing through a 2mm glass section. Our benchmark for premium [glass vials](https://www.veslapack.com/glass-vials) is < 2% transmission at 400nm.\n2. **Accelerated Stability Testing**: We place filled bottles in a UV aging chamber for 72 hours (simulating 6 months of retail shelf exposure) and then chemically assay the active ingredient concentration.\n3. **Cross-Hatch Adhesion (for coated colors)**: If the UV protection is achieved via opaque coating, we perform tape-pull tests to ensure the barrier never flakes or degrades during shipping.\n\n### What Buyers Should Ask Their Factory\nWhen sourcing from a [China glass bottle manufacturer](https://www.veslapack.com/cosmetic-packaging-supplier-comparison-2026), never accept 'it looks dark enough' as a QC standard. Request a **Spectral Transmission Report** and ensure the testing was done on the actual production batch, not a generic sample. This technical due diligence is what separates professional indie brands from generic white-label resellers.", 
       kr: "조항", jp: "本文", tw: "本文" 
     },
     date: "2026-08-19",
     readMinutes: 8,
     category: "material",
     keywords: ["amber glass UV protection test", "spectrophotometer glass testing", "skincare formula stability packaging", "vitamin c serum bottle oxidation", "cosmetic glass quality control China"],
+  },
+  {
+    slug: "how-to-import-glass-bottles-from-china",
+    title: {
+      en: "How to Import Cosmetic Glass Bottles from China in 2026: HS Codes, DDP & Breakage Control",
+      kr: "2026년 중국에서 화장품 유리병 수입하는 방법: HS 코드, DDP 및 파손 방지",
+      jp: "2026年版：中国から化粧品ガラスボトルを輸入する方法（HSコード・DDP・破損対策）",
+      tw: "2026 從中國進口化妝品玻璃瓶完整指南：HS 編碼、DDP 物流與防破損包裝",
+    },
+    excerpt: {
+      en: "Step-by-step import guide for US & EU beauty brands: HS 7010.90 tariffs, FDA/EU 1935/2004 compliance, ISTA-3A drop-test cartons, and FOB vs. DDP landed cost math.",
+      kr: "미국 및 EU 뷰티 브랜드를 위한 단계별 수입 가이드: HS 7010.90 관세, FDA/EU 규정, ISTA-3A 포장 및 FOB vs DDP 비용 비교.",
+      jp: "米国・EUのビューティーブランド向け輸入ガイド：HS 7010.90関税、FDA/EU準拠、ISTA-3A落下試験梱包、FOB対DDPコスト比較。",
+      tw: "歐美美妝品牌必讀進口指南：HS 7010.90 稅則、FDA/EU 合規文件、ISTA-3A 防震出口箱與 FOB/DDP 到岸成本試算。",
+    },
+    body: {
+      en: "Importing cosmetic glass packaging from China for the first time can feel intimidating—especially when you are coordinating customs brokers, tariff classifications, and fragile sea freight. This 2026 guide breaks down the exact workflow used by 500+ beauty brands sourcing through [Vesla](https://www.veslapack.com/cosmetic-glass-packaging-manufacturer).\n\n### 1. HS Code Classification & Import Duties\nEmpty glass cosmetic containers (serum bottles, dropper bottles, cream jars, and vials) generally fall under **HS Code 7010.90** (Carboys, bottles, flasks, jars, pots, phials, ampoules and other containers, of glass, of a kind used for the conveyance or packing of goods).\n- **United States**: Standard MFN duty on 7010.90.91 is typically 0%–2.5%, plus applicable Section 301 tariffs depending on subheading. Using a **DDP (Delivered Duty Paid)** forwarder locks in your all-in landed rate upfront.\n- **European Union & UK**: Standard third-country duty averages 5%–7% plus local VAT (reclaimable for VAT-registered businesses).\n- **Closures & Droppers**: If shipped separately, plastic/aluminum/pipette assemblies may be classified under HS 3923.50 or 9616, though when packed together as a complete bottle assembly they are commonly cleared under the primary container code.\n\n### 2. Required Compliance Documents\nBefore booking freight, confirm your [custom cosmetic packaging manufacturer](https://www.veslapack.com/custom-cosmetic-packaging-manufacturer) provides:\n1. **Commercial Invoice & Packing List** with exact net/gross weights and HS codes.\n2. **Bill of Lading (B/L)** or Air Waybill.\n3. **Certificate of Compliance**: FDA 21 CFR 175.300 (USA) and EU 1935/2004 + REACH/RoHS (Europe) declarations.\n4. **ISPM-15 Fumigation Stamp** on any wooden pallets.\n\n### 3. FOB vs. DDP: Which Incoterm Wins in 2026?\n| Criteria | EXW / FOB (Guangzhou/Shenzhen) | DDP (Door-to-Door) |\n| :--- | :--- | :--- |\n| **Who Handles Customs** | Your freight forwarder & broker | Vesla's logistics team |\n| **Hidden Port Fees** | Buyer pays destination THC, chassis, customs bond | $0 surprise fees — 100% all-in quote |\n| **Transit Time (US West)** | 18–25 days port-to-port + clearance | 20–26 days door-to-3PL |\n| **Best For** | Brands importing 40ft FCL containers | Indie brands (5,000–20,000 pcs LCL/Air) |\n\n### 4. Zero-Breakage Export Packaging Protocol\nGlass breakage happens when bottles touch bottle-to-bottle during ocean vibration. Every Vesla export order uses **5-ply double-wall corrugated cartons**, individual **corrugated cell dividers** (egg-crate grids), shrink-wrapped palletization, and **ISTA-3A drop-test validation** from 80cm. Our verified transit breakage rate across EU and US lanes is under 0.3%.\n\nReady to calculate landed DDP pricing for your next launch? [Request a factory quote](https://www.veslapack.com/contact) with your destination ZIP code and target quantity.",
+      kr: "본문", jp: "本文", tw: "本文"
+    },
+    date: "2026-11-24",
+    readMinutes: 9,
+    category: "logistics",
+    keywords: ["how to import glass bottles from china", "HS code 7010.90 cosmetic glass", "DDP shipping glass bottles USA EU", "cosmetic packaging customs clearance"],
+  },
+  {
+    slug: "how-to-verify-glass-bottle-factory-audit",
+    title: {
+      en: "How to Verify a Glass Bottle Factory in China: 2026 Audit Checklist",
+      kr: "중국 유리병 공장 실사 및 검증 방법: 2026 감사 체크리스트",
+      jp: "中国のガラスボトル工場を検証・監査する方法：2026年チェックリスト",
+      tw: "如何驗證與驗廠中國玻璃瓶製造商：2026 工廠稽核清單",
+    },
+    excerpt: {
+      en: "Separate real IS-machine glass manufacturers from trading companies. Verify ISO 9001:2015, SGS audits, annealing lehrs, and AQL 1.5 inspection reports before wiring a deposit.",
+      kr: "실제 IS 머신 유리 제조사와 무역 회사를 구별하는 방법. 계약금 송금 전 ISO 9001, SGS 감사 및 AQL 1.5 검수 보고서를 확인하세요.",
+      jp: "実際のISマシン工場と商社を見分ける方法。手付金送金前にISO 9001、SGS監査、AQL 1.5検査レポートを確認しましょう。",
+      tw: "教你區分真正的 IS 製瓶工廠與貿易商：匯款前必查 ISO 9001、SGS 驗廠報告、退火爐與 AQL 1.5 品管標準。",
+    },
+    body: {
+      en: "Search Alibaba or Google for 'cosmetic glass bottle manufacturer' and 80% of results are middlemen or decoration-only workshops posing as integrated factories. When your launch timeline depends on 5,000–50,000 units arriving leak-free, verifying the actual manufacturing floor is non-negotiable. Here is the exact 6-point audit checklist used by [Vesla's Quality Control team](https://www.veslapack.com/quality-control).\n\n### 1. Confirm IS Forming Machines & Annealing Lehrs\nA true primary glass factory operates **IS (Individual Section) forming machines** fed by a continuous glass furnace, followed by a **PID-controlled annealing lehr**. Ask for a live 5-minute video walkthrough showing:\n- The hot-end forming line with today's date written on a whiteboard.\n- The annealing lehr (which relieves internal glass stress so bottles don't shatter during filling or transit).\n- In-house decoration lines (spray booths, UV curing ovens, silk-screen stations).\n\n### 2. Verify ISO 9001:2015 & SGS Audit Certificates\nDon't settle for a blurry PDF. Check our [certifications page](https://www.veslapack.com/certifications) for what real documentation looks like: an active **ISO 9001:2015** certificate number verifiable on the registrar's database, plus **FDA 21 CFR** and **EU 1935/2004** compliance declarations.\n\n### 3. Check AQL Inspection Standards\nAsk your supplier what Acceptable Quality Limit (AQL) they enforce before shipment. Professional cosmetic packaging lines run **AQL 1.5** for critical defects (cracks, chipped neck finishes, leakage) and **AQL 2.5** for major cosmetic defects (bubbles, coating pinholes, print misalignment).\n\n### 4. Test Coating Adhesion & Neck Tolerance\nRequest physical samples from a real production run—not hand-painted mockups—and verify:\n- **Cross-Hatch Tape Test (ASTM D3359)**: Spray coatings and silk-screen ink must not peel when scored and pulled with 3M tape.\n- **Neck Finish Gauge (+/- 0.2mm)**: 18/415 and 20/400 threads must mate cleanly with your dropper collar or lotion pump without cross-threading.\n\n### 5. Red Flags to Walk Away From\n- Refusal to do a live video tour of the production floor.\n- Bank beneficiary name that does not match the registered company on the business license.\n- Lead times that sound too good to be true (custom molds cannot be machined and sampled in 7 days).\n\nWant to inspect our Guangzhou production floor? [Book a live video factory tour](https://www.veslapack.com/contact) or visit us in person — see [About Vesla](https://www.veslapack.com/about) for our full facility specs.",
+      kr: "본문", jp: "本文", tw: "本文"
+    },
+    date: "2026-11-24",
+    readMinutes: 8,
+    category: "guide",
+    keywords: ["how to verify glass bottle factory audit", "cosmetic packaging factory audit China", "ISO 9001 glass bottle manufacturer", "AQL 1.5 glass inspection"],
+  },
+  {
+    slug: "glass-bottle-screen-printing-vs-frosting",
+    title: {
+      en: "Glass Bottle Screen Printing vs. Acid Frosting vs. Hot Stamping: 2026 Buyer's Guide",
+      kr: "유리병 실크스크린 인쇄 vs 산 부식 프로스팅 vs 핫 스탬핑 비교 가이드",
+      jp: "ガラスボトルのシルク印刷 vs フロスト加工 vs ホットスタンプ比較ガイド",
+      tw: "玻璃瓶絲網印刷 vs 酸洗磨砂 vs 燙金工藝：2026 成本與耐用度比較",
+    },
+    excerpt: {
+      en: "Compare unit cost, scratch resistance, chemical durability with essential oils, and minimum order quantities across every in-house glass decoration technique.",
+      kr: "유리병 데코레이션 공정별 단가, 내스크래치성, 에센셜 오일 내화학성 및 최소 주문 수량을 비교 분석합니다.",
+      jp: "ガラス装飾技法ごとの単価、耐傷性、精油への耐薬品性、最小ロットを比較解説します。",
+      tw: "全面比較絲網印刷、酸洗磨砂、噴塗漸層與燙金燙銀的單價差異、耐刮度與精油耐腐蝕性。",
+    },
+    body: {
+      en: "Choosing the right decoration finish is what transforms a $0.40 stock bottle into a $48 luxury serum on retail shelves. Because [Vesla](https://www.veslapack.com/custom-cosmetic-packaging-manufacturer) runs frosting, spray coating, silk-screen printing, and hot stamping under one roof, we tested all four techniques side-by-side for cost, durability, and formula compatibility.\n\n### Quick Comparison Matrix\n| Technique | Added Unit Cost (5k MOQ) | Scratch & Oil Resistance | Visual Effect | Best For |\n| :--- | :--- | :--- | :--- | :--- |\n| **Acid Frosting** | +$0.06 – $0.10 | Extremely High (etched into glass) | Soft, velvety translucent matte | Clean beauty & luxury serums |\n| **Color Spray / Gradient** | +$0.08 – $0.18 | High (with UV topcoat) | Pantone solid, gradient, or matte tint | UV protection & bold brand color |\n| **Silk-Screen Printing** | +$0.04 – $0.08 per color | High (kiln-fired or UV-cured ink) | Crisp raised typography directly on glass | Ingredient lists & minimalist logos |\n| **Hot Stamping (Gold/Silver)** | +$0.06 – $0.12 | Medium-High (metallic foil) | Mirror-shine gold, rose gold, or silver | Prestige logos & crest accents |\n\n### 1. Acid Frosting vs. Matte Spray Coating\nMany buyers confuse **acid frosting** with **matte spray coating**. Acid frosting chemically etches the outer surface of the glass, so it never peels or chips—even when exposed to citrus essential oils or alcohol. Matte spray coating applies a pigmented lacquer, which lets you match any **Pantone color** (such as frosted sage green or blush pink) and adds light-blocking opacity.\n\n### 2. Silk-Screen Printing vs. Paper Labels\n- **Silk-Screen Printing**: Zero label edges, waterproof in humid bathrooms, and never bubbles on curved shoulders. Requires a one-time screen plate fee (~$50–$80 per color).\n- **Hot Stamping**: Ideal for metallic gold or silver logos that paper labels cannot replicate. Best paired with a matte frosted or spray-coated base.\n\n### 3. Essential Oil & Alcohol Compatibility Tip\nIf your formula contains high concentrations of tea tree oil, limonene, or denatured alcohol, always request a **UV-cured protective topcoat** over spray finishes and **kiln-fired ceramic ink** for silk screening. Explore our [5-step custom decoration process](https://www.veslapack.com/process) or [request decorated samples](https://www.veslapack.com/contact?source=sample) to test your formula firsthand.",
+      kr: "본문", jp: "本文", tw: "本文"
+    },
+    date: "2026-11-24",
+    readMinutes: 7,
+    category: "material",
+    keywords: ["glass bottle screen printing vs frosting", "cosmetic glass decoration cost", "hot stamping glass bottle", "custom spray coating glass"],
+  },
+  {
+    slug: "dropper-bottle-sizes-guide-ml-chart",
+    title: {
+      en: "Dropper Bottle Sizes Guide: 5ml–100ml Chart, Neck Finishes & Formula Matching",
+      kr: "드롭퍼 보틀 사이즈 가이드: 5ml~100ml 규격표, 넥 파이니시 및 제형 매칭",
+      jp: "ドロッパーボトルサイズガイド：5ml〜100ml一覧表・口径・処方マッチング",
+      tw: "滴管瓶容量規格完整指南：5ml–100ml 對照表、瓶口口徑與配方適配",
+    },
+    excerpt: {
+      en: "Complete ml-to-oz conversion chart, 18/410 vs 18/415 vs 20/400 neck dimensions, and recommended bottle sizes for serums, facial oils, hair oils, and discovery kits.",
+      kr: "ml-oz 환산표, 18/410 vs 18/415 vs 20/400 넥 규격, 세럼·페이스 오일·헤어 오일별 권장 용량을 한눈에 확인하세요.",
+      jp: "ml-oz換算表、18/410・18/415・20/400ネック寸法、セラムや美容オイル別の推奨容量を一覧で解説。",
+      tw: "完整 ml 與 oz 換算表、18/410 與 18/415 瓶口尺寸規格，以及精華液、面部油與試用組的最佳容量建議。",
+    },
+    body: {
+      en: "Picking the right bottle capacity affects more than just your unit cost—it determines your retail price tier, dropper pipette length, and shipping carton weight. Use this 2026 sizing chart from [Vesla's Serum & Dropper Bottle division](https://www.veslapack.com/serum-bottles) to match your formula to the exact industry-standard vessel.\n\n### Complete 5ml–100ml Dropper Bottle Size Chart\n| Capacity (ml) | Fluid Ounces (fl oz) | Standard Neck Finish | Typical Use Case | Recommended SKUs |\n| :--- | :--- | :--- | :--- | :--- |\n| **5 ml** | 0.17 oz | 18/415 or 13/415 | Discovery kits, eye serums, pure botanicals | [Amber Serum Vials](https://www.veslapack.com/products/amber-glass-serum-vial-dropper-bottle-supplier) |\n| **10 ml – 15 ml** | 0.34 – 0.50 oz | 18/415 | Concentrated actives, lash/brow serums, travel sizes | [10ml & 15ml Small Round Droppers](https://www.veslapack.com/products/10ml-15ml-small-straight-round-dropper-bottle-supplier) |\n| **20 ml** | 0.68 oz | 18/415 | Luxury eye & lip oils, Korean skincare ampoules | [Black Flat Shoulder 20-60ml](https://www.veslapack.com/products/black-flat-shoulder-round-dropper-bottle-supplier) |\n| **30 ml** | 1.0 fl oz | 18/415 or 20/400 | **Global #1 standard** for facial serums & oils | [Heart-Shaped 30ml](https://www.veslapack.com/products/heart-shaped-glass-dropper-bottle-manufacturer), [Frosted Blue 30ml](https://www.veslapack.com/products/frosted-blue-glass-dropper-bottle-manufacturer) |\n| **50 ml** | 1.7 fl oz | 20/400 | Value-size serums, scalp oils, beard oils | [Flat Square 30/50ml](https://www.veslapack.com/products/custom-flat-square-glass-dropper-bottle-supplier) |\n| **60 ml – 100 ml** | 2.0 – 3.4 fl oz | 20/400 | Hair oils, body oils, salon backbar refills | [Square 100ml Serum Bottle](https://www.veslapack.com/products/square-glass-serum-dropper-bottle-manufacturer-100ml), [Flat Shoulder 60ml](https://www.veslapack.com/products/flat-shoulder-round-glass-dropper-bottle-manufacturer) |\n\n### Understanding Neck Finishes (18/415 vs. 20/400)\nThe first number is the outer thread diameter in millimeters (18mm or 20mm); the second number indicates thread height and turns (415 = tall cosmetic neck, 400 = standard single-turn neck). Matching your neck finish ensures your glass pipette reaches within 2mm of the bottle bottom without touching.\n\n### Pro Tip: Fill Line vs. Brimful Capacity\nAlways leave **10%–12% headspace** in a dropper bottle so inserting the glass pipette does not cause your serum to overflow during filling. Need technical CAD drawings with exact brimful volume and neck dimensions? [Contact our engineering team](https://www.veslapack.com/contact) for instant spec sheets.",
+      kr: "본문", jp: "本文", tw: "本文"
+    },
+    date: "2026-11-24",
+    readMinutes: 7,
+    category: "guide",
+    keywords: ["dropper bottle sizes guide ml chart", "30ml vs 50ml dropper bottle", "18/415 neck finish dropper", "serum bottle capacity chart"],
+  },
+  {
+    slug: "borosilicate-vs-soda-lime-glass-cosmetic",
+    title: {
+      en: "Borosilicate vs. Type III Soda-Lime Glass for Cosmetics: Engineering & Cost Comparison",
+      kr: "화장품용 붕규산 유리 vs Type III 소다라임 유리: 엔지니어링 및 비용 비교",
+      jp: "化粧品用ホウケイ酸ガラス vs Type III ソーダ石灰ガラス：性能とコスト比較",
+      tw: "化妝品用高硼矽玻璃 vs Type III 鈉鈣玻璃：物性工程與成本比較",
+    },
+    excerpt: {
+      en: "When should beauty brands pay extra for borosilicate vials vs. heavy-wall Type III soda-lime glass? Compare thermal shock, hydrolytic resistance, weight, and MOQ.",
+      kr: "붕규산 유리와 Type III 소다라임 유리의 내열충격성, 내가수분해성, 무게감 및 단가 차이를 비교하여 최적의 소재를 선택하세요.",
+      jp: "耐熱衝撃性、耐加水分解性、重量感、単価の違いを比較し、処方に最適なガラス素材を選びましょう。",
+      tw: "深入比較高硼矽與 Type III 鈉鈣玻璃的耐溫差、耐水解性、厚底質感與起訂量成本差異。",
+    },
+    body: {
+      en: "When formulating active skincare, buyers often ask whether they need **Type I Borosilicate Glass** or **Type III Soda-Lime Glass**. Both are FDA 21 CFR and EU 1935/2004 compliant, but they serve very different roles in cosmetic manufacturing.\n\n### Side-by-Side Material Comparison\n| Property | Type III Soda-Lime Glass | Type I Borosilicate Glass |\n| :--- | :--- | :--- |\n| **Primary Use** | Heavy-wall serum bottles & cream jars | Precision 2–10ml sample vials & tubular ampoules |\n| **Wall Weight & Luxury Feel** | Heavy, thick base (premium shelf feel) | Ultra-lightweight, thin uniform walls |\n| **Thermal Shock Resistance** | Good (handles hot-pour balms up to ~65°C) | Exceptional (autoclave & extreme temp shifts) |\n| **Hydrolytic Resistance** | Standard USP Type III (ideal for oils/creams) | Highest USP Type I (zero alkali leaching) |\n| **Unit Cost** | Lower ($0.25 – $0.75) | 25%–50% higher for molded shapes |\n| **Stock Mold Availability** | 1,200+ shapes at 5,000 MOQ | Mostly tubular vials & straight cylinders |\n\n### When to Choose Type III Soda-Lime Glass\nFor 90% of skincare lines—including facial oils, moisturizers, cleansers, and [cream jars](https://www.veslapack.com/cream-jars)—**Type III Soda-Lime Glass** is the industry gold standard. It allows dramatic heavy-wall bases, square shoulders, and custom sculptural silhouettes like our [30ml Heart-Shaped Dropper Bottle](https://www.veslapack.com/products/heart-shaped-glass-dropper-bottle-manufacturer) at accessible [low MOQ](https://www.veslapack.com/low-moq-cosmetic-packaging) pricing.\n\n### When to Choose Borosilicate Glass\nChoose **Borosilicate** for:\n1. **2ml–10ml Discovery Vials & Ampoules**: Check our [Glass Vials collection](https://www.veslapack.com/glass-vials), drawn from precision borosilicate tubing for crisp optical clarity.\n2. **High-pH or Medical-Grade Actives**: Formulas requiring autoclave sterilization or extreme pH stability.\n\nUnsure which glass grade matches your formula pH and filling temperature? [Send your formula brief to our engineers](https://www.veslapack.com/contact) for a free compatibility recommendation.",
+      kr: "본문", jp: "本文", tw: "本文"
+    },
+    date: "2026-11-24",
+    readMinutes: 7,
+    category: "material",
+    keywords: ["borosilicate vs soda lime glass cosmetic", "type III soda lime glass skincare", "borosilicate glass vials cosmetic", "cosmetic glass material engineering"],
+  },
+  {
+    slug: "wholesale-cosmetic-bottles-price-list",
+    title: {
+      en: "2026 Wholesale Cosmetic Glass Bottles Price List: Unit Costs by Capacity & MOQ",
+      kr: "2026 도매 화장품 유리병 가격표: 용량 및 MOQ별 단가 가이드",
+      jp: "2026年版 卸売化粧品ガラスボトル価格表：容量・MOQ別単価ガイド",
+      tw: "2026 批發化妝品玻璃瓶價格表：依容量、起訂量與工藝區分的出廠單價",
+    },
+    excerpt: {
+      en: "Transparent factory-direct 2026 pricing for 5ml–100ml dropper bottles, 15g–100g cream jars, glass vials, and decoration add-ons at 5k, 10k, and 30k+ tiers.",
+      kr: "5k, 10k, 30k+ 수량 구간별 5ml~100ml 드롭퍼, 15g~100g 크림 자, 바이알 및 데코레이션 추가 비용을 투명하게 공개합니다.",
+      jp: "5k・10k・30k+の数量別における5ml〜100mlドロッパー、15g〜100gクリームジャー、加飾費用の工場直販価格を公開。",
+      tw: "公開 2026 年工廠直供價格區間：5k、10k、30k+ 階梯下各容量滴管瓶、膏霜罐、安瓶與印刷噴塗加價明細。",
+    },
+    body: {
+      en: "Most packaging suppliers hide pricing behind endless email chains. Below is Vesla's transparent **2026 factory-direct EXW reference price list** for stock-mold cosmetic glass packaging, including bottle, closure/dropper assembly, and standard export carton packing.\n\n### 1. 2026 Factory-Direct Unit Price Tiers (USD)\n| Product Category | Capacity Range | 5,000 pcs (Launch MOQ) | 10,000 pcs | 30,000+ pcs |\n| :--- | :--- | :--- | :--- | :--- |\n| **Glass Sample Vials** | 2ml – 10ml | $0.14 – $0.24 | $0.11 – $0.19 | $0.08 – $0.15 |\n| **Serum & Dropper Bottles** | 15ml – 30ml | $0.36 – $0.55 | $0.30 – $0.46 | $0.24 – $0.38 |\n| **Large Serum / Oil Bottles** | 50ml – 100ml | $0.48 – $0.75 | $0.40 – $0.64 | $0.32 – $0.52 |\n| **Heavy-Wall Cream Jars** | 30g – 50g (w/ lid) | $0.45 – $0.72 | $0.38 – $0.60 | $0.30 – $0.49 |\n| **Coordinated Lotion + Cream Sets** | 40ml–120ml + 50g | $0.95 – $1.45 | $0.82 – $1.25 | $0.68 – $1.05 |\n\n### 2. Custom Decoration & Tooling Add-Ons\n- **Acid Frosting**: +$0.06 – $0.10 / unit\n- **Pantone Color Spray / Gradient**: +$0.08 – $0.18 / unit\n- **Silk-Screen Printing**: +$0.04 – $0.08 / color (one-time screen setup ~$50–$80)\n- **Hot Stamping (Gold/Silver)**: +$0.06 – $0.12 / unit\n- **Custom Private Mold (optional)**: $2,500 – $15,000 one-time tooling (MOQ 10,000 pcs)\n\n### 3. Sample Kit & Shipping Estimate\nNew beauty brands can order a **physical sample kit** (3–5 decorated bottles) dispatched via DHL Express in **5–7 days**—you only cover express shipping. For bulk orders, **DDP sea/trucking to the USA or EU** typically adds $0.12–$0.25/unit depending on bottle weight and destination.\n\nWant an exact itemized quote for your SKUs? [Request your custom price sheet](https://www.veslapack.com/contact) and receive a response within 24 hours.",
+      kr: "본문", jp: "本文", tw: "本文"
+    },
+    date: "2026-11-24",
+    readMinutes: 8,
+    category: "guide",
+    keywords: ["wholesale cosmetic bottles price list", "bulk glass dropper bottle cost", "custom cosmetic packaging pricing 2026", "factory direct glass bottle price"],
   },
 ];
 

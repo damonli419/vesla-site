@@ -350,6 +350,23 @@ export default function ProductDetail() {
           </div>
         </section>
       )}
+      {/* Sticky mobile conversion bar */}
+      <div className="fixed inset-x-0 bottom-0 z-40 flex items-center gap-2 border-t border-gold/20 bg-white/95 px-4 py-3 backdrop-blur-md sm:hidden">
+        <Link
+          to={`/contact?source=sample&product=${encodeURIComponent(product.name)}`}
+          onClick={() => trackEvent("click_sample", { product: product.id, placement: "mobile_sticky" })}
+          className="flex-1 rounded-full bg-gold py-2.5 text-center text-xs font-semibold text-white shadow-sm"
+        >
+          Request Sample
+        </Link>
+        <Link
+          to={`/contact?product=${encodeURIComponent(product.name)}`}
+          onClick={() => trackEvent("click_quote", { product: product.id, placement: "mobile_sticky" })}
+          className="flex-1 rounded-full border border-gold py-2.5 text-center text-xs font-semibold text-gold-dark"
+        >
+          Get Quote
+        </Link>
+      </div>
     </div>
   );
 }
