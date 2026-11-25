@@ -523,6 +523,7 @@ const REDIRECTS = {
   "/blog/cosmetic-set-packaging-guide": "/blog/matching-cosmetic-packaging-set-guide-2026",
   "/blog/how-to-estimate-packaging-budget": "/blog/custom-glass-bottle-cost-breakdown",
   "/blog/k-beauty-packaging-trends-2026": "/blog/2026-cosmetic-glass-packaging-trends-report",
+  "/blog/glass-spray-bottles-vs-pump-bottles": "/blog/dropper-bottle-vs-airless-pump-packaging",
 };
 
 const KNOWN_PATHS = new Set([
@@ -629,6 +630,16 @@ export default {
             "access-control-allow-origin": "*",
             "access-control-allow-methods": "POST, OPTIONS",
             "access-control-allow-headers": "content-type",
+          },
+        });
+      }
+      if (path.startsWith("/api/")) {
+        return new Response("Method Not Allowed", {
+          status: 405,
+          headers: {
+            "Allow": "POST, OPTIONS",
+            "X-Robots-Tag": "noindex, nofollow",
+            "Content-Type": "text/plain",
           },
         });
       }
